@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          vecinos Comprometidos  React.
+          vecinos Comprometidos organizado  React.
         </p>
         
       </header>
