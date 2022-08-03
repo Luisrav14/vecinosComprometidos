@@ -16,12 +16,14 @@ function App() {
                 </div>
               </ul>
             </div>
+            
       </nav>
-
-      <div class="banner">
-      <img className='logo3' src='https://quintasresidencial.com/images/banner_index.png' style={{width:1400}}/>
+      <div className="banner">
+      <img className='hola' src='https://quintasresidencial.com/images/banner_index.png' style={{width:1342}}/>
       
       </div>
+
+      
     </div>
 
     
