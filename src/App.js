@@ -19,7 +19,7 @@ function App() {
       </nav>
 
       <div class="banner">
-      <img className='logo' src='https://quintasresidencial.com/images/banner_index.png' style={{width:1400}}/>
+      <img className='logo3' src='https://quintasresidencial.com/images/banner_index.png' style={{width:1400}}/>
       
       </div>
     </div>
