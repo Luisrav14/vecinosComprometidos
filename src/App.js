@@ -4,36 +4,27 @@ import React from 'react';
 function App() {
   return (
     <div className="App">
-       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown link
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-</nav>
+      <nav className="navbar navbar-expand-lg navbar-light " style={{backgroundColor: 'green',}}>
+        <a className="navbar-brand" href="http://quintasresidencial.com"><img className='logo' src='https://quintasresidencial.com/images/Logo-quintas-header.png' style={{width:120}}/></a>
+          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+            <div className="collapse navbar-collapse text-end" id="navbarNavDropdown">
+              <ul className="navbar-nav text-end">
+                <div className="text-end">
+                  <a href="loging.php" className="btn btn-outline-light text-uppercase "> Mi cuenta</a>  
+                </div>
+              </ul>
+            </div>
+      </nav>
+
+      <div class="banner">
+      <img className='logo' src='https://quintasresidencial.com/images/banner_index.png' style={{width:1400}}/>
+      
+      </div>
     </div>
+
+    
   );
 }
 
