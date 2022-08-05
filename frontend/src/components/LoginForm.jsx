@@ -1,6 +1,12 @@
 import { infoFraccionamiento } from "../global/infoFraccionamiento";
+import { useForm } from "../hooks/useForm";
 
 export const LoginForm = () => {
+  const { formState, onInputChange, email, password } = useForm({
+    email: "",
+    password: "",
+  });
+
   return (
     <div className="d-lg-flex half">
       <div className="container ">
