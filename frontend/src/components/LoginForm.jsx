@@ -11,18 +11,18 @@ export const LoginForm = () => {
 
   const [inputType, SetinputType] = useState("password");
 
-  const showHiddePassword = () => (inputType == "password" ? SetinputType("text") : SetinputType("password"));
+  const handleChangePassword = () => (inputType == "password" ? SetinputType("text") : SetinputType("password"));
 
   const handleSubmit = () => {};
 
   return (
-    <div className="d-lg-flex half mt-5">
+    <div className="d-lg-flex half mt-5 py-4">
       <div className="container">
         <div className="row align-items-center justify-content-center">
-          <div className="col-md-4 mb-5">
-            <div className="text-center">
+          <div className="col-md-5 mb-5 border border-1 rounded py-5 shadow shadow-sm">
+            <div className="mb-4 text-center">
               <a href="/">
-                <img src={infoFraccionamiento.logo} width="155" height="140" alt="logo" />
+                <img src={infoFraccionamiento.logo_color} width="215" height="65" alt="logo" />
               </a>
             </div>
             <form id="ingresar">
@@ -38,13 +38,13 @@ export const LoginForm = () => {
                 </label>
                 <div className="input-group mb-3">
                   <input type={inputType} className="form-control" placeholder="Contraseña" id="password" name="password" value={password} onChange={onInputChange} />
-                  <button className="btn btn-outline-primary" type="button" onClick={showHiddePassword}>
+                  <button className="btn btn-outline-primary" type="button" onClick={handleChangePassword}>
                     {inputType != "password" ? <BsFillEyeFill /> : <BsFillEyeSlashFill />}
                   </button>
                 </div>
               </div>
               <input type="button" id="entrar" value="Entrar" className="btn btn-block form-control btn-primary form-inline" />
-              <div className="d-flex pt-2 justify-content-center">
+              <div className="d-flex pt-4 justify-content-center">
                 <small className="text-center">
                   ¿Olvidaste tu contraseña? <a href="/password-recovery"> Click Aquí</a>
                 </small>
