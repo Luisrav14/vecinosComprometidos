@@ -6,7 +6,7 @@ import routes from "./routes/routes";
 const app = express();
 
 // Config
-app.set("port", 5001);
+app.set("port", 5000);
 app.use(cors());
 
 // Middlewares

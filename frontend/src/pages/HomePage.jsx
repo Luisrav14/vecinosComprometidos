@@ -3,7 +3,9 @@ export const HomePage = () => {
     <>
       <div>
         <h1>Test</h1>
-        <a href="/test">Ruta prueba</a>
+        <a href="/test">Ruta prueba</a> <br></br>
+        <a href="/index">Ruta index</a>
+
       </div>
     </>
   );
