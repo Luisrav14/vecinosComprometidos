@@ -1,6 +1,8 @@
-const mysql = require("mysql2/promise");
-const { devServer } = require("./config");
+import mysql from "promise-mysql";
+import { devServer } from "./config";
 
-const connection = async () => await mysql.createConnection(devServer);
+const connection = mysql.createConnection(devServer);
 
-module.exports = connection;
+export default function dbConnection() {
+  return connection;
+}

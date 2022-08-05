@@ -3,7 +3,8 @@ module.exports = {
     host: "localhost",
     user: "root",
     password: "",
-    database: "vecinos_newbd",
+    database: "quintas_prueba",
+    // database: "vecinos_newbd",
   },
 
   productionServer: {
