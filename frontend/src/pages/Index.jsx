@@ -2,24 +2,29 @@ export const Index = () => {
     return (
       <>
        <div className="App">
-      <nav className="navbar navbar-expand-lg navbar-light " style={{backgroundColor: '#40A4BC',}}>
-        <a className="navbar-brand" href="http://quintasresidencial.com"><img className='logo' src='https://vecinoscomprometidos.com/images/VC%20LOGO_white_vecinos.png' style={{width:150}}/></a>
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <nav className="navbar navbar-expand-lg navbar-light " style={{backgroundColor: '#40A4BC',}}>
+          <a className="navbar-brand" href="http://quintasresidencial.com"><img className='logo' src='https://vecinoscomprometidos.com/images/VC%20LOGO_white_vecinos.png' style={{width:150}}/></a>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
             <div className="collapse navbar-collapse " id="navbarNavDropdown">
               <ul className="navbar-nav ">
-          
-           
                 
               </ul>
+              
               <div class="col-12">
-              <div className="float-right">
-                
-                <a href="loging.php" className="btn btn-blue text-uppercase " style={{color: "white", marginRight:'-85%',fontSize:'18px'}}> Mi cuenta</a>  
-                </div>
-    </div>
+              <a id="ubicacion" class="btn btn-outline-dark border border-0 text-uppercase" style={{color: "white",fontSize:'18px'}}>Durango</a>
+              <img src='https://quintasresidencial.com/animated/cloudy-day-1.svg' alt="" />
+              <a id="ubicacion" class="btn btn-outline-dark border border-0 text-uppercase" style={{color: "white",fontSize:'18px'}}>26 c</a>
+              <a id="ubicacion" class="btn btn-outline-dark border border-0 text-uppercase" style={{color: "white",fontSize:'18px'}}>Viernes 05/08/200</a>
+              <a id="ubicacion" class="btn btn-outline-dark border border-0 text-uppercase" style={{color: "white",fontSize:'18px'}}>11:51:50</a>
+              
+              
+             <span className="float-right">
+                <a href="/login" className="btn btn-blue text-uppercase " style={{color: "white",fontSize:'18px',marginTop:'10%'}}> Mi cuenta</a>  
+                </span>
             </div>
+        </div>
             
       </nav>
       <div className="banner">
