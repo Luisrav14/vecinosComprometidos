@@ -16,7 +16,7 @@ export const Index = () => {
               <div class="col-12">
               <div className="float-right">
                 
-                <a href="loging.php" className="btn btn-blue text-uppercase " style={{color: "white", marginRight:'-40%',fontSize:'18px'}}> Mi cuenta</a>  
+                <a href="loging.php" className="btn btn-blue text-uppercase " style={{color: "white", marginRight:'-85%',fontSize:'18px'}}> Mi cuenta</a>  
                 </div>
     </div>
             </div>
