@@ -1,18 +1,24 @@
 export const Index = () => {
     return (
       <>
-        <div className="App">
+       <div className="App">
       <nav className="navbar navbar-expand-lg navbar-light " style={{backgroundColor: '#40A4BC',}}>
         <a className="navbar-brand" href="http://quintasresidencial.com"><img className='logo' src='https://vecinoscomprometidos.com/images/VC%20LOGO_white_vecinos.png' style={{width:150}}/></a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
-            <div className="collapse navbar-collapse text-end" id="navbarNavDropdown">
-              <ul className="navbar-nav text-end">
-                <div className="text-end">
-                  <a href="loging.php" className="btn btn-outline-light text-uppercase "> Mi cuenta</a>  
-                </div>
+            <div className="collapse navbar-collapse " id="navbarNavDropdown">
+              <ul className="navbar-nav ">
+          
+           
+                
               </ul>
+              <div class="col-12">
+              <div className="float-right">
+                
+                <a href="loging.php" className="btn btn-blue text-uppercase " style={{color: "white", marginRight:'-40%',fontSize:'18px'}}> Mi cuenta</a>  
+                </div>
+    </div>
             </div>
             
       </nav>
