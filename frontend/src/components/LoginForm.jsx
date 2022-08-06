@@ -1,6 +1,10 @@
 import { useState } from "react";
-import { infoFraccionamiento } from "../global/infoFraccionamiento";
 import { useForm } from "../hooks/useForm";
+import axios from "axios";
+
+import globalConfig from "../global/globalConfig";
+import { infoFraccionamiento } from "../global/infoFraccionamiento";
+
 import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 
 export const LoginForm = () => {
@@ -13,7 +17,12 @@ export const LoginForm = () => {
 
   const handleChangePassword = () => (inputType == "password" ? SetinputType("text") : SetinputType("password"));
 
-  const handleSubmit = () => {};
+  const handleSubmit = async () => {
+    await axios
+      .post(`${globalConfig.api_URL}/login`, formState)
+      .then(({ data }) => console.log(data))
+      .catch((error) => console.log(error));
+  };
 
   return (
     <div className="d-lg-flex half mt-5 py-4">
@@ -25,19 +34,19 @@ export const LoginForm = () => {
                 <img src={infoFraccionamiento.logo_color} width="215" height="65" alt="logo" />
               </a>
             </div>
-            <form id="ingresar">
+            <form onSubmit={handleSubmit}>
               <div className="form-group first">
                 <label className="fw-normal mb-1" htmlFor="username">
                   Usuario
                 </label>
-                <input type="text" className="form-control" placeholder="Correo Electrónico" id="correo" name="correo" value={correo} onChange={onInputChange} />
+                <input type="text" className="form-control" placeholder="Correo Electrónico" id="correo" name="correo" value={correo} onChange={onInputChange} required />
               </div>
               <div className="form-group last my-3">
                 <label className="fw-normal mb-1" htmlFor="password">
                   Contraseña
                 </label>
                 <div className="input-group mb-3">
-                  <input type={inputType} className="form-control" placeholder="Contraseña" id="password" name="password" value={password} onChange={onInputChange} />
+                  <input type={inputType} className="form-control" placeholder="Contraseña" id="password" name="password" value={password} onChange={onInputChange} required />
                   <button className="btn btn-outline-primary" type="button" onClick={handleChangePassword}>
                     {inputType != "password" ? <BsFillEyeFill /> : <BsFillEyeSlashFill />}
                   </button>

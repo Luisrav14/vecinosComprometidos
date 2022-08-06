@@ -10,8 +10,8 @@ code {
 }
 
 .footer-sm {
-  position: fixed;
+  position: absolute;
   bottom: 0px;
   width: 100%;
-  background-color: #40a4bc;
+  background-color: #40a4bc !important;
 }

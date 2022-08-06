@@ -19,10 +19,8 @@ export const loginController = {
   },
 
   validation: async (req, res) => {
-    const correo = req.params.correo;
-    const password = req.params.password;
-
-    console.log(req);
+    const correo = req.body.correo;
+    const password = req.body.password;
 
     try {
       const db = await dbConnection();
