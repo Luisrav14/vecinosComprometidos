@@ -3,7 +3,7 @@ import App from "../App";
 
 import { LoginPage } from "../pages/LoginPage";
 import { Index } from "../pages/Index";
-import { Dashboard } from "../pages/dashboard/dashboard";
+import { Dashboard } from "../pages/dashboard/Dashboard";
 
 export const Rutas = () => {
   return (

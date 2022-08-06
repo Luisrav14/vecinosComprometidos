@@ -24,12 +24,28 @@ export const loginController = {
 
     try {
       const db = await dbConnection();
-      const data = await db.query("SELECT * FROM users WHERE correo = ? AND password = ?", [correo, password]);
+      const isUser = await db.query("SELECT * FROM users WHERE correo = ?", [correo]);
 
-      res.status(200).send({
-        status: "success",
-        data,
-      });
+      if (isUser.length > 0) {
+        const data = await db.query("SELECT * FROM users WHERE correo = ? AND password = ?", [correo, password]);
+
+        if (data.length > 0) {
+          res.status(200).send({
+            status: "success",
+            data,
+          });
+        } else {
+          res.status(200).send({
+            status: "error",
+            message: "Contraseña incorrecta",
+          });
+        }
+      } else {
+        res.status(200).send({
+          status: "error",
+          message: "Correo no existe",
+        });
+      }
     } catch (error) {
       res.status(500).send({
         status: "error",

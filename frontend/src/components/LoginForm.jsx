@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useForm } from "../hooks/useForm";
-/*import { Redirect } from "react-router-dom";*/
 
 import axios from "axios";
 
@@ -28,7 +27,7 @@ export const LoginForm = () => {
 
   const handleSubmit = () => {
     if (correo == "test@test.com" && password == "1234") {
-      <Redirect to="/dashboard/" />;
+      alert("Acceso Correcto");
     } else {
       alert("Credenciales incorrectas");
     }
