@@ -1,12 +1,12 @@
-import Logo from "../assets/images/logo.png";
+import { infoFraccionamiento } from "../global/infoFraccionamiento";
 
 export const Index = () => {
   return (
     <>
       <div className="App">
-        <nav className="navbar navbar-expand-lg navbar-light " style={{ backgroundColor: "#40A4BC" }}>
+        <nav className="navbar navbar-expand-lg shadow shadow-sm" style={{ backgroundColor: "#40A4BC" }}>
           <a className="navbar-brand" href="/">
-            <img className="logo" src={Logo} style={{ width: 150 }} />
+            <img className="logo" src={infoFraccionamiento.logo} style={{ width: 150 }} />
           </a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -38,17 +38,18 @@ export const Index = () => {
             </div>
           </div>
         </nav>
+
         <div className="banner">
           <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
             <div className="carousel-inner">
               <div className="carousel-item active">
-                <img className="hola" src="https://quintasresidencial.com/images/1.png" style={{ width: "100%" }} />
+                <img className="w-100" src="https://quintasresidencial.com/images/1.png" style={{ height: "90vh" }} />
               </div>
               <div className="carousel-item">
-                <img className="hola" src="https://quintasresidencial.com/images/2.png" style={{ width: "100%" }} />
+                <img className="w-100" src="https://quintasresidencial.com/images/2.png" style={{ height: "90vh" }} />
               </div>
               <div className="carousel-item">
-                <img className="hola" src="https://quintasresidencial.com/images/3.png" style={{ width: "100%" }} />
+                <img className="w-100" src="https://quintasresidencial.com/images/3.png" style={{ height: "90vh" }} />
               </div>
             </div>
             <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -61,6 +62,7 @@ export const Index = () => {
             </a>
           </div>
         </div>
+
         <div className="container pt-5 pb-5">
           <div className="row pb-5">
             <div className="col"></div>
@@ -86,7 +88,7 @@ export const Index = () => {
             <div className="col pb-1"></div>
           </div>
         </div>
-      
+
         <div className="container pb-5">
           <div className="col text-center pb-3">
             <h5 id="subTitulo">Servicios</h5>
@@ -130,10 +132,6 @@ export const Index = () => {
           </div>
         </div>
 
-
-
-
-
         <div className="container pb-5">
           <div className="col text-center pb-3">
             <h5 id="subTitulo">Supermercados</h5>
@@ -169,7 +167,6 @@ export const Index = () => {
             </div>
           </div>
         </div>
-
 
         <div className="container pb-5">
           <div className="row pb-5">
@@ -262,95 +259,92 @@ export const Index = () => {
             </div>
           </div>
         </div>
-    
-  
       </div>
 
-      
       <div className="col-12">
-      <img className="img-fluid" src="https://quintasresidencial.com/images/bottom_emergencias.png" alt="" />
-    </div>
-    <div className="col-12">
-      <img className="img-fluid" src="https://quintasresidencial.com/images/footer.png" alt="" />
-      
-    </div>
-   
-    <footer className="page-footer font-small blue pt-4">
-
- 
-<div className="container-fluid text-center text-md-left">
-
-  
-  <div className="row">
-
-    
-    <div className="col-md-4 mt-md-0 mt-3">
-
-      
-      <h5 className="text-uppercase">Direccion</h5>
-      <p>Las Quintas Residencial, CP 34186, Durango,Durango</p>
-
-    </div>
-    <div className="col-md-4 mt-md-0 mt-3">
-
-      
-      <h5 className="text-uppercase">Contacto</h5>
-      <strong><span><a href="mailto:administración@quintasresidencial.com" target="_blank">administración@quintasresidencial.com</a></span></strong> <br></br>
-              <strong><span><a href="fraccionamiento/QuintasResidencial/reportes.php" target="_blank">Reportes</a></span></strong>
-
-    </div>
-    
-
-
-
- 
-    <div className="col-md-4 mb-md-0 mb-3">
-
- 
-      <h5 className="text-uppercase"> Legal</h5>
-
-      <ul className="list-unstyled">
-        <li>
-        <strong><span><a href="assets/pdf/Aviso-Privacidad.pdf" target="_blank">Políticas de Privacidad</a></span></strong> 
-        </li>
-        <li>
-        <strong><span><a href="assets/pdf/Terminos-Condiciones.pdf" target="_blank">Terminos y Condiciones</a></span></strong> 
-        </li>
-        <li>
-        <strong><span><a href="fraccionamiento/QuintasResidencial/asambleastodas.php" target="_blank">Asambleas</a></span></strong> 
-        </li>
-      
-      </ul>
-
-    </div>
-   
-
-    
-
-
-  </div>
-
-
-</div>
-
-<div className="footer-copyright text-center py-3">© Copyright Quintas Residencial 2022. All Rights Reserved <br></br>
-  <a href="/visitantes"> Visitantes</a>
-</div>
-<div className="container mt-2">
-    <div className="row ">
-      <div className="col-md-3 col-sm-12">
-        <p className="mt-3 text-dark text-center">
-          Tu dinero siempre seguro
-        </p>
+        <img className="img-fluid" src="https://quintasresidencial.com/images/bottom_emergencias.png" alt="" />
       </div>
-      <div className="col-md-9 col-sm-12 m-0">
-      <img className="img-fluid" src="https://quintasresidencial.com/images/pieLogos.png" alt="servicio12" />
+      <div className="col-12">
+        <img className="img-fluid" src="https://quintasresidencial.com/images/footer.png" alt="" />
       </div>
-    </div>
-  </div>
 
-</footer>
-      
+      <footer className="page-footer font-small blue pt-4">
+        <div className="container-fluid text-center text-md-left">
+          <div className="row">
+            <div className="col-md-4 mt-md-0 mt-3">
+              <h5 className="text-uppercase">Dirección</h5>
+              <p> {infoFraccionamiento.direccion} </p>
+            </div>
+            <div className="col-md-4 mt-md-0 mt-3">
+              <h5 className="text-uppercase">Contacto</h5>
+              <strong>
+                <span>
+                  <a href={`mailto:${infoFraccionamiento.correo}`} target="_blank">
+                    {infoFraccionamiento.correo}
+                  </a>
+                </span>
+              </strong>{" "}
+              <br></br>
+              <strong>
+                <span>
+                  <a href="fraccionamiento/QuintasResidencial/reportes.php" target="_blank">
+                    Reportes
+                  </a>
+                </span>
+              </strong>
+            </div>
+
+            <div className="col-md-4 mb-md-0 mb-3">
+              <h5 className="text-uppercase"> Legal</h5>
+
+              <ul className="list-unstyled">
+                <li>
+                  <strong>
+                    <span>
+                      <a href="assets/pdf/Aviso-Privacidad.pdf" target="_blank">
+                        Políticas de Privacidad
+                      </a>
+                    </span>
+                  </strong>
+                </li>
+                <li>
+                  <strong>
+                    <span>
+                      <a href="assets/pdf/Terminos-Condiciones.pdf" target="_blank">
+                        Terminos y Condiciones
+                      </a>
+                    </span>
+                  </strong>
+                </li>
+                <li>
+                  <strong>
+                    <span>
+                      <a href="fraccionamiento/QuintasResidencial/asambleastodas.php" target="_blank">
+                        Asambleas
+                      </a>
+                    </span>
+                  </strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="footer-copyright text-center py-3">
+          © Copyright {infoFraccionamiento.nombre} 2022. All Rights Reserved <br></br>
+          <a href="/visitantes"> Visitantes</a>
+        </div>
+        <div className="container mt-2">
+          <div className="row ">
+            <div className="col-md-3 col-sm-12">
+              <p className="mt-3 text-dark text-center">Tu dinero siempre seguro</p>
+            </div>
+            <div className="col-md-9 col-sm-12 m-0">
+              <img className="img-fluid" src="https://quintasresidencial.com/images/pieLogos.png" alt="servicio12" />
+            </div>
+          </div>
+        </div>
+      </footer>
     </>
   );
 };
