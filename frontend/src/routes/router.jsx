@@ -3,6 +3,7 @@ import App from "../App";
 
 import { LoginPage } from "../pages/LoginPage";
 import { Index } from "../pages/Index";
+import { Dashboard } from "../pages/dashboard/dashboard";
 
 export const Rutas = () => {
   return (
@@ -11,6 +12,9 @@ export const Rutas = () => {
         <Route path="/" element={<Index />} />
         <Route path="/test" element={<App />} />
         <Route path="/login" element={<LoginPage />} />
+
+        {/* Dashboard routes */}
+        <Route path="/dashboard/" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   );

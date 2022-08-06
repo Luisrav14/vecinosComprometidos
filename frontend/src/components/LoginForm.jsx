@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useForm } from "../hooks/useForm";
+import { Redirect } from "react-router-dom";
+
 import axios from "axios";
 
 import globalConfig from "../global/globalConfig";
@@ -17,11 +19,19 @@ export const LoginForm = () => {
 
   const handleChangePassword = () => (inputType == "password" ? SetinputType("text") : SetinputType("password"));
 
-  const handleSubmit = async () => {
+  /* const handleSubmit = async () => {
     await axios
       .post(`${globalConfig.api_URL}/login`, formState)
       .then(({ data }) => console.log(data))
       .catch((error) => console.log(error));
+  }; */
+
+  const handleSubmit = () => {
+    if (correo == "test@test.com" && password == "1234") {
+      <Redirect to="/dashboard/" />;
+    } else {
+      alert("Credenciales incorrectas");
+    }
   };
 
   return (
@@ -34,7 +44,7 @@ export const LoginForm = () => {
                 <img src={infoFraccionamiento.logo_color} width="215" height="65" alt="logo" />
               </a>
             </div>
-            <form onSubmit={handleSubmit}>
+            <form>
               <div className="form-group first">
                 <label className="fw-normal mb-1" htmlFor="username">
                   Usuario
@@ -52,7 +62,7 @@ export const LoginForm = () => {
                   </button>
                 </div>
               </div>
-              <input type="button" id="entrar" value="Entrar" className="btn btn-block form-control btn-primary form-inline" />
+              <input type="button" id="entrar" value="Entrar" className="btn btn-block form-control btn-primary form-inline" onClick={handleSubmit} />
               <div className="d-flex pt-4 justify-content-center">
                 <small className="text-center">
                   ¿Olvidaste tu contraseña? <a href="/password-recovery"> Click Aquí</a>
