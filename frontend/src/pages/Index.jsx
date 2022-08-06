@@ -267,7 +267,7 @@ export const Index = () => {
       </div>
 
       
-    <div class="col-12">
+      <div class="col-12">
       <img class="img-fluid" src="https://quintasresidencial.com/images/bottom_emergencias.png" alt="" />
     </div>
     <div class="col-12">
