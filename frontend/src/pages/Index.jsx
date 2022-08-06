@@ -275,82 +275,81 @@ export const Index = () => {
       
     </div>
    
-<footer class="page-footer font-small blue pt-4">
+    <footer class="page-footer font-small blue pt-4">
 
  
-  <div class="container-fluid text-center text-md-left">
+<div class="container-fluid text-center text-md-left">
+
+  
+  <div class="row">
 
     
-    <div class="row">
+    <div class="col-md-4 mt-md-0 mt-3">
 
       
-      <div class="col-md-4 mt-md-0 mt-3">
-
-        
-        <h5 class="text-uppercase">Direccion</h5>
-        <p>Las Quintas Residencial, CP 34186, Durango,Durango</p>
-
-      </div>
-      <div class="col-md-4 mt-md-0 mt-3">
-
-        
-        <h5 class="text-uppercase">Contacto</h5>
-        <strong><span><a href="mailto:administración@quintasresidencial.com" target="_blank">administración@quintasresidencial.com</a></span></strong> <br></br>
-                <strong><span><a href="fraccionamiento/QuintasResidencial/reportes.php" target="_blank">Reportes</a></span></strong>
-
-      </div>
-      
-
-
-
-   
-      <div class="col-md-4 mb-md-0 mb-3">
-
-   
-        <h5 class="text-uppercase"> Legal</h5>
-
-        <ul class="list-unstyled">
-          <li>
-          <strong><span><a href="assets/pdf/Aviso-Privacidad.pdf" target="_blank">Políticas de Privacidad</a></span></strong> 
-          </li>
-          <li>
-          <strong><span><a href="assets/pdf/Terminos-Condiciones.pdf" target="_blank">Terminos y Condiciones</a></span></strong> 
-          </li>
-          <li>
-          <strong><span><a href="fraccionamiento/QuintasResidencial/asambleastodas.php" target="_blank">Asambleas</a></span></strong> 
-          </li>
-        
-        </ul>
-
-      </div>
-     
-  
-      
-
+      <h5 class="text-uppercase">Direccion</h5>
+      <p>Las Quintas Residencial, CP 34186, Durango,Durango</p>
 
     </div>
+    <div class="col-md-4 mt-md-0 mt-3">
+
+      
+      <h5 class="text-uppercase">Contacto</h5>
+      <strong><span><a href="mailto:administración@quintasresidencial.com" target="_blank">administración@quintasresidencial.com</a></span></strong> <br></br>
+              <strong><span><a href="fraccionamiento/QuintasResidencial/reportes.php" target="_blank">Reportes</a></span></strong>
+
+    </div>
+    
+
+
+
  
+    <div class="col-md-4 mb-md-0 mb-3">
+
+ 
+      <h5 class="text-uppercase"> Legal</h5>
+
+      <ul class="list-unstyled">
+        <li>
+        <strong><span><a href="assets/pdf/Aviso-Privacidad.pdf" target="_blank">Políticas de Privacidad</a></span></strong> 
+        </li>
+        <li>
+        <strong><span><a href="assets/pdf/Terminos-Condiciones.pdf" target="_blank">Terminos y Condiciones</a></span></strong> 
+        </li>
+        <li>
+        <strong><span><a href="fraccionamiento/QuintasResidencial/asambleastodas.php" target="_blank">Asambleas</a></span></strong> 
+        </li>
+      
+      </ul>
+
+    </div>
+   
+
+    
+
 
   </div>
- 
-  <div class="footer-copyright text-center py-3">© Copyright Quintas Residencial 2022. All Rights Reserved <br></br>
-    <a href="/visitantes"> Visitantes</a>
-  </div>
-  <div class="container mt-2">
-      <div class="row ">
-        <div class="col-md-3 col-sm-12">
-          <p class="mt-3 text-dark text-center">
-            Tu dinero siempre seguro
-          </p>
-        </div>
-        <div class="col-md-9 col-sm-12 m-0">
-        <img class="img-fluid" src="https://quintasresidencial.com/images/pieLogos.png" alt="servicio12" />
-        </div>
+
+
+</div>
+
+<div class="footer-copyright text-center py-3">© Copyright Quintas Residencial 2022. All Rights Reserved <br></br>
+  <a href="/visitantes"> Visitantes</a>
+</div>
+<div class="container mt-2">
+    <div class="row ">
+      <div class="col-md-3 col-sm-12">
+        <p class="mt-3 text-dark text-center">
+          Tu dinero siempre seguro
+        </p>
+      </div>
+      <div class="col-md-9 col-sm-12 m-0">
+      <img class="img-fluid" src="https://quintasresidencial.com/images/pieLogos.png" alt="servicio12" />
       </div>
     </div>
+  </div>
 
 </footer>
-
       
     </>
   );
