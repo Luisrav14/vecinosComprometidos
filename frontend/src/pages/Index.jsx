@@ -285,13 +285,7 @@ export const Index = () => {
                 </span>
               </strong>{" "}
               <br></br>
-              <strong>
-                <span>
-                  <a href="fraccionamiento/QuintasResidencial/reportes.php" target="_blank">
-                    Reportes
-                  </a>
-                </span>
-              </strong>
+             
             </div>
 
             <div className="col-md-4 mb-md-0 mb-3">
@@ -332,7 +326,7 @@ export const Index = () => {
 
         <div className="footer-copyright text-center py-3">
           © Copyright {infoFraccionamiento.nombre} 2022. All Rights Reserved <br></br>
-          <a href="/visitantes"> Visitantes</a>
+         
         </div>
         <div className="container mt-2">
           <div className="row ">
