@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import { useForm } from "../hooks/useForm";
 
 import axios from "axios";
@@ -18,7 +19,7 @@ export const LoginForm = () => {
 
   const handleChangePassword = () => (inputType == "password" ? SetinputType("text") : SetinputType("password"));
 
-  /* const handleSubmit = async () => {
+  /*   const handleSubmit = async () => {
     await axios
       .post(`${globalConfig.api_URL}/login`, formState)
       .then(({ data }) => console.log(data))
@@ -27,7 +28,7 @@ export const LoginForm = () => {
 
   const handleSubmit = () => {
     if (correo == "test@test.com" && password == "1234") {
-      alert("Acceso Correcto");
+      alert("Acceso correcto");
     } else {
       alert("Credenciales incorrectas");
     }
@@ -37,7 +38,7 @@ export const LoginForm = () => {
     <div className="d-lg-flex half mt-5 py-4">
       <div className="container">
         <div className="row align-items-center justify-content-center">
-          <div className="col-md-5 mb-5 border border-1 rounded py-5 shadow shadow-sm">
+          <div className="col-md-5 mb-5 border border-1 rounded-2 py-5">
             <div className="mb-4 text-center">
               <a href="/">
                 <img src={infoFraccionamiento.logo_color} width="215" height="65" alt="logo" />
@@ -48,7 +49,7 @@ export const LoginForm = () => {
                 <label className="fw-normal mb-1" htmlFor="username">
                   Usuario
                 </label>
-                <input type="text" className="form-control" placeholder="Correo Electrónico" id="correo" name="correo" value={correo} onChange={onInputChange} required />
+                <input type="email" className="form-control" placeholder="Correo Electrónico" id="correo" name="correo" value={correo} onChange={onInputChange} required />
               </div>
               <div className="form-group last my-3">
                 <label className="fw-normal mb-1" htmlFor="password">
@@ -61,7 +62,10 @@ export const LoginForm = () => {
                   </button>
                 </div>
               </div>
-              <input type="button" id="entrar" value="Entrar" className="btn btn-block form-control btn-primary form-inline" onClick={handleSubmit} />
+              {/* <input type="button" id="entrar" value="Entrar" className="btn btn-block form-control btn-primary form-inline" onClick={handleSubmit} /> */}
+              <a id="entrar" value="Entrar" className="btn btn-block form-control btn-primary form-inline" href="/admin">
+                Enviar
+              </a>
               <div className="d-flex pt-4 justify-content-center">
                 <small className="text-center">
                   ¿Olvidaste tu contraseña? <a href="/password-recovery"> Click Aquí</a>
