@@ -43,10 +43,10 @@ export const Index = () => {
           <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
             <div className="carousel-inner">
               <div className="carousel-item active">
-                <img className="w-100" src="https://quintasresidencial.com/images/1.png"  />
+                <img className="w-100" src=""  />
               </div>
               <div className="carousel-item">
-                <img className="w-100" src="https://quintasresidencial.com/images/2.png"  />
+                <img className="w-100" src=""  />
               </div>
               <div className="carousel-item">
                 <img className="w-100" src="https://quintasresidencial.com/images/3.png"  />
@@ -265,7 +265,7 @@ export const Index = () => {
         <img className="img-fluid" src="https://quintasresidencial.com/images/bottom_emergencias.png" alt="" />
       </div>
       <div className="col-12">
-        <img className="img-fluid" src="https://quintasresidencial.com/images/footer.png" alt="" />
+        <img className="img-fluid" src={infoFraccionamiento.bannerinferior} alt="" />
       </div>
 
       <footer className="page-footer font-small blue pt-4">
