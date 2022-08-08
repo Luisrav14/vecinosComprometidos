@@ -34,7 +34,8 @@ font-size: 34px;
   display: none;
  }
  .w-100{
-  height: 50vh;
+  height: 30vh;
+  background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrLLMRRSQR_pgVU9qEcfl9U6QnuKqXvXStLw&usqp=CAU);
  }
  #titulo{
   font-size: 24px;
@@ -52,4 +53,5 @@ font-size: 34px;
   margin: 0 auto;
   margin-bottom: 10%;
  }
+ 
 }

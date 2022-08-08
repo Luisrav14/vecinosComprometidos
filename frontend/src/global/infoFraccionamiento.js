@@ -1,5 +1,6 @@
 import Logo from "../assets/images/logo.png";
 import LogoColor from "../assets/images/logo_color.png";
+import BannerInferior from "../assets/images/banners_inferior.png";
 
 export const infoFraccionamiento = {
   nombre: "Vecinos Comprometidos",
@@ -10,4 +11,5 @@ export const infoFraccionamiento = {
   whatsapp: "6181234567",
   logo: Logo,
   logo_color: LogoColor,
+  bannerinferior: BannerInferior,
 };
