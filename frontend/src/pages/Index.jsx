@@ -1,10 +1,10 @@
 import { infoFraccionamiento } from "../global/infoFraccionamiento";
-
+import '../assets/css/index.css'
 export const Index = () => {
   return (
     <>
       <div className="App">
-        <nav className="navbar navbar-expand-lg shadow shadow-sm" style={{ backgroundColor: "#40A4BC" }}>
+        <nav className="navbar navbar-expand-lg navbar-light" style={{ backgroundColor: "#40A4BC" }}>
           <a className="navbar-brand" href="/">
             <img className="logo" src={infoFraccionamiento.logo} style={{ width: 150 }} />
           </a>
@@ -15,17 +15,17 @@ export const Index = () => {
             <ul className="navbar-nav "></ul>
 
             <div className="col-12">
-              <a id="ubicacion" className="btn btn-outline-dark border border-0 text-uppercase" style={{ color: "white", fontSize: "18px" }}>
+              <a id="ciudad" className="btn btn-outline-dark border border-0 text-uppercase" style={{ color: "white", fontSize: "18px" }}>
                 Durango
               </a>
-              <img src="https://quintasresidencial.com/animated/cloudy-day-1.svg" alt="" />
-              <a id="ubicacion" className="btn btn-outline-dark border border-0 text-uppercase" style={{ color: "white", fontSize: "18px" }}>
+              <img id="imgtemp" src="https://quintasresidencial.com/animated/cloudy-day-1.svg" alt="" />
+              <a id="temp" className="btn btn-outline-dark border border-0 text-uppercase" style={{ color: "white", fontSize: "18px" }}>
                 26 c
               </a>
-              <a id="ubicacion" className="btn btn-outline-dark border border-0 text-uppercase" style={{ color: "white", fontSize: "18px" }}>
+              <a id="fecha" className="btn btn-outline-dark border border-0 text-uppercase" style={{ color: "white", fontSize: "18px" }}>
                 Viernes 05/08/200
               </a>
-              <a id="ubicacion" className="btn btn-outline-dark border border-0 text-uppercase" style={{ color: "white", fontSize: "18px" }}>
+              <a id="hora" className="btn btn-outline-dark border border-0 text-uppercase" style={{ color: "white", fontSize: "18px" }}>
                 11:51:50
               </a>
 
@@ -43,13 +43,13 @@ export const Index = () => {
           <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
             <div className="carousel-inner">
               <div className="carousel-item active">
-                <img className="w-100" src="https://quintasresidencial.com/images/1.png" style={{ height: "90vh" }} />
+                <img className="w-100" src="https://quintasresidencial.com/images/1.png"  />
               </div>
               <div className="carousel-item">
-                <img className="w-100" src="https://quintasresidencial.com/images/2.png" style={{ height: "90vh" }} />
+                <img className="w-100" src="https://quintasresidencial.com/images/2.png"  />
               </div>
               <div className="carousel-item">
-                <img className="w-100" src="https://quintasresidencial.com/images/3.png" style={{ height: "90vh" }} />
+                <img className="w-100" src="https://quintasresidencial.com/images/3.png"  />
               </div>
             </div>
             <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
