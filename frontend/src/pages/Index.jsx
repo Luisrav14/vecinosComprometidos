@@ -30,7 +30,7 @@ export const Index = () => {
               </a>
 
               <span className="float-right">
-                <a href="/login" className="btn btn-blue text-uppercase " style={{ color: "white", fontSize: "18px", marginTop: "10%" }}>
+                <a href="/login" id="btncuenta" className="btn btn-blue text-uppercase " style={{ color: "white", fontSize: "18px", marginTop: "10%" }}>
                   {" "}
                   Mi cuenta
                 </a>
