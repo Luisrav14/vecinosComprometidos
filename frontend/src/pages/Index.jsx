@@ -43,13 +43,13 @@ export const Index = () => {
           <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
             <div className="carousel-inner">
               <div className="carousel-item active">
-                <img className="w-100" src=""  />
+                <img id="banner1" className="w-100" src="https://quintasresidencial.com/images/1.png"  />
+              </div>
+              <div  className="carousel-item">
+                <img id="banner2" className="w-100" src="https://quintasresidencial.com/images/2.png"  />
               </div>
               <div className="carousel-item">
-                <img className="w-100" src=""  />
-              </div>
-              <div className="carousel-item">
-                <img className="w-100" src="https://quintasresidencial.com/images/3.png"  />
+                <img  id="banner3" className="w-100" src="https://quintasresidencial.com/images/3.png"/>
               </div>
             </div>
             <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
