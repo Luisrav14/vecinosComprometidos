@@ -23,7 +23,8 @@ export const Rutas = () => {
 
         {/* Dashboard routes */}
         <Route path="/dashboard" element={<Dashboard />} />
-          {/* Dashboard routes */}
+        
+          {/* Dashboard user routes */}
           <Route path="/dashuser" element={<DashUser/>} />
       </Routes>
     </BrowserRouter>
