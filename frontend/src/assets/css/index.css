@@ -31,6 +31,17 @@ font-size: 34px;
 #ciudad{
   margin-left: 20%;
 }
+.card-noti{
+  align-items: center;
+  
+  width:30%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.card-img-top{
+  width:400px;
+  height: 300px;
+}
 
 
 

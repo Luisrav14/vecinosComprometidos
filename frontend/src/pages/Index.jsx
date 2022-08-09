@@ -265,6 +265,53 @@ export const Index = () => {
       <div className="col-12">
         <img className="img-fluid" src="https://quintasresidencial.com/images/bottom_emergencias.png" alt="" />
       </div>
+
+
+
+<div className="col-12 mt-5">
+<div className="col text-center pb-3 mb-5">
+            <h5 id="subTitulo">Blog de noticias</h5>
+          </div>
+      <div className="card-group mb-5">
+  <div className="card-noti">
+  <img className="card-img-top" src="https://quintasresidencial.com/fraccionamiento/QuintasResidencial/assets/images/blog/1659716959_mascotas.jpg" alt="" />
+    <div className="card-body">
+      <h5 className="card-title">Nuevas normas de convivencia con nuestras mascotas</h5>
+      <p className="card-text">Censo canino</p>
+    </div>
+    <div className="card-footer">
+    <a href="#" class="btn btn-primary">Leer más</a>
+    </div>
+  </div>
+  <div className="card-noti">
+  <img className="card-img-top" src="https://www.oirealtor.com/noticias-inmobiliarias/wp-content/uploads/2022/06/tips.jpeg" alt="" />
+  
+    <div className="card-body">
+      <h5 className="card-title">DEPOSITO EN GARANTIA PARA PROPIETARIOS QUE RENTAN SU CASA</h5>
+      <p className="card-text">Deposito en Garantía</p>
+    </div>
+    <div className="card-footer">
+    <a href="#" class="btn btn-primary">Leer más</a>
+    </div>
+  </div>
+  <div className="card-noti">
+  <img className="card-img-top" src="https://quintasresidencial.com/fraccionamiento/QuintasResidencial/assets/images/blog/1642543017_6_consecuencias.png" alt="" />
+    <div className="card-body">
+      <h5 className="card-title">6 Consecuencias si no se paga la cuota de mantenimiento</h5>
+      <p className="card-text">Trae consecuencias específicas.</p>
+    </div>
+    <div className="card-footer">
+    <a href="#" class="btn btn-primary">Leer más</a>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
       <div className="col-12">
         <img className="img-fluid" src={infoFraccionamiento.bannerinferior} alt="" />
       </div>

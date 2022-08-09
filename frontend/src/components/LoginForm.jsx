@@ -66,6 +66,9 @@ export const LoginForm = () => {
               <a id="entrar" value="Entrar" className="btn btn-block form-control btn-primary form-inline" href="/admin">
                 Enviar
               </a>
+              <a id="entrar" value="Entrar" className="btn btn-block form-control btn-primary form-inline" href="/dashuser">
+                Micrositio
+              </a>
               <div className="d-flex pt-4 justify-content-center">
                 <small className="text-center">
                   ¿Olvidaste tu contraseña? <a href="/password-recovery"> Click Aquí</a>
