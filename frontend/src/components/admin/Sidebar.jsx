@@ -2,88 +2,87 @@
 
 export const Sidebar = () => {
   return (
-    <nav id="sidebar" className="sidebar js-sidebar">
-      <div className="sidebar-content js-simplebar">
-        <a className="sidebar-brand" href="index.html">
-          <span className="align-middle">AdminKit</span>
+    <nav id="sidebar" class="sidebar js-sidebar">
+      <div class="sidebar-content js-simplebar">
+        <a class="sidebar-brand" href="/admin">
+          <span class="align-middle">Dashboard</span>
         </a>
 
-        <ul className="sidebar-nav">
-          <li className="sidebar-header">Pages</li>
+        <ul class="sidebar-nav">
+          <li class="sidebar-item active">
+            <a class="sidebar-link" href="/admin">
+              <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Resúmen de información</span>
+            </a>
+          </li>
+          <li class="sidebar-header">Operaciones</li>
 
-          <li className="sidebar-item active">
-            <a className="sidebar-link" href="index.html">
-              <i className="align-middle" data-feather="sliders"></i> <span className="align-middle">Dashboard</span>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="/admin">
+              <i class="align-middle" data-feather="user"></i> <span class="align-middle">Base de datos general</span>
             </a>
           </li>
 
-          <li className="sidebar-item">
-            <a className="sidebar-link" href="pages-profile.html">
-              <i className="align-middle" data-feather="user"></i> <span className="align-middle">Profile</span>
+          <li class="sidebar-item">
+            <a class="sidebar-link" hrefadmin="pages-/">
+              <i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Sign In</span>
             </a>
           </li>
 
-          <li className="sidebar-item">
-            <a className="sidebar-link" href="pages-sign-in.html">
-              <i className="align-middle" data-feather="log-in"></i> <span className="align-middle">Sign In</span>
+          <li class="sidebar-item">
+            <a class="sidebar-link" hrefadmin="pages-/">
+              <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Sign Up</span>
             </a>
           </li>
 
-          <li className="sidebar-item">
-            <a className="sidebar-link" href="pages-sign-up.html">
-              <i className="align-middle" data-feather="user-plus"></i> <span className="align-middle">Sign Up</span>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="/admin">
+              <i class="align-middle" data-feather="book"></i> <span class="align-middle">Blank</span>
             </a>
           </li>
 
-          <li className="sidebar-item">
-            <a className="sidebar-link" href="pages-blank.html">
-              <i className="align-middle" data-feather="book"></i> <span className="align-middle">Blank</span>
+          <li class="sidebar-header">Finanzas</li>
+
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="/admin">
+              <i class="align-middle" data-feather="square"></i> <span class="align-middle">Buttons</span>
             </a>
           </li>
 
-          <li className="sidebar-header">Tools & Components</li>
-
-          <li className="sidebar-item">
-            <a className="sidebar-link" href="ui-buttons.html">
-              <i className="align-middle" data-feather="square"></i> <span className="align-middle">Buttons</span>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="/admin">
+              <i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Forms</span>
             </a>
           </li>
 
-          <li className="sidebar-item">
-            <a className="sidebar-link" href="ui-forms.html">
-              <i className="align-middle" data-feather="check-square"></i> <span className="align-middle">Forms</span>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="/admin">
+              <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Cards</span>
             </a>
           </li>
 
-          <li className="sidebar-item">
-            <a className="sidebar-link" href="ui-cards.html">
-              <i className="align-middle" data-feather="grid"></i> <span className="align-middle">Cards</span>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="/admin">
+              <i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Typography</span>
             </a>
           </li>
 
-          <li className="sidebar-item">
-            <a className="sidebar-link" href="ui-typography.html">
-              <i className="align-middle" data-feather="align-left"></i> <span className="align-middle">Typography</span>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="/admin">
+              <i class="align-middle" data-feather="coffee"></i> <span class="align-middle">Icons</span>
             </a>
           </li>
 
-          <li className="sidebar-item">
-            <a className="sidebar-link" href="icons-feather.html">
-              <i className="align-middle" data-feather="coffee"></i> <span className="align-middle">Icons</span>
+          <li class="sidebar-header">Control de accesos</li>
+
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="/admin">
+              <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Charts</span>
             </a>
           </li>
 
-          <li className="sidebar-header">Plugins & Addons</li>
-
-          <li className="sidebar-item">
-            <a className="sidebar-link" href="charts-chartjs.html">
-              <i className="align-middle" data-feather="bar-chart-2"></i> <span className="align-middle">Charts</span>
-            </a>
-          </li>
-
-          <li className="sidebar-item">
-            <a className="sidebar-link" href="maps-google.html">
-              <i className="align-middle" data-feather="map"></i> <span className="align-middle">Maps</span>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="/admin">
+              <i class="align-middle" data-feather="map"></i> <span class="align-middle">Maps</span>
             </a>
           </li>
         </ul>
