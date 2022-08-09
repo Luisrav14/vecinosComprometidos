@@ -279,8 +279,8 @@ export const Index = () => {
       <h5 className="card-title">Nuevas normas de convivencia con nuestras mascotas</h5>
       <p className="card-text">Censo canino</p>
     </div>
-    <div className="card-footer">
-    <a href="#" class="btn btn-primary">Leer más</a>
+    <div className="card-footer1">
+    <a href="#" className="btn btn-primary">Leer más</a>
     </div>
   </div>
   <div className="card-noti">
@@ -290,8 +290,8 @@ export const Index = () => {
       <h5 className="card-title">DEPOSITO EN GARANTIA PARA PROPIETARIOS QUE RENTAN SU CASA</h5>
       <p className="card-text">Deposito en Garantía</p>
     </div>
-    <div className="card-footer">
-    <a href="#" class="btn btn-primary">Leer más</a>
+    <div className="card-footer1">
+    <a href="#" className="btn btn-primary">Leer más</a>
     </div>
   </div>
   <div className="card-noti">
@@ -300,8 +300,8 @@ export const Index = () => {
       <h5 className="card-title">6 Consecuencias si no se paga la cuota de mantenimiento</h5>
       <p className="card-text">Trae consecuencias específicas.</p>
     </div>
-    <div className="card-footer">
-    <a href="#" class="btn btn-primary">Leer más</a>
+    <div className="card-footer1">
+    <a href="#" className="btn btn-primary">Leer más</a>
     </div>
   </div>
 </div>
