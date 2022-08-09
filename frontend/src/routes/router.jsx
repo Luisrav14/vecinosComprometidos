@@ -4,6 +4,7 @@ import { LoginPage } from "../pages/LoginPage";
 import { Index } from "../pages/Index";
 import { Dashboard } from "../pages/dashboard/Dashboard";
 import { AdminDashboard } from "../pages/admin/AdminDashboard";
+import { DashUser } from "../pages/usuarios/dashuser";
 import { BaseDatosGeneral } from "../pages/admin/BaseDatosGeneral";
 import { Navbar } from "../components/admin/Navbar";
 import { Sidebar } from "../components/admin/Sidebar";
@@ -22,6 +23,8 @@ export const Rutas = () => {
 
         {/* Dashboard routes */}
         <Route path="/dashboard" element={<Dashboard />} />
+          {/* Dashboard routes */}
+          <Route path="/dashuser" element={<DashUser/>} />
       </Routes>
     </BrowserRouter>
   );
