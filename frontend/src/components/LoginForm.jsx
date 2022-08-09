@@ -19,26 +19,26 @@ export const LoginForm = () => {
 
   const handleChangePassword = () => (inputType == "password" ? SetinputType("text") : SetinputType("password"));
 
-  /*   const handleSubmit = async () => {
+  const handleSubmit = async () => {
     await axios
       .post(`${globalConfig.api_URL}/login`, formState)
       .then(({ data }) => console.log(data))
       .catch((error) => console.log(error));
-  }; */
+  };
 
-  const handleSubmit = () => {
+  /* const handleSubmit = () => {
     if (correo == "test@test.com" && password == "1234") {
       alert("Acceso correcto");
     } else {
       alert("Credenciales incorrectas");
     }
-  };
+  }; */
 
   return (
     <div className="d-lg-flex half mt-5 py-4">
       <div className="container">
         <div className="row align-items-center justify-content-center">
-          <div className="col-md-5 mb-5 border border-1 rounded-2 py-5">
+          <div className="col-md-5 mb-5 py-5">
             <div className="mb-4 text-center">
               <a href="/">
                 <img src={infoFraccionamiento.logo_color} width="215" height="65" alt="logo" />

@@ -6,18 +6,19 @@ import { BaseDatosGeneral } from "./BaseDatosGeneral";
 
 export const AdminDashboard = () => {
   return (
-    <>
-      <div className="row">
+    <div className="wrapper">
+      <Sidebar />
+      <div className="main">
         <Navbar />
-        <Sidebar />
-        <div className="col-md-10">
-          <div className="container py-3">
-            <Routes>
-              <Route path="/admin/general" render={<BaseDatosGeneral />} />
-            </Routes>
+        <main className="content">
+          <div className="container-fluid p-0">
+            <h1 className="h3 mb-3">
+              <strong>Analytics</strong> Dashboard
+            </h1>
+            <div className="row"></div>
           </div>
-        </div>
+        </main>
       </div>
-    </>
+    </div>
   );
 };

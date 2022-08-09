@@ -1,5 +1,6 @@
 import { infoFraccionamiento } from "../global/infoFraccionamiento";
-import '../assets/css/index.css'
+import "../assets/css/index.css";
+import "../assets/css/App.css";
 export const Index = () => {
   return (
     <>
@@ -43,13 +44,13 @@ export const Index = () => {
           <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
             <div className="carousel-inner">
               <div className="carousel-item active">
-                <img id="banner1" className="w-100" src="https://quintasresidencial.com/images/1.png"  />
-              </div>
-              <div  className="carousel-item">
-                <img id="banner2" className="w-100" src="https://quintasresidencial.com/images/2.png"  />
+                <img id="banner1" className="w-100" src="https://quintasresidencial.com/images/1.png" />
               </div>
               <div className="carousel-item">
-                <img  id="banner3" className="w-100" src="https://quintasresidencial.com/images/3.png"/>
+                <img id="banner2" className="w-100" src="https://quintasresidencial.com/images/2.png" />
+              </div>
+              <div className="carousel-item">
+                <img id="banner3" className="w-100" src="https://quintasresidencial.com/images/3.png" />
               </div>
             </div>
             <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -285,7 +286,6 @@ export const Index = () => {
                 </span>
               </strong>{" "}
               <br></br>
-             
             </div>
 
             <div className="col-md-4 mb-md-0 mb-3">
@@ -326,7 +326,6 @@ export const Index = () => {
 
         <div className="footer-copyright text-center py-3">
           © Copyright {infoFraccionamiento.nombre} 2022. All Rights Reserved <br></br>
-         
         </div>
         <div className="container mt-2">
           <div className="row ">
