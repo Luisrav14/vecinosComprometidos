@@ -1,6 +1,20 @@
 import React from 'react';
 import { Navbar } from "../../components/admin/Navbar";
 import { Sidebar } from "../../components/admin/Sidebar";
+import MaterialTable from "material-table";
+import ReactDOM from "react-dom";
+
+const columnas=[
+{title:'id',
+field: 'id'},
+{title:'nombre',
+field: 'nombre'},
+{title:'apellido',
+field: 'apellido'}
+]
+const data=[
+{id:1, nombre:'ernesto',apellido:'amaya'}
+]
 
 
 
@@ -20,8 +34,12 @@ export const DashUser = () => {
                   <div className="card-header">
                     <h5 className="card-title mb-0"> </h5>
                    
-                    <img className="card-img-top" src=" https://quintasresidencial.com/fraccionamiento/QuintasResidencial/assets/images/backgroudGeneral.jpeg"alt="" />
+                  <img className="card-img-top" src=" https://quintasresidencial.com/fraccionamiento/QuintasResidencial/assets/images/backgroudGeneral.jpeg"alt="" />
+                 <MaterialTable>
+                  
+                 </MaterialTable>
                   </div>
+                  
                   <div className="card-body"></div>
                 </div>
               </div>
