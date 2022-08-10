@@ -1,11 +1,16 @@
+import { NavLink } from "react-router-dom";
+
 import { infoFraccionamiento } from "../../global/infoFraccionamiento";
 import { FaDatabase, FaTable, FaAddressCard } from "react-icons/fa";
 import { BsGraphUp } from "react-icons/bs";
+import { useState } from "react";
 
 export const Sidebar = () => {
+  const [showSidebar, setShowSidebar] = useState("");
+
   return (
-    <nav id="sidebar" className="sidebar js-sidebar">
-      <div className="sidebar-content js-simplebar">
+    <nav id="sidebar" className={`sidebar ${showSidebar}`}>
+      <div className="sidebar-content">
         <a className="sidebar-brand mb-1" href="/admin">
           <span className="align-middle">
             <img className="w-75 ml-3" src={infoFraccionamiento.logo} />
@@ -15,17 +20,16 @@ export const Sidebar = () => {
         <ul className="sidebar-nav">
           <li className="sidebar-item text-light active my-2">
             <a data-bs-target="#db" data-bs-toggle="collapse" className="sidebar-link collapsed">
-              <i className="align-middle" data-feather="layout"></i>{" "}
+              <i className="align-middle" data-feather="layout"></i>
               <span className="align-middle">
-                {" "}
                 <FaDatabase /> Base de Datos
               </span>
             </a>
             <ul id="db" className="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
               <li className="sidebar-item">
-                <a className="sidebar-link" href="/admin">
+                <NavLink to="/admin/general" className="sidebar-link">
                   Base de Datos general
-                </a>
+                </NavLink>
               </li>
               <li className="sidebar-item">
                 <a className="sidebar-link" href="/admin">

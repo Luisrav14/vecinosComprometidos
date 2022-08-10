@@ -22,7 +22,7 @@ export const Navbar = () => {
           <form className="d-flex">
             <div className="dropdown mr-3">
               <button class="btn btn-outline-primary text-light dropdown-toggle px-1" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                Usuario{" "}
+                Usuario
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li>
