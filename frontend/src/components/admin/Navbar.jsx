@@ -1,10 +1,13 @@
-//
+import { FaArrowLeft, FaPowerOff } from "react-icons/fa";
 
 export const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-primary bg-primary">
       <div className="container-fluid">
-        {"<<<"}
+        <div className="text-light">
+          <FaArrowLeft />
+        </div>
+
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -15,9 +18,9 @@ export const Navbar = () => {
             </li>
           </ul>
           <form className="d-flex">
-            <div class="dropdown mr-3">
-              <button class="btn btn-outline-dark dropdown-toggle px-4" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                Usuario
+            <div className="dropdown mr-3">
+              <button class="btn btn-outline-primary text-light dropdown-toggle px-1" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Usuario{" "}
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li>
@@ -37,6 +40,9 @@ export const Navbar = () => {
                 </li>
               </ul>
             </div>
+            <button className="btn btn-primary">
+              <FaPowerOff />
+            </button>
           </form>
         </div>
       </div>
