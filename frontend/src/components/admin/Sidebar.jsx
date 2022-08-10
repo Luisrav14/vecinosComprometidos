@@ -1,13 +1,12 @@
 import { infoFraccionamiento } from "../../global/infoFraccionamiento";
 import { FaDatabase, FaTable, FaAddressCard } from "react-icons/fa";
 import { BsGraphUp } from "react-icons/bs";
-import { BiChalkboard } from "react-icons/bi";
 
 export const Sidebar = () => {
   return (
-    <nav id="sidebar" className="sidebar js-sidebar" style={{ height: "100%" }}>
+    <nav id="sidebar" className="sidebar js-sidebar">
       <div className="sidebar-content js-simplebar">
-        <a className="sidebar-brand bg-primary mb-1" href="/admin">
+        <a className="sidebar-brand mb-1" href="/admin">
           <span className="align-middle">
             <img className="w-75 ml-3" src={infoFraccionamiento.logo} />
           </span>
