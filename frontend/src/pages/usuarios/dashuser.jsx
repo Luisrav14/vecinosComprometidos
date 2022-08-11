@@ -4,6 +4,10 @@ import { useEffect } from "react";
 import Swal from "sweetalert2";
 import { SidebarUser } from "../../components/admin/SidebarUser";
 
+
+
+
+
 export const DashUser = () => {
   useEffect(() => {
     mostrarAlerta();
@@ -31,9 +35,13 @@ export const DashUser = () => {
 
                     <h1 className="mb-3 fw-bold">Bienvenido</h1>
                     <img className="card-img-top" src=" https://quintasresidencial.com/fraccionamiento/QuintasResidencial/assets/images/backgroudGeneral.jpeg" alt="" />
+                    
                   </div>
+                  
 
-                  <div className="card-body"></div>
+                  <div className="card-body">
+                    
+                  </div>
                 </div>
               </div>
             </div>
@@ -43,3 +51,4 @@ export const DashUser = () => {
     </div>
   );
 };
+
