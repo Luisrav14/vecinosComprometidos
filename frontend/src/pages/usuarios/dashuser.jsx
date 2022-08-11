@@ -4,10 +4,6 @@ import { useEffect } from "react";
 import Swal from "sweetalert2";
 import { SidebarUser } from "../../components/admin/SidebarUser";
 
-
-
-
-
 export const DashUser = () => {
   useEffect(() => {
     mostrarAlerta();
