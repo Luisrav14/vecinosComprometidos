@@ -16,7 +16,7 @@ export const AdminDashboard = ({ children }) => {
         <Navbar handleSidebar={handleSidebar} />
         <main className="content">
           <div className="container-fluid p-0">
-            <DataTable/>
+            <DataTable />
           </div>
         </main>
       </div>
