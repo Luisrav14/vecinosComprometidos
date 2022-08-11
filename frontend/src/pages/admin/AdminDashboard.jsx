@@ -13,7 +13,7 @@ export const AdminDashboard = ({ children }) => {
     <div className="wrapper">
       <Sidebar show={showSidebar} />
       <div className="main">
-        <Navbar handleSidebar={handleSidebar} />
+        <Navbar />
         <main className="content">
           <div className="container-fluid p-0">
             <DataTable />
