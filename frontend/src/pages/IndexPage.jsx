@@ -1,7 +1,6 @@
 import { infoFraccionamiento } from "../global/infoFraccionamiento";
-import "../assets/css/index.css";
-import "../assets/css/App.css";
-export const Index = () => {
+
+export const IndexPage = () => {
   return (
     <>
       <div className="App">

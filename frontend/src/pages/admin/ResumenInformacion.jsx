@@ -1,6 +1,6 @@
 import { AdminDashboard } from "./AdminDashboard";
 import { BsGraphUp, BsGraphDown, BsCashStack, BsHouseDoor, BsFillCreditCardFill } from "react-icons/bs";
-import { LineChart, BarChart, DonutChart } from "../../components/admin/charts/";
+import { LineChart, BarChart, DonutChart } from "../../components/";
 
 export const ResumenInformacion = () => {
   return (

@@ -1,8 +1,6 @@
 import { infoFraccionamiento } from "../../global/infoFraccionamiento";
 import { FaDatabase, FaTable, FaAddressCard } from "react-icons/fa";
-import { BsGraphUp,BsFillTreeFill,BsFillHandIndexThumbFill,BsFillPieChartFill } from "react-icons/bs";
-
-
+import { BsFillTreeFill, BsFillHandIndexThumbFill, BsFillPieChartFill } from "react-icons/bs";
 
 export const SidebarUser = () => {
   return (
@@ -24,27 +22,26 @@ export const SidebarUser = () => {
               </span>
             </a>
             <ul id="db" className="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
-            <li className="sidebar-item">
-                <a className="sidebar-link" href="/suscripcion">
-                Suscripción
+              <li className="sidebar-item">
+                <a className="sidebar-link" href="/dashboard/suscripcion">
+                  Suscripción
                 </a>
               </li>
               <li className="sidebar-item">
-                <a className="sidebar-link" href="/efectivo">
-                Pago en efectivo
+                <a className="sidebar-link" href="/dashboard/efectivo">
+                  Pago en efectivo
                 </a>
               </li>
               <li className="sidebar-item">
-                <a className="sidebar-link" href="/transferencia">
-                Transferencia Bancaria
+                <a className="sidebar-link" href="/dashboard/transferencia">
+                  Transferencia Bancaria
                 </a>
               </li>
               <li className="sidebar-item">
-                <a className="sidebar-link" href="/pagospendientes">
-                Pagos Extraordinarios
+                <a className="sidebar-link" href="/dashboard/pagospendientes">
+                  Pagos Extraordinarios
                 </a>
               </li>
-             
             </ul>
           </li>
 
@@ -58,13 +55,13 @@ export const SidebarUser = () => {
             </a>
             <ul id="operacion" className="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
               <li className="sidebar-item">
-                <a className="sidebar-link" href="/saldofavor">
-                Saldo a favor
+                <a className="sidebar-link" href="/dashboard/saldofavor">
+                  Saldo a favor
                 </a>
               </li>
               <li className="sidebar-item">
                 <a className="sidebar-link" href="/admin">
-                Historial de pagos
+                  Historial de pagos
                 </a>
               </li>
             </ul>
@@ -90,7 +87,6 @@ export const SidebarUser = () => {
             </a>
           </li>
 
-
           <li className="sidebar-item text-light  my-2 rounded rounded-1">
             <a data-bs-target="#finanzas" data-bs-toggle="" className="sidebar-link ">
               <i className="align-middle" data-feather="layout"></i>{" "}
@@ -106,12 +102,11 @@ export const SidebarUser = () => {
               <i className="align-middle" data-feather="layout"></i>{" "}
               <span className="align-middle">
                 {" "}
-                <BsFillTreeFill />Espacios Comunes
+                <BsFillTreeFill />
+                Espacios Comunes
               </span>
             </a>
           </li>
-
-
         </ul>
       </div>
     </nav>

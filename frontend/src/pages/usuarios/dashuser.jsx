@@ -31,13 +31,9 @@ export const DashUser = () => {
 
                     <h1 className="mb-3 fw-bold">Bienvenido</h1>
                     <img className="card-img-top" src=" https://quintasresidencial.com/fraccionamiento/QuintasResidencial/assets/images/backgroudGeneral.jpeg" alt="" />
-                    
                   </div>
-                  
 
-                  <div className="card-body">
-                    
-                  </div>
+                  <div className="card-body"></div>
                 </div>
               </div>
             </div>
@@ -47,4 +43,3 @@ export const DashUser = () => {
     </div>
   );
 };
-
