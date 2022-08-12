@@ -47,7 +47,7 @@ export const SaldoFavor = () => {
                                                                             </select>
                                                                        
                                                                             </div>          
-                                                                            <button type="submit" class="btn btn-primary col-md-4 col-sm-12 mt-4"> <i class="FaAddressCard"></i> Buscar</button>
+                                                                            <button type="submit" class="btn btn-success col-md-4 col-sm-12 mt-4"> <i class="FaAddressCard"></i> Buscar</button>
                                                                             
                           </form>
                         
