@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { IndexPage, LoginPage, BaseDatosGeneral, ResumenInformacion, Suscripcion, Efectivo, Transferencia, PagosPendientes, SaldoFavor } from "../pages/";
+import { IndexPage, LoginPage, BaseDatosGeneral, ResumenInformacion, Suscripcion, Efectivo, Transferencia, PagosPendientes, SaldoFavor, DashUser } from "../pages/";
 
 export const Rutas = () => {
   return (
@@ -15,6 +15,7 @@ export const Rutas = () => {
         <Route path="/admin/general" element={<BaseDatosGeneral />}></Route>
 
         {/* Dashboard user routes */}
+        <Route path="/dashboard/dashuser" element={<DashUser />} />
         <Route path="/dashboard/suscripcion" element={<Suscripcion />} />
         <Route path="/dashboard/efectivo" element={<Efectivo />} />
         <Route path="/dashboard/transferencia" element={<Transferencia />} />
