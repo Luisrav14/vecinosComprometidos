@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import Swal from "sweetalert2";
 import { SidebarUser } from "../../components/admin/SidebarUser";
 
-export const Transferencia = () => {
+export const PagosPendientes = () => {
 
 
   return (
@@ -16,8 +16,8 @@ export const Transferencia = () => {
           <div className="container-fluid p-0">
             <div className="row">
               <div className="col-12">
-              <h1><b>Pagos por transferencia</b></h1>
-              <h5>En esta página podemos ver los pagos pendientes con nuestro metodo de pago seleccionado, podres pagar haciendo clic en el boton de la columna de acciones.</h5>
+              <h1><b>Pagos Extraordinarios</b></h1>
+              <h5>En esta página podemos ver una lista de los pagos que estan pendientes por pagar, haga clic en en boton "Pagar" para cumplir con su responsabilidad.</h5>
                 <div className="card">
                 
                   <div className="card-header">
@@ -39,6 +39,7 @@ export const Transferencia = () => {
     <tr>
       <th scope="col">#</th>
       <th scope="col">Concepto</th>
+      <th scope="col">Descripción</th>
       <th scope="col">Monto</th>
       <th scope="col">Estatús</th>
       <th scope="col">acciones</th>
@@ -47,39 +48,13 @@ export const Transferencia = () => {
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <td>Ingreso Extraordinario al mes de: Noviembre del 2021</td>
+      <td>Adeudo de Cuotas de Enero de 2011 a Septiembre de 2021	</td>
+      <td>$61,868.00	</td>
+      <td>Pendiente</td>
       <td> <a class="btn btn-success btn-sm"  >Pagar</a></td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td> <a class="btn btn-success btn-sm"  >Pagar</a></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-      <td> <a class="btn btn-success btn-sm"  >Pagar</a></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-      <td> <a class="btn btn-success btn-sm"  >Pagar</a></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-      <td> <a class="btn btn-success btn-sm"  >Pagar</a></td>
-    </tr>
+  
   </tbody>
 </table>
                             

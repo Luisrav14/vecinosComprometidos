@@ -1,10 +1,11 @@
 import React from "react";
 import { Navbar } from "../../components/admin/Navbar";
+import { FaDatabase, FaTable, FaAddressCard } from "react-icons/fa";
 import { useEffect } from "react";
 import Swal from "sweetalert2";
 import { SidebarUser } from "../../components/admin/SidebarUser";
 
-export const Transferencia = () => {
+export const SaldoFavor = () => {
 
 
   return (
@@ -16,8 +17,8 @@ export const Transferencia = () => {
           <div className="container-fluid p-0">
             <div className="row">
               <div className="col-12">
-              <h1><b>Pagos por transferencia</b></h1>
-              <h5>En esta página podemos ver los pagos pendientes con nuestro metodo de pago seleccionado, podres pagar haciendo clic en el boton de la columna de acciones.</h5>
+              <h1><b>Saldo a Favor</b></h1>
+              <h5>En esta página veremos la cantidad total de saldo que se encuentra disponible a nuestro favor, y que se aplicara en el siguiente pago.</h5>
                 <div className="card">
                 
                   <div className="card-header">
@@ -34,11 +35,31 @@ export const Transferencia = () => {
                           <div className="container mt-5">
 
                             <div>
+                          <form class="form-group form-default col-md-5 col-sm-12 row justify-content-center">
+                          <div class="col-md-6 col-sm-12 mt-1">
+                                                                            <label className="col-12 mb-1" >Buscar por año:</label>
+                                                                          
+                                                                            <select class="form-control" name="year" required>
+                                                                                <option selected disabled>Selcciona un año</option>
+                                                                                <option  >2021</option>
+                                                                                <option >2022</option>
+
+                                                                            </select>
+                                                                       
+                                                                            </div>          
+                                                                            <button type="submit" class="btn btn-primary col-md-4 col-sm-12 mt-4"> <i class="FaAddressCard"></i> Buscar</button>
+                                                                            
+                          </form>
+                        
+
+
+
                             <table class="table table-striped">
   <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
       <th scope="col">Concepto</th>
+      <th scope="col">Descripción</th>
       <th scope="col">Monto</th>
       <th scope="col">Estatús</th>
       <th scope="col">acciones</th>
@@ -47,39 +68,13 @@ export const Transferencia = () => {
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <td>Ingreso Extraordinario al mes de: Noviembre del 2021</td>
+      <td>Adeudo de Cuotas de Enero de 2011 a Septiembre de 2021	</td>
+      <td>$61,868.00	</td>
+      <td>Pendiente</td>
       <td> <a class="btn btn-success btn-sm"  >Pagar</a></td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td> <a class="btn btn-success btn-sm"  >Pagar</a></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-      <td> <a class="btn btn-success btn-sm"  >Pagar</a></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-      <td> <a class="btn btn-success btn-sm"  >Pagar</a></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-      <td> <a class="btn btn-success btn-sm"  >Pagar</a></td>
-    </tr>
+  
   </tbody>
 </table>
                             
