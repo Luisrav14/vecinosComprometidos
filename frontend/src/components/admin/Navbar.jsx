@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { FaBars, FaPowerOff } from "react-icons/fa";
 
 export const Navbar = () => {
   const [showSidebar, setShowSidebar] = useState(true);

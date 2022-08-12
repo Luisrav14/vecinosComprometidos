@@ -3,10 +3,14 @@ import { NavLink } from "react-router-dom";
 import { infoFraccionamiento } from "../../global/infoFraccionamiento";
 import { FaDatabase, FaTable, FaAddressCard } from "react-icons/fa";
 import { BsGraphUp } from "react-icons/bs";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export const Sidebar = () => {
-  const [showSidebar, setShowSidebar] = useState("");
+export const Sidebar = ({ show = true }) => {
+  const [showSidebar, setShowSidebar] = useState(true);
+
+  useEffect(() => {
+    setShowSidebar(show);
+  }, [show]);
 
   const menuItems = [
     {
@@ -277,7 +281,7 @@ export const Sidebar = () => {
   ];
 
   return (
-    <nav id="sidebar" className={`sidebar ${showSidebar}`}>
+    <nav id="sidebar" className={`sidebar ${showSidebar ? "" : "d-none"} `}>
       <div className="sidebar-content">
         <a className="sidebar-brand mb-1" href="/admin">
           <span className="align-middle">
