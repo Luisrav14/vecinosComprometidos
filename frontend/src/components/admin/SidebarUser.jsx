@@ -35,12 +35,12 @@ export const SidebarUser = () => {
                 </a>
               </li>
               <li className="sidebar-item">
-                <a className="sidebar-link" href="/admin">
+                <a className="sidebar-link" href="/transferencia">
                 Transferencia Bancaria
                 </a>
               </li>
               <li className="sidebar-item">
-                <a className="sidebar-link" href="/admin">
+                <a className="sidebar-link" href="/pagospendientes">
                 Pagos Extraordinarios
                 </a>
               </li>
@@ -58,7 +58,7 @@ export const SidebarUser = () => {
             </a>
             <ul id="operacion" className="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
               <li className="sidebar-item">
-                <a className="sidebar-link" href="/admin">
+                <a className="sidebar-link" href="/saldofavor">
                 Saldo a favor
                 </a>
               </li>

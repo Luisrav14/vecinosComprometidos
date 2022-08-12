@@ -9,6 +9,9 @@ import { ResumenInformacion } from "../pages/admin/ResumenInformacion";
 import { Suscripcion } from "../pages/usuarios/suscripcion";
 import { Efectivo } from "../pages/usuarios/efectivo";
 
+import { Transferencia } from "../pages/usuarios/transferencia";
+import { PagosPendientes } from "../pages/usuarios/pagospendientes";
+import { SaldoFavor } from "../pages/usuarios/saldofavor";
 export const Rutas = () => {
   return (
     <BrowserRouter>
@@ -23,7 +26,11 @@ export const Rutas = () => {
 
         {/* Dashboard user routes */}
         <Route path="/suscripcion" element={<Suscripcion />} />
-        <Route path="/efectivo" element={<Suscripcion />} />
+        <Route path="/efectivo" element={<Efectivo />} />
+        <Route path="/transferencia" element={<Transferencia />} />
+        <Route path="/pagospendientes" element={<PagosPendientes />} />
+        <Route path="/saldofavor" element={<SaldoFavor />} />
+
       </Routes>
     </BrowserRouter>
 
