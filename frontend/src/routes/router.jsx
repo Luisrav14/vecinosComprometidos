@@ -7,6 +7,7 @@ import { DashUser } from "../pages/usuarios/dashuser";
 import { BaseDatosGeneral } from "../pages/admin/BaseDatosGeneral";
 import { Suscripcion } from "../pages/usuarios/suscripcion";
 import { Efectivo } from "../pages/usuarios/efectivo";
+import { Transferencia } from "../pages/usuarios/transferencia";
 export const Rutas = () => {
   return (
     <BrowserRouter>
@@ -24,7 +25,8 @@ export const Rutas = () => {
 
         {/* Dashboard user routes */}
         <Route path="/suscripcion" element={<Suscripcion />} />
-        <Route path="/efectivo" element={<Suscripcion />} />
+        <Route path="/efectivo" element={<Efectivo />} />
+        <Route path="/transferencia" element={<Transferencia />} />
 
 
       </Routes>

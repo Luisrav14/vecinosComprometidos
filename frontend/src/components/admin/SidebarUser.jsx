@@ -35,7 +35,7 @@ export const SidebarUser = () => {
                 </a>
               </li>
               <li className="sidebar-item">
-                <a className="sidebar-link" href="/admin">
+                <a className="sidebar-link" href="/transferencia">
                 Transferencia Bancaria
                 </a>
               </li>
