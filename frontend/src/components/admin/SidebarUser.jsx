@@ -25,12 +25,12 @@ export const SidebarUser = () => {
             </a>
             <ul id="db" className="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
             <li className="sidebar-item">
-                <a className="sidebar-link" href="/admin">
+                <a className="sidebar-link" href="/suscripcion">
                 Suscripción
                 </a>
               </li>
               <li className="sidebar-item">
-                <a className="sidebar-link" href="/admin">
+                <a className="sidebar-link" href="/efectivo">
                 Pago en efectivo
                 </a>
               </li>
