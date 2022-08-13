@@ -2,7 +2,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { IndexPage, LoginPage, BaseDatosGeneral, ResumenInformacion } from "../pages/";
 
-import { Suscripcion, Efectivo, Transferencia, PagosPendientes, SaldoFavor, DashUser } from "../pages/usuarios/";
+import { DashUser } from "../pages/usuarios/Dashuser";
+import { Efectivo } from "../pages/usuarios/Efectivo";
+import { PagosPendientes } from "../pages/usuarios/PagosPendientes";
+import { Suscripcion } from "../pages/usuarios/Suscripcion";
+import { SaldoFavor } from "../pages/usuarios/SaldoFavor";
+import { Transferencia } from "../pages/usuarios/Transferencia";
 
 export const Rutas = () => {
   return (
