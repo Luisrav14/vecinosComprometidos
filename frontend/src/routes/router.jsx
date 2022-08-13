@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { IndexPage, LoginPage, BaseDatosGeneral, ResumenInformacion, DashUser, Efectivo, PagosPendientes, Suscripcion, SaldoFavor, Transferencia } from "../pages/";
+import { IndexPage, LoginPage, BaseDatosGeneral, ResumenInformacion, DashUser, Efectivo, PagosPendientes, Suscripcion, SaldoFavor, Transferencia, AgregarPropietario } from "../pages/";
 
 export const Rutas = () => {
   return (
@@ -10,8 +10,9 @@ export const Rutas = () => {
         <Route path="/login" element={<LoginPage />} />
 
         {/* Admin routes */}
-        <Route path="/admin/" element={<ResumenInformacion />}></Route>
-        <Route path="/admin/general" element={<BaseDatosGeneral />}></Route>
+        <Route path="/admin/" element={<ResumenInformacion />} />
+        <Route path="/admin/general" element={<BaseDatosGeneral />} />
+        <Route path="admin/agregar-propietario" element={<AgregarPropietario />} />
 
         {/* Dashboard user routes */}
         <Route path="/dashboard/" element={<DashUser />} />

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Navbar } from "../../components/admin/Navbar";
 import { Sidebar } from "../../components/admin/Sidebar";
 
-export const AdminDashboard = ({ children }) => {
+export const AdminDashboard = ({ children, title }) => {
   const [showSidebar, setShowSidebar] = useState(true);
 
   const handleSidebar = () => {
@@ -193,7 +193,10 @@ export const AdminDashboard = ({ children }) => {
           </div>
         </nav>
         <main className="content">
-          <div className="container-fluid p-0">{children}</div>
+          <div className="container-fluid p-0">
+            <h1 className="mb-3 fw-bold">{title}</h1>
+            {children}
+          </div>
         </main>
       </div>
     </div>

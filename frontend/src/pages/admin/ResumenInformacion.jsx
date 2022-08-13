@@ -4,8 +4,7 @@ import { LineChart, BarChart, DonutChart } from "../../components/";
 
 export const ResumenInformacion = () => {
   return (
-    <AdminDashboard>
-      <h1 className="mb-4 fw-bold">Resumen Informativo</h1>
+    <AdminDashboard title="Resumen Informativo">
       <div className="row d-flex">
         <div className="col-md-3">
           <div className="card">
