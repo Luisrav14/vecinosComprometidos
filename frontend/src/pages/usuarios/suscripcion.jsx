@@ -15,21 +15,54 @@ export const Suscripcion = () => {
             <div className="row">
               <div className="col-12">
                 <div className="card">
-                  <div className="card-header">
-                    <h5 className="card-title mb-0"> </h5>
+                 
+                  <div className="card-header mb-0">
+                   
 
                     <div className=" rounded col-xl-12 col-md-12">
-                      <div className="card-block mb-5 mt-5">
+                      <div className="card-block mb-5 mt-3">
                         <div className="text-center">
-                          <img className="card-img-top" style={{ width: "20%" }} src=" https://quintasresidencial.com/fraccionamiento/QuintasResidencial/assets/images/warning.png" alt="" />
-                          <h2>
-                            Atención tú método de pago actual es: <br></br> transferencia
-                          </h2>
-                          <div className="container mt-5">
-                            <div>
-                              <h3>Comunicate con el administrador para cambiar tu método de pago</h3>
+
+
+
+                          <div className="card-block ">
+
+                            <div className="row d-flex justify-content-around">
+
+                              <div className="col-lg-6 col-md-6 col-sm-12">
+                                <div className="card" style={{ width: "80%" }}>
+                                  <img className="img-fluid" src=" https://quintasresidencial.com/demo/fraccionamiento/QuintasResidencial/assets/images/mensual.jpg" alt="" />
+                                  <div className="card-body border rounded">
+                                    <h5 className="card-title text-center mb-2">Cantidad:</h5>
+                                    <h2 className="card-text text-center mb-3" style={{ fontSize: "1.2rem" }}><strong>$ 566.00 MXP</strong> </h2>
+                                    <div className="text-center"><a href="" className="btn btn-primary">Seleccionar</a></div>
+                                  </div>
+                                </div>
+                              </div>
+
+
+                              <div className="col-lg-6 col-md-6 col-sm-12">
+                                <div className="card" style={{ width: "80%" }}>
+                                  <img className="img-fluid" src=" https://quintasresidencial.com/demo/fraccionamiento/QuintasResidencial/assets/images/semestral.png" alt="" />
+                                  <div className="card-body border rounded">
+                                    <h5 className="card-title text-center mb-2">Cantidad:</h5>
+                                    <h2 className="card-text text-center mb-3" style={{ fontSize: "1.2rem" }}><strong>$ 3,113.00 MXP</strong> </h2>
+                                    <div className="text-center"><a href="" className="btn btn-primary">Seleccionar</a></div>
+                                  </div>
+                                </div>
+                              </div>
+
+
                             </div>
+
+
                           </div>
+
+
+
+
+                          
+                         
                         </div>
                       </div>
                     </div>
