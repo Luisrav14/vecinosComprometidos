@@ -4,9 +4,9 @@ import { IndexPage, LoginPage, BaseDatosGeneral, ResumenInformacion } from "../p
 
 import { DashUser } from "../pages/usuarios/dashuser";
 import { Efectivo } from "../pages/usuarios/efectivo";
-import { PagosPendientes } from "../pages/usuarios/pagosPendientes";
+import { PagosPendientes } from "../pages/usuarios/pagospendientes";
 import { Suscripcion } from "../pages/usuarios/suscripcion";
-import { SaldoFavor } from "../pages/usuarios/saldoFavor";
+import { SaldoFavor } from "../pages/usuarios/saldofavor";
 import { Transferencia } from "../pages/usuarios/transferencia";
 
 export const Rutas = () => {
