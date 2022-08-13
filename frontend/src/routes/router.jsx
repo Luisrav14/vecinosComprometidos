@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { IndexPage, LoginPage, BaseDatosGeneral, ResumenInformacion, DashUser, Efectivo, PagosPendientes, Suscripcion, SaldoFavor, Transferencia, AgregarPropietario } from "../pages/";
+import { IndexPage, LoginPage, BaseDatosGeneral, ResumenInformacion, DashUser, Efectivo, PagosPendientes, Suscripcion, SaldoFavor, Transferencia, Tarjeta, AgregarPropietario } from "../pages/";
 
 export const Rutas = () => {
   return (
@@ -21,6 +21,7 @@ export const Rutas = () => {
         <Route path="/dashboard/transferencia" element={<Transferencia />} />
         <Route path="/dashboard/pagospendientes" element={<PagosPendientes />} />
         <Route path="/dashboard/saldofavor" element={<SaldoFavor />} />
+        <Route path="/dashboard/tarjeta" element={<Tarjeta />} />
       </Routes>
     </BrowserRouter>
 
