@@ -1,13 +1,14 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { IndexPage, LoginPage, BaseDatosGeneral, ResumenInformacion, Suscripcion, Efectivo, Transferencia, PagosPendientes, SaldoFavor, DashUser } from "../pages/";
+import { IndexPage, LoginPage, BaseDatosGeneral, ResumenInformacion } from "../pages/";
+
+import { Suscripcion, Efectivo, Transferencia, PagosPendientes, SaldoFavor, DashUser } from "../pages/usuarios/";
 
 export const Rutas = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<IndexPage />} />
-
         <Route path="/login" element={<LoginPage />} />
 
         {/* Admin routes */}
