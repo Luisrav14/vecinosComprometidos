@@ -47,7 +47,7 @@ export const Suscripcion = () => {
                                   <div className="card-body border rounded">
                                     <h5 className="card-title text-center mb-2">Cantidad:</h5>
                                     <h2 className="card-text text-center mb-3" style={{ fontSize: "1.2rem" }}><strong>$ 3,113.00 MXP</strong> </h2>
-                                    <div className="text-center"><a href="" className="btn btn-primary">Seleccionar</a></div>
+                                    <div className="text-center"><a href="/dashboard/tarjeta" className="btn btn-primary">Seleccionar</a></div>
                                   </div>
                                 </div>
                               </div>
