@@ -1,13 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { IndexPage, LoginPage, BaseDatosGeneral, ResumenInformacion } from "../pages/";
-
-import { DashUser } from "../pages/usuarios/dashuser";
-import { Efectivo } from "../pages/usuarios/efectivo";
-import { PagosPendientes } from "../pages/usuarios/pagospendientes";
-import { Suscripcion } from "../pages/usuarios/suscripcion";
-import { SaldoFavor } from "../pages/usuarios/saldofavor";
-import { Transferencia } from "../pages/usuarios/transferencia";
+import { IndexPage, LoginPage, BaseDatosGeneral, ResumenInformacion, DashUser, Efectivo, PagosPendientes, Suscripcion, SaldoFavor, Transferencia } from "../pages/";
 
 export const Rutas = () => {
   return (
