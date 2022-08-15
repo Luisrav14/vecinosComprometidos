@@ -31,7 +31,7 @@ export const Suscripcion = () => {
 
                               <div className="col-lg-6 col-md-6 col-sm-12">
                                 <div className="card" style={{ width: "80%" }}>
-                                  <img className="img-fluid" src=" https://quintasresidencial.com/demo/fraccionamiento/QuintasResidencial/assets/images/mensual.jpg" alt="" />
+                                  <img className="img-fluid" src=" https://quintasresidencial.com/fraccionamiento/QuintasResidencial/assets/images/membresias_mes.png" alt="" />
                                   <div className="card-body border rounded">
                                     <h5 className="card-title text-center mb-2">Cantidad:</h5>
                                     <h2 className="card-text text-center mb-3" style={{ fontSize: "1.2rem" }}><strong>$ 566.00 MXP</strong> </h2>
@@ -43,7 +43,7 @@ export const Suscripcion = () => {
 
                               <div className="col-lg-6 col-md-6 col-sm-12">
                                 <div className="card" style={{ width: "80%" }}>
-                                  <img className="img-fluid" src=" https://quintasresidencial.com/demo/fraccionamiento/QuintasResidencial/assets/images/semestral.png" alt="" />
+                                  <img className="img-fluid" src="https://quintasresidencial.com/fraccionamiento/QuintasResidencial/assets/images/membresias_semestre.png" alt="" />
                                   <div className="card-body border rounded">
                                     <h5 className="card-title text-center mb-2">Cantidad:</h5>
                                     <h2 className="card-text text-center mb-3" style={{ fontSize: "1.2rem" }}><strong>$ 3,113.00 MXP</strong> </h2>

@@ -6,7 +6,7 @@ export const SidebarUser = () => {
   return (
     <nav id="sidebar" className="sidebar js-sidebar">
       <div className="sidebar-content js-simplebar">
-        <a className="sidebar-brand mb-1" href="/admin">
+        <a className="sidebar-brand mb-1" href="/dashboard">
           <span className="align-middle">
             <img className="w-75 ml-3" src={infoFraccionamiento.logo} />
           </span>
@@ -28,7 +28,7 @@ export const SidebarUser = () => {
                 </a>
               </li>
               <li className="sidebar-item">
-                <a className="sidebar-link" href="/dashboard/efectivo">
+                <a className="sidebar-link" href="/dashboard/pago-efectivo">
                   Pago en efectivo
                 </a>
               </li>

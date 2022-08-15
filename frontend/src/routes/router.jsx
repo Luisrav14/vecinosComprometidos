@@ -17,7 +17,7 @@ export const Rutas = () => {
         {/* Dashboard user routes */}
         <Route path="/dashboard/" element={<DashUser />} />
         <Route path="/dashboard/suscripcion" element={<Suscripcion />} />
-        <Route path="/dashboard/efectivo" element={<Efectivo />} />
+        <Route path="/dashboard/pago-efectivo" element={<Efectivo />} />
         <Route path="/dashboard/transferencia" element={<Transferencia />} />
         <Route path="/dashboard/pagospendientes" element={<PagosPendientes />} />
         <Route path="/dashboard/saldofavor" element={<SaldoFavor />} />
