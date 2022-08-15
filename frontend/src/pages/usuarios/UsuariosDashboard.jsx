@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Navbar } from "../../components/admin/Navbar";
-import { Sidebar } from "../../components/admin/Sidebar";
+import { SidebarUser } from "../../components/admin/SidebarUser";
 
-export const AdminDashboard = ({ children }) => {
+export const UsuariosDashboard = ({ children }) => {
   const [showSidebar, setShowSidebar] = useState(true);
 
   const handleSidebar = () => {
@@ -11,7 +11,7 @@ export const AdminDashboard = ({ children }) => {
 
   return (
     <div className="wrapper">
-      <Sidebar show={showSidebar} />
+      <SidebarUser show={showSidebar} />
       <div className="main">
         <nav className="navbar navbar-expand navbar-light navbar-bg">
           <a className="sidebar-toggle js-sidebar-toggle" onClick={handleSidebar}>

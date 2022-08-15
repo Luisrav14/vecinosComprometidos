@@ -1,10 +1,10 @@
-import { AdminDashboard } from "./AdminDashboard";
 import { BsGraphUp, BsGraphDown, BsCashStack, BsHouseDoor, BsFillCreditCardFill } from "react-icons/bs";
 import { LineChart, BarChart, DonutChart } from "../../components/";
 
 export const ResumenInformacion = () => {
   return (
-    <AdminDashboard title="Resumen Informativo">
+    <>
+      <h1 className="mb-3 fw-bold">Resumen Informativo</h1>
       <div className="row d-flex">
         <div className="col-md-3">
           <div className="card">
@@ -275,6 +275,6 @@ export const ResumenInformacion = () => {
           </div>
         </div>
       </div>
-    </AdminDashboard>
+    </>
   );
 };

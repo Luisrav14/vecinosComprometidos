@@ -13,3 +13,4 @@ export * from "./usuarios/saldofavor";
 export * from "./usuarios/suscripcion";
 export * from "./usuarios/transferencia";
 export * from "./usuarios/tarjeta";
+export * from "./usuarios/UsuariosDashboard";

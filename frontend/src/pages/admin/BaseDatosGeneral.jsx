@@ -1,9 +1,8 @@
 import { BsPlusLg } from "react-icons/bs";
-import { AdminDashboard } from "./AdminDashboard";
 
 export const BaseDatosGeneral = () => {
   return (
-    <AdminDashboard title="Base de datos general">
+    <>
       <div className="card">
         <div className="card-header border-bottom border-1">
           <div className="row d-flex">
@@ -50,19 +49,19 @@ export const BaseDatosGeneral = () => {
                         Nombre
                       </th>
                       <th className="sorting" tabIndex="0" aria-controls="datatables-reponsive" rowSpan="1" colSpan="1" style={{ width: "93px" }} aria-label="Position: activate to sort column ascending">
-                        Position
+                        Dirección
                       </th>
                       <th className="sorting" tabIndex="0" aria-controls="datatables-reponsive" rowSpan="1" colSpan="1" style={{ width: "60px" }} aria-label="Office: activate to sort column ascending">
-                        Office
+                        Cuota Suscripción
                       </th>
                       <th className="sorting" tabIndex="0" aria-controls="datatables-reponsive" rowSpan="1" colSpan="1" style={{ width: "27px" }} aria-label="Age: activate to sort column ascending">
-                        Age
+                        Cuota Efectivo
                       </th>
                       <th className="sorting" tabIndex="0" aria-controls="datatables-reponsive" rowSpan="1" colSpan="1" style={{ width: "65px" }} aria-label="Start date: activate to sort column ascending">
-                        Start date
+                        Método de pago
                       </th>
                       <th className="sorting dtr-hidden" tabIndex="0" aria-controls="datatables-reponsive" rowSpan="1" colSpan="1" style={{ width: "0px", display: "none" }} aria-label="Salary: activate to sort column ascending">
-                        Salary
+                        Acciones
                       </th>
                     </tr>
                   </thead>
@@ -235,6 +234,6 @@ export const BaseDatosGeneral = () => {
           </div>
         </div>
       </div>
-    </AdminDashboard>
+    </>
   );
 };

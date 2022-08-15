@@ -1,10 +1,10 @@
 import { FaArrowLeft, FaHouseUser, FaFileAlt, FaHome, FaRegSave } from "react-icons/fa";
-import { AdminDashboard } from "./AdminDashboard";
+
 import { useForm } from "../../hooks/useForm";
 
 export const AgregarPropietario = () => {
   return (
-    <AdminDashboard title="">
+    <>
       <div className="card">
         <div className="card-header border-bottom border-1">
           <div className="row d-flex">
@@ -211,6 +211,6 @@ export const AgregarPropietario = () => {
           </form>
         </div>
       </div>
-    </AdminDashboard>
+    </>
   );
 };

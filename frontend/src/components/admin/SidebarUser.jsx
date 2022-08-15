@@ -1,12 +1,19 @@
 import { infoFraccionamiento } from "../../global/infoFraccionamiento";
 import { FaDatabase, FaTable, FaAddressCard } from "react-icons/fa";
 import { BsFillTreeFill, BsFillHandIndexThumbFill, BsFillPieChartFill } from "react-icons/bs";
+import { useEffect, useState } from "react";
 
-export const SidebarUser = () => {
+export const SidebarUser = ({ show = true }) => {
+  const [showSidebar, setShowSidebar] = useState(true);
+
+  useEffect(() => {
+    setShowSidebar(show);
+  }, [show]);
+
   return (
-    <nav id="sidebar" className="sidebar js-sidebar">
+    <nav id="sidebar" className={`sidebar ${showSidebar ? "" : "d-none"} `}>
       <div className="sidebar-content js-simplebar">
-        <a className="sidebar-brand mb-1" href="/admin">
+        <a className="sidebar-brand mb-1" href="/">
           <span className="align-middle">
             <img className="w-75 ml-3" src={infoFraccionamiento.logo} />
           </span>
