@@ -19,13 +19,13 @@ export const Tarjeta = () => {
               <div className="col-12">
                 <div className="card">
                   <div className="card-header">
-                    <h5 className="card-title mb-0"> </h5>
+                    <h5 className="card-title mb-0">Tarjeta de credito </h5>
 
                   
                   
                   </div>
-<PaymentForms/>
-                  <div className="card-body"></div>
+
+                  <div className="card-body text-center"><PaymentForms/></div>
                 </div>
               </div>
             </div>
