@@ -1,8 +1,9 @@
 import { FaArrowLeft, FaHouseUser, FaFileAlt, FaHome, FaRegSave } from "react-icons/fa";
-
-import { useForm } from "../../hooks/useForm";
+import { useForm } from "react-hook-form";
 
 export const AgregarPropietario = () => {
+  const { register, handleSubmit } = useForm();
+
   return (
     <>
       <div className="card">
@@ -17,7 +18,7 @@ export const AgregarPropietario = () => {
           </div>
         </div>
         <div className="card-body">
-          <form action="">
+          <form onSubmit={handleSubmit}>
             <div className="row justify-content-center d-flex">
               <div className="col-md-12 border-bottom border-1 my-3">
                 <p className="text-primary fw-bolder">
@@ -26,31 +27,31 @@ export const AgregarPropietario = () => {
               </div>
               <div className="col-md-4 mb-3">
                 <label className="form-label">Nombre(s)</label>
-                <input type="text" className="form-control" placeholder="Nombre(s)" />
+                <input type="text" className="form-control" name="nombre" placeholder="Nombre(s)" />
               </div>
               <div className="col-md-4 mb-3">
                 <label className="form-label">Apellido Paterno</label>
-                <input type="text" className="form-control" placeholder="Apellido Paterno" />
+                <input type="text" className="form-control" name="apellidoP" placeholder="Apellido Paterno" />
               </div>
               <div className="col-md-4 mb-3">
                 <label className="form-label">Apellido Materno</label>
-                <input type="text" className="form-control" placeholder="Apellido Materno" />
+                <input type="text" className="form-control" name="apellidoM" placeholder="Apellido Materno" />
               </div>
               <div className="col-md-6 mb-3">
                 <label className="form-label">Fecha de nacimiento</label>
-                <input type="date" className="form-control" />
+                <input type="date" className="form-control" name="fechaNacimiento" />
               </div>
               <div className="col-md-6 mb-3">
                 <label className="form-label">Correo</label>
-                <input type="email" className="form-control" placeholder="Correo" />
+                <input type="apellidoP" className="form-control" name="correo" placeholder="Correo" />
               </div>
               <div className="col-md-6 mb-3">
                 <label className="form-label">Celular</label>
-                <input type="text" className="form-control" placeholder="Celular" />
+                <input type="text" className="form-control" name="celular" placeholder="Celular" />
               </div>
               <div className="col-md-6 mb-3">
                 <label className="form-label">Teléfono</label>
-                <input type="text" className="form-control" placeholder="Teléfono" />
+                <input type="text" className="form-control" name="telefono" placeholder="Teléfono" />
               </div>
 
               <div className="col-md-12 border-bottom border-1 my-3">
@@ -60,11 +61,11 @@ export const AgregarPropietario = () => {
               </div>
               <div className="col-md-12 mb-3">
                 <label className="form-label">Razón Social</label>
-                <input type="text" className="form-control" placeholder="Ej. Razon Social" />
+                <input type="text" className="form-control" name="razon_social" placeholder="Ej. Razon Social" />
               </div>
               <div className="col-md-6 mb-3">
                 <label className="form-label">Correo</label>
-                <input type="email" className="form-control" placeholder="Correo" />
+                <input type="apellidoP" className="form-control" placeholder="Correo" />
               </div>
               <div className="col-md-6 mb-3">
                 <label className="form-label">RFC</label>
@@ -198,14 +199,10 @@ export const AgregarPropietario = () => {
                   <option value="3">Three</option>
                 </select>
               </div>
-              <div className="col-md-4 mt-5">
+              <div className="col-md-4 my-5">
                 <button className="btn btn-primary form-control">
-                  {" "}
                   <FaRegSave /> Guardar
                 </button>
-              </div>
-              <div className="col-md-4 mt-5">
-                <button className="btn btn-outline-primary form-control">Cancelar</button>
               </div>
             </div>
           </form>
