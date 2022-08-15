@@ -10,11 +10,37 @@ import PaymentForms from "./paymentform";
 
 export const Tarjeta = () => {
   return (
+<<<<<<< Updated upstream
     <>
       <div className="col-12">
         <div className="card">
           <div className="card-header">
             <h5 className="card-title mb-0"> </h5>
+=======
+    <div className="wrapper">
+      <SidebarUser />
+      <div className="main">
+        <Navbar />
+        <main className="content">
+          <div className="container-fluid p-0">
+            <div className="row">
+              <div className="col-12">
+                <div className="card">
+                  <div className="card-header">
+                    <h5 className="card-title mb-0">Tarjeta de credito </h5>
+
+                  
+                  
+                  </div>
+                  <PaymentForms/>
+
+                  <div className="card-body text-center">
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+>>>>>>> Stashed changes
           </div>
           <PaymentForms />
 
