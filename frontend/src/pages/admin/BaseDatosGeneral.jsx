@@ -2,13 +2,15 @@ import { BsPlusLg } from "react-icons/bs";
 
 import DataTable from "react-data-table-component";
 
+const ExpandedComponent = ({ data }) => <pre>{JSON.stringify(data, null, 2)}</pre>;
+
 const columns = [
   {
-    name: "Title",
+    name: "Nombre",
     selector: (row) => row.title,
   },
   {
-    name: "Year",
+    name: "Dirección",
     selector: (row) => row.year,
   },
 ];
@@ -16,16 +18,15 @@ const columns = [
 const data = [
   {
     id: 1,
-    title: "Beetlejuice",
-    year: "1988",
+    title: "Prueba Numero 1",
+    year: "Quintas #112",
   },
   {
     id: 2,
-    title: "Ghostbusters",
-    year: "1984",
+    title: "Prueba Numero dos",
+    year: "Roble #333",
   },
 ];
-
 export const BaseDatosGeneral = () => {
   return (
     <>
@@ -41,7 +42,7 @@ export const BaseDatosGeneral = () => {
             </div>
           </div>
         </div>
-        <DataTable columns={columns} data={data} pagination />
+        <DataTable columns={columns} data={data} pagination expandableRows expandableRowsComponent={ExpandedComponent} />
       </div>
     </>
   );
