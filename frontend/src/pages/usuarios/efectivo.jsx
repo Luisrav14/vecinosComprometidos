@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import Swal from "sweetalert2";
 import { SidebarUser } from "../../components/admin/SidebarUser";
 
-export const Efectivo = () => {
+export const Efectivo2 = () => {
   return (
     <>
       <div className="col-12">

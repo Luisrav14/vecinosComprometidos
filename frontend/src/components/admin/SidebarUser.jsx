@@ -1,7 +1,7 @@
+import { useEffect, useState } from "react";
 import { infoFraccionamiento } from "../../global/infoFraccionamiento";
 import { FaDatabase, FaTable, FaAddressCard } from "react-icons/fa";
 import { BsFillTreeFill, BsFillHandIndexThumbFill, BsFillPieChartFill } from "react-icons/bs";
-import { useEffect, useState } from "react";
 
 export const SidebarUser = ({ show = true }) => {
   const [showSidebar, setShowSidebar] = useState(true);
@@ -9,7 +9,6 @@ export const SidebarUser = ({ show = true }) => {
   useEffect(() => {
     setShowSidebar(show);
   }, [show]);
-
   return (
     <nav id="sidebar" className={`sidebar ${showSidebar ? "" : "d-none"} `}>
       <div className="sidebar-content js-simplebar">
@@ -35,7 +34,7 @@ export const SidebarUser = ({ show = true }) => {
                 </a>
               </li>
               <li className="sidebar-item">
-                <a className="sidebar-link" href="/dashboard/efectivo">
+                <a className="sidebar-link" href="/dashboard/pago-efectivo">
                   Pago en efectivo
                 </a>
               </li>

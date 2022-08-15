@@ -12,4 +12,5 @@ export const infoFraccionamiento = {
   logo: Logo,
   logo_color: LogoColor,
   bannerinferior: BannerInferior,
+
 };
