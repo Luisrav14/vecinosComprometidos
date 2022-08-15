@@ -3,6 +3,7 @@ import { BsPlusLg } from "react-icons/bs";
 export const BaseDatosGeneral = () => {
   return (
     <>
+      <h1 className="mb-3 fw-bold">Base de datos general</h1>
       <div className="card">
         <div className="card-header border-bottom border-1">
           <div className="row d-flex">
