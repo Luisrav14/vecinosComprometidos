@@ -12,7 +12,7 @@ export const SidebarUser = ({ show = true }) => {
   return (
     <nav id="sidebar" className={`sidebar ${showSidebar ? "" : "d-none"} `}>
       <div className="sidebar-content js-simplebar">
-        <a className="sidebar-brand mb-1" href="/">
+        <a className="sidebar-brand mb-1" href="/dashboard">
           <span className="align-middle">
             <img className="w-75 ml-3" src={infoFraccionamiento.logo} />
           </span>
