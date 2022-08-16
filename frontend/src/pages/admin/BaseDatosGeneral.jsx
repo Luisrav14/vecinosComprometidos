@@ -1,30 +1,91 @@
-import { BsPlusLg } from "react-icons/bs";
+import { BsPlusLg, BsEnvelope, BsPencilSquare, BsPinAngle } from "react-icons/bs";
 
 import DataTable from "react-data-table-component";
 
-const ExpandedComponent = ({ data }) => <pre>{JSON.stringify(data, null, 2)}</pre>;
+const ExpandedComponent = ({ data }) => (
+  <pre className="mx-5 px-5">
+    <div className="container">
+      <div className="row">
+        <table className="table table-sm table-borderless">
+          <thead className="">
+            <tr>
+              <th scope="col">Clave de unidad</th>
+              <th scope="col">Método de pago</th>
+              <th scope="col">Ubicación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>FA-522-00</td>
+              <td>Suscripción</td>
+              <td>
+                <button className="btn btn-success">
+                  <BsPinAngle />
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </pre>
+);
 
 const columns = [
   {
+    name: "#",
+    selector: (row) => row.id,
+    sortable: true,
+  },
+  {
     name: "Nombre",
-    selector: (row) => row.title,
+    selector: (row) => row.nombre,
+    sortable: true,
   },
   {
     name: "Dirección",
-    selector: (row) => row.year,
+    selector: (row) => row.direccion,
+    sortable: true,
+  },
+  {
+    name: "Cuota Mantenimiento",
+    selector: (row) => row.cuota_mantenimiento,
+    sortable: true,
+  },
+  {
+    name: "Acciones",
+    selector: (row) => row.acciones,
   },
 ];
 
 const data = [
   {
     id: 1,
-    title: "Prueba Numero 1",
-    year: "Quintas #112",
+    nombre: "Prueba Numero 1",
+    direccion: "Quintas #112",
+    cuota_mantenimiento: "$526.00",
+    acciones: [
+      <button class="btn btn-warning mx-2">
+        <BsPencilSquare />
+      </button>,
+      <button class="btn btn-primary mx-2">
+        <BsEnvelope />
+      </button>,
+    ],
   },
   {
     id: 2,
-    title: "Prueba Numero dos",
-    year: "Roble #333",
+    nombre: "Prueba Numero dos",
+    direccion: "Roble #333",
+    cuota_mantenimiento: "$526.00",
+    acciones: [
+      <button class="btn btn-warning mx-2">
+        <BsPencilSquare />
+      </button>,
+      <button class="btn btn-primary mx-2">
+        <BsEnvelope />
+      </button>,
+    ],
   },
 ];
 export const BaseDatosGeneral = () => {
