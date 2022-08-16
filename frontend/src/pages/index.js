@@ -15,3 +15,5 @@ export * from "./usuarios/transferencia";
 export * from "./usuarios/tarjeta";
 export * from "./usuarios/UsuariosDashboard";
 export * from "./usuarios/efectivo";
+export * from "./usuarios/historialpagos";
+export * from "./usuarios/historialpagos"
