@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Cards from "react-credit-cards";
-import "react-credit-cards/es/styles-compiled.css";
+// import Cards from "react-credit-cards";
+// import "react-credit-cards/es/styles-compiled.css";
 
 
 
@@ -30,12 +30,12 @@ const PaymentForms = () => {
     }
     return (
         <div className='card-body'>
-            <Cards
+            {/* <Cards
                 number={state.number}
                 name={state.name}
                 expiry={state.expiry}
                 cvc={state.cvc}
-                focused={state.focus} />
+                focused={state.focus} /> */}
             <form>
                 <div className='form-group'>
                     <label htmlFor="name">Nombre</label>
