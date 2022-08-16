@@ -4,9 +4,9 @@ import { useEffect } from "react";
 import Swal from "sweetalert2";
 import { SidebarUser } from "../../components/admin/SidebarUser";
 
-// import Cards from "react-credit-cards";
-// import "react-credit-cards/es/styles-compiled.css";
-// import PaymentForms from "./paymentform";
+
+import "react-credit-cards/es/styles-compiled.css";
+import PaymentForms from "./paymentform";
 
 
 export const Tarjeta = () => {
@@ -22,7 +22,7 @@ export const Tarjeta = () => {
         </div>
 
         <div className="card-body">
-        {/* <PaymentForms /> */}
+      <PaymentForms /> 
         </div>
       </div>
     </>
