@@ -1,5 +1,5 @@
 import React, { useState } from "react";
- import Cards from "react-credit-cards";
+import Cards from "react-credit-cards";
 import "react-credit-cards/es/styles-compiled.css";
 
 
@@ -47,7 +47,7 @@ const PaymentForms = () => {
                     <input className='form-control' type="number" placeholder='•••• •••• •••• ••••' name="number" id="number" onChange={handleInputChange} onFocus={handleFocusChange} maxLength="16" />
                 </div>
                 <div className='row'>
-                    <div class="col">
+                    <div className="col">
                         <div className='form-group'>
                             <label htmlFor="name">Fecha de expiracion </label>
                             <input className='form-control' placeholder='Fecha de expiracion' type="number" name="expiry" id="expiry" onChange={handleInputChange} onFocus={handleFocusChange}  maxLength="4" />
@@ -55,7 +55,7 @@ const PaymentForms = () => {
 
                     </div>
 
-                    <div class="col">
+                    <div className="col">
                         <label htmlFor="name"> CVV</label> <br></br>
                         <input className='form-control' type="text" placeholder='•••' name="cvc" id="cvc" onChange={handleInputChange} onFocus={handleFocusChange}  maxLength="4"/>
                     </div>
