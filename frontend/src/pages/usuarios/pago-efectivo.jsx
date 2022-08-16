@@ -6,16 +6,13 @@ import { SidebarUser } from "../../components/admin/SidebarUser";
 
 export const Efectivo = () => {
   return (
-    <div className="wrapper">
-      <SidebarUser />
-      <div className="main">
-        <Navbar />
+
         <main className="content">
           <div className="container-fluid p-0">
             <div className="row">
               <div className="col-12">
                 <h1>
-                  <b>Pagos en efectivo</b>
+                  <b>Pagos en Efectivo</b>
                 </h1>
                 <h5>En esta página podemos ver los pagos pendientes con nuestro metodo de pago seleccionado, podres pagar haciendo clic en el boton de la columna de acciones.</h5>
                 <div className="card">
@@ -107,7 +104,6 @@ export const Efectivo = () => {
             </div>
           </div>
         </main>
-      </div>
-    </div>
+     
   );
 };

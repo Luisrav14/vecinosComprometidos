@@ -34,7 +34,7 @@ export const SidebarUser = ({ show = true }) => {
                 </a>
               </li>
               <li className="sidebar-item">
-                <a className="sidebar-link" href="/dashboard/pago-efectivo">
+                <a className="sidebar-link" href="/dashboard/efectivo">
                   Pago en efectivo
                 </a>
               </li>
