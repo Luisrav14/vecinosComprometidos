@@ -3,8 +3,6 @@ import React from "react";
 export const HistorialPagos = () => {
   return (
     <>
-    
-
       <div className="">
         <div className="col-12">
           <h1>
@@ -34,9 +32,6 @@ export const HistorialPagos = () => {
 
                   </div>
                 </div>
-
-
-
               </div>
             </div>
           </div>
