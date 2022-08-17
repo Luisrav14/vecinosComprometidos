@@ -1,5 +1,5 @@
-import { infoFraccionamiento } from "../global/infoFraccionamiento";
 
+import { infoFraccionamiento } from "../global/infoFraccionamiento";
 export const IndexPage = () => {
   return (
     <>
@@ -43,13 +43,13 @@ export const IndexPage = () => {
           <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
             <div className="carousel-inner">
               <div className="carousel-item active">
-                <img id="banner1" className="w-100" src="https://quintasresidencial.com/images/1.png" />
+                <img id="banner1" className="w-100" src={infoFraccionamiento.banner1} />
               </div>
               <div className="carousel-item">
-                <img id="banner2" className="w-100" src="https://quintasresidencial.com/images/2.png" />
+                <img id="banner2" className="w-100" src={infoFraccionamiento.banner2}/>
               </div>
               <div className="carousel-item">
-                <img id="banner3" className="w-100" src="https://quintasresidencial.com/images/3.png" />
+                <img id="banner3" className="w-100" src={infoFraccionamiento.banner3} />
               </div>
             </div>
             <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -97,35 +97,35 @@ export const IndexPage = () => {
             <div className="col-lg-2 col-md-6 mt-10 mb-30 d-flex">
               <div className="card">
                 <a href="https://www.cfe.mx/Pages/default.aspx" target="_blank">
-                  <img className="img-fluid" src="https://quintasresidencial.com/images/Mesa_de_trabajo_5.png" alt="servicio4" />
+                  <img className="img-fluid" src={infoFraccionamiento.servicio1} alt="CFE" />
                 </a>
               </div>
             </div>
             <div className="col-lg-2 col-md-6 mt-10 mb-30 d-flex">
               <div className="card">
                 <a href="http://www.amd.gob.mx/amd/page.html" target="_blank">
-                  <img className="img-fluid" src="https://quintasresidencial.com/images/Mesa_de_trabajo_5_copia.png" alt="servicio1" />
+                  <img className="img-fluid" src={infoFraccionamiento.servicio2} alt="servicio2" />
                 </a>
               </div>
             </div>
             <div className="col-lg-2 col-md-6 mt-10 mb-30 d-flex">
               <div className="card">
                 <a href="https://telmex.com" target="_blank">
-                  <img className="img-fluid" src="https://quintasresidencial.com/images/Mesa_de_trabajo_4_copia.png" alt="servicio2" />
+                  <img className="img-fluid" src={infoFraccionamiento.servicio3} alt="servicio3" />
                 </a>
               </div>
             </div>
             <div className="col-lg-2 col-md-6 mt-10 mb-30 d-flex">
               <div className="card">
                 <a href="https://www.gasimperialdgo.com" target="_blank">
-                  <img className="img-fluid" src="https://quintasresidencial.com/images/iconos_Servicios_Gas.png" alt="servicio3" />
+                  <img className="img-fluid" src={infoFraccionamiento.servicio4} alt="servicio4" />
                 </a>
               </div>
             </div>
             <div className="col-lg-2 col-md-6 mt-10 mb-30 d-flex">
               <div className="card">
                 <a href="https://www.megacable.com.mx" target="_blank">
-                  <img className="img-fluid" src="https://quintasresidencial.com/images/Mesa_de_trabajo_4_copia_6.png" alt="servicio3" />
+                  <img className="img-fluid" src={infoFraccionamiento.servicio5} alt="servicio5" />
                 </a>
               </div>
             </div>
@@ -140,28 +140,28 @@ export const IndexPage = () => {
             <div className="col-lg-2 col-md-6 mt-10 mb-30 d-flex">
               <div className="card">
                 <a href="https://www.chedraui.com.mx" target="_blank">
-                  <img className="img-fluid" src="https://quintasresidencial.com/images/Mesa_de_trabajo_4.png" alt="servicio4" />
+                  <img className="img-fluid" src={infoFraccionamiento.supermercado1} alt="supermercado1" />
                 </a>
               </div>
             </div>
             <div className="col-lg-2 col-md-6 mt-10 mb-30 d-flex">
               <div className="card">
                 <a href="https://alsuper.com" target="_blank">
-                  <img className="img-fluid" src="https://quintasresidencial.com/images/Mesa_de_trabajo_1.png" alt="servicio1" />
+                  <img className="img-fluid" src={infoFraccionamiento.supermercado2} alt="supermercado2" />
                 </a>
               </div>
             </div>
             <div className="col-lg-2 col-md-6 mt-10 mb-30 d-flex">
               <div className="card">
                 <a href="https://www.samsclub.com" target="_blank">
-                  <img className="img-fluid" src="https://quintasresidencial.com/images/Mesa_de_trabajo_2.png" alt="servicio2" />
+                  <img className="img-fluid" src={infoFraccionamiento.supermercado3} alt="supermercado3" />
                 </a>
               </div>
             </div>
             <div className="col-lg-2 col-md-6 mt-10 mb-30 d-flex">
               <div className="card">
                 <a href="https://www.cityclub.com.mx" target="_blank">
-                  <img className="img-fluid" src="https://quintasresidencial.com/images/Mesa_de_trabajo_3.png" alt="servicio3" />
+                  <img className="img-fluid" src={infoFraccionamiento.supermercado4} alt="supermercado4" />
                 </a>
               </div>
             </div>
