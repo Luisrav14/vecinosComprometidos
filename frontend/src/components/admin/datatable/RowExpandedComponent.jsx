@@ -1,6 +1,6 @@
 import { BsPinAngle } from "react-icons/bs";
 
-export const RowExpandedComponent = ({ data }) => (
+export const RowExpandedComponent = ({ child }) => (
   <pre className="mx-5 px-5">
     <div className="container">
       <div className="row">

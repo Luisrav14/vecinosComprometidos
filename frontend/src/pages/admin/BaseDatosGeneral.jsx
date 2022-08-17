@@ -3,6 +3,7 @@ import DataTable from "react-data-table-component";
 import { BsPlusLg, BsEnvelope, BsPencilSquare, BsPinAngle } from "react-icons/bs";
 
 import Swal from "sweetalert2";
+import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
 
 const sendEmail = () => {
   Swal.fire({
@@ -12,66 +13,36 @@ const sendEmail = () => {
   });
 };
 
-const ExpandedComponent = ({ data }) => (
-  <pre className="mx-5 px-5">
-    <div className="container">
-      <div className="row">
-        <table className="table table-sm table-borderless">
-          <thead className="">
-            <tr>
-              <th scope="col">Clave de unidad</th>
-              <th scope="col">Método de pago</th>
-              <th scope="col">Ubicación</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>FA-522-00</td>
-              <td>Suscripción</td>
-              <td>
-                <button className="btn btn-success">
-                  <BsPinAngle />
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </pre>
-);
-
-const paginationComponentOptions = {
-  rowsPerPageText: "Filas por página",
-  rangeSeparatorText: "de",
-  selectAllRowsItem: true,
-  selectAllRowsItemText: "Todos",
-};
-
 const columns = [
   {
     name: "#",
     selector: (row) => row.id,
     sortable: true,
+    width: "5%",
+    center: true,
   },
   {
     name: "Nombre",
     selector: (row) => row.nombre,
     sortable: true,
+    center: true,
   },
   {
     name: "Dirección",
     selector: (row) => row.direccion,
     sortable: true,
+    center: true,
   },
   {
     name: "Cuota Mantenimiento",
     selector: (row) => row.cuota_mantenimiento,
     sortable: true,
+    center: true,
   },
   {
     name: "Acciones",
     selector: (row) => row.acciones,
+    center: true,
   },
 ];
 
@@ -105,6 +76,7 @@ const data = [
     ],
   },
 ];
+
 export const BaseDatosGeneral = () => {
   return (
     <>
@@ -120,7 +92,7 @@ export const BaseDatosGeneral = () => {
             </div>
           </div>
         </div>
-        <DataTable columns={columns} data={data} pagination expandableRows expandableRowsComponent={ExpandedComponent} paginationComponentOptions={paginationComponentOptions} />
+        <DataTableComponent columns={columns} data={data} expandible={true} />
       </div>
     </>
   );
