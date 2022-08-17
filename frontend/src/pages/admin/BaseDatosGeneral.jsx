@@ -1,7 +1,16 @@
 import { Link } from "react-router-dom";
+import DataTable from "react-data-table-component";
 import { BsPlusLg, BsEnvelope, BsPencilSquare, BsPinAngle } from "react-icons/bs";
 
-import DataTable from "react-data-table-component";
+import Swal from "sweetalert2";
+
+const sendEmail = () => {
+  Swal.fire({
+    icon: "success",
+    title: "Operación realizada",
+    text: "Email enviado exitosamente",
+  });
+};
 
 const ExpandedComponent = ({ data }) => (
   <pre className="mx-5 px-5">
@@ -69,7 +78,7 @@ const data = [
       <Link to="/admin/editar-propietario" class="btn btn-warning mx-2">
         <BsPencilSquare />
       </Link>,
-      <button class="btn btn-primary mx-2">
+      <button class="btn btn-primary mx-2" onClick={sendEmail}>
         <BsEnvelope />
       </button>,
     ],
@@ -83,7 +92,7 @@ const data = [
       <Link to="/admin/editar-propietario" class="btn btn-warning mx-2">
         <BsPencilSquare />
       </Link>,
-      <button class="btn btn-primary mx-2">
+      <button class="btn btn-primary mx-2" onClick={sendEmail}>
         <BsEnvelope />
       </button>,
     ],
