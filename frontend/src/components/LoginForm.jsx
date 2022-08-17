@@ -34,8 +34,8 @@ export const LoginForm = () => {
   };
 
   return (
-    <div className="d-lg-flex half mt-5 py-4">
-      <div className="container">
+    <div className="d-lg-flex half py-4">
+      <div className="container py-5">
         <div className="row align-items-center justify-content-center">
           <div className="col-md-5 mb-5 py-5">
             <div className="mb-4 text-center">
@@ -81,7 +81,7 @@ export const LoginForm = () => {
                   </button>
                 </div>
               </div>
-             {/*  <button type="submit" id="entrar" value="Entrar" className="btn btn-block form-control btn-primary form-inline">
+              {/*  <button type="submit" id="entrar" value="Entrar" className="btn btn-block form-control btn-primary form-inline">
                 Entrar
               </button> */}
               <a id="entrar" value="Entrar" className="btn btn-block form-control btn-primary form-inline" href="/admin">

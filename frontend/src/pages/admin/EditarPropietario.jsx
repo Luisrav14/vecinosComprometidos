@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FaArrowLeft, FaHouseUser, FaFileAlt, FaHome, FaRegSave } from "react-icons/fa";
 
-export const AgregarPropietario = () => {
+export const EditarPropietario = () => {
   const { register, handleSubmit } = useForm();
 
   const showData = (data) => console.log(data);
@@ -12,7 +12,7 @@ export const AgregarPropietario = () => {
       <div className="card">
         <div className="card-header border-bottom border-1">
           <div className="row d-flex">
-            <h5 className="card-title col-md-6 pt-2">Agregar propietario</h5>
+            <h5 className="card-title col-md-6 pt-2">Editar propietario</h5>
             <div className="col-md-6 text-right">
               <Link to="/admin/general" className="btn btn-primary">
                 <FaArrowLeft /> Regresar

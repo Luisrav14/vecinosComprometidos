@@ -1,5 +1,6 @@
 export * from "./IndexPage";
 export * from "./LoginPage";
+export * from "./PasswordRecoveryPage";
 
 export * from "./admin/AdminDashboard";
 export * from "./admin/BaseDatosGeneral";
@@ -16,4 +17,3 @@ export * from "./usuarios/tarjeta";
 export * from "./usuarios/UsuariosDashboard";
 export * from "./usuarios/efectivo";
 export * from "./usuarios/historialpagos";
-

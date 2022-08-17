@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { IndexPage, LoginPage } from "../pages/";
+import { IndexPage, LoginPage, PasswordRecoveryPage } from "../pages/";
 import { AdminRoutes } from "./AdminRoutes";
 import { DashboardRoutes } from "./DashboardRoutes";
 
@@ -10,6 +10,7 @@ export const Rutas = () => {
       <Routes>
         <Route path="/" element={<IndexPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/password-recovery" element={<PasswordRecoveryPage />} />
 
         {/* Admin routes */}
         <Route path="admin/*" element={<AdminRoutes />} />

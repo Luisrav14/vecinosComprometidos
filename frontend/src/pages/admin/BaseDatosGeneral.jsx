@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { BsPlusLg, BsEnvelope, BsPencilSquare, BsPinAngle } from "react-icons/bs";
 
 import DataTable from "react-data-table-component";
@@ -65,9 +66,9 @@ const data = [
     direccion: "Quintas #112",
     cuota_mantenimiento: "$526.00",
     acciones: [
-      <button class="btn btn-warning mx-2">
+      <Link to="/admin/editar-propietario" class="btn btn-warning mx-2">
         <BsPencilSquare />
-      </button>,
+      </Link>,
       <button class="btn btn-primary mx-2">
         <BsEnvelope />
       </button>,
@@ -79,9 +80,9 @@ const data = [
     direccion: "Roble #333",
     cuota_mantenimiento: "$526.00",
     acciones: [
-      <button class="btn btn-warning mx-2">
+      <Link to="/admin/editar-propietario" class="btn btn-warning mx-2">
         <BsPencilSquare />
-      </button>,
+      </Link>,
       <button class="btn btn-primary mx-2">
         <BsEnvelope />
       </button>,
@@ -97,9 +98,9 @@ export const BaseDatosGeneral = () => {
           <div className="row d-flex">
             <h5 className="card-title col-md-6 pt-2">Propietarios</h5>
             <div className="col-md-6 text-right">
-              <a href="agregar-propietario" className="btn btn-primary">
+              <Link to="/admin/agregar-propietario" className="btn btn-primary">
                 <BsPlusLg /> Agregar
-              </a>
+              </Link>
             </div>
           </div>
         </div>
