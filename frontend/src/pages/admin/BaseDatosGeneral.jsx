@@ -1,83 +1,96 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import DataTable from "react-data-table-component";
-import { BsPlusLg, BsEnvelope, BsPencilSquare, BsPinAngle } from "react-icons/bs";
+import { BsPlusLg, BsEnvelope, BsPencilSquare } from "react-icons/bs";
 
 import Swal from "sweetalert2";
 import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
 
-const sendEmail = () => {
-  Swal.fire({
-    icon: "success",
-    title: "Operación realizada",
-    text: "Email enviado exitosamente",
-  });
-};
-
-const columns = [
-  {
-    name: "#",
-    selector: (row) => row.id,
-    sortable: true,
-    width: "5%",
-    center: true,
-  },
-  {
-    name: "Nombre",
-    selector: (row) => row.nombre,
-    sortable: true,
-    center: true,
-  },
-  {
-    name: "Dirección",
-    selector: (row) => row.direccion,
-    sortable: true,
-    center: true,
-  },
-  {
-    name: "Cuota Mantenimiento",
-    selector: (row) => row.cuota_mantenimiento,
-    sortable: true,
-    center: true,
-  },
-  {
-    name: "Acciones",
-    selector: (row) => row.acciones,
-    center: true,
-  },
-];
-
-const data = [
-  {
-    id: 1,
-    nombre: "Prueba Numero 1",
-    direccion: "Quintas #112",
-    cuota_mantenimiento: "$526.00",
-    acciones: [
-      <Link to="/admin/editar-propietario" class="btn btn-warning mx-2">
-        <BsPencilSquare />
-      </Link>,
-      <button class="btn btn-primary mx-2" onClick={sendEmail}>
-        <BsEnvelope />
-      </button>,
-    ],
-  },
-  {
-    id: 2,
-    nombre: "Prueba Numero dos",
-    direccion: "Roble #333",
-    cuota_mantenimiento: "$526.00",
-    acciones: [
-      <Link to="/admin/editar-propietario" class="btn btn-warning mx-2">
-        <BsPencilSquare />
-      </Link>,
-      <button class="btn btn-primary mx-2" onClick={sendEmail}>
-        <BsEnvelope />
-      </button>,
-    ],
-  },
-];
-
 export const BaseDatosGeneral = () => {
+  const sendEmail = () => {
+    const [loaderMail, setLoaderMail] = useState("mail");
+    setTimeout(() => {
+      setLoaderMail("enviando mail");
+      console.log(loaderMail);
+    }, 5000);
+
+    setLoaderMail("Mail enviado");
+
+    Swal.fire({
+      icon: "success",
+      title: "Operación realizada",
+      text: "Email enviado exitosamente",
+    });
+  };
+
+  const columns = [
+    {
+      id: "id",
+      name: "#",
+      selector: (row) => row.id,
+      sortable: true,
+      width: "5%",
+      center: true,
+    },
+    {
+      id: "Nombre",
+      name: "Nombre",
+      selector: (row) => row.nombre,
+      sortable: true,
+      center: true,
+    },
+    {
+      id: "Dirección",
+      name: "Dirección",
+      selector: (row) => row.direccion,
+      sortable: true,
+      center: true,
+    },
+    {
+      id: "CuotaMantenimiento",
+      name: "Cuota Mantenimiento",
+      selector: (row) => row.cuota_mantenimiento,
+      sortable: true,
+      center: true,
+    },
+    {
+      id: "Acciones",
+      name: "Acciones",
+      selector: (row) => row.acciones,
+      center: true,
+    },
+  ];
+
+  const data = [
+    {
+      id: 1,
+      nombre: "Prueba Numero 1",
+      direccion: "Quintas #112",
+      cuota_mantenimiento: "$526.00",
+      acciones: [
+        <Link to="/admin/editar-propietario" className="btn btn-warning mx-2">
+          <BsPencilSquare />
+        </Link>,
+        <button className="btn btn-primary mx-2" onClick={sendEmail}>
+          <BsEnvelope />
+        </button>,
+      ],
+    },
+    {
+      id: 2,
+      nombre: "Prueba Numero dos",
+      direccion: "Roble #333",
+      cuota_mantenimiento: "$526.00",
+      acciones: [
+        <Link to="/admin/editar-propietario" className="btn btn-warning mx-2">
+          <BsPencilSquare />
+        </Link>,
+        <button className="btn btn-primary mx-2" onClick={sendEmail}>
+          <BsEnvelope />
+        </button>,
+      ],
+    },
+  ];
+
   return (
     <>
       <h1 className="mb-3 fw-bold">Base de datos general</h1>

@@ -6,8 +6,14 @@ import { customStyles } from "./customStyles";
 
 export const DataTableComponent = ({ columns, data, expandible = false }) => {
   return (
-    <>
-      <DataTable columns={columns} data={data} pagination expandableRows={expandible} expandableRowsComponent={RowExpandedComponent} paginationComponentOptions={PaginationOptionsComponent} customStyles={customStyles} />
-    </>
+    <DataTable
+      data={data}
+      columns={columns}
+      pagination
+      expandableRows={expandible} // Acordion en rows
+      expandableRowsComponent={RowExpandedComponent}
+      paginationComponentOptions={PaginationOptionsComponent}
+      customStyles={customStyles}
+    />
   );
 };
