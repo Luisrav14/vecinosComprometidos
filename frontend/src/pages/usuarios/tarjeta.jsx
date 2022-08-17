@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import Swal from "sweetalert2";
 import { SidebarUser } from "../../components/admin/SidebarUser";
 
- import "react-credit-cards/es/styles-compiled.css";
+
  import PaymentForms from "./paymentform";
 
 export const Tarjeta = () => {
