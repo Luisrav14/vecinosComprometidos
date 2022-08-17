@@ -41,6 +41,13 @@ const ExpandedComponent = ({ data }) => (
   </pre>
 );
 
+const paginationComponentOptions = {
+  rowsPerPageText: "Filas por página",
+  rangeSeparatorText: "de",
+  selectAllRowsItem: true,
+  selectAllRowsItemText: "Todos",
+};
+
 const columns = [
   {
     name: "#",
@@ -113,7 +120,7 @@ export const BaseDatosGeneral = () => {
             </div>
           </div>
         </div>
-        <DataTable columns={columns} data={data} pagination expandableRows expandableRowsComponent={ExpandedComponent} />
+        <DataTable columns={columns} data={data} pagination expandableRows expandableRowsComponent={ExpandedComponent} paginationComponentOptions={paginationComponentOptions} />
       </div>
     </>
   );
