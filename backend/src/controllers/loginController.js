@@ -1,3 +1,6 @@
+import jwt from "jsonwebtoken";
+import { serialize } from "cookie";
+
 import dbConnection from "../database/connection";
 
 export const loginController = {
@@ -30,7 +33,19 @@ export const loginController = {
         const data = await db.query("SELECT * FROM users WHERE correo = ? AND password = ?", [correo, password]);
 
         if (data.length > 0) {
-          res.status(200).send({
+          const authToken = jwt.sign({ exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24, data }, "secret");
+
+          const serializedToken = serialize("authToken", authToken, {
+            // httpOnly: true,
+            // secure: process.env.NODE_ENV === "production",
+            // sameSite: "none",
+            // maxAge: 1000 * 60 * 60 * 24,
+            // path: "/",
+          });
+
+          res.setHeader("Set-Cookie", serializedToken);
+
+          return res.status(200).send({
             status: "success",
             data,
           });

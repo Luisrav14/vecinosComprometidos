@@ -20,16 +20,16 @@ export const LoginForm = () => {
 
   const navigate = useNavigate();
 
-  const dataValidation = async (data) => {
+ /*  const dataValidation = async (data) => {
     await axios
       .post(`${globalConfig.api_URL}/login`, data)
       .then(({ data }) => console.log(data))
       .catch((error) => console.log(error));
-  };
+  }; */
 
   /* Login temporal */
 
-  /* const dataValidation = async (data) => {
+  const dataValidation = async (data) => {
     setloginErrorMail(false);
     setloginErrorPass(false);
 
@@ -66,7 +66,7 @@ export const LoginForm = () => {
     } else {
       setloginErrorMail(true);
     }
-  }; */
+  };
 
   return (
     <div className="d-lg-flex half py-4">
