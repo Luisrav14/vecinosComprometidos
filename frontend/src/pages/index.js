@@ -18,3 +18,5 @@ export * from "./usuarios/UsuariosDashboard";
 export * from "./usuarios/efectivo";
 export * from "./usuarios/historialpagos";
 export * from "./usuarios/facturas";
+export * from "./usuarios/encuestas";
+export * from "./usuarios/acciones";

@@ -88,7 +88,7 @@ export const SidebarUser = ({ show = true }) => {
               <i className="align-middle" data-feather="layout"></i>{" "}
               <span className="align-middle">
                 {" "}
-                <BsFillPieChartFill /> Encuestas
+                <a href="/dashboard/encuestas" style={{ textDecoration: 'none', color:"white"}}><BsFillPieChartFill /> Encuestas </a>
               </span>
             </a>
           </li>
@@ -98,7 +98,7 @@ export const SidebarUser = ({ show = true }) => {
               <i className="align-middle" data-feather="layout"></i>{" "}
               <span className="align-middle">
                 {" "}
-                <BsFillHandIndexThumbFill /> Acciones
+                <a href="/dashboard/acciones" style={{ textDecoration: 'none', color:"white"}}><BsFillHandIndexThumbFill /> Acciones</a>
               </span>
             </a>
           </li>
