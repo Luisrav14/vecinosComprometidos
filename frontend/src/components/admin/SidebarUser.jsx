@@ -76,9 +76,9 @@ export const SidebarUser = ({ show = true }) => {
           <li className="sidebar-item text-light  my-2 rounded rounded-1">
             <a data-bs-target="#finanzas" data-bs-toggle="" className="sidebar-link ">
               <i className="align-middle" data-feather="layout"></i>{" "}
-              <span className="align-middle">
+             <span className="align-middle"> 
                 {" "}
-                <FaAddressCard /> Facturas
+                 <a href="/dashboard/facturas" style={{ textDecoration: 'none', color:"white"}}> <FaAddressCard /> Facturas </a>
               </span>
             </a>
           </li>
@@ -88,7 +88,7 @@ export const SidebarUser = ({ show = true }) => {
               <i className="align-middle" data-feather="layout"></i>{" "}
               <span className="align-middle">
                 {" "}
-                <BsFillPieChartFill /> Encuestas
+                <a href="/dashboard/encuestas" style={{ textDecoration: 'none', color:"white"}}><BsFillPieChartFill /> Encuestas </a>
               </span>
             </a>
           </li>
@@ -98,7 +98,7 @@ export const SidebarUser = ({ show = true }) => {
               <i className="align-middle" data-feather="layout"></i>{" "}
               <span className="align-middle">
                 {" "}
-                <BsFillHandIndexThumbFill /> Acciones
+                <a href="/dashboard/acciones" style={{ textDecoration: 'none', color:"white"}}><BsFillHandIndexThumbFill /> Acciones</a>
               </span>
             </a>
           </li>

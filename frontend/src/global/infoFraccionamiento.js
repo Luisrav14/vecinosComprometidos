@@ -18,6 +18,20 @@ import Servicio5 from "../assets/images/index/megacable.png"
   import Supermercado3 from "../assets/images/index/sams.png"
   import Supermercado4 from "../assets/images/index/cityclub.png"
 
+   /*Imagenes de los oficios del index*/ 
+   import Oficio1 from "../assets/images/index/lavacarros.png"
+   import Oficio2 from "../assets/images/index/cerrajero.png"
+   import Oficio3 from "../assets/images/index/plomero.png"
+   import Oficio4 from "../assets/images/index/plomero2.png"
+   import Oficio5 from "../assets/images/index/jardinero.png"
+
+   
+
+
+
+
+
+
 
 export const infoFraccionamiento = {
   nombre: "Vecinos Comprometidos",
@@ -48,4 +62,9 @@ export const infoFraccionamiento = {
   supermercado3: Supermercado3,
   supermercado4: Supermercado4,
    /*Imagenes de los oficios del index*/ 
+   oficio1: Oficio1,
+   oficio2: Oficio2,
+   oficio3: Oficio3,
+   oficio4: Oficio4,
+   oficio5: Oficio5,
 };
