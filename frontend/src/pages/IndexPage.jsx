@@ -179,35 +179,35 @@ export const IndexPage = () => {
             <div className="col-lg-2 col-md-6 mt-10 mb-30 d-flex justify-content-around">
               <div className="card">
                 <a href="https://api.whatsapp.com/send?phone=526182280145" target="_blank">
-                  <img className="img-fluid" src="https://quintasresidencial.com/images/Mesa%20de%20trabajo%204%20copia%207.png" alt="Deepers Lava Carros" />
+                  <img className="img-fluid"  src={infoFraccionamiento.oficio1} alt="Deepers Lava Carros" />
                 </a>
               </div>
             </div>
             <div className="col-lg-2 col-md-6 mt-10 mb-30 d-flex justify-content-around">
               <div className="card">
                 <a href="https://api.whatsapp.com/send?phone=526181347748">
-                  <img className="img-fluid" src="https://quintasresidencial.com/images/Mesa%20de%20trabajo%204%20copia%208.png" alt="Cerrajeros VIP" />
+                  <img className="img-fluid" src={infoFraccionamiento.oficio2} alt="Cerrajeros VIP" />
                 </a>
               </div>
             </div>
             <div className="col-lg-2 col-md-6 mt-10 mb-30 d-flex justify-content-around">
               <div className="card">
                 <a href="https://api.whatsapp.com/send?phone=526181496462">
-                  <img className="img-fluid" src="https://quintasresidencial.com/images/Mesa%20de%20trabajo%204%20copia%209.png" alt="Antonio Gallegos Plomero" />
+                  <img className="img-fluid" src={infoFraccionamiento.oficio3} alt="Antonio Gallegos Plomero" />
                 </a>
               </div>
             </div>
             <div className="col-lg-2 col-md-6 mt-10 mb-30 d-flex justify-content-around">
               <div className="card">
                 <a href="https://api.whatsapp.com/send?phone=526181330663">
-                  <img className="img-fluid" src="https://quintasresidencial.com/images/Mesa%20de%20trabajo%204%20copia%2010.png" alt="Manuel Plomero" />
+                  <img className="img-fluid" src={infoFraccionamiento.oficio4} alt="Manuel Plomero" />
                 </a>
               </div>
             </div>
             <div className="col-lg-2 col-md-6 mt-10 mb-30 d-flex justify-content-around">
               <div className="card">
                 <a href="https://api.whatsapp.com/send?phone=526182067292">
-                  <img className="img-fluid" src="https://quintasresidencial.com/images/Mesa%20de%20trabajo%204%20copia%2011.png" alt="Alfonoso Jardinero" />
+                  <img className="img-fluid" src={infoFraccionamiento.oficio5} alt="Alfonoso Jardinero" />
                 </a>
               </div>
             </div>
