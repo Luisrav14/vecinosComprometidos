@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Route, useNavigate } from "react-router-dom";
 
 import axios from "axios";
+import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
 import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 
@@ -12,8 +13,12 @@ export const LoginForm = () => {
   const { register, handleSubmit } = useForm();
 
   const [inputType, SetinputType] = useState("password");
+  const [loginErrorMail, setloginErrorMail] = useState(false);
+  const [loginErrorPass, setloginErrorPass] = useState(false);
 
   const handleChangePassword = () => (inputType == "password" ? SetinputType("text") : SetinputType("password"));
+
+  const navigate = useNavigate();
 
   // const dataValidation = async (data) => {
   //   await axios
@@ -22,14 +27,42 @@ export const LoginForm = () => {
   //     .catch((error) => console.log(error));
   // };
 
-  const dataValidation = (data) => {
-    console.log(data);
-    const navigate = useNavigate();
+  const dataValidation = async (data) => {
+    setloginErrorMail(false);
+    setloginErrorPass(false);
 
-    if (data.email == "admin@admin.com" && data.password == "1234") {
-      navigate("/");
+    console.log(data);
+
+    if (data.correo == "admin@admin.com") {
+      if (data.password == "1234") {
+        await Swal.fire({
+          icon: "success",
+          title: "Inicio de sesion correcto",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        navigate("/admin", {
+          replace: true,
+        });
+      } else {
+        setloginErrorPass(true);
+      }
+    } else if (data.correo == "user@user.com") {
+      if (data.password == "1234") {
+        await Swal.fire({
+          icon: "success",
+          title: "Inicio de sesion correcto",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        navigate("/dashboard", {
+          replace: true,
+        });
+      } else {
+        setloginErrorPass(true);
+      }
     } else {
-      alert("Credenciales incorrectas");
+      setloginErrorMail(true);
     }
   };
 
@@ -50,24 +83,25 @@ export const LoginForm = () => {
                 </label>
                 <input
                   type="email"
-                  className="form-control"
+                  className={`form-control ${loginErrorMail ? "border border-2 border-danger" : ""} `}
                   placeholder="Correo Electrónico"
                   id="correo"
                   name="correo"
-                  {...register("email", {
+                  {...register("correo", {
                     required: true,
                     message: "Ingrese correo electrónico",
                   })}
                 />
+                {loginErrorMail && <small className="text-danger">Correo inexistente, verifique.</small>}
               </div>
               <div className="form-group last my-3">
                 <label className="fw-normal mb-1" htmlFor="password">
                   Contraseña
                 </label>
-                <div className="input-group mb-3">
+                <div className="input-group mb-1">
                   <input
                     type={inputType}
-                    className="form-control"
+                    className={`form-control ${loginErrorPass ? "border border-2 border-danger" : ""} `}
                     placeholder="Contraseña"
                     id="password"
                     name="password"
@@ -80,16 +114,19 @@ export const LoginForm = () => {
                     {inputType != "password" ? <BsFillEyeFill /> : <BsFillEyeSlashFill />}
                   </button>
                 </div>
+                {loginErrorPass && <small className="text-danger">Contraseña Incorrecta</small>}
               </div>
-              {/*  <button type="submit" id="entrar" value="Entrar" className="btn btn-block form-control btn-primary form-inline">
+
+              <button type="submit" id="entrar" value="Entrar" className="btn btn-block form-control btn-primary form-inline">
                 Entrar
-              </button> */}
-              <a id="entrar" value="Entrar" className="btn btn-block form-control btn-primary form-inline" href="/admin">
+              </button>
+
+              {/*  <a id="entrar" value="Entrar" className="btn btn-block form-control btn-primary form-inline" href="/admin">
                 Administración
               </a>
               <a id="entrar" value="Entrar" className="btn btn-block form-control btn-primary form-inline" href="/dashboard/">
                 Micrositio
-              </a>
+              </a> */}
               <div className="d-flex pt-4 justify-content-center">
                 <small className="text-center">
                   ¿Olvidaste tu contraseña? <a href="/password-recovery"> Click Aquí</a>

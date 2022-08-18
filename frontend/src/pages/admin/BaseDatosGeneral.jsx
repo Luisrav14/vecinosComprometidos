@@ -7,14 +7,6 @@ import { DataTableComponent } from "../../components/admin/datatable/DataTableCo
 
 export const BaseDatosGeneral = () => {
   const sendEmail = () => {
-    const [loaderMail, setLoaderMail] = useState("mail");
-    setTimeout(() => {
-      setLoaderMail("enviando mail");
-      console.log(loaderMail);
-    }, 5000);
-
-    setLoaderMail("Mail enviado");
-
     Swal.fire({
       icon: "success",
       title: "Operación realizada",

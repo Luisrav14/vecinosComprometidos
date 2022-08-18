@@ -1,21 +1,8 @@
-import React, { useEffect } from "react";
-import Swal from "sweetalert2";
+import React from "react";
 
 import { UsuariosDashboard } from "./UsuariosDashboard";
 
 export const DashUser = () => {
-  useEffect(() => {
-    mostrarAlerta();
-  }, []);
-
-  const mostrarAlerta = () => {
-    Swal.fire({
-      icon: "success",
-      title: "Inicio de sesion correcto",
-      showConfirmButton: false,
-      timer: 1500,
-    });
-  };
   return (
     <>
       <div className="card">
