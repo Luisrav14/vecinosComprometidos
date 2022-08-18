@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Route, useNavigate } from "react-router-dom";
+import { NavLink, Route, useNavigate } from "react-router-dom";
 
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -20,14 +20,16 @@ export const LoginForm = () => {
 
   const navigate = useNavigate();
 
-  // const dataValidation = async (data) => {
-  //   await axios
-  //     .post(`${globalConfig.api_URL}/login`, data)
-  //     .then(({ data }) => console.log(data))
-  //     .catch((error) => console.log(error));
-  // };
-
   const dataValidation = async (data) => {
+    await axios
+      .post(`${globalConfig.api_URL}/login`, data)
+      .then(({ data }) => console.log(data))
+      .catch((error) => console.log(error));
+  };
+
+  /* Login temporal */
+
+  /* const dataValidation = async (data) => {
     setloginErrorMail(false);
     setloginErrorPass(false);
 
@@ -64,7 +66,7 @@ export const LoginForm = () => {
     } else {
       setloginErrorMail(true);
     }
-  };
+  }; */
 
   return (
     <div className="d-lg-flex half py-4">
@@ -129,7 +131,7 @@ export const LoginForm = () => {
               </a> */}
               <div className="d-flex pt-4 justify-content-center">
                 <small className="text-center">
-                  ¿Olvidaste tu contraseña? <a href="/password-recovery"> Click Aquí</a>
+                  ¿Olvidaste tu contraseña? <NavLink to="/password-recovery"> Click Aquí</NavLink>
                 </small>
               </div>
             </form>

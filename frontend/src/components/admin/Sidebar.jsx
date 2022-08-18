@@ -117,10 +117,10 @@ export const Sidebar = ({ show = true }) => {
                 </a>
               </li>
               <li className="sidebar-item">
-                <a data-bs-target="#ingresos-3" data-bs-toggle="collapse" className="sidebar-link collapsed" aria-expanded="false">
+                <a data-bs-target="#reportes-3" data-bs-toggle="collapse" className="sidebar-link collapsed" aria-expanded="false">
                   Reportes
                 </a>
-                <ul id="ingresos-3" className="sidebar-dropdown list-unstyled collapse">
+                <ul id="reportes-3" className="sidebar-dropdown list-unstyled collapse">
                   <li className="sidebar-item">
                     <a className="sidebar-link" href="#">
                       Pendientes
@@ -224,22 +224,21 @@ export const Sidebar = ({ show = true }) => {
                   Estados de cuenta
                 </a>
               </li>
-
               <li className="sidebar-item">
-                <a data-bs-target="#ingresos-3" data-bs-toggle="collapse" className="sidebar-link collapsed" aria-expanded="false">
+                <a data-bs-target="#cuotasm-3" data-bs-toggle="collapse" className="sidebar-link collapsed" aria-expanded="false">
                   Ingresos
                 </a>
-                <ul id="ingresos-3" className="sidebar-dropdown list-unstyled collapse">
+                <ul id="cuotasm-3" className="sidebar-dropdown list-unstyled collapse">
                   <li className="sidebar-item">
                     <a className="sidebar-link" href="#">
                       Cuotas de mantenimiento
                     </a>
                   </li>
                   <li className="sidebar-item">
-                    <a data-bs-target="#ingresos-3-1" data-bs-toggle="collapse" className="sidebar-link collapsed" aria-expanded="false">
+                    <a data-bs-target="#cuotasm-3-1" data-bs-toggle="collapse" className="sidebar-link collapsed" aria-expanded="false">
                       Extraordinarios
                     </a>
-                    <ul id="ingresos-3-1" className="sidebar-dropdown list-unstyled collapse">
+                    <ul id="cuotasm-3-1" className="sidebar-dropdown list-unstyled collapse">
                       <li className="sidebar-item">
                         <a className="sidebar-link" href="#">
                           Pagados
@@ -263,10 +262,10 @@ export const Sidebar = ({ show = true }) => {
                     </a>
                   </li>
                   <li className="sidebar-item">
-                    <a data-bs-target="#ingresos-3-2" data-bs-toggle="collapse" className="sidebar-link collapsed" aria-expanded="false">
+                    <a data-bs-target="#cuotasm-3-2" data-bs-toggle="collapse" className="sidebar-link collapsed" aria-expanded="false">
                       Saldo a favor
                     </a>
-                    <ul id="ingresos-3-2" className="sidebar-dropdown list-unstyled collapse">
+                    <ul id="cuotasm-3-2" className="sidebar-dropdown list-unstyled collapse">
                       <li className="sidebar-item">
                         <a className="sidebar-link" href="#">
                           Por aplicar
@@ -286,7 +285,6 @@ export const Sidebar = ({ show = true }) => {
                   </li>
                 </ul>
               </li>
-
               <li className="sidebar-item">
                 <a data-bs-target="#egresos-3" data-bs-toggle="collapse" className="sidebar-link collapsed" aria-expanded="false">
                   Egresos

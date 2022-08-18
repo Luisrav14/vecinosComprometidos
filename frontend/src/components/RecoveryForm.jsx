@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import { Route, useNavigate } from "react-router-dom";
+import { NavLink, Route, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 import globalConfig from "../global/globalConfig";
@@ -53,7 +53,7 @@ export const RecoveryForm = () => {
                 </button>
                 <div className="d-flex pt-4 justify-content-center">
                   <p className="text-center">
-                    <a href="/login">Iniciar sesión</a>
+                    <NavLink to="/login">Iniciar sesión</NavLink>
                   </p>
                 </div>
               </form>
