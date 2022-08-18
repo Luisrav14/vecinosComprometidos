@@ -108,8 +108,7 @@ export const SidebarUser = ({ show = true }) => {
               <i className="align-middle" data-feather="layout"></i>{" "}
               <span className="align-middle">
                 {" "}
-                <BsFillTreeFill />
-                Espacios Comunes
+                <a href="/dashboard/espacioscomunes" style={{ textDecoration: 'none', color:"white"}}><BsFillTreeFill />Espacios Comunes</a>
               </span>
             </a>
           </li>
