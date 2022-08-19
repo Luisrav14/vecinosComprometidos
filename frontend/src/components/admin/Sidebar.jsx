@@ -230,9 +230,9 @@ export const Sidebar = ({ show = true }) => {
                 </a>
                 <ul id="cuotasm-3" className="sidebar-dropdown list-unstyled collapse">
                   <li className="sidebar-item">
-                    <a className="sidebar-link" href="#">
+                    <NavLink className="sidebar-link" to="cuotas-mantenimiento">
                       Cuotas de mantenimiento
-                    </a>
+                    </NavLink>
                   </li>
                   <li className="sidebar-item">
                     <a data-bs-target="#cuotasm-3-1" data-bs-toggle="collapse" className="sidebar-link collapsed" aria-expanded="false">

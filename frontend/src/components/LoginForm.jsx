@@ -20,7 +20,7 @@ export const LoginForm = () => {
 
   const navigate = useNavigate();
 
- /*  const dataValidation = async (data) => {
+  /*  const dataValidation = async (data) => {
     await axios
       .post(`${globalConfig.api_URL}/login`, data)
       .then(({ data }) => console.log(data))
@@ -78,7 +78,7 @@ export const LoginForm = () => {
                 <img src={infoFraccionamiento.logo_color} width="215" height="65" alt="logo" />
               </a>
             </div>
-            <form onSubmit={handleSubmit(dataValidation)}>
+            <form className="px-5" onSubmit={handleSubmit(dataValidation)}>
               <div className="form-group first">
                 <label className="fw-normal mb-1" htmlFor="username">
                   Usuario
