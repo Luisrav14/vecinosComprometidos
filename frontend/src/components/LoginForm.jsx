@@ -2,12 +2,12 @@ import { useState } from "react";
 import { NavLink, Route, useNavigate } from "react-router-dom";
 
 import axios from "axios";
-import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
 import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 
 import globalConfig from "../global/globalConfig";
 import { infoFraccionamiento } from "../global/infoFraccionamiento";
+import { TerminosCondicionesAlert } from "./sweetAlert/TerminosCondicionesAlert";
 
 export const LoginForm = () => {
   const { register, handleSubmit } = useForm();
@@ -33,33 +33,15 @@ export const LoginForm = () => {
     setloginErrorMail(false);
     setloginErrorPass(false);
 
-    console.log(data);
-
     if (data.correo == "admin@admin.com") {
       if (data.password == "1234") {
-        await Swal.fire({
-          icon: "success",
-          title: "Inicio de sesion correcto",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-        navigate("/admin", {
-          replace: true,
-        });
+        (await TerminosCondicionesAlert()) && navigate("/admin", { replace: true });
       } else {
         setloginErrorPass(true);
       }
     } else if (data.correo == "user@user.com") {
       if (data.password == "1234") {
-        await Swal.fire({
-          icon: "success",
-          title: "Inicio de sesion correcto",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-        navigate("/dashboard", {
-          replace: true,
-        });
+        (await TerminosCondicionesAlert()) && navigate("/dashboard", { replace: true });
       } else {
         setloginErrorPass(true);
       }
@@ -78,7 +60,7 @@ export const LoginForm = () => {
                 <img src={infoFraccionamiento.logo_color} width="215" height="65" alt="logo" />
               </a>
             </div>
-            <form className="px-5" onSubmit={handleSubmit(dataValidation)}>
+            <form className="mx-3 px-5" onSubmit={handleSubmit(dataValidation)}>
               <div className="form-group first">
                 <label className="fw-normal mb-1" htmlFor="username">
                   Usuario
@@ -118,17 +100,9 @@ export const LoginForm = () => {
                 </div>
                 {loginErrorPass && <small className="text-danger">Contraseña Incorrecta</small>}
               </div>
-
               <button type="submit" id="entrar" value="Entrar" className="btn btn-block form-control btn-primary form-inline">
                 Entrar
               </button>
-
-              {/*  <a id="entrar" value="Entrar" className="btn btn-block form-control btn-primary form-inline" href="/admin">
-                Administración
-              </a>
-              <a id="entrar" value="Entrar" className="btn btn-block form-control btn-primary form-inline" href="/dashboard/">
-                Micrositio
-              </a> */}
               <div className="d-flex pt-4 justify-content-center">
                 <small className="text-center">
                   ¿Olvidaste tu contraseña? <NavLink to="/password-recovery"> Click Aquí</NavLink>

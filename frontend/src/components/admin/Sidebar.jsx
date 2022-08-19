@@ -15,11 +15,11 @@ export const Sidebar = ({ show = true }) => {
   return (
     <nav id="sidebar" className={`sidebar ${showSidebar ? "" : "d-none"} `}>
       <div className="sidebar-content">
-        <a className="sidebar-brand mb-1" href="/admin">
+        <NavLink className="sidebar-brand mb-1" to="/admin">
           <span className="align-middle">
             <img className="w-75 ml-3" src={infoFraccionamiento.logo} />
           </span>
-        </a>
+        </NavLink>
         <ul className="sidebar-nav">
           <li className="sidebar-item text-light active my-2">
             <a data-bs-target="#db" data-bs-toggle="collapse" className="sidebar-link collapsed">
