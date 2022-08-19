@@ -23,3 +23,5 @@ export * from "./usuarios/facturas";
 export * from "./usuarios/encuestas";
 export * from "./usuarios/acciones";
 export * from "./usuarios/espacioscomunes";
+export * from "./usuarios/miperfil";
+export * from "./usuarios/missuscripciones";

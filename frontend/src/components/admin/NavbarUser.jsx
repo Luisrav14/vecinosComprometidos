@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const Navbar = () => {
+export const NavbarUser = () => {
   const [showSidebar, setShowSidebar] = useState(true);
 
   const handleSidebar = () => {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { UsuariosDashboard, DashUser, Efectivo, PagosPendientes, SaldoFavor, Suscripcion, Tarjeta, Transferencia, HistorialPagos,Facturas,Encuestas, Acciones, EspaciosComunes, } from "../pages";
+import { UsuariosDashboard, DashUser, Efectivo, PagosPendientes, SaldoFavor, Suscripcion, Tarjeta, Transferencia, HistorialPagos,Facturas,Encuestas, Acciones, EspaciosComunes, MiPerfil, MisSuscripciones } from "../pages";
 
 export const DashboardRoutes = () => {
   return (
@@ -19,6 +19,8 @@ export const DashboardRoutes = () => {
           <Route path="/encuestas" element={<Encuestas />} />
           <Route path="/acciones" element={<Acciones />} />
           <Route path="/espacioscomunes" element={<EspaciosComunes />} />
+          <Route path="/miperfil" element={<MiPerfil />} />
+          <Route path="/missuscripciones" element={<MisSuscripciones />} />
         </Routes>
       </UsuariosDashboard>
     </>

@@ -1,10 +1,85 @@
 import React from "react";
-import { Navbar } from "../../components/admin/Navbar";
-import { FaDatabase, FaTable, FaAddressCard } from "react-icons/fa";
-import { useEffect } from "react";
-import Swal from "sweetalert2";
-import { SidebarUser } from "../../components/admin/SidebarUser";
 
+import Swal from "sweetalert2";
+
+import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
+import { BsPlusLg, BsEnvelope, BsPencilSquare, BsPinAngle,BsFillFileEarmarkFill } from "react-icons/bs";
+
+
+const Pagar = () => {
+  Swal.fire({
+    icon: "success",
+    title: "Operación realizada",
+    text: "Pagado enviado exitosamente",
+  });
+};
+
+const columns = [
+  {
+    name: "#",
+    selector: (row) => row.id,
+    sortable: true,
+    width: "8%",
+    center: true,
+  },
+  {
+    name: "Fecha de pago ",
+    selector: (row) => row.fecha,
+    sortable: true,
+    
+    center: true,
+  },
+  {
+    name: "Saldo a favor	 ",
+    selector: (row) => row.saldo,
+    sortable: true,
+    
+    center: true,
+  },
+  {
+    name: "Comprobante",
+    selector: (row) => row.comprobante,
+    sortable: true,
+    
+    center: true,
+  },
+  {
+    name: "Estatús",
+    selector: (row) => row.estatus,
+    sortable: true,
+    center: true,
+  },
+  
+  
+];
+
+const data = [
+  {
+    id: 1,
+    fecha:"19/08/22",
+    saldo: "$865",
+    comprobante: [
+      <button class="btn btn-success mx-2" onClick={Pagar}><BsFillFileEarmarkFill/>
+      
+        </button>,
+         ],
+    estatus: "Pendiente",
+    
+            
+  },
+  {
+    id: 2,
+    fecha:"19/08/22",
+    saldo: "$865",
+    comprobante: [
+      <button class="btn btn-success mx-2" onClick={Pagar}><BsFillFileEarmarkFill/>
+      
+        </button>,
+         ],
+    estatus: "Pendiente",
+           
+  },
+];
 export const SaldoFavor = () => {
   return (
     <>
@@ -82,31 +157,7 @@ export const SaldoFavor = () => {
                     <div class="col"></div>
                   </div>
 
-                  <table class="table table-striped">
-                    <thead class="thead-dark">
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Concepto</th>
-                        <th scope="col">Descripción</th>
-                        <th scope="col">Monto</th>
-                        <th scope="col">Estatús</th>
-                        <th scope="col">acciones</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Ingreso Extraordinario al mes de: Noviembre del 2021</td>
-                        <td>Adeudo de Cuotas de Enero de 2011 a Septiembre de 2021 </td>
-                        <td>$61,868.00 </td>
-                        <td>Pendiente</td>
-                        <td>
-                          {" "}
-                          <a class="btn btn-success btn-sm">Pagar</a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <DataTableComponent columns={columns} data={data} />
                 </div>
               </div>
             </div>

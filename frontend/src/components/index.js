@@ -4,6 +4,7 @@ export * from "./LoginForm";
 export * from "./admin/MenuItem";
 export * from "./admin/Navbar";
 export * from "./admin/Sidebar";
+export * from "./admin/NavbarUser";
 export * from "./admin/SidebarUser";
 
 export * from "./admin/charts/BarChart";
