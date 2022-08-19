@@ -1,4 +1,5 @@
 import { BsGraphUp, BsGraphDown, BsCashStack, BsHouseDoor, BsFillCreditCardFill } from "react-icons/bs";
+import { NavLink } from "react-router-dom";
 import { LineChart, BarChart, DonutChart } from "../../components/";
 
 export const ResumenInformacion = () => {
@@ -86,7 +87,7 @@ export const ResumenInformacion = () => {
             </div>
           </div>
         </div>
-        <div className=" col-md-9">
+        <div className="col-md-9">
           <div className="card">
             <div className="card-header">
               <div className="card-title">Ingresos Mensuales</div>
@@ -104,13 +105,27 @@ export const ResumenInformacion = () => {
               <hr />
             </div>
             <div className="card-body text-center">
-              <a className="btn btn-primary text-light mb-3 form-control">Base de datos general</a>
-              <a className="btn btn-primary text-light mb-3 form-control">Cuotas de mantenimiento</a>
-              <a className="btn btn-primary text-light mb-3 form-control">Pagos realizados</a>
-              <a className="btn btn-primary text-light mb-3 form-control">Saldo a favor</a>
-              <a className="btn btn-primary text-light mb-3 form-control">Extraordinarios</a>
-              <a className="btn btn-primary text-light mb-3 form-control">Facturación</a>
-              <a className="btn btn-primary text-light mb-3 form-control">Acceso Visitas</a>
+              <NavLink className="btn btn-primary text-light mb-3 form-control" to="general">
+                Base de datos general
+              </NavLink>
+              <NavLink className="btn btn-primary text-light mb-3 form-control" to="cuotas-mantenimiento">
+                Cuotas de mantenimiento
+              </NavLink>
+              <NavLink className="btn btn-primary text-light mb-3 form-control" to="">
+                Pagos realizados
+              </NavLink>
+              <NavLink className="btn btn-primary text-light mb-3 form-control" to="">
+                Saldo a favor
+              </NavLink>
+              <NavLink className="btn btn-primary text-light mb-3 form-control" to="">
+                Extraordinarios
+              </NavLink>
+              <NavLink className="btn btn-primary text-light mb-3 form-control" to="">
+                Facturación
+              </NavLink>
+              <NavLink className="btn btn-primary text-light mb-3 form-control" to="">
+                Acceso Visitas
+              </NavLink>
             </div>
           </div>
         </div>
