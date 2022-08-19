@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import Swal from "sweetalert2";
 import { SidebarUser } from "../../components/admin/SidebarUser";
 
-
 export const EspaciosComunes = () => {
   return (
     <>
@@ -29,8 +28,7 @@ export const EspaciosComunes = () => {
 		            	<div class="head-month"></div>
 		                <div class="head-day"></div>
 		            </div>
-		           
-			        </div>
+		          </div>
 			      </div>
 			      <div class="calendar-wrap">
 			      	<div class="w-100 button-wrap">
