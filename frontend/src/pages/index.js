@@ -4,10 +4,13 @@ export * from "./PasswordRecoveryPage";
 
 export * from "./admin/AdminDashboard";
 export * from "./admin/BaseDatosGeneral";
-export * from "./admin/CuotasMantenimiento";
 export * from "./admin/ResumenInformacion";
 export * from "./admin/EditarPropietario";
 export * from "./admin/AgregarPropietario";
+export * from "./admin/CuotasMantenimiento";
+export * from "./admin/CuotaTotalPagado";
+export * from "./admin/CuotaTotalPendiente";
+export * from "./admin/CuotaTotalRecaudar";
 
 export * from "./usuarios/dashuser";
 export * from "./usuarios/pago-efectivo";

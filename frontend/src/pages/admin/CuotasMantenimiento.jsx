@@ -1,5 +1,7 @@
+import { NavLink } from "react-router-dom";
 import { BsFileEarmarkExcel, BsFileEarmarkPdf, BsSearch, BsTable } from "react-icons/bs";
 import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
+import { exportPDF } from "../../components/admin/datatable/ExportPDF";
 
 export const CuotasMantenimiento = () => {
   const columns = [
@@ -50,21 +52,46 @@ export const CuotasMantenimiento = () => {
       id: 1,
       año: "2022",
       mes: "Agosto",
-      total_cuotas: "$116,000.00",
-      pendiente: "$0.00",
-      pagado: "$116,000.00",
+      total_cuotas: (
+        <NavLink to="recaudar" className="text-decoration-none">
+          $116,000.00
+        </NavLink>
+      ),
+      pendiente: (
+        <NavLink to="pendiente" className="text-decoration-none">
+          $0.00
+        </NavLink>
+      ),
+      pagado: (
+        <NavLink to="pagado" className="text-decoration-none">
+          $116,000.00
+        </NavLink>
+      ),
       estatus: <span className="badge badge-success">Pagado</span>,
     },
     {
       id: 2,
       año: "2022",
       mes: "Julio",
-      total_cuotas: "$116,000.00",
-      pendiente: "$60,505.00",
-      pagado: "$55,495.00",
+      total_cuotas: (
+        <NavLink to="recaudar" className="text-decoration-none">
+          $116,000.00
+        </NavLink>
+      ),
+      pendiente: (
+        <NavLink to="pendiente" className="text-decoration-none">
+          $60,505.00
+        </NavLink>
+      ),
+      pagado: (
+        <NavLink to="pagado" className="text-decoration-none">
+          $55,495.00
+        </NavLink>
+      ),
       estatus: <span className="badge badge-danger">Pendiente</span>,
     },
   ];
+
   return (
     <>
       <h1 className="mb-3 fw-bold">Cuotas Mantenimiento</h1>
@@ -114,14 +141,15 @@ export const CuotasMantenimiento = () => {
               </button>
             </div>
           </div>
-          {/* <div className="col-md-12 d-flex mb-3 justify-content-start">
-            <button className="btn btn-primary mx-2">
+          <div className="col-md-12 d-flex mb-3 justify-content-start">
+            <input type="text" className="form-control col-md-3" placeholder="Buscar..." />
+            <button className="btn btn-primary mx-2" onClick={() => exportPDF()}>
               <BsFileEarmarkPdf /> PDF
             </button>
             <button className="btn btn-primary mx-2">
               <BsFileEarmarkExcel /> Excel
             </button>
-          </div> */}
+          </div>
           <div className="col-md-12">
             <DataTableComponent columns={columns} data={data} />
           </div>
