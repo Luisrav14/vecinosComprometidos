@@ -97,7 +97,7 @@ export const Sidebar = ({ show = true }) => {
                 </a>
                 <ul id="asambleas-3" className="sidebar-dropdown list-unstyled collapse">
                   <li className="sidebar-item">
-                    <a className="sidebar-link" href="#">
+                    <a className="sidebar-link" href="/admin/asambleas">
                       Asamblea
                     </a>
                     <a className="sidebar-link" href="#">
