@@ -1,8 +1,9 @@
-import { NavLink } from "react-router-dom";
-import { BsFileEarmarkExcel, BsFileEarmarkPdf, BsSearch, BsTable } from "react-icons/bs";
-import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
-import { exportPDF } from "../../components/admin/datatable/ExportPDF";
+import { BsFileEarmarkExcel, BsFileEarmarkPdf, BsPlusLg } from "react-icons/bs";
+
 import { RegresarBtn } from "../../components/RegresarBtn";
+import { exportPDF } from "../../components/admin/datatable/ExportPDF";
+import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
+import { ModalWithBtn } from "../../components/modals/ModalWithBtn";
 
 export const CuotaTotalPendiente = () => {
   const columns = [
@@ -61,6 +62,22 @@ export const CuotaTotalPendiente = () => {
     },
   ];
 
+  const AgregarForm = () => {
+    return (
+      <form>
+        <div className="form-comtrol">
+          <select className="form-control">
+            <option disabled selected>
+              Selecciona un propietario
+            </option>
+            <option value="">Prueba 1</option>
+            <option value="">Prueba 2</option>
+          </select>
+        </div>
+      </form>
+    );
+  };
+
   return (
     <>
       <h1 className="mb-3 fw-bold">Total Pendiente</h1>
@@ -75,14 +92,21 @@ export const CuotaTotalPendiente = () => {
           </div>
         </div>
         <div className="card-body">
-          <div className="col-md-12 d-flex mb-3 justify-content-start">
-            <input type="text" className="form-control col-md-3" placeholder="Buscar..." />
-            <button className="btn btn-primary mx-2" onClick={() => exportPDF()}>
-              <BsFileEarmarkPdf /> PDF
-            </button>
-            <button className="btn btn-primary mx-2">
-              <BsFileEarmarkExcel /> Excel
-            </button>
+          <div className="col-md-12 d-flex mb-3 justify-content-between">
+            <div className="col-md-9 d-flex">
+              <input type="text" className="form-control col-md-3" placeholder="Buscar..." />
+              <button className="btn btn-primary mx-2" onClick={() => exportPDF()}>
+                <BsFileEarmarkPdf /> PDF
+              </button>
+              <button className="btn btn-primary mx-2">
+                <BsFileEarmarkExcel /> Excel
+              </button>
+            </div>
+            <div className="col-md-3 text-right">
+              <ModalWithBtn title="Pago cuota mantenimiento" textBtn="Agregar" iconBtn={<BsPlusLg />}>
+                {<AgregarForm />}
+              </ModalWithBtn>
+            </div>
           </div>
           <div className="col-md-12">
             <DataTableComponent columns={columns} data={data} />

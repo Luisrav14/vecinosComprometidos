@@ -220,9 +220,9 @@ export const Sidebar = ({ show = true }) => {
             </a>
             <ul id="finanzas" className="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
               <li className="sidebar-item">
-                <a className="sidebar-link" href="/admin">
+                <NavLink className="sidebar-link" to="estados-cuenta">
                   Estados de cuenta
-                </a>
+                </NavLink>
               </li>
               <li className="sidebar-item">
                 <a data-bs-target="#cuotasm-3" data-bs-toggle="collapse" className="sidebar-link collapsed" aria-expanded="false">

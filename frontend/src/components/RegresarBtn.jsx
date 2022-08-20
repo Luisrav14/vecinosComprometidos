@@ -9,7 +9,7 @@ export const RegresarBtn = () => {
   };
 
   return (
-    <button className="btn btn-primary" onClick={lastPage}>
+    <button className="btn btn-secondary" onClick={lastPage}>
       <FaArrowLeft /> Regresar
     </button>
   );

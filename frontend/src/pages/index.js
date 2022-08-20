@@ -11,7 +11,8 @@ export * from "./admin/CuotasMantenimiento";
 export * from "./admin/CuotaTotalPagado";
 export * from "./admin/CuotaTotalPendiente";
 export * from "./admin/CuotaTotalRecaudar";
-export *from "./admin/Asamblea";
+export * from "./admin/Asamblea";
+export * from "./admin/EstadosDeCuenta";
 
 export * from "./usuarios/dashuser";
 export * from "./usuarios/pago-efectivo";

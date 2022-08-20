@@ -98,7 +98,7 @@ export const CuotaTotalPagado = () => {
       <div className="card">
         <div className="card-header border-bottom border-1">
           <div className="row d-flex justify-content-between">
-            <h5 className="card-title col-md-6 pt-2">Total pagado del Nombre de :Nombre</h5>
+            <h5 className="card-title col-md-6 pt-2">Total pagado del mes de :mes</h5>
             <div className="col-md-2 text-right">
               <RegresarBtn />
             </div>

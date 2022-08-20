@@ -55,12 +55,12 @@ export const CuotaTotalRecaudar = () => {
 
   return (
     <>
-      <h1 className="mb-3 fw-bold">Cuotas Mantenimiento</h1>
+      <h1 className="mb-3 fw-bold">Cuotas mantenimiento a recaudar</h1>
 
       <div className="card">
         <div className="card-header border-bottom border-1">
           <div className="row d-flex justify-content-between">
-            <h5 className="card-title col-md-6 pt-2">Desglose de cuotas de mantenimiento del nombre de :nombre</h5>
+            <h5 className="card-title col-md-6 pt-2">Desglose de cuotas de mantenimiento del mes de :mes</h5>
             <div className="col-md-2 text-right">
               <RegresarBtn />
             </div>
