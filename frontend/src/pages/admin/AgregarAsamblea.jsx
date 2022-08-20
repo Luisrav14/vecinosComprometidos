@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FaArrowLeft, FaHouseUser, FaFileAlt, FaHome, FaRegSave } from "react-icons/fa";
+import { RegresarBtn } from "../../components/RegresarBtn";
 
 export const AgregarAsamblea = () => {
   const { register, handleSubmit } = useForm();
@@ -14,9 +15,8 @@ export const AgregarAsamblea = () => {
           <div className="row d-flex">
             <h5 className="card-title col-md-6 pt-2">Agregar asamblea</h5>
             <div className="col-md-6 text-right">
-              <Link to="/admin/general" className="btn btn-primary">
-                <FaArrowLeft /> Regresar
-              </Link>
+             
+              <RegresarBtn/>
             </div>
           </div>
         </div>
@@ -45,18 +45,18 @@ export const AgregarAsamblea = () => {
                   {...register("titulo", {
                     required: true,
                   })}
-                  placeholder="Correo"
+                  placeholder="Titulo"
                 />
               </div>
               <div className="col-md-12 mb-3">
-                <label className="form-label">Descripcion</label>
+                <label className="form-label">Descripción</label>
                 <textarea
                   type="text"
                   className="form-control"
-                  {...register("descripcion", {
+                  {...register("descripción", {
                     required: true,
                   })}
-                  placeholder="Descripcion"
+                  placeholder="Descripción"
                 />
               </div>
              
