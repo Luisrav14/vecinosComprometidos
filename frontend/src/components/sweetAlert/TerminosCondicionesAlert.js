@@ -2,17 +2,17 @@ import Swal from "sweetalert2";
 
 export const TerminosCondicionesAlert = async () => {
   const { value: accept } = await Swal.fire({
-    title: "Términos y Condiciones",
+    title: "Políticas",
     icon: "info",
-    input: "checkbox",
-    inputValue: 0,
-    inputPlaceholder: "Acepto los términos y condiciones",
+    html: '<div class="text-left pl-5"><div class="form-check"><input class="form-check-input" type="checkbox" value="" id="swal-input1"><label class="form-check-label" for="swal-input1">He leido y acepto Términos y condiciones</label></div>' + '<div class="form-check"><input class="form-check-input" type="checkbox" value="" id="swal-input2"><label class="form-check-label" for="swal-input2">He leido y acepto el Aviso de privaicidad</label></div></div>',
     confirmButtonText: "Continuar",
     confirmButtonColor: "#326ABC",
     showCancelButton: true,
     cancelButtonText: "Cancelar",
     inputValidator: (result) => {
-      return !result && "Necesitas aceptar los términos y condiciones para continuar";
+      if (document.getElementById("swal-input1").value && document.getElementById("swal-input2").value) {
+        return !result && "Necesitas aceptar las políticas para continuar";
+      }
     },
   });
 
