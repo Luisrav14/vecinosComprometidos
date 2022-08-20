@@ -12,6 +12,7 @@ export * from "./admin/CuotaTotalPagado";
 export * from "./admin/CuotaTotalPendiente";
 export * from "./admin/CuotaTotalRecaudar";
 export *from "./admin/Asamblea";
+export * from "./admin/AgregarAsamblea";
 
 export * from "./usuarios/dashuser";
 export * from "./usuarios/pago-efectivo";
