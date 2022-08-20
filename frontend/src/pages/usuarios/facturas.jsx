@@ -1,10 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Navbar } from "../../components/admin/Navbar";
-import { useEffect } from "react";
+
+
 import Swal from "sweetalert2";
-import { SidebarUser } from "../../components/admin/SidebarUser";
-import { UsuariosDashboard } from "./UsuariosDashboard";
+
 import DataTable from "react-data-table-component";
 import { BsPlusLg, BsEnvelope, BsPencilSquare, BsPinAngle,BsFillFileEarmarkFill } from "react-icons/bs";
 import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
@@ -37,7 +35,7 @@ const columns = [
     name: "Nombre",
     selector: (row) => row.nombre,
     sortable: true,
-    width: "18%",
+    width: "10%",
     center: true,
   },
   {
@@ -90,7 +88,7 @@ const data = [
   {
     id: 2,
     fecha:"18/08/22",
-    nombre: "Factura Numero 2",
+    nombre: "Factura Numero dos",
     direccion: "Roble #333",
     recibo: [
       <button class="btn btn-warning mx-2">

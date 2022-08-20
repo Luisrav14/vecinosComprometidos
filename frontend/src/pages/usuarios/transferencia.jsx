@@ -3,6 +3,80 @@ import { Navbar } from "../../components/admin/Navbar";
 import { useEffect } from "react";
 import Swal from "sweetalert2";
 import { SidebarUser } from "../../components/admin/SidebarUser";
+import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
+
+
+
+const Pagar = () => {
+  Swal.fire({
+    icon: "success",
+    title: "Operación realizada",
+    text: "Pagado enviado exitosamente",
+  });
+};
+
+const columns = [
+  {
+    name: "#",
+    selector: (row) => row.id,
+    sortable: true,
+    width: "8%",
+    center: true,
+  },
+  {
+    name: "Concepto ",
+    selector: (row) => row.concepto,
+    sortable: true,
+    
+    center: true,
+  },
+  {
+    name: "Monto",
+    selector: (row) => row.monto,
+    sortable: true,
+    
+    center: true,
+  },
+  {
+    name: "Estatús",
+    selector: (row) => row.estatus,
+    sortable: true,
+    center: true,
+  },
+  
+  {
+    name: "Acciones",
+    selector: (row) => row.acciones,
+    center: true,
+    
+  },
+];
+
+const data = [
+  {
+    id: 1,
+    concepto:"Pago agosto",
+    monto: "636",
+    estatus: "Pagado",
+    
+             acciones: [
+              <button class="btn btn-success mx-2" onClick={Pagar}>
+               Pagar 
+                </button>,
+                 ],
+  },
+  {
+    id: 2,
+    concepto:"Pago agosto",
+    monto: "636",
+    estatus: "Pendiente",
+             acciones: [
+              <button class="btn btn-success mx-2" onClick={Pagar}>
+                Pagar 
+                </button>,
+                 ],
+  },
+];
 
 export const Transferencia = () => {
   return (
@@ -21,69 +95,7 @@ export const Transferencia = () => {
                 <div className="text-center">
                   <div className="container mt-5">
                     <div>
-                      <table class="table table-striped">
-                        <thead class="thead-dark">
-                          <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Concepto</th>
-                            <th scope="col">Monto</th>
-                            <th scope="col">Estatús</th>
-                            <th scope="col">acciones</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>
-                              {" "}
-                              <a class="btn btn-success btn-sm">Pagar</a>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>
-                              {" "}
-                              <a class="btn btn-success btn-sm">Pagar</a>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                            <td>
-                              {" "}
-                              <a class="btn btn-success btn-sm">Pagar</a>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                            <td>
-                              {" "}
-                              <a class="btn btn-success btn-sm">Pagar</a>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                            <td>
-                              {" "}
-                              <a class="btn btn-success btn-sm">Pagar</a>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
+                    <DataTableComponent columns={columns} data={data} />
                     </div>
                   </div>
                 </div>

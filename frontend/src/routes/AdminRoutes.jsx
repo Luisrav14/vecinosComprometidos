@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { AdminDashboard, AgregarPropietario, BaseDatosGeneral, CuotasMantenimiento, CuotaTotalPagado, CuotaTotalPendiente, CuotaTotalRecaudar, EditarPropietario, ResumenInformacion } from "../pages";
+import { AdminDashboard, AgregarPropietario, BaseDatosGeneral, CuotasMantenimiento, CuotaTotalPagado, CuotaTotalPendiente, CuotaTotalRecaudar, EditarPropietario, ResumenInformacion, Asamblea } from "../pages";
 
 export const AdminRoutes = () => {
   return (
@@ -15,6 +15,7 @@ export const AdminRoutes = () => {
           <Route path="/cuotas-mantenimiento/recaudar" element={<CuotaTotalRecaudar />} />
           <Route path="/cuotas-mantenimiento/pendiente" element={<CuotaTotalPendiente />} />
           <Route path="/cuotas-mantenimiento/pagado" element={<CuotaTotalPagado />} />
+          <Route path="/asambleas" element={<Asamblea />} />
         </Routes>
       </AdminDashboard>
     </>

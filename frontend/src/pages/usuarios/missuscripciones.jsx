@@ -3,31 +3,25 @@ import { Navbar } from "../../components/admin/Navbar";
 import { useEffect } from "react";
 import Swal from "sweetalert2";
 import { SidebarUser } from "../../components/admin/SidebarUser";
-import Calendar from 'react-calendar';
-import  { useState } from 'react';
-import 'react-calendar/dist/Calendar.css';
-export const EspaciosComunes = () => {
+
+export const MisSuscripciones = () => {
   return (
     <>
-    
       <div className="col-12">
-      <h2>
-            <b>Espacios comunes</b>
-          </h2>
         <div className="card">
-          <div className="card-header mb-0">
+          <div className="card-header">
+            <h5 className="card-title mb-0"> </h5>
+
             <div className=" rounded col-xl-12 col-md-12">
-              <div className="card-block mb-5 mt-3">
+              <div className="card-block mb-5 mt-5">
                 <div className="text-center">
-                  <div className="card-block ">
-                    <div className="row d-flex justify-content-around">
-                      
-
-                    <Calendar style={{width:"100%"}} />
-
-                   
-
-                     
+                  <img className="card-img-top" style={{ width: "20%" }} src=" https://quintasresidencial.com/fraccionamiento/QuintasResidencial/assets/images/warning.png" alt="" />
+                  <h2>
+                  Atención no tienes ninguna suscripción activa
+                  </h2>
+                  <div className="container mt-5">
+                    <div>
+                      <h3>Verifíca en la sección "Método de pago"</h3>
                     </div>
                   </div>
                 </div>
@@ -45,12 +39,3 @@ export const EspaciosComunes = () => {
     </>
   );
 };
-function MyApp() {
-  const [value, onChange] = useState(new Date());
-
-  return (
-    <div>
-      <Calendar onChange={onChange} value={value} />
-    </div>
-  );
-}

@@ -3,7 +3,89 @@ import { Navbar } from "../../components/admin/Navbar";
 import { useEffect } from "react";
 import Swal from "sweetalert2";
 import { SidebarUser } from "../../components/admin/SidebarUser";
+import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
 
+
+
+const Pagar = () => {
+  Swal.fire({
+    icon: "success",
+    title: "Operación realizada",
+    text: "Pagado enviado exitosamente",
+  });
+};
+
+const columns = [
+  {
+    name: "#",
+    selector: (row) => row.id,
+    sortable: true,
+    width: "8%",
+    center: true,
+  },
+  {
+    name: "Concepto ",
+    selector: (row) => row.concepto,
+    sortable: true,
+    
+    center: true,
+  },
+  {
+    name: "Descripcion ",
+    selector: (row) => row.descripcion,
+    sortable: true,
+    
+    center: true,
+  },
+  {
+    name: "Monto",
+    selector: (row) => row.monto,
+    sortable: true,
+    
+    center: true,
+  },
+  {
+    name: "Estatús",
+    selector: (row) => row.estatus,
+    sortable: true,
+    center: true,
+  },
+  
+  {
+    name: "Acciones",
+    selector: (row) => row.acciones,
+    center: true,
+    
+  },
+];
+
+const data = [
+  {
+    id: 1,
+    concepto:"Ingreso Extraordinario al mes de: Marzo del 2022",
+    descripcion: "cuota de mantenimiento febrero y marzo 2022",
+    monto: "$1,029.00",
+    estatus: "Pendiente",
+    
+             acciones: [
+              <button class="btn btn-success mx-2" onClick={Pagar}>
+               Pagar 
+                </button>,
+                 ],
+  },
+  {
+    id: 2,
+    concepto:"Ingreso Extraordinario al mes de: Marzo del 2022",
+    descripcion: "cuota de mantenimiento febrero y marzo 2022",
+    monto: "$1,029.00",
+    estatus: "Pendiente",
+             acciones: [
+              <button class="btn btn-success mx-2" onClick={Pagar}>
+                Pagar 
+                </button>,
+                 ],
+  },
+];
 export const PagosPendientes = () => {
   return (
     <>
@@ -21,31 +103,7 @@ export const PagosPendientes = () => {
                 <div className="text-center">
                   <div className="container mt-5">
                     <div>
-                      <table class="table table-striped">
-                        <thead class="thead-dark">
-                          <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Concepto</th>
-                            <th scope="col">Descripción</th>
-                            <th scope="col">Monto</th>
-                            <th scope="col">Estatús</th>
-                            <th scope="col">acciones</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Ingreso Extraordinario al mes de: Noviembre del 2021</td>
-                            <td>Adeudo de Cuotas de Enero de 2011 a Septiembre de 2021 </td>
-                            <td>$61,868.00 </td>
-                            <td>Pendiente</td>
-                            <td>
-                              {" "}
-                              <a class="btn btn-success btn-sm">Pagar</a>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
+                    <DataTableComponent columns={columns} data={data} />
                     </div>
                   </div>
                 </div>

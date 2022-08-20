@@ -11,6 +11,7 @@ export * from "./admin/CuotasMantenimiento";
 export * from "./admin/CuotaTotalPagado";
 export * from "./admin/CuotaTotalPendiente";
 export * from "./admin/CuotaTotalRecaudar";
+export *from "./admin/Asamblea";
 
 export * from "./usuarios/dashuser";
 export * from "./usuarios/pago-efectivo";
@@ -26,3 +27,5 @@ export * from "./usuarios/facturas";
 export * from "./usuarios/encuestas";
 export * from "./usuarios/acciones";
 export * from "./usuarios/espacioscomunes";
+export * from "./usuarios/miperfil";
+export * from "./usuarios/missuscripciones";

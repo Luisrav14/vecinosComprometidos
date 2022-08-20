@@ -1,8 +1,14 @@
 import React from "react";
 import DataTable from "react-data-table-component";
-
+import { BsFillFileEarmarkFill } from "react-icons/bs";
 const ExpandedComponent = ({ data }) => <pre>{JSON.stringify(data, null, 2)}</pre>;
-
+const Pagar = () => {
+  Swal.fire({
+    icon: "success",
+    title: "Operación realizada",
+    text: "Pagado enviado exitosamente",
+  });
+};
 const columns = [
   {
     name: "id",
@@ -37,7 +43,11 @@ const data = [
     concepto: "Prueba Numero 1",
     metodo: "Quintas #112",
     monto: "600",
-    recibo: "recibo"
+    recibo: [
+      <button class="btn btn-success mx-2" onClick={Pagar}><BsFillFileEarmarkFill/>
+      
+        </button>,
+         ],
   },
   {
     id: 1,
@@ -45,7 +55,11 @@ const data = [
     concepto: "Prueba Numero 2",
     metodo: "Quintas #112",
     monto: "600",
-    recibo: "recibo"
+    recibo: [
+      <button class="btn btn-success mx-2" onClick={Pagar}><BsFillFileEarmarkFill/>
+      
+        </button>,
+         ],
   },
 ];
 export const HistorialPagos = () => {
