@@ -52,7 +52,7 @@ export const Asamblea = () => {
       name: "Fecha Publicado",
       selector: (row) => row.fechapublicado,
       center: true,
-      width: "15%",
+     
     },
   ];
 
@@ -93,7 +93,7 @@ export const Asamblea = () => {
             <h5 className="card-title col-md-6 pt-2">Asambleas </h5>
            
             <div className="col-md-6 text-right">
-              <Link to="/admin/agregar-propietario" className="btn btn-primary">
+              <Link to="/admin/agregar-asamblea" className="btn btn-primary">
                 <BsPlusLg /> Agregar
               </Link>
             </div>
