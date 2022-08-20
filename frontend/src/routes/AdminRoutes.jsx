@@ -1,9 +1,10 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import { AdminDashboard, AgregarPropietario, BaseDatosGeneral, CuotasMantenimiento,
-   CuotaTotalPagado, CuotaTotalPendiente, CuotaTotalRecaudar, EditarPropietario, ResumenInformacion,
-    Asamblea, EstadosDeCuenta,  AgregarAsamblea, AnunciosAcuerdos} from "../pages";
+
+
+
+import { AdminDashboard, AgregarPropietario, BaseDatosGeneral, CuotasMantenimiento, CuotaTotalPagado, CuotaTotalPendiente, CuotaTotalRecaudar, EditarPropietario, ResumenInformacion, Asamblea, EstadosDeCuenta, AgregarAsamblea,AnunciosAcuerdos } from "../pages";
 
 
 export const AdminRoutes = () => {
@@ -26,6 +27,9 @@ export const AdminRoutes = () => {
           <Route path="/asambleas" element={<Asamblea />} />
           <Route path="/agregar-asamblea" element={<AgregarAsamblea />} />
           <Route path="/anunciosacuerdos" element={<AnunciosAcuerdos />} />
+
+
+          <Route path="/estados-cuenta" element={<EstadosDeCuenta />} />
 
         </Routes>
       </AdminDashboard>
