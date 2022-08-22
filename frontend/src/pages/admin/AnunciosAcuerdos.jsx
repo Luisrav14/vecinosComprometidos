@@ -103,7 +103,7 @@ export const AnunciosAcuerdos = () => {
             <h5 className="card-title col-md-6 pt-2">Asambleas </h5>
            
             <div className="col-md-6 text-right">
-              <Link to="#" className="btn btn-primary">
+              <Link to="/admin/agregar-anuncios" className="btn btn-primary">
                 <BsPlusLg /> 
               </Link>
             </div>
