@@ -11,14 +11,12 @@ export const AgregarPropietario = () => {
 
   const showHiddenForm = () => {
     const tipoProp = getValues("tipo");
+    console.log(tipoProp);
     const estatusProp = getValues("estatus");
+    console.log(estatusProp);
 
-    if (tipoProp === "baldio") {
-      setloteForm(true);
-    } else {
-      setloteForm(false);
-      estatusProp === "rentada" ? setRentaForm(true) : setRentaForm(false);
-    }
+    tipoProp === "baldio" ? setloteForm(true) : setloteForm(false);
+    estatusProp === "rentada" ? setRentaForm(true) : setRentaForm(false);
   };
 
   const showData = (data) => console.log(data);
@@ -475,7 +473,7 @@ export const AgregarPropietario = () => {
                 </select>
               </div>
 
-              {rentaForm && (
+              {loteForm == false && rentaForm && (
                 <>
                   <div className="col-md-12 border-bottom border-1 my-3">
                     <p className="text-primary fw-bolder">
@@ -545,7 +543,7 @@ export const AgregarPropietario = () => {
                 </>
               )}
 
-              {rentaForm != loteForm && (
+              {rentaForm == false && loteForm && (
                 <>
                   <div className="col-md-12 border-bottom border-1 my-3">
                     <p className="text-primary fw-bolder">
