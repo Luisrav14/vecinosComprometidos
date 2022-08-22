@@ -4,7 +4,8 @@ import { Route, Routes } from "react-router-dom";
 
 
 
-import { AdminDashboard, AgregarPropietario, BaseDatosGeneral, CuotasMantenimiento, CuotaTotalPagado, CuotaTotalPendiente, CuotaTotalRecaudar, EditarPropietario, ResumenInformacion, Asamblea, EstadosDeCuenta, AgregarAsamblea,AnunciosAcuerdos } from "../pages";
+import { AdminDashboard, AgregarPropietario, BaseDatosGeneral, CuotasMantenimiento, CuotaTotalPagado, CuotaTotalPendiente, CuotaTotalRecaudar, EditarPropietario,
+   ResumenInformacion, Asamblea, EstadosDeCuenta, AgregarAsamblea,AnunciosAcuerdos, InventarioActivo, InventarioDescontinuado } from "../pages";
 
 
 export const AdminRoutes = () => {
@@ -21,6 +22,9 @@ export const AdminRoutes = () => {
           <Route path="/cuotas-mantenimiento/recaudar" element={<CuotaTotalRecaudar />} />
           <Route path="/cuotas-mantenimiento/pendiente" element={<CuotaTotalPendiente />} />
           <Route path="/cuotas-mantenimiento/pagado" element={<CuotaTotalPagado />} />
+          <Route path="/inventarioactivo" element={<InventarioActivo />} />
+          <Route path="/inventariodescontinuado" element={<InventarioDescontinuado />} />
+
 
 
           {/* RUTAS OPERACIONES */}
