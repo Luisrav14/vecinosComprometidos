@@ -100,7 +100,7 @@ export const Sidebar = ({ show = true }) => {
                     <a className="sidebar-link" href="/admin/asambleas">
                       Asamblea
                     </a>
-                    <a className="sidebar-link" href="#">
+                    <a className="sidebar-link" href="/admin/anunciosacuerdos">
                       Actas y acuerdos
                     </a>
                   </li>

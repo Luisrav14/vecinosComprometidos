@@ -14,6 +14,7 @@ export * from "./admin/CuotaTotalRecaudar";
 export * from "./admin/Asamblea";
 export * from "./admin/AgregarAsamblea";
 export * from "./admin/EstadosDeCuenta";
+export * from "./admin/AnunciosAcuerdos";
 
 export * from "./usuarios/dashuser";
 export * from "./usuarios/pago-efectivo";
