@@ -18,8 +18,7 @@ export * from "./admin/AnunciosAcuerdos";
 export * from "./admin/AgregarAnuncios";
 export * from "./admin/InventarioActivo";
 export * from "./admin/InventarioDescontinuado";
-
-
+export * from "./admin/Acciones";
 
 
 export * from "./usuarios/dashuser";

@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router-dom";
 
 
 import { AdminDashboard, AgregarPropietario, BaseDatosGeneral, CuotasMantenimiento, CuotaTotalPagado, CuotaTotalPendiente, CuotaTotalRecaudar, EditarPropietario,
-   ResumenInformacion, Asamblea, EstadosDeCuenta, AgregarAsamblea,AnunciosAcuerdos, InventarioActivo, InventarioDescontinuado, AgregarAnuncios } from "../pages";
+   ResumenInformacion, Asamblea, EstadosDeCuenta, AgregarAsamblea,AnunciosAcuerdos, InventarioActivo, InventarioDescontinuado, AgregarAnuncios,AccionesMod } from "../pages";
 
 
 export const AdminRoutes = () => {
@@ -24,7 +24,7 @@ export const AdminRoutes = () => {
           <Route path="/cuotas-mantenimiento/pagado" element={<CuotaTotalPagado />} />
           <Route path="/inventarioactivo" element={<InventarioActivo />} />
           <Route path="/inventariodescontinuado" element={<InventarioDescontinuado />} />
-
+          <Route path="/acciones" element={<AccionesMod />} />
 
 
           {/* RUTAS OPERACIONES */}
@@ -32,7 +32,7 @@ export const AdminRoutes = () => {
           <Route path="/agregar-asamblea" element={<AgregarAsamblea />} />
           <Route path="/anunciosacuerdos" element={<AnunciosAcuerdos />} />
           <Route path="/agregar-anuncios" element={<AgregarAnuncios />} />
-
+         
           <Route path="/estados-cuenta" element={<EstadosDeCuenta />} />
 
         </Routes>
