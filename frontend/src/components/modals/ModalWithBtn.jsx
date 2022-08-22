@@ -1,9 +1,7 @@
-import React from "react";
-
-export const ModalWithBtn = ({ title, textBtn, iconBtn, children }) => {
+export const ModalWithBtn = ({ title, textBtn, iconBtn, classBtn, footer = true, children }) => {
   return (
     <>
-      <button className="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <button className={classBtn} type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
         {iconBtn} {textBtn}
       </button>
 
@@ -17,14 +15,16 @@ export const ModalWithBtn = ({ title, textBtn, iconBtn, children }) => {
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body">{children}</div>
-            <div className="modal-footer">
-              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
-                Cancelar
-              </button>
-              <button type="button" className="btn btn-primary">
-                Aceptar
-              </button>
-            </div>
+            {footer && (
+              <div className="modal-footer">
+                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
+                  Cancelar
+                </button>
+                <button type="button" className="btn btn-primary">
+                  Aceptar
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>

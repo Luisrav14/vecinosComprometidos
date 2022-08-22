@@ -4,6 +4,39 @@ import { BsPlusLg, BsEnvelope, BsPencilSquare } from "react-icons/bs";
 
 import Swal from "sweetalert2";
 import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
+import { ModalWithBtn } from "../../components";
+
+const DatosPersonales = () => {
+  return (
+    <>
+      <div className="container">
+        <div className="card">
+          <div className="card-header shadow shadow-sm">
+            <h5 className="card-title">Prueba Numero Uno</h5>
+            <hr />
+          </div>
+          <div class="card-body row">
+            <div class="col-md-6 mb-3">
+              <strong>Correo: </strong> mail@mail.com
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <strong>Contraseña: </strong> **********
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <strong>Telefono: </strong> 61812345678
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <strong>Celular: </strong> 61812345678
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
 
 export const BaseDatosGeneral = () => {
   const sendEmail = () => {
@@ -55,7 +88,11 @@ export const BaseDatosGeneral = () => {
   const data = [
     {
       id: 1,
-      nombre: "Prueba Numero 1",
+      nombre: (
+        <ModalWithBtn classBtn="btn btn-link text-decoration-none" textBtn={"Prueba Numero 1"} title="Datos personales" footer={false}>
+          <DatosPersonales />
+        </ModalWithBtn>
+      ),
       direccion: "Quintas #112",
       cuota_mantenimiento: "$526.00",
       acciones: [
@@ -69,7 +106,11 @@ export const BaseDatosGeneral = () => {
     },
     {
       id: 2,
-      nombre: "Prueba Numero dos",
+      nombre: (
+        <ModalWithBtn classBtn="btn btn-link text-decoration-none" textBtn={"Prueba Numero 1"} title="Datos personales" footer={false}>
+          <DatosPersonales />
+        </ModalWithBtn>
+      ),
       direccion: "Roble #333",
       cuota_mantenimiento: "$526.00",
       acciones: [

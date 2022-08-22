@@ -103,7 +103,7 @@ export const CuotaTotalPendiente = () => {
               </button>
             </div>
             <div className="col-md-3 text-right">
-              <ModalWithBtn title="Pago cuota mantenimiento" textBtn="Agregar" iconBtn={<BsPlusLg />}>
+              <ModalWithBtn classBtn="btn btn-primary" title="Pago cuota mantenimiento" textBtn="Agregar" iconBtn={<BsPlusLg />}>
                 {<AgregarForm />}
               </ModalWithBtn>
             </div>
