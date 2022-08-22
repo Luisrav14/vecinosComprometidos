@@ -1,9 +1,25 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { FaArrowLeft, FaHouseUser, FaFileAlt, FaHome, FaRegSave } from "react-icons/fa";
+import { FaArrowLeft, FaHouseUser, FaFileAlt, FaHome, FaRegSave, FaBuilding } from "react-icons/fa";
 
 export const AgregarPropietario = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, getValues } = useForm();
+
+  const [rentaForm, setRentaForm] = useState(false);
+  const [loteForm, setloteForm] = useState(false);
+
+  const showHiddenForm = () => {
+    const tipoProp = getValues("tipo");
+    const estatusProp = getValues("estatus");
+
+    if (tipoProp === "baldio") {
+      setloteForm(true);
+    } else {
+      setloteForm(false);
+      estatusProp === "rentada" ? setRentaForm(true) : setRentaForm(false);
+    }
+  };
 
   const showData = (data) => console.log(data);
 
@@ -265,7 +281,9 @@ export const AgregarPropietario = () => {
                     required: true,
                   })}
                 >
-                  <option defaultValue={0}>Selecciona un método de pago</option>
+                  <option selected disabled>
+                    Selecciona un método de pago
+                  </option>
                   <option value="PUE">Pago de una sola exhibición</option>
                   <option value="PPD">Pago en parcialidades o diferido</option>
                 </select>
@@ -392,7 +410,9 @@ export const AgregarPropietario = () => {
                     required: true,
                   })}
                 >
-                  <option defaultValue={0}>Selecciona un método de pago</option>
+                  <option selected disabled>
+                    Selecciona un método de pago
+                  </option>
                   <option value="Suscripción">Suscripción</option>
                   <option value="Efectivo">Pago en efectivo</option>
                   <option value="Transferencia">Transferencia</option>
@@ -427,8 +447,11 @@ export const AgregarPropietario = () => {
                   {...register("tipo", {
                     required: true,
                   })}
+                  onChange={showHiddenForm}
                 >
-                  <option defaultValue={0}>Selecciona un tipo de propiedad</option>
+                  <option selected disabled>
+                    Selecciona un tipo de propiedad
+                  </option>
                   <option value="construida">Casa Construida</option>
                   <option value="proceso">Casa en Proceso</option>
                   <option value="baldio">Terreno Baldío</option>
@@ -441,13 +464,157 @@ export const AgregarPropietario = () => {
                   {...register("estatus", {
                     required: true,
                   })}
+                  onChange={showHiddenForm}
                 >
-                  <option defaultValue={0}>Selecciona una opción</option>
+                  <option selected disabled>
+                    Selecciona una opción
+                  </option>
                   <option value="habitada">Habitada</option>
                   <option value="sinhabitar">Sin Habitar</option>
                   <option value="rentada">Rentada</option>
                 </select>
               </div>
+
+              {rentaForm && (
+                <>
+                  <div className="col-md-12 border-bottom border-1 my-3">
+                    <p className="text-primary fw-bolder">
+                      <FaBuilding /> Inquilino
+                    </p>
+                  </div>
+
+                  <div className="col-md-4 mb-3">
+                    <label className="form-label">Nombre(s)</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      {...register("inquilino_nombre", {
+                        required: true,
+                      })}
+                      placeholder="Nombre(s)"
+                    />
+                  </div>
+                  <div className="col-md-4 mb-3">
+                    <label className="form-label">Apellido Paterno</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      {...register("inquilino_apellidoP", {
+                        required: true,
+                      })}
+                      placeholder="Apellido Paterno"
+                    />
+                  </div>
+                  <div className="col-md-4 mb-3">
+                    <label className="form-label">Apellido Materno</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      {...register("inquilino_apellidoM", {
+                        required: true,
+                      })}
+                      placeholder="Apellido Materno"
+                    />
+                  </div>
+                  <div className="col-md-4 mb-3">
+                    <label className="form-label">Correo</label>
+                    <input
+                      type="email"
+                      className="form-control"
+                      {...register("inquilino_correo", {
+                        required: true,
+                      })}
+                      placeholder="Correo"
+                    />
+                  </div>
+                  <div className="col-md-4 mb-3">
+                    <label className="form-label">Celular</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      {...register("inquilino_celular", {
+                        required: true,
+                      })}
+                      placeholder="Celular"
+                    />
+                  </div>
+                  <div className="col-md-4 mb-3">
+                    <label className="form-label">Teléfono</label>
+                    <input type="text" className="form-control" {...register("telefono")} placeholder="Teléfono" />
+                  </div>
+                </>
+              )}
+
+              {rentaForm != loteForm && (
+                <>
+                  <div className="col-md-12 border-bottom border-1 my-3">
+                    <p className="text-primary fw-bolder">
+                      <FaBuilding /> Lote valdío
+                    </p>
+                  </div>
+
+                  <div className="col-md-6 mb-3">
+                    <label className="form-label">Calle</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      {...register("lote_calle", {
+                        required: true,
+                      })}
+                      placeholder="Calle"
+                    />
+                  </div>
+                  <div className="col-md-6 mb-3">
+                    <label className="form-label">Colonia</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      {...register("lote_colonia", {
+                        required: true,
+                      })}
+                      placeholder="Colonia"
+                    />
+                  </div>
+                  <div className="col-md-6 mb-3">
+                    <label className="form-label">Código Postal</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      {...register("lote_cp", {
+                        required: true,
+                      })}
+                      placeholder="Código Postal"
+                    />
+                  </div>
+                  <div className="col-md-6 mb-3">
+                    <label className="form-label">Ciudad</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      {...register("lote_ciudad", {
+                        required: true,
+                      })}
+                      placeholder="Ciudad"
+                    />
+                  </div>
+                  <div className="col-md-6 mb-3">
+                    <label className="form-label">Teléfono</label>
+                    <input type="text" className="form-control" {...register("lote_telefono")} placeholder="Teléfono" />
+                  </div>
+                  <div className="col-md-6 mb-3">
+                    <label className="form-label">Correo electrónico</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      {...register("lote_correo", {
+                        required: true,
+                      })}
+                      placeholder="Correo electrónico"
+                    />
+                  </div>
+                </>
+              )}
+
               <div className="col-md-4 my-5">
                 <button type="submit" className="btn btn-primary form-control">
                   <FaRegSave /> Guardar
