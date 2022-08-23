@@ -34,7 +34,7 @@ export const InventarioActivo = () => {
                                                                 <div class="col-md-3 mb-1">
 
                                                                     <div class="card text-center order-visitor-card  p-4">
-                                                                        <a href="inventario-table.php">
+                                                                        <a href="/admin/inventario">
                                                                             <div class="card-block">
                                                                                 <h6 class="mb-4">Accesos</h6>
                                                                                 <h4 class="m-t-15 m-b-15">
@@ -50,7 +50,7 @@ export const InventarioActivo = () => {
                                                                 <div class="col-md-3 mb-1">
 
                                                                     <div class="card text-center order-visitor-card p-4">
-                                                                        <a href="inventario-table-areas.php">
+                                                                        <a href="/admin/inventario">
                                                                             <div class="card-block">
                                                                                 <h6 class="mb-4">Areas comunes</h6>
                                                                                 <h4 class="m-b-15">

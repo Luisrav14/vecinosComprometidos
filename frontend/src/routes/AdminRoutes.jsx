@@ -1,7 +1,11 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import { AdminDashboard, AgregarPropietario, BaseDatosGeneral, CuotasMantenimiento, CuotaTotalPagado, CuotaTotalPendiente, CuotaTotalRecaudar, EditarPropietario, ResumenInformacion, Asamblea, EstadosDeCuenta, AgregarAsamblea, AnunciosAcuerdos, InventarioActivo, InventarioDescontinuado, AgregarAnuncios,AccionesMod, CasasRenta, LotesBaldios } from "../pages";
+import { AdminDashboard, AgregarPropietario, BaseDatosGeneral, CuotasMantenimiento,
+  CuotaTotalPagado, CuotaTotalPendiente, CuotaTotalRecaudar, EditarPropietario, 
+  ResumenInformacion, Asamblea, EstadosDeCuenta, AgregarAsamblea, AnunciosAcuerdos,
+  InventarioActivo, InventarioDescontinuado, AgregarAnuncios,AccionesMod, CasasRenta,
+  LotesBaldios, Inventario } from "../pages";
 
 export const AdminRoutes = () => {
   return (
@@ -17,6 +21,7 @@ export const AdminRoutes = () => {
           <Route path="/editar-propietario" element={<EditarPropietario />} />
           <Route path="/inventarioactivo" element={<InventarioActivo />} />
           <Route path="/inventariodescontinuado" element={<InventarioDescontinuado />} />
+          <Route path="/inventario" element={<Inventario />} />
           <Route path="/acciones" element={<AccionesMod />} />
 
 
