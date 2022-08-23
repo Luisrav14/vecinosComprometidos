@@ -1,13 +1,9 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { BiCoffee } from "react-icons/bi";
 import { BsFillCameraVideoFill } from "react-icons/bs";
 import { FiTruck } from "react-icons/fi";
 import { FaLeaf } from "react-icons/fa";
 import { AiFillIdcard, AiFillFile, AiOutlineStar, AiFillTag } from "react-icons/ai";
-import Swal from "sweetalert2";
-import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
-import { ModalWithBtn } from "../../components";
 
 export const InventarioDescontinuado = () => {
   const inventarioItems = [

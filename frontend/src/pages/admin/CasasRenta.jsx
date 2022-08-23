@@ -1,5 +1,38 @@
 import { BsEnvelope, BsPencilSquare, BsTrash } from "react-icons/bs";
 import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
+import { ModalWithBtn } from "../../components";
+
+const DatosPersonales = () => {
+  return (
+    <>
+      <div className="container">
+        <div className="card">
+          <div className="card-header shadow shadow-sm">
+            <h5 className="card-title">Prueba Numero Uno</h5>
+            <hr />
+          </div>
+          <div className="card-body row">
+            <div className="col-md-6 mb-3">
+              <strong>Correo: </strong> mail@mail.com
+            </div>
+
+            <div className="col-md-6 mb-3">
+              <strong>Contraseña: </strong> **********
+            </div>
+
+            <div className="col-md-6 mb-3">
+              <strong>Telefono: </strong> 61812345678
+            </div>
+
+            <div className="col-md-6 mb-3">
+              <strong>Celular: </strong> 61812345678
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
 
 export const CasasRenta = () => {
   const columns = [
@@ -43,8 +76,16 @@ export const CasasRenta = () => {
     {
       id: 1,
       clave_unidad: "2022",
-      inquilino: "Inquilino prueba 1",
-      propietario: "Propietario prueba 1",
+      inquilino: (
+        <ModalWithBtn classBtn="btn btn-link text-decoration-none" textBtn={"Inquilino Prueba Numero 1"} title="Datos personales" footer={false}>
+          <DatosPersonales />
+        </ModalWithBtn>
+      ),
+      propietario: (
+        <ModalWithBtn classBtn="btn btn-link text-decoration-none" textBtn={"Propietario prueba 1"} title="Datos personales" footer={false}>
+          <DatosPersonales />
+        </ModalWithBtn>
+      ),
       acciones: [
         <button className="btn btn-warning mx-2">
           <BsPencilSquare />
@@ -60,8 +101,16 @@ export const CasasRenta = () => {
     {
       id: 2,
       clave_unidad: "2022",
-      inquilino: "Inquilino prueba 2",
-      propietario: "Propietario prueba 2",
+      inquilino: (
+        <ModalWithBtn classBtn="btn btn-link text-decoration-none" textBtn={"Inquilino Prueba Numero 2"} title="Datos personales" footer={false}>
+          <DatosPersonales />
+        </ModalWithBtn>
+      ),
+      propietario: (
+        <ModalWithBtn classBtn="btn btn-link text-decoration-none" textBtn={"Propietario prueba 2"} title="Datos personales" footer={false}>
+          <DatosPersonales />
+        </ModalWithBtn>
+      ),
       acciones: [
         <button className="btn btn-warning mx-2">
           <BsPencilSquare />
