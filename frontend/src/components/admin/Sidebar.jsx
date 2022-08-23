@@ -70,12 +70,12 @@ export const Sidebar = ({ show = true }) => {
                 </a>
                 <ul id="ingresos-3" className="sidebar-dropdown list-unstyled collapse">
                   <li className="sidebar-item">
-                    <a className="sidebar-link" href="/admin/inventarioactivo">
+                    <NavLink className="sidebar-link" to="/admin/inventarioactivo">
                       Activo
-                    </a>
-                    <a className="sidebar-link" href="/admin/inventariodescontinuado">
+                    </NavLink>
+                    <NavLink className="sidebar-link" to="/admin/inventariodescontinuado">
                       Descontinuado
-                    </a>
+                    </NavLink>
                   </li>
                 </ul>
               </li>
