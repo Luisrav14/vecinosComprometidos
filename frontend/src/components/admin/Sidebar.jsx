@@ -35,14 +35,14 @@ export const Sidebar = ({ show = true }) => {
                 </NavLink>
               </li>
               <li className="sidebar-item">
-                <a className="sidebar-link" href="/admin">
+                <NavLink className="sidebar-link" to="/admin/casas-renta">
                   Casas en renta
-                </a>
+                </NavLink>
               </li>
               <li className="sidebar-item">
-                <a className="sidebar-link" href="/admin">
+                <NavLink className="sidebar-link" to="/admin/lotes-baldios">
                   Lotes Baldíos
-                </a>
+                </NavLink>
               </li>
               <li className="sidebar-item">
                 <a className="sidebar-link" href="/admin">

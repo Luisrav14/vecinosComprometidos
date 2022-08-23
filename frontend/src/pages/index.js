@@ -18,9 +18,8 @@ export * from "./admin/AnunciosAcuerdos";
 export * from "./admin/AgregarAnuncios";
 export * from "./admin/InventarioActivo";
 export * from "./admin/InventarioDescontinuado";
-
-
-
+export * from "./admin/CasasRenta";
+export * from "./admin/LotesBaldios";
 
 export * from "./usuarios/dashuser";
 export * from "./usuarios/pago-efectivo";
