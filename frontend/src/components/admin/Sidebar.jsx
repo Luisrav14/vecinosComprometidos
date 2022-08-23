@@ -277,11 +277,11 @@ export const Sidebar = ({ show = true }) => {
                         </a>
                       </li>
                     </ul>
-                    <li className="sidebar-item">
-                      <a className="sidebar-link" href="#">
-                        Ingresos cancelados
-                      </a>
-                    </li>
+                  </li>
+                  <li className="sidebar-item">
+                    <a className="sidebar-link" href="#">
+                      Ingresos cancelados
+                    </a>
                   </li>
                 </ul>
               </li>

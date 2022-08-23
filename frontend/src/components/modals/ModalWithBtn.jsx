@@ -1,11 +1,12 @@
 export const ModalWithBtn = ({ title, textBtn, iconBtn, classBtn, footer = true, children }) => {
+  const modalKey = Math.floor(Math.random() * 10000);
   return (
     <>
-      <button className={classBtn} type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <button className={classBtn} type="button" data-bs-toggle="modal" data-bs-target={`#Modal${modalKey}`}>
         {iconBtn} {textBtn}
       </button>
 
-      <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div className="modal fade" id={`Modal${modalKey}`} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" key={modalKey}>
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">

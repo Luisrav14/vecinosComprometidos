@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import DataTable from "react-data-table-component";
 
 import { RowExpandedComponent } from "./RowExpandedComponent";
@@ -11,7 +10,7 @@ export const DataTableComponent = ({ columns, data, expandible = false }) => {
       data={data}
       columns={columns}
       pagination
-      expandableRows={expandible} // Acordion en rows
+      expandableRows={expandible} // Acordion rows
       expandableRowsComponent={RowExpandedComponent}
       paginationComponentOptions={PaginationOptionsComponent}
       customStyles={customStyles}
