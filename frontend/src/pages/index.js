@@ -22,6 +22,17 @@ export * from "./admin/Inventario";
 export * from "./admin/Acciones";
 export * from "./admin/CasasRenta";
 export * from "./admin/LotesBaldios";
+export * from "./admin/Incidentes.jsx";
+export * from "./admin/AgregarIncidente";
+
+
+
+
+
+
+
+
+
 
 export * from "./usuarios/dashuser";
 export * from "./usuarios/pago-efectivo";

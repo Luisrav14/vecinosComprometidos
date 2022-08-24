@@ -75,10 +75,10 @@ export const InventarioActivo = () => {
                       <Link to={`/admin/inventario/${item.nombre}`}>
                         <div className="card-block">
                           <h6 className="mb-4"> {item.nombre} </h6>
-                          <h4 className="m-t-15 m-b-15">
+                          <h4 className="">
                             {item.icon} {item.cantidad}
                           </h4>
-                          <p className="m-b-0"></p>
+                          <p className="mb-5"></p>
                         </div>
                       </Link>
                     </div>

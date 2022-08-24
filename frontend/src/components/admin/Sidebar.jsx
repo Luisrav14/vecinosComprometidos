@@ -112,7 +112,7 @@ export const Sidebar = ({ show = true }) => {
                 </a>
               </li>
               <li className="sidebar-item">
-                <a className="sidebar-link" href="/admin">
+                <a className="sidebar-link" href="/admin/incidentes">
                   Incidentes
                 </a>
               </li>
