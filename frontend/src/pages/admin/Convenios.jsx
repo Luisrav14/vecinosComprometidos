@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { BsPlusLg, BsEnvelope, BsPencilSquare, BsFillChatLeftTextFill } from "react-icons/bs";
-import { AiFillDelete } from "react-icons/ai";
+import { AiFillDelete,AiFillFile } from "react-icons/ai";
 import Swal from "sweetalert2";
 import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
 
-export const Incidentes = () => {
+export const Convenios = () => {
   const sendEmail = () => {
     Swal.fire({
       icon: "success",
@@ -16,7 +16,7 @@ export const Incidentes = () => {
 
   const columns = [
     {
-      id: "id",
+      id: "#",
       name: "#",
       selector: (row) => row.id,
       sortable: true,
@@ -24,30 +24,45 @@ export const Incidentes = () => {
       center: true,
     },
     {
-      id: "Motivo",
-      name: "Motivo",
-      selector: (row) => row.motivo,
-      sortable: true,
-      center: true,
-      width: "40%",
-    },
-    {
-      id: "Descripcion",
-      name: "Descripcion",
-      selector: (row) => row.descripcion,
+    
+      name: "Colono",
+      selector: (row) => row.colono,
       sortable: true,
       center: true,
       width: "15%",
     },
+   
     {
-      id: "Fecha ",
-      name: "Fecha ",
-      selector: (row) => row.fecha,
+     
+      name: "Descripcion",
+      selector: (row) => row.descripcion,
       center: true,
      
     },
     {
-      id: "Acciones",
+    
+      name: "Fecha inicio",
+      selector: (row) => row.fechainicio,
+      center: true,
+     
+    },
+    {
+    
+      name: "Fecha final",
+      selector: (row) => row.fechafinal,
+      center: true,
+     
+    },
+    {
+     
+      name: "Convenio",
+      selector: (row) => row.convenio,
+      center: true,
+     
+    },
+   
+    {
+     
       name: "Acciones",
       selector: (row) => row.acciones,
       center: true,
@@ -58,15 +73,23 @@ export const Incidentes = () => {
   const data = [
     {
       id: 1,
-      motivo:"Daño a la estructura de pavimento en calle bugambilias	",
-      fecha: "2021-10-27",
-      titulo: "PRIMERA ASAMBLEA EXTRAORDINARIA 2022",
+      colono:"Maura Isela Flores Murillo",
+      fechainicio: "2021-10-27",
+      fechafinal: "2021-10-27",
       descripcion: [
         
         <button className="btn btn-primary mx-2" >
           <BsFillChatLeftTextFill />
         </button>,
       ],
+      convenio: [
+        
+        <button className="btn btn-primary mx-2" >
+          <AiFillFile />
+        </button>,
+      ],
+
+    
       acciones: [
         <button className="btn btn-warning mx-2">
           <BsPencilSquare />
@@ -79,40 +102,46 @@ export const Incidentes = () => {
     },
     {
       id: 2,
-      motivo:"Av. Las Quintas esquina con Magnolias	",
-      fecha: "2021-10-27",
-      titulo: "PRIMERA ASAMBLEA EXTRAORDINARIA 2022",
+      colono:"Luis Fernando Soto Jaquez	",
+      fechainicio: "2021-10-27",
+      fechafinal: "2021-10-27",
       descripcion: [
         
         <button className="btn btn-primary mx-2" >
           <BsFillChatLeftTextFill />
         </button>,
       ],
+      convenio: [
+        
+        <button className="btn btn-primary mx-2" >
+          <AiFillFile />
+        </button>,
+      ],
+
+    
       acciones: [
         <button className="btn btn-warning mx-2">
           <BsPencilSquare />
         </button>,
-         <button className="btn btn-danger mx-2" >
+         <button className="btn btn-danger mx-2" onClick={sendEmail}>
          <AiFillDelete />
        </button>,
       ],
-     
+      
     },
   ];
 
   return (
     <>
-      <h1 className="mb-3 fw-bold">Incidentes</h1>
-      <h6>Aquí se muestra una lista de eventos notorios que sucedieron en el día a día en el fraccionamiento, podremos agregar y actualizarlos a nuestra conveniencia, o eliminarlos.
-
-</h6>
+      <h1 className="mb-3 fw-bold">Convenios</h1>
+      <h6>En esta sección veremos una lista de acuerdos a los que se ha llegado con individuos externos o internos a la residencia, respecto a diferentes circunstancias.</h6>
       <div className="card">
         <div className="card-header border-bottom border-1 ">
           <div className="row d-flex">
-            <h5 className="card-title col-md-6 pt-2">Incidentes </h5>
+            <h5 className="card-title col-md-6 pt-2">Reportes pendientes </h5>
            
             <div className="col-md-6 text-right">
-              <Link to="/admin/agregarincidente" className="btn btn-primary">
+            <Link to="/admin/agregarconvenios" className="btn btn-primary">
                 <BsPlusLg /> Agregar
               </Link>
             </div>

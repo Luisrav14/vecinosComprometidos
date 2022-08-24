@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { BsPlusLg, BsEnvelope, BsPencilSquare, BsFillChatLeftTextFill } from "react-icons/bs";
-import { AiFillDelete } from "react-icons/ai";
+import { AiFillDelete,AiFillFile } from "react-icons/ai";
 import Swal from "sweetalert2";
 import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
 
-export const Incidentes = () => {
+export const ReportesResueltos = () => {
   const sendEmail = () => {
     Swal.fire({
       icon: "success",
@@ -16,7 +16,7 @@ export const Incidentes = () => {
 
   const columns = [
     {
-      id: "id",
+      folio: "Folio",
       name: "#",
       selector: (row) => row.id,
       sortable: true,
@@ -24,20 +24,27 @@ export const Incidentes = () => {
       center: true,
     },
     {
-      id: "Motivo",
-      name: "Motivo",
-      selector: (row) => row.motivo,
-      sortable: true,
-      center: true,
-      width: "40%",
-    },
-    {
-      id: "Descripcion",
-      name: "Descripcion",
-      selector: (row) => row.descripcion,
+      id: "Nombre",
+      name: "Nombre",
+      selector: (row) => row.nombre,
       sortable: true,
       center: true,
       width: "15%",
+    },
+    {
+      id: "Direccion",
+      name: "Direccion",
+      selector: (row) => row.direccion,
+      sortable: true,
+      center: true,
+      width: "15%",
+    },
+    {
+      id: "Consulta ",
+      name: "Consulta",
+      selector: (row) => row.consulta,
+      center: true,
+     
     },
     {
       id: "Fecha ",
@@ -46,6 +53,14 @@ export const Incidentes = () => {
       center: true,
      
     },
+    {
+      id: "Estatus",
+      name: "Estatus",
+      selector: (row) => row.estatus,
+      center: true,
+     
+    },
+   
     {
       id: "Acciones",
       name: "Acciones",
@@ -58,63 +73,57 @@ export const Incidentes = () => {
   const data = [
     {
       id: 1,
-      motivo:"Daño a la estructura de pavimento en calle bugambilias	",
+      nombre:"Alicia Talamantes	",
       fecha: "2021-10-27",
-      titulo: "PRIMERA ASAMBLEA EXTRAORDINARIA 2022",
-      descripcion: [
+      direccion: "Azaleas 108",
+      consulta: [
         
         <button className="btn btn-primary mx-2" >
           <BsFillChatLeftTextFill />
         </button>,
       ],
+      estatus:"Resuelto",
       acciones: [
         <button className="btn btn-warning mx-2">
-          <BsPencilSquare />
+          <AiFillFile />
         </button>,
-         <button className="btn btn-danger mx-2" onClick={sendEmail}>
-         <AiFillDelete />
-       </button>,
+        
       ],
       
     },
     {
       id: 2,
-      motivo:"Av. Las Quintas esquina con Magnolias	",
+      nombre:"Luisa Enriquez",
       fecha: "2021-10-27",
-      titulo: "PRIMERA ASAMBLEA EXTRAORDINARIA 2022",
-      descripcion: [
+      direccion: "Orquidea 109",
+      consulta: [
         
         <button className="btn btn-primary mx-2" >
           <BsFillChatLeftTextFill />
         </button>,
       ],
+      estatus:"Resuelto",
       acciones: [
         <button className="btn btn-warning mx-2">
-          <BsPencilSquare />
+          <AiFillFile />
         </button>,
-         <button className="btn btn-danger mx-2" >
-         <AiFillDelete />
-       </button>,
+        
       ],
-     
+      
     },
   ];
 
   return (
     <>
-      <h1 className="mb-3 fw-bold">Incidentes</h1>
-      <h6>Aquí se muestra una lista de eventos notorios que sucedieron en el día a día en el fraccionamiento, podremos agregar y actualizarlos a nuestra conveniencia, o eliminarlos.
-
-</h6>
+      <h1 className="mb-3 fw-bold">Reportes Resueltos</h1>
+      <h6>En esta sección tenemos una lista de reportes a los que ya le dimos seguimiento, podemos consultar esta tabla amanera de historial, para su conveniencia puede descargar el reporte en formato PDF o visualizarlo en línea.</h6>
       <div className="card">
         <div className="card-header border-bottom border-1 ">
           <div className="row d-flex">
-            <h5 className="card-title col-md-6 pt-2">Incidentes </h5>
+            <h5 className="card-title col-md-6 pt-2">Reportes Resueltos </h5>
            
             <div className="col-md-6 text-right">
-              <Link to="/admin/agregarincidente" className="btn btn-primary">
-                <BsPlusLg /> Agregar
-              </Link>
+            
             </div>
           </div>
         </div>

@@ -24,15 +24,10 @@ export * from "./admin/CasasRenta";
 export * from "./admin/LotesBaldios";
 export * from "./admin/Incidentes.jsx";
 export * from "./admin/AgregarIncidente";
-
-
-
-
-
-
-
-
-
+export * from "./admin/Reportes";
+export * from "./admin/ReportesResueltos";
+export * from "./admin/Convenios";
+export * from "./admin/AgregarConvenio";
 
 export * from "./usuarios/dashuser";
 export * from "./usuarios/pago-efectivo";
