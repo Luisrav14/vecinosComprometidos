@@ -1,7 +1,12 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import { AdminDashboard, AgregarPropietario, BaseDatosGeneral, CuotasMantenimiento, CuotaTotalPagado, CuotaTotalPendiente, CuotaTotalRecaudar, EditarPropietario, ResumenInformacion, Asamblea, EstadosDeCuenta, AgregarAsamblea, AnunciosAcuerdos, InventarioActivo, InventarioDescontinuado, AgregarAnuncios, AccionesMod, CasasRenta, LotesBaldios, Inventario, InformacionPersonal, CensoAnimal, Estadisticas } from "../pages";
+import { AdminDashboard, AgregarPropietario, BaseDatosGeneral,
+   CuotasMantenimiento, CuotaTotalPagado, CuotaTotalPendiente,
+    CuotaTotalRecaudar, EditarPropietario, ResumenInformacion, 
+    Asamblea, EstadosDeCuenta, AgregarAsamblea, AnunciosAcuerdos, 
+    InventarioActivo, InventarioDescontinuado, AgregarAnuncios,
+     AccionesMod, CasasRenta, LotesBaldios, Inventario, InformacionPersonal, CensoAnimal, Estadisticas, Incidentes, AgregarIncidente,Reportes, ReportesResueltos, Convenios, AgregarConvenio } from "../pages";
 
 export const AdminRoutes = () => {
   return (
@@ -28,7 +33,12 @@ export const AdminRoutes = () => {
           <Route path="/agregar-asamblea" element={<AgregarAsamblea />} />
           <Route path="/anunciosacuerdos" element={<AnunciosAcuerdos />} />
           <Route path="/agregar-anuncios" element={<AgregarAnuncios />} />
-
+          <Route path="/incidentes" element={<Incidentes />} />
+          <Route path="/agregarincidente" element={<AgregarIncidente />} />
+          <Route path="/reportespendientes" element={<Reportes/>} />
+          <Route path="/reportesresueltos" element={<ReportesResueltos/>} />
+          <Route path="/convenios" element={<Convenios/>} />
+          <Route path="/agregarconvenios" element={<AgregarConvenio/>} />
           {/* RUTAS FINANZAS */}
           <Route path="/estados-cuenta" element={<EstadosDeCuenta />} />
           <Route path="/cuotas-mantenimiento" element={<CuotasMantenimiento />} />

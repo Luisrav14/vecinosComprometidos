@@ -112,7 +112,7 @@ export const Sidebar = ({ show = true }) => {
                 </a>
               </li>
               <li className="sidebar-item">
-                <a className="sidebar-link" href="/admin">
+                <a className="sidebar-link" href="/admin/incidentes">
                   Incidentes
                 </a>
               </li>
@@ -122,17 +122,17 @@ export const Sidebar = ({ show = true }) => {
                 </a>
                 <ul id="reportes-3" className="sidebar-dropdown list-unstyled collapse">
                   <li className="sidebar-item">
-                    <a className="sidebar-link" href="#">
+                    <a className="sidebar-link" href="/admin/reportespendientes">
                       Pendientes
                     </a>
-                    <a className="sidebar-link" href="#">
+                    <a className="sidebar-link" href="/admin/reportesresueltos">
                       Resueltos
                     </a>
                   </li>
                 </ul>
               </li>
               <li className="sidebar-item">
-                <a className="sidebar-link" href="/admin">
+                <a className="sidebar-link" href="/admin/convenios">
                   Convenios
                 </a>
               </li>

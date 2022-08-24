@@ -24,7 +24,7 @@ export const Inventario = () => {
       name: "#",
       selector: (row) => row.id,
       sortable: true,
-      width: "7%",
+      width: "5%",
       center: true,
     },
     {
@@ -33,6 +33,7 @@ export const Inventario = () => {
       selector: (row) => row.categoria,
       sortable: true,
       center: true,
+      width: "15%",
     },
     {
       id: "Articulo",
