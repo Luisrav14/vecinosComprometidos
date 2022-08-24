@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
-import { BsFileEarmarkExcel, BsFileEarmarkPdf, BsSearch, BsTable } from "react-icons/bs";
+import { BsSearch, BsTable } from "react-icons/bs";
 import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
-import { exportPDF } from "../../components/admin/datatable/ExportPDF";
 
 export const CuotasMantenimiento = () => {
   const columns = [
@@ -140,15 +139,6 @@ export const CuotasMantenimiento = () => {
                 <BsTable /> Mostrar todo
               </button>
             </div>
-          </div>
-          <div className="col-md-12 d-flex mb-3 justify-content-start">
-            <input type="text" className="form-control col-md-3" placeholder="Buscar..." />
-            <button className="btn btn-primary mx-2" onClick={() => exportPDF()}>
-              <BsFileEarmarkPdf /> PDF
-            </button>
-            <button className="btn btn-primary mx-2">
-              <BsFileEarmarkExcel /> Excel
-            </button>
           </div>
           <div className="col-md-12">
             <DataTableComponent columns={columns} data={data} />

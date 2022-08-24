@@ -45,9 +45,9 @@ export const Sidebar = ({ show = true }) => {
                 </NavLink>
               </li>
               <li className="sidebar-item">
-                <a className="sidebar-link" href="/admin">
+                <NavLink className="sidebar-link" to="/admin/informacion-personal">
                   Información personal
-                </a>
+                </NavLink>
               </li>
               <li className="sidebar-item">
                 <a className="sidebar-link" href="/admin">
@@ -55,14 +55,14 @@ export const Sidebar = ({ show = true }) => {
                 </a>
               </li>
               <li className="sidebar-item">
-                <a className="sidebar-link" href="/admin">
+                <NavLink className="sidebar-link" to="/admin/censo-animal">
                   Censo canino
-                </a>
+                </NavLink>
               </li>
               <li className="sidebar-item">
-                <a className="sidebar-link" href="/admin">
+                <NavLink className="sidebar-link" to="/admin/estadisticas">
                   Estadísticas
-                </a>
+                </NavLink>
               </li>
               <li className="sidebar-item">
                 <a data-bs-target="#ingresos-3" data-bs-toggle="collapse" className="sidebar-link collapsed" aria-expanded="false">

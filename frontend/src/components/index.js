@@ -11,6 +11,9 @@ export * from "./admin/charts/BarChart";
 export * from "./admin/charts/DonutChart";
 export * from "./admin/charts/LineChart";
 
+export * from "./admin/datatable/DataTableComponent";
+
 export * from "./modals/ModalWithBtn";
 
 export * from "./sweetAlert/TerminosCondicionesAlert";
+export * from "./sweetAlert/EliminarAlert";

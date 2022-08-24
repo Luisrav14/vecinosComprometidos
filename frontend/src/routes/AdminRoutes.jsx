@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import { AdminDashboard, AgregarPropietario, BaseDatosGeneral, CuotasMantenimiento, CuotaTotalPagado, CuotaTotalPendiente, CuotaTotalRecaudar, EditarPropietario, ResumenInformacion, Asamblea, EstadosDeCuenta, AgregarAsamblea, AnunciosAcuerdos, InventarioActivo, InventarioDescontinuado, AgregarAnuncios, AccionesMod, CasasRenta, LotesBaldios, Inventario } from "../pages";
+import { AdminDashboard, AgregarPropietario, BaseDatosGeneral, CuotasMantenimiento, CuotaTotalPagado, CuotaTotalPendiente, CuotaTotalRecaudar, EditarPropietario, ResumenInformacion, Asamblea, EstadosDeCuenta, AgregarAsamblea, AnunciosAcuerdos, InventarioActivo, InventarioDescontinuado, AgregarAnuncios, AccionesMod, CasasRenta, LotesBaldios, Inventario, InformacionPersonal, CensoAnimal, Estadisticas } from "../pages";
 
 export const AdminRoutes = () => {
   return (
@@ -19,6 +19,9 @@ export const AdminRoutes = () => {
           <Route path="/inventariodescontinuado" element={<InventarioDescontinuado />} />
           <Route path="/inventario/:categoria" element={<Inventario />} />
           <Route path="/acciones" element={<AccionesMod />} />
+          <Route path="/informacion-personal" element={<InformacionPersonal />} />
+          <Route path="/censo-animal" element={<CensoAnimal />} />
+          <Route path="/estadisticas" element={<Estadisticas />} />
 
           {/* RUTAS OPERACIONES */}
           <Route path="/asambleas" element={<Asamblea />} />

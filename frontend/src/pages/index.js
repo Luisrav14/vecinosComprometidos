@@ -22,6 +22,9 @@ export * from "./admin/Inventario";
 export * from "./admin/Acciones";
 export * from "./admin/CasasRenta";
 export * from "./admin/LotesBaldios";
+export * from "./admin/CensoAnimal";
+export * from "./admin/Estadisticas";
+export * from "./admin/InformacionPersonal";
 
 export * from "./usuarios/dashuser";
 export * from "./usuarios/pago-efectivo";
