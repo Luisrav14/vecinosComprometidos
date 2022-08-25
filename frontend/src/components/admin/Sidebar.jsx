@@ -142,7 +142,7 @@ export const Sidebar = ({ show = true }) => {
                 </a>
                 <ul id="informes-3" className="sidebar-dropdown list-unstyled collapse">
                   <li className="sidebar-item">
-                    <a className="sidebar-link" href="#">
+                    <a className="sidebar-link" href="/admin/informes-financieros">
                       Informes financieros
                     </a>
                     <a className="sidebar-link" href="#">

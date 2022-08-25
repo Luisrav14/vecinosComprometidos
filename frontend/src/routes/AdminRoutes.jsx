@@ -6,7 +6,9 @@ import { AdminDashboard, AgregarPropietario, BaseDatosGeneral,
     CuotaTotalRecaudar, EditarPropietario, ResumenInformacion, 
     Asamblea, EstadosDeCuenta, AgregarAsamblea, AnunciosAcuerdos, 
     InventarioActivo, InventarioDescontinuado, AgregarAnuncios,
-     AccionesMod, CasasRenta, LotesBaldios, Inventario, InformacionPersonal, CensoAnimal, Estadisticas, Incidentes, AgregarIncidente,Reportes, ReportesResueltos, Convenios, AgregarConvenio } from "../pages";
+    AccionesMod, CasasRenta, LotesBaldios, Inventario, InformacionPersonal,
+    CensoAnimal, Estadisticas, Incidentes, AgregarIncidente,Reportes, ReportesResueltos,
+    Convenios, AgregarConvenio, InformesFinancieros } from "../pages";
 
 export const AdminRoutes = () => {
   return (
@@ -39,6 +41,7 @@ export const AdminRoutes = () => {
           <Route path="/reportesresueltos" element={<ReportesResueltos/>} />
           <Route path="/convenios" element={<Convenios/>} />
           <Route path="/agregarconvenios" element={<AgregarConvenio/>} />
+          <Route path="/informes-financieros" element={<InformesFinancieros/>} />
           {/* RUTAS FINANZAS */}
           <Route path="/estados-cuenta" element={<EstadosDeCuenta />} />
           <Route path="/cuotas-mantenimiento" element={<CuotasMantenimiento />} />
