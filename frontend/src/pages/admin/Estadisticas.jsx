@@ -128,7 +128,7 @@ export const Estadisticas = () => {
 
   return (
     <>
-      {/* <div>
+      <div>
         <h1 className="mb-3 fw-bold">Estadísticas</h1>
 
         <div className="card">
@@ -167,7 +167,7 @@ export const Estadisticas = () => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </>
   );
 };

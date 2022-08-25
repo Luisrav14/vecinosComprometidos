@@ -1,6 +1,7 @@
 import { BsPencilSquare } from "react-icons/bs";
 import { FaBox, FaDog, FaPlus, FaTrash } from "react-icons/fa";
 import { DataTableComponent, EliminarAlert, ModalWithBtn } from "../../components/";
+import { MascotasForm } from "../../components/admin/forms/MascotasForm";
 
 const InfoMascotas = () => {
   return (
@@ -25,35 +26,6 @@ const InfoMascotas = () => {
         </div>
       </div>
     </div>
-  );
-};
-
-const MascotasForm = () => {
-  return (
-    <>
-      <form action="" className="text-left">
-        <div className="form-group col-md-12">
-          <label htmlFor="">Dirección</label>
-          <select className="form-select">
-            <option selected>Selecciona una dirección</option>
-            <option value="">Quinta #123</option>
-            <option value="">Pinos #111</option>
-          </select>
-        </div>
-        <div className="form-group col-md-12">
-          <label htmlFor="">Colono</label>
-          <input className="form-control" type="text" disabled value="Nombre Propietario " />
-        </div>
-        <div className="form-group col-md-12">
-          <label for="isPet">¿Cuenta con alguna mascota?</label>
-          <select className="form-select">
-            <option selected>Selecciona una dirección</option>
-            <option value="">Si</option>
-            <option value="">No</option>
-          </select>
-        </div>
-      </form>
-    </>
   );
 };
 
