@@ -31,6 +31,10 @@ export * from "./admin/AgregarConvenio";
 export * from "./admin/CensoAnimal";
 export * from "./admin/Estadisticas";
 export * from "./admin/InformacionPersonal";
+export * from "./admin/InformesFinancieros";
+
+
+
 
 export * from "./usuarios/dashuser";
 export * from "./usuarios/pago-efectivo";
