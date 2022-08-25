@@ -8,7 +8,8 @@ import { AdminDashboard, AgregarPropietario, BaseDatosGeneral,
     InventarioActivo, InventarioDescontinuado, AgregarAnuncios,
     AccionesMod, CasasRenta, LotesBaldios, Inventario, InformacionPersonal,
     CensoAnimal, Estadisticas, Incidentes, AgregarIncidente,Reportes, ReportesResueltos,
-    Convenios, AgregarConvenio, InformesFinancieros } from "../pages";
+    Convenios, AgregarConvenio, InformesFinancieros, AgregarInformeFinanciero, RecursosHumanos,
+    AgregarRecursosHumanos } from "../pages";
 
 export const AdminRoutes = () => {
   return (
@@ -42,6 +43,14 @@ export const AdminRoutes = () => {
           <Route path="/convenios" element={<Convenios/>} />
           <Route path="/agregarconvenios" element={<AgregarConvenio/>} />
           <Route path="/informes-financieros" element={<InformesFinancieros/>} />
+          <Route path="/agregar-informe-financiero" element={<AgregarInformeFinanciero/>} />
+          <Route path="/recursos-humanos" element={<RecursosHumanos/>} />
+          <Route path="/agregar-recursos-humanos" element={<AgregarRecursosHumanos/>} />
+
+
+
+
+
           {/* RUTAS FINANZAS */}
           <Route path="/estados-cuenta" element={<EstadosDeCuenta />} />
           <Route path="/cuotas-mantenimiento" element={<CuotasMantenimiento />} />

@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { FaArrowLeft, FaHouseUser, FaFileAlt, FaHome, FaRegSave } from "react-icons/fa";
 import { RegresarBtn } from "../../components/RegresarBtn";
 
-export const AgregarAnuncios = () => {
+export const AgregarRecursosHumanos = () => {
   const { register, handleSubmit } = useForm();
 
   const showData = (data) => console.log(data);
@@ -13,7 +13,7 @@ export const AgregarAnuncios = () => {
       <div className="card">
         <div className="card-header border-bottom border-1">
           <div className="row d-flex">
-            <h5 className="card-title col-md-6 pt-2"> Agregar accion</h5>
+            <h5 className="card-title col-md-6 pt-2">Agregar contrato</h5>
             <div className="col-md-6 text-right">
 
               <RegresarBtn />
@@ -23,91 +23,128 @@ export const AgregarAnuncios = () => {
         <div className="card-body">
           <form onSubmit={handleSubmit(showData)}>
             <div className="row justify-content-center d-flex">
-              <div className="col-md-6 mb-3">
-                <label className="form-label">Fecha de inicio</label>
-                <input
-                  type="date"
-                  className="form-control"
-                  {...register("fecha_inicio", {
-                    required: true,
-                  })}
-                />
-              </div>
-              <div className="col-md-6 mb-3">
-                <label className="form-label">Fecha de conclusion</label>
-                <input
-                  type="date"
-                  className="form-control"
-                  {...register("fecha_conclu", {
-                    required: true,
-                  })}
-                />
-              </div>
-              <div className="col-md-6 mb-3">
-                <label className="form-label">Titulo</label>
+
+
+
+
+             
+              <div className="col-md-12s mb-3">
+                <label className="form-label">Nombre</label>
                 <input
                   type="text"
                   className="form-control"
                   {...register("titulo", {
                     required: true,
                   })}
-                  placeholder="Titulo"
+                  placeholder="Nombre"
                 />
               </div>
+              
               <div className="col-md-6 mb-3">
-                <label className="form-label">Descripcion</label>
+                <label className="form-label">Apellido Paterno</label>
                 <input
                   type="text"
                   className="form-control"
-                  {...register("Descripcion", {
+                  {...register("motivo", {
                     required: true,
                   })}
-                  placeholder="Descripcion"
+                  placeholder="Apellido Paterno"
                 />
               </div>
+
               <div className="col-md-6 mb-3">
-                <label className="form-label">Soluciones</label>
+                <label className="form-label">Apellido Materno</label>
                 <input
                   type="text"
                   className="form-control"
-                  {...register("Soluciones", {
+                  {...register("motivo", {
                     required: true,
                   })}
-                  placeholder="Soluciones"
+                  placeholder="Apellido Materno"
                 />
               </div>
-              <div className="col-md-6 mb-3">
-                <label className="form-label">Estatus</label>
-                <select class="form-select" aria-label="Default select example">
-                  <option selected>Open this select menu</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
-              </div>
-              <div className="col-md-6 mb-3">
-                <label className="form-label">Resultados</label>
+
+
+              <div className="col-md-4 mb-3">
+                <label className="form-label">Fraccionamiento</label>
                 <input
-                  type="Resultados"
+                  type="text"
                   className="form-control"
-                  {...register("Resultados", {
+                  {...register("fraccionamiento", {
                     required: true,
                   })}
-                  placeholder="Resultados"
+                  placeholder="Fraccionamiento"
                 />
               </div>
+
+              <div className="col-md-4 mb-3">
+                <label className="form-label">Calle</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  {...register("Calle", {
+                    required: true,
+                  })}
+                  placeholder="Calle"
+                />
+              </div>
+
+              <div className="col-md-4 mb-3">
+                <label className="form-label">Num ext</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  {...register("Num ext", {
+                    required: true,
+                  })}
+                  placeholder="Num ext"
+                />
+              </div>
+
+
+
               <div className="col-md-6 mb-3">
-                <label className="form-label" hidden>oculto</label>
-                <input hidden
-                  type="oculto"
+                <label className="form-label">Telefono</label>
+                <input
+                  type="text"
                   className="form-control"
-                  {...register("oculto", {
+                  {...register("telefono", {
                     required: true,
                   })}
-                  placeholder="oculto"
+                  placeholder="Telefono"
                 />
               </div>
-             <div className="col-md-4 my-5">
+
+
+              <div className="col-md-6 mb-3">
+                <label className="form-label">Correo</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  {...register("correo", {
+                    required: true,
+                  })}
+                  placeholder="Correo"
+                />
+              </div>
+
+
+
+
+
+
+
+              <div className="col-12 mb-3">
+                <label className="form-label">Contrato en archivo PDF</label>
+                <input class="form-control" id="formFileLg" type="file"/>
+              </div>
+              
+
+
+
+
+
+              <div className="col-md-4 my-5">
                 <button type="submit" className="btn btn-primary form-control">
                   <FaRegSave /> Guardar
                 </button>

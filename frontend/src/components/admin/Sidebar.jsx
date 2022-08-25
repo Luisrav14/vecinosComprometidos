@@ -145,7 +145,7 @@ export const Sidebar = ({ show = true }) => {
                     <a className="sidebar-link" href="/admin/informes-financieros">
                       Informes financieros
                     </a>
-                    <a className="sidebar-link" href="#">
+                    <a className="sidebar-link" href="/admin/recursos-humanos">
                       Recursos humanos
                     </a>
                     <a className="sidebar-link" href="#">

@@ -32,9 +32,9 @@ export * from "./admin/CensoAnimal";
 export * from "./admin/Estadisticas";
 export * from "./admin/InformacionPersonal";
 export * from "./admin/InformesFinancieros";
-
-
-
+export * from "./admin/AgregarInformeFinanciero";
+export * from "./admin/RecursosHumanos";
+export * from "./admin/AgregarRecursosHumanos";
 
 export * from "./usuarios/dashuser";
 export * from "./usuarios/pago-efectivo";
