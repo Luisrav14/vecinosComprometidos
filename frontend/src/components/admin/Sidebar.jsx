@@ -148,17 +148,17 @@ export const Sidebar = ({ show = true }) => {
                     <a className="sidebar-link" href="/admin/recursos-humanos">
                       Recursos humanos
                     </a>
-                    <a className="sidebar-link" href="#">
+                    <a className="sidebar-link" href="/admin/proveedores">
                       Proveedores
                     </a>
-                    <a className="sidebar-link" href="#">
+                    <a className="sidebar-link" href="/admin/reglamentos">
                       Reglamentos
                     </a>
                   </li>
                 </ul>
               </li>
               <li className="sidebar-item">
-                <a className="sidebar-link" href="/admin">
+                <a className="sidebar-link" href="/admin/blogs">
                   Blogs
                 </a>
               </li>

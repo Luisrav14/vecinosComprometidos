@@ -5,7 +5,7 @@ import { AiFillDelete,AiFillFile } from "react-icons/ai";
 import Swal from "sweetalert2";
 import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
 
-export const RecursosHumanos = () => {
+export const Reglamentos = () => {
  
 
   const columns = [
@@ -19,21 +19,27 @@ export const RecursosHumanos = () => {
     },
     {
     
-      name: "Nombre",
-      selector: (row) => row.nombre,
+      name: "Titulo",
+      selector: (row) => row.titulo,
       sortable: true,
       center: true,
       width: "15%",
     },
     {
-      name: "Contacto",
-      selector: (row) => row.contacto,
+      name: "Motivo",
+      selector: (row) => row.motivo,
       center: true,
      
     },
     {
-      name: "Contrato",
-      selector: (row) => row.contrato,
+      name: "Descripcion",
+      selector: (row) => row.descripcion,
+      center: true,
+     
+    },
+    {
+      name: "Documento",
+      selector: (row) => row.documento,
       center: true,
      
     },
@@ -41,7 +47,7 @@ export const RecursosHumanos = () => {
  
     {
     
-      name: "Fecha Ingreso",
+      name: "Fecha",
       selector: (row) => row.fecha,
       center: true,
      
@@ -60,11 +66,11 @@ export const RecursosHumanos = () => {
   const data = [
     {
       id: 1,
-      nombre:"Ernesto",
-      motivo: "informe financiero",
+      titulo:"Nuevo Reglamento	",
+      motivo: "Falta de norma anterior",
       fecha: "2021-10-27",
-      contacto:"ernestoar2301@gmail.com",
-      contrato: [
+      descripcion:"Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      documento: [
         
         <button className="btn btn-primary mx-2" >
           <AiFillFile />
@@ -86,15 +92,15 @@ export const RecursosHumanos = () => {
 
   return (
     <>
-      <h1 className="mb-3 fw-bold">Recursos Humanos</h1>
-      <h6>En esta página podemos acceder a una lista de personal de Recursos Humanos de nuestro fraccionamiento y documentación relevante en caso de requerirla, Además podemos actualizar, borrar y añadir información del personal .</h6>
+      <h1 className="mb-3 fw-bold">Reglamentos</h1>
+      <h6>En esta sección encontramos los reglamentos relativos a la sana convivencia entre colonos, podemos añadir y editar estos reglamentos, aquí mantendremos un registro de los mismos.</h6>
       <div className="card">
         <div className="card-header border-bottom border-1 ">
           <div className="row d-flex">
             <h5 className="card-title col-md-6 pt-2">Recursos humanos </h5>
             <div className="col-md-6 text-right">
-            <Link to="/admin/agregar-recursos-humanos" className="btn btn-primary">
-                <BsPlusLg /> Agregar
+            <Link to="/admin/agregar-reglamentos" className="btn btn-primary">
+                <BsPlusLg/>  Agregar
               </Link>
             </div>
           </div>
