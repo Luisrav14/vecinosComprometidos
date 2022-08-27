@@ -35,6 +35,8 @@ export * from "./admin/InformesFinancieros";
 export * from "./admin/AgregarInformeFinanciero";
 export * from "./admin/RecursosHumanos";
 export * from "./admin/AgregarRecursosHumanos";
+export * from "./admin/Proveedores";
+export * from "./admin/AgregarProveedor";
 
 export * from "./usuarios/dashuser";
 export * from "./usuarios/pago-efectivo";

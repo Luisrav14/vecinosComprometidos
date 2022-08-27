@@ -9,7 +9,7 @@ import { AdminDashboard, AgregarPropietario, BaseDatosGeneral,
     AccionesMod, CasasRenta, LotesBaldios, Inventario, InformacionPersonal,
     CensoAnimal, Estadisticas, Incidentes, AgregarIncidente,Reportes, ReportesResueltos,
     Convenios, AgregarConvenio, InformesFinancieros, AgregarInformeFinanciero, RecursosHumanos,
-    AgregarRecursosHumanos } from "../pages";
+    AgregarRecursosHumanos, Proveedores, AgregarProveedor } from "../pages";
 
 export const AdminRoutes = () => {
   return (
@@ -46,6 +46,9 @@ export const AdminRoutes = () => {
           <Route path="/agregar-informe-financiero" element={<AgregarInformeFinanciero/>} />
           <Route path="/recursos-humanos" element={<RecursosHumanos/>} />
           <Route path="/agregar-recursos-humanos" element={<AgregarRecursosHumanos/>} />
+          <Route path="/proveedores" element={<Proveedores/>} />
+          <Route path="/agregar-proveedor" element={<AgregarProveedor/>} />
+
 
 
 
