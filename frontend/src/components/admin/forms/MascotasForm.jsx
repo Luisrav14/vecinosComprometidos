@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useForm } from "../../../hooks/useForm";
+import { useForm } from "react-hook-form";
+import Select from "react-select";
 
 export const MascotasForm = () => {
   return (
@@ -29,20 +30,20 @@ export const MascotasForm = () => {
         <div className="col-md-12" id="form1">
           <div className="form-group">
             <label htmlFor="numero_mascotas">Número de mascotas que viven en su hogar</label>
-            <select className="form-select">
-              <option selected disabled>
-                Selecciona una opción
-              </option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-            </select>
+            <Select
+              defaultInputValue="Selecciona una opción"
+              options={[
+                { label: "1", value: 1 },
+                { label: "2", value: 2 },
+                { label: "3", value: 3 },
+                { label: "4", value: 4 },
+                { label: "5", value: 5 },
+                { label: "6", value: 6 },
+                { label: "7", value: 7 },
+                { label: "8", value: 8 },
+                { label: "9", value: 9 },
+              ]}
+            />
           </div>
           <div className="form-group">
             <label htmlFor="conflicto" className="col-form-label">

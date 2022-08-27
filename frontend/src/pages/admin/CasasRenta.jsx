@@ -87,10 +87,10 @@ export const CasasRenta = () => {
         </ModalWithBtn>
       ),
       acciones: [
-        <button className="btn btn-warning mx-2">
+        <button className="btn btn-success mx-2">
           <BsPencilSquare />
         </button>,
-        <button className="btn btn-success mx-2">
+        <button className="btn btn-primary mx-2">
           <BsEnvelope />
         </button>,
         <button className="btn btn-danger" onClick={EliminarAlert}>
@@ -112,10 +112,10 @@ export const CasasRenta = () => {
         </ModalWithBtn>
       ),
       acciones: [
-        <button className="btn btn-warning mx-2">
+        <button className="btn btn-success mx-2">
           <BsPencilSquare />
         </button>,
-        <button className="btn btn-success mx-2">
+        <button className="btn btn-primary mx-2">
           <BsEnvelope />
         </button>,
         <button className="btn btn-danger" onClick={EliminarAlert}>

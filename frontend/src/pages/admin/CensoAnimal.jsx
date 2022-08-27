@@ -86,7 +86,7 @@ export const CensoAnimal = () => {
         </ModalWithBtn>
       ),
       acciones: [
-        <button className="btn btn-warning mx-1">
+        <button className="btn btn-success mx-1">
           <BsPencilSquare />
         </button>,
         <button className="btn btn-danger" onClick={EliminarAlert}>
@@ -105,7 +105,7 @@ export const CensoAnimal = () => {
         </ModalWithBtn>
       ),
       acciones: [
-        <button className="btn btn-warning mx-1">
+        <button className="btn btn-success mx-1">
           <BsPencilSquare />
         </button>,
         <button className="btn btn-danger" onClick={EliminarAlert}>
