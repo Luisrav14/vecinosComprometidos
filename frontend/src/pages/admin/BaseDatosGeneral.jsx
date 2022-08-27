@@ -146,7 +146,7 @@ export const BaseDatosGeneral = () => {
       ),
       cuota_mantenimiento: "$526.00",
       acciones: [
-        <Link to="/admin/editar-propietario" className="btn btn-warning mx-2">
+        <Link to="/admin/editar-propietario" className="btn btn-success mx-2">
           <BsPencilSquare />
         </Link>,
         <button className="btn btn-primary mx-2" onClick={sendEmail}>
@@ -168,7 +168,7 @@ export const BaseDatosGeneral = () => {
       ),
       cuota_mantenimiento: "$526.00",
       acciones: [
-        <Link to="/admin/editar-propietario" className="btn btn-warning mx-2">
+        <Link to="/admin/editar-propietario" className="btn btn-success mx-2">
           <BsPencilSquare />
         </Link>,
         <button className="btn btn-primary mx-2" onClick={sendEmail}>

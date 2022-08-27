@@ -49,7 +49,7 @@ export const LotesBaldios = () => {
       propietario: "Alejandra Gómez Silerio",
       estatus: <span className="badge badge-warning">Pendiente</span>,
       acciones: [
-        <button className="btn btn-warning mx-2">
+        <button className="btn btn-success mx-2">
           <BsPencilSquare />
         </button>,
       ],
@@ -60,7 +60,7 @@ export const LotesBaldios = () => {
       propietario: "Agustín García Ugalde",
       estatus: <span className="badge badge-success">Completado</span>,
       acciones: [
-        <button className="btn btn-warning mx-2">
+        <button className="btn btn-success mx-2">
           <BsPencilSquare />
         </button>,
       ],
