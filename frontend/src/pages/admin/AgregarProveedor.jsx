@@ -28,116 +28,87 @@ export const AgregarProveedor = () => {
 
 
              
-              <div className="col-md-12s mb-3">
-                <label className="form-label">Nombre</label>
+              <div className="col-md-6 mb-3">
+                <label className="form-label">Nombre o razón social</label>
                 <input
                   type="text"
                   className="form-control"
-                  {...register("titulo", {
+                  {...register("nombre", {
                     required: true,
                   })}
-                  placeholder="Nombre"
+                  placeholder="Nombre o razón social"
                 />
               </div>
               
               <div className="col-md-6 mb-3">
-                <label className="form-label">Apellido Paterno</label>
+                <label className="form-label">RFC</label>
                 <input
                   type="text"
                   className="form-control"
-                  {...register("motivo", {
+                  {...register("RFC", {
                     required: true,
                   })}
-                  placeholder="Apellido Paterno"
+                  placeholder="RFC"
                 />
               </div>
 
-              <div className="col-md-6 mb-3">
-                <label className="form-label">Apellido Materno</label>
+              <div className="col-md-4 mb-3">
+                <label className="form-label">Nombre de contacto</label>
                 <input
                   type="text"
                   className="form-control"
-                  {...register("motivo", {
+                  {...register("nomcontacto", {
                     required: true,
                   })}
-                  placeholder="Apellido Materno"
+                  placeholder="Nombre de contacto"
                 />
               </div>
 
 
               <div className="col-md-4 mb-3">
-                <label className="form-label">Fraccionamiento</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  {...register("fraccionamiento", {
-                    required: true,
-                  })}
-                  placeholder="Fraccionamiento"
-                />
-              </div>
-
-              <div className="col-md-4 mb-3">
-                <label className="form-label">Calle</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  {...register("Calle", {
-                    required: true,
-                  })}
-                  placeholder="Calle"
-                />
-              </div>
-
-              <div className="col-md-4 mb-3">
-                <label className="form-label">Num ext</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  {...register("Num ext", {
-                    required: true,
-                  })}
-                  placeholder="Num ext"
-                />
-              </div>
-
-
-
-              <div className="col-md-6 mb-3">
-                <label className="form-label">Telefono</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  {...register("telefono", {
-                    required: true,
-                  })}
-                  placeholder="Telefono"
-                />
-              </div>
-
-
-              <div className="col-md-6 mb-3">
-                <label className="form-label">Correo</label>
+                <label className="form-label">Correo de contacto</label>
                 <input
                   type="text"
                   className="form-control"
                   {...register("correo", {
                     required: true,
                   })}
-                  placeholder="Correo"
+                  placeholder="Correo de contacto"
+                />
+              </div>
+
+              <div className="col-md-4 mb-3">
+                <label className="form-label">Teléfono</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  {...register("Teléfono", {
+                    required: true,
+                  })}
+                  placeholder="Teléfono"
+                />
+              </div>
+
+              <div className="col-md-12 mb-3">
+                <label className="form-label">Notas (opcional)</label>
+                <textarea
+                  type="text" 
+                  rows={3}
+         
+                  className="form-control"
+                  {...register("Notas", {
+                    required: true,
+                  })}
+                  placeholder="Notas"
                 />
               </div>
 
 
 
+             
 
 
-
-
-              <div className="col-12 mb-3">
-                <label className="form-label">Contrato en archivo PDF</label>
-                <input class="form-control" id="formFileLg" type="file"/>
-              </div>
+            
               
 
 

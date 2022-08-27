@@ -47,7 +47,7 @@ export const AdminRoutes = () => {
           <Route path="/recursos-humanos" element={<RecursosHumanos/>} />
           <Route path="/agregar-recursos-humanos" element={<AgregarRecursosHumanos/>} />
           <Route path="/proveedores" element={<Proveedores/>} />
-          <Route path="/agregar-proveedor" element={<AgregarProveedor/>} />
+          <Route path="/agregar-proveedores" element={<AgregarProveedor/>} />
 
 
 
