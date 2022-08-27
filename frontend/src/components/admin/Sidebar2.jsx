@@ -1,7 +1,9 @@
 import { infoFraccionamiento } from "../../global/infoFraccionamiento";
 import { FaDatabase, FaTable, FaAddressCard } from "react-icons/fa";
 import { BsGraphUp } from "react-icons/bs";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { MenuItem } from "./MenuItem";
+import { NavLink } from "react-router-dom";
 
 const menuItems = [
   {
@@ -271,13 +273,12 @@ const menuItems = [
   },
 ];
 
-export const Sidebar = (show = true) => {
-  const [showSidebar, setShowSidebar] = useState(show);
-  let i = 0;
+export const Sidebar = ({ show = true }) => {
+  const [showSidebar, setShowSidebar] = useState(true);
 
-  const handleSidebar = () => {
-    setShowSidebar(!show);
-  };
+  useEffect(() => {
+    setShowSidebar(show);
+  }, [show]);
 
   return (
     <nav id="sidebar" className={`sidebar ${showSidebar ? "" : "d-none"} `}>
@@ -295,7 +296,23 @@ export const Sidebar = (show = true) => {
         <ul className="sidebar-nav">
           {menuItems.map((item) => {
             i++;
-            console.log({ ...item });
+            return (
+              <li className="sidebar-item text-light active my-2">
+                <a data-bs-target={`#${i}`} data-bs-toggle="collapse" className="sidebar-link collapsed">
+                  <i className="align-middle" data-feather="layout"></i>
+                  <span className="align-middle">
+                    {item.icon} {item.category}
+                  </span>
+                </a>
+                <ul id={i} className="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                  <li className="sidebar-item">
+                    <NavLink to={item.category} className="sidebar-link">
+                      {item.category}
+                    </NavLink>
+                  </li>
+                </ul>
+              </li>
+            );
           })}
         </ul>
       </div>

@@ -1,41 +1,13 @@
 import { BsEnvelope, BsPencilSquare, BsTrash } from "react-icons/bs";
 import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
 import { EliminarAlert, ModalWithBtn } from "../../components";
+import Select from "react-select";
 import { FaSearch } from "react-icons/fa";
-
-const DatosPersonales = () => {
-  return (
-    <>
-      <div className="container">
-        <div className="card">
-          <div className="card-header shadow shadow-sm">
-            <h5 className="card-title">Prueba Numero Uno</h5>
-            <hr />
-          </div>
-          <div className="card-body row">
-            <div className="col-md-6 mb-3">
-              <strong>Correo: </strong> mail@mail.com
-            </div>
-
-            <div className="col-md-6 mb-3">
-              <strong>Contraseña: </strong> **********
-            </div>
-
-            <div className="col-md-6 mb-3">
-              <strong>Telefono: </strong> 61812345678
-            </div>
-
-            <div className="col-md-6 mb-3">
-              <strong>Celular: </strong> 61812345678
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-};
+import { useState } from "react";
 
 export const Estadisticas = () => {
+  const [busqueda, setBusqueda] = useState("");
+
   const columns = [
     {
       name: "#",
@@ -45,28 +17,28 @@ export const Estadisticas = () => {
       center: true,
     },
     {
-      name: "Clave de unidad",
+      name: "",
       selector: (row) => row.clave_unidad,
       sortable: true,
       width: "auto",
       center: true,
     },
     {
-      name: "Datos del inquilino",
+      name: "",
       selector: (row) => row.inquilino,
       sortable: true,
       width: "auto",
       center: true,
     },
     {
-      name: "Datos del propietario",
+      name: "",
       selector: (row) => row.propietario,
       sortable: true,
       width: "auto",
       center: true,
     },
     {
-      name: "Acciones",
+      name: "",
       selector: (row) => row.acciones,
       center: true,
       width: "auto",
@@ -76,19 +48,11 @@ export const Estadisticas = () => {
   const data = [
     {
       id: 1,
-      clave_unidad: "2022",
-      inquilino: (
-        <ModalWithBtn classBtn="btn btn-link text-decoration-none" textBtn={"Inquilino Prueba Numero 1"} title="Datos personales" footer={false}>
-          <DatosPersonales />
-        </ModalWithBtn>
-      ),
-      propietario: (
-        <ModalWithBtn classBtn="btn btn-link text-decoration-none" textBtn={"Propietario prueba 1"} title="Datos personales" footer={false}>
-          <DatosPersonales />
-        </ModalWithBtn>
-      ),
+      clave_unidad: "",
+      inquilino: "",
+      propietario: "",
       acciones: [
-        <button className="btn btn-warning mx-2">
+        /*  <button className="btn btn-warning mx-2">
           <BsPencilSquare />
         </button>,
         <button className="btn btn-success mx-2">
@@ -96,24 +60,16 @@ export const Estadisticas = () => {
         </button>,
         <button className="btn btn-danger" onClick={EliminarAlert}>
           <BsTrash />
-        </button>,
+        </button>, */
       ],
     },
     {
       id: 2,
-      clave_unidad: "2022",
-      inquilino: (
-        <ModalWithBtn classBtn="btn btn-link text-decoration-none" textBtn={"Inquilino Prueba Numero 2"} title="Datos personales" footer={false}>
-          <DatosPersonales />
-        </ModalWithBtn>
-      ),
-      propietario: (
-        <ModalWithBtn classBtn="btn btn-link text-decoration-none" textBtn={"Propietario prueba 2"} title="Datos personales" footer={false}>
-          <DatosPersonales />
-        </ModalWithBtn>
-      ),
+      clave_unidad: "",
+      inquilino: "",
+      propietario: "",
       acciones: [
-        <button className="btn btn-warning mx-2">
+        /*  <button className="btn btn-warning mx-2">
           <BsPencilSquare />
         </button>,
         <button className="btn btn-success mx-2">
@@ -121,7 +77,7 @@ export const Estadisticas = () => {
         </button>,
         <button className="btn btn-danger" onClick={EliminarAlert}>
           <BsTrash />
-        </button>,
+        </button>, */
       ],
     },
   ];
@@ -141,17 +97,19 @@ export const Estadisticas = () => {
             <form className="row d-flex justify-content-center">
               <div className="col-md-4">
                 <div className="form-group">
-                  <select className="form-select">
-                    <option disabled>Selecciona una opción</option>
-                    <option value="1">Casas Construidas</option>
-                    <option value="2">Casas en Proceso</option>
-                    <option value="3">Terrenos Baldíos</option>
-                    <option value="4">Casas Habitadas</option>
-                    <option value="5">Casas Sin Habitar</option>
-                    <option value="6">Casas Rentadas</option>
-                    <option value="7">Vehículos</option>
-                    <option value="8">Personal Doméstico</option>
-                  </select>
+                  <Select
+                    options={[
+                      { label: "Casas Construidas", value: "casas construidas" },
+                      { label: "Casas en Proceso", value: "casas en proceso" },
+                      { label: "Terrenos Baldíos", value: "lotes baldíos" },
+                      { label: "Casas Habitadas", value: "casas habitadas" },
+                      { label: "Casas sin habitar", value: "casas sin habitar" },
+                      { label: "Casas Rentadas", value: "casas rentadas" },
+                      { label: "Vehículos", value: "vehiculos" },
+                      { label: "Personal Doméstico", value: "personal doméstico" },
+                    ]}
+                    onChange={({ value }) => setBusqueda(value)}
+                  />
                 </div>
               </div>
               <div className="col-md-2">
@@ -162,8 +120,14 @@ export const Estadisticas = () => {
             </form>
 
             <div className="col-md-12 mt-5">
-              <h4 className="fw-bold mb-3">Resultados</h4>
-              <DataTableComponent columns={columns} data={data} />
+              {busqueda != "" ? (
+                <>
+                  <h4 className="mb-3 fw-bolder font-italic">Resultados de {busqueda}</h4>
+                  <DataTableComponent columns={columns} data={data} />
+                </>
+              ) : (
+                <span className="mb-3 alert alert-light justify-content-center text-muted">No hay nada para mostrar</span>
+              )}
             </div>
           </div>
         </div>

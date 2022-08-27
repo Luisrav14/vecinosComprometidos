@@ -1,23 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Select from "react-select";
 import { useForm } from "react-hook-form";
 import { FaArrowLeft, FaHouseUser, FaFileAlt, FaHome, FaRegSave, FaBuilding } from "react-icons/fa";
 
 export const AgregarPropietario = () => {
-  const { register, handleSubmit, getValues } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const [rentaForm, setRentaForm] = useState(false);
   const [loteForm, setloteForm] = useState(false);
-
-  const showHiddenForm = () => {
-    const tipoProp = getValues("tipo");
-    console.log(tipoProp);
-    const estatusProp = getValues("estatus");
-    console.log(estatusProp);
-
-    tipoProp === "baldio" ? setloteForm(true) : setloteForm(false);
-    estatusProp === "rentada" ? setRentaForm(true) : setRentaForm(false);
-  };
 
   const showData = (data) => console.log(data);
 
@@ -246,7 +237,7 @@ export const AgregarPropietario = () => {
                     required: true,
                   })}
                 >
-                  <option defaultValue={0}>Selecciona una forma de pago</option>
+                  <option>Selecciona una forma de pago</option>
                   <option value="01">01 - Efectivo</option>
                   <option value="02">02 - Cheque nominativo</option>
                   <option value="03">03 - Transferencia electrónica de fondos</option>
@@ -339,6 +330,7 @@ export const AgregarPropietario = () => {
                   <option value="626">626 - Régimen Simplificado de Confianza</option>
                 </select>
               </div>
+
               <div className="col-md-12 border-bottom border-1 my-3">
                 <p className="text-primary fw-bolder">
                   <FaHome /> Datos de la Propiedad
@@ -440,37 +432,25 @@ export const AgregarPropietario = () => {
               </div>
               <div className="col-md-6 mb-3">
                 <label className="form-label">Tipo de propiedad</label>
-                <select
-                  className="form-select"
-                  {...register("tipo", {
-                    required: true,
-                  })}
-                  onChange={showHiddenForm}
-                >
-                  <option selected disabled>
-                    Selecciona un tipo de propiedad
-                  </option>
-                  <option value="construida">Casa Construida</option>
-                  <option value="proceso">Casa en Proceso</option>
-                  <option value="baldio">Terreno Baldío</option>
-                </select>
+                <Select
+                  options={[
+                    { label: "Casa Construida", value: "construida" },
+                    { label: "Casa en Proceso", value: "proceso" },
+                    { label: "Terreno Baldío", value: "baldio" },
+                  ]}
+                  onChange={({ value }) => (value === "baldio" ? setloteForm(true) : setloteForm(false))}
+                />
               </div>
               <div className="col-md-6 mb-3">
                 <label className="form-label">Estatus de la propiedad</label>
-                <select
-                  className="form-select"
-                  {...register("estatus", {
-                    required: true,
-                  })}
-                  onChange={showHiddenForm}
-                >
-                  <option selected disabled>
-                    Selecciona una opción
-                  </option>
-                  <option value="habitada">Habitada</option>
-                  <option value="sinhabitar">Sin Habitar</option>
-                  <option value="rentada">Rentada</option>
-                </select>
+                <Select
+                  options={[
+                    { label: "Casa habitada", value: "habitada" },
+                    { label: "Casa en Renta", value: "rentada" },
+                    { label: "Sin habitar", value: "sinHabitar" },
+                  ]}
+                  onChange={({ value }) => (value === "rentada" ? setRentaForm(true) : setRentaForm(false))}
+                />
               </div>
 
               {loteForm == false && rentaForm && (
