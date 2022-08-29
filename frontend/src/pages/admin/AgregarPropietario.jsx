@@ -453,7 +453,7 @@ export const AgregarPropietario = () => {
                 />
               </div>
 
-              {loteForm == false && rentaForm && (
+              {rentaForm && (
                 <>
                   <div className="col-md-12 border-bottom border-1 my-3">
                     <p className="text-primary fw-bolder">
@@ -523,11 +523,11 @@ export const AgregarPropietario = () => {
                 </>
               )}
 
-              {rentaForm == false && loteForm && (
+              {loteForm && (
                 <>
                   <div className="col-md-12 border-bottom border-1 my-3">
                     <p className="text-primary fw-bolder">
-                      <FaBuilding /> Lote valdío
+                      <FaBuilding /> Lote baldío
                     </p>
                   </div>
 
