@@ -178,7 +178,7 @@ export const Sidebar = ({ show = true }) => {
                 </ul>
               </li>
               <li className="sidebar-item">
-                <a className="sidebar-link" href="/admin">
+                <a className="sidebar-link" href="/admin/encuestasadm">
                   Encuestas
                 </a>
               </li>

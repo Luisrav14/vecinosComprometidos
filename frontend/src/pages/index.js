@@ -43,6 +43,9 @@ export * from "./admin/BlogDeNoticias";
 export * from "./admin/AgregarBlog";
 export * from "./admin/CalendarioReservaciones";
 export * from "./admin/AreasReservadas";
+export * from "./admin/EncuestasAdm";
+export * from "./admin/AgregarEncuesta";
+
 
 
 export * from "./usuarios/dashuser";

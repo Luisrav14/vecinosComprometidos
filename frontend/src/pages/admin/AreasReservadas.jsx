@@ -101,14 +101,12 @@ export const AreasReservadas = () => {
             <h5 className="card-title col-md-6 pt-2">Areás Reservadas</h5>
            
             <div className="col-md-6 text-right">
-            <Link to="/admin/agregar-areas-reservadas" className="btn btn-primary">
-                <BsPlusLg /> Agregar
-              </Link>
+            
             </div>
           </div>
         </div>
 
-        <DataTableComponent columns={columns} data={data}  />
+        <DataTableComponent columns={columns} data={data}   />
       </div>
     </>
   );
