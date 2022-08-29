@@ -10,7 +10,7 @@ import { AdminDashboard, AgregarPropietario, BaseDatosGeneral,
     CensoAnimal, Estadisticas, Incidentes, AgregarIncidente,Reportes, ReportesResueltos,
     Convenios, AgregarConvenio, InformesFinancieros, AgregarInformeFinanciero, RecursosHumanos,
     AgregarRecursosHumanos, Proveedores, AgregarProveedor, Reglamentos, AgregarReglamentos,
-    BlogDeNoticias, AgregarBlog } from "../pages";
+    BlogDeNoticias, AgregarBlog, CalendarioReservaciones, AreasReservadas } from "../pages";
 
 export const AdminRoutes = () => {
   return (
@@ -53,6 +53,8 @@ export const AdminRoutes = () => {
           <Route path="/agregar-reglamentos" element={<AgregarReglamentos/>} />
           <Route path="/blogs" element={<BlogDeNoticias/>} />
           <Route path="/agregar-blog" element={<AgregarBlog/>} />
+          <Route path="/calendario-reservaciones" element={<CalendarioReservaciones/>} />
+          <Route path="/areas-reservadas" element={<AreasReservadas/>} />
 
 
 

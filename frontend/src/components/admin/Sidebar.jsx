@@ -168,10 +168,10 @@ export const Sidebar = ({ show = true }) => {
                 </a>
                 <ul id="areas-3" className="sidebar-dropdown list-unstyled collapse">
                   <li className="sidebar-item">
-                    <a className="sidebar-link" href="#">
+                    <a className="sidebar-link" href="/admin/calendario-reservaciones">
                       Calendario de reservación
                     </a>
-                    <a className="sidebar-link" href="#">
+                    <a className="sidebar-link" href="/admin/areas-reservadas">
                       Áreas reservadas
                     </a>
                   </li>

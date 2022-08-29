@@ -41,7 +41,8 @@ export * from "./admin/Reglamentos";
 export * from "./admin/AgregarReglamentos";
 export * from "./admin/BlogDeNoticias";
 export * from "./admin/AgregarBlog";
-
+export * from "./admin/CalendarioReservaciones";
+export * from "./admin/AreasReservadas";
 
 
 export * from "./usuarios/dashuser";
