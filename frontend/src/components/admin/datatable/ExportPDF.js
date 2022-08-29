@@ -1,16 +1,27 @@
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 
-export const exportPDF = (fileName, headers, body) => {
+export const exportPDF = (headers, body, fileName) => {
   const doc = new jsPDF();
 
-  autoTable(doc, {
-    head: [["Name", "Email", "Country"]],
-    body: [
-      ["David", "david@example.com", "Sweden"],
-      ["Castille", "castille@example.com", "Spain"],
-    ],
+  const headersExport = headers.headers;
+  const bodyExport = headers.data;
+
+  headersExport.forEach((row) => {
+    headersExport.push(row.name);
   });
 
-  doc.save("table.pdf");
+  // body.forEach((row) => {
+  //   bodyExport.push(row);
+  // });
+
+  console.log(headersExport);
+  // console.log(bodyExport);
+
+  autoTable(doc, {
+    head: headersExport,
+    body: bodyExport,
+  });
+
+  doc.save(`${fileName}.pdf`);
 };

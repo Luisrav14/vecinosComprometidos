@@ -137,9 +137,7 @@ export const CasasRenta = () => {
             </div>
           </div>
           <div className="card-body">
-            <div className="col-md-12">
-              <DataTableComponent columns={columns} data={data} />
-            </div>
+            <DataTableComponent columns={columns} data={data} />
           </div>
         </div>
       </div>

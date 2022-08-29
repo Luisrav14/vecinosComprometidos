@@ -12,6 +12,7 @@ export * from "./admin/charts/DonutChart";
 export * from "./admin/charts/LineChart";
 
 export * from "./admin/datatable/DataTableComponent";
+export * from "./admin/datatable/FiltersMonthYear";
 
 export * from "./modals/ModalWithBtn";
 
