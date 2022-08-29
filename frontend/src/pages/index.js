@@ -45,7 +45,7 @@ export * from "./admin/CalendarioReservaciones";
 export * from "./admin/AreasReservadas";
 export * from "./admin/EncuestasAdm";
 export * from "./admin/AgregarEncuesta";
-
+export * from "./admin/Medidores";
 
 
 export * from "./usuarios/dashuser";
