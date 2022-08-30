@@ -1,138 +1,127 @@
-import React from "react";
-
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { BsPlusLg, BsEnvelope, BsPencilSquare, BsFillChatLeftTextFill } from "react-icons/bs";
+import { AiFillDelete,AiFillFile } from "react-icons/ai";
 import Swal from "sweetalert2";
-
 import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
-import { BsPlusLg, BsEnvelope, BsPencilSquare, BsPinAngle,BsFillFileEarmarkFill } from "react-icons/bs";
 
-
-const Pagar = () => {
-  Swal.fire({
-    icon: "success",
-    title: "Operación realizada",
-    text: "Pagado enviado exitosamente",
-  });
-};
-
-const columns = [
-  {
-    name: "Año",
-    selector: (row) => row.ano,
-    sortable: true,
-    width: "7%",
-    center: true,
-  },
-  {
-    name: "Mes ",
-    selector: (row) => row.mes,
-    sortable: true,
-    width: "10%",
-    center: true,
-  },
-  {
-    name: "Num de Medidor",
-    selector: (row) => row.nummedi,
-    sortable: true,
-    
-    center: true,
-  },
-  {
-    name: "Mes o Periodo",
-    selector: (row) => row.mesoperiodo,
-    sortable: true,
-    width: "23%",
-    center: true,
-  },
-  {
-    name: "Fecha corte",
-    selector: (row) => row.fechacorte,
-    sortable: true,
-    center: true,
-  },
-  {
-    name: "Saldo Final",
-    selector: (row) => row.saldo,
-    sortable: true,
-    center: true,
-  },
-  {
-    name: "Archivo",
-    selector:(row)=> row.archivo,
-    sortable: true,
-    center: true,
-
-  }
-  
-  
-  
-];
-
-const data = [
-  {
-    id: 1,
-    ano:"2022",
-    mes: "Agosto",
-    nummedi: "645130804692",
-    mesoperiodo: "24 MAR 2022 - 25 ABR 2022	",
-    fechacorte:"2022-05-08",
-    saldo:"$10644.00",
-    archivo: [
-      <button class="btn btn-success mx-2" onClick={Pagar}><BsFillFileEarmarkFill/>
-      
-        </button>,
-         ],
-    estatus: "Pendiente",
-    
-            
-  },
-  
-];
 export const Medidores = () => {
+ 
+
+  const columns = [
+    {
+      id: "Año",
+      name: "Año",
+      selector: (row) => row.ano,
+      sortable: true,
+      width: "7%",
+      center: true,
+    },
+    {
+    
+      name: "Mes",
+      selector: (row) => row.mes,
+      sortable: true,
+      center: true,
+      width: "15%",
+    },
+    {
+      name: "Num de medidor",
+      selector: (row) => row.nummedi,
+      center: true,
+     
+    },
+    {
+    
+      name: "Num de servicio",
+      selector: (row) => row.numservi,
+      sortable: true,
+      center: true,
+      width: "15%",
+    },
+    {
+      name: "Mes o periodo",
+      selector: (row) => row.mesiperiodo,
+      center: true,
+     
+    }, 
+    {
+      name: "Fecha de corte",
+      selector: (row) => row.fechacorte,
+      center: true,
+     
+    }, 
+    {
+      name: "Saldo final",
+      selector: (row) => row.saldo,
+      center: true,
+     
+    }, 
+    {
+     
+      name: "Acciones",
+      selector: (row) => row.acciones,
+      center: true,
+    },
+    
+  ];
+
+  const data = [
+    {
+      ano: 1,
+      mes: "Enero",
+      nummedi:"NN024L",
+      numservi:"645130804692",
+      mesiperiodo: "24 MAR 2022 - 25 ABR 2022	",
+      fechacorte: "2022-05-08	",
+      saldo:"10644.00",
+      acciones: [
+        <button className="btn btn-success mx-2">
+          <AiFillFile />
+        </button>
+      ],
+    },
+  ];
+
   return (
     <>
-      <div className="">
-        <div className="col-12">
-          <h1>
-            <b>Medidores</b>
-          </h1>
-          <h5>En esta página veremos la informacion de los medidores del fraccionamiento.</h5>
+      <h1 className="mb-3 fw-bold">Medidores</h1>
+      <h6>En esta página encontramos una lista de medidores de nuestro fraccionamiento.</h6>
+      <div className="card">
+        <div className="card-header border-bottom border-1 ">
+          <div className="row d-flex">
+            <h5 className="card-title col-md-6 pt-2">Proveedores </h5>
+            <div className="col-md-6 text-right">
+            <Link to="/admin/agregar-proveedores" className="btn btn-primary">
+                <BsPlusLg /> Agregar
+              </Link>
+            </div>
+          </div>
+        </div>
 
-          <h5 className="card-title mb-0"> </h5>
-
-          <div className="card-block mb-5 mt-5">
+        <div className="card-block mb-5 ">
             <div className="text-center">
               <div className="container mt-5">
-                <div>
-                  <div class="row">
-                    <div class="col">
-                      {" "}
-                      <form class="">
-                        <label className="col-12 mb-1">Buscar por año:</label>
-                        <select class="form-control" name="year" required>
-                          <option selected disabled>
-                            Selcciona un año
-                          </option>
-                          <option>2021</option>
-                          <option>2022</option>
+                <div className="card-block">
+                  <div className="row">
+                    <form className="form-group form-default col-md-5 col-sm-12 row justify-content-center">
+                      <div className="col-md-6 col-sm-12 mt-1">
+                        <label className="col-sm-12" htmlFor="">Buscar por año:</label>
+                        <select name="" className="form-control" id="">
+                          <option selected disabled>Selcciona un año</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
                         </select>
-                      </form>
-                    </div>
-                    <div class="col">
-                      {" "}
-                      <button type="submit" class="btn btn-success">
-                        {" "}
-                        <i class="FaAddressCard"></i> Buscar
-                      </button>
-                    </div>
-                    <div class="col">
-                      {" "}
-                      <form class="">
-                        <label class="col-sm-12">Buscar por mes:</label>
+                      </div>
+                      <button type="submit" className="btn btn-primary col-md-4 col-sm-12 mt-5">Buscar</button>
+                    </form>
+                    <form className="form-group form-default col-md-5 col-sm-12 row justify-content-center">
+                      <div className="col-md-6 col-sm-12 mt-1">
+                        <label className="col-sm-12">Buscar por mes:</label>
 
-                        <select class="form-control" name="month" required>
-                          <option selected disabled>
-                            Selcciona un mes
-                          </option>
+                        <select className="form-control" name="month" required>
+                          <option selected disabled>Selcciona un mes</option>
                           <option value="01">Enero</option>
                           <option value="02">Febrero</option>
                           <option value="03">Marzo</option>
@@ -146,36 +135,22 @@ export const Medidores = () => {
                           <option value="11">Noviembre</option>
                           <option value="12">Diciembre</option>
                         </select>
-
-                        <div className="col"></div>
-                      </form>
-                    </div>
-                    <div class="col">
-                      {" "}
-                      <button type="submit" class="btn btn-success">
-                        {" "}
-                        <i class="FaAddressCard"></i> Buscar
-                      </button>
-                    </div>
+                      </div>
+                      <button type="submit" className="btn btn-primary col-md-4 col-sm-12 mt-5">  Buscar</button>
+                    </form>
+                    <form id="" className="form-group form-default col-md-2 col-sm-12 row">
+                      <label className="col-sm-12"></label>
+                      <label className="col-sm-12"></label>
+                      <label className="col-sm-12"></label>
+                      
+                        <button type="submit" className="btn btn-primary col-md-12 col-sm-12">  Mostrar Todos</button>
+                    </form>
+                    <DataTableComponent columns={columns} data={data}  />
                   </div>
-
-                  <div class="row">
-                    <div class="col"></div>
-                    <div class="col"></div>
-                  </div>
-
-                  <DataTableComponent columns={columns} data={data} />
                 </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="card-body"></div>
-      </div>
-      <div className="text-right">
-        <img className="card-img-top" style={{ width: "10%" }} src="https://quintasresidencial.com/fraccionamiento/QuintasResidencial/assets/images/openpay-logo.png" alt="" />
-        <img className="card-img-top" style={{ width: "10%" }} src="https://quintasresidencial.com/fraccionamiento/QuintasResidencial/assets/images/ssl.png" alt="" />
       </div>
     </>
   );
