@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink, Route, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import axios from "axios";
 import { useForm } from "react-hook-form";
@@ -20,12 +20,41 @@ export const LoginForm = () => {
 
   const navigate = useNavigate();
 
-  /*  const dataValidation = async (data) => {
+  /* 
+  const dataValidation = async (data) => {
     await axios
       .post(`${globalConfig.api_URL}/login`, data)
-      .then(({ data }) => console.log(data))
+      .then(({ data }) => {
+        console.log(data);
+        inputErrors(data);
+      })
       .catch((error) => console.log(error));
-  }; */
+  };
+
+  const inputErrors = async ({ status, data }) => {
+    setloginErrorMail(false);
+    setloginErrorPass(false);
+
+    switch (status) {
+      case "success":
+        data[0].tipo != 5 
+          ? (await TerminosCondicionesAlert()) && navigate("/admin", { replace: true })  
+          : (await TerminosCondicionesAlert()) && navigate("/dashboard", { replace: true });
+        break;
+
+      case "error_password":
+        setloginErrorPass(true);
+        break;
+
+      case "error_email":
+        setloginErrorMail(true);
+        break;
+
+      default:
+        break;
+    }
+  };
+  */
 
   /* Login temporal */
 
