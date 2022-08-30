@@ -64,7 +64,7 @@ const data = [
                    <button class="btn btn-success mx-2"  title="Ver Resultados">
                    <BsFillEyeFill />
                    </button>,
-                      <button class="btn btn-success mx-2"  title="Ver Resultados">
+                      <button class="btn btn-success mx-2"  title="Editar">
                       <BsPencilSquare />
                       </button>,
                         
@@ -82,10 +82,10 @@ const data = [
              acciones: [
               
                 
-                   <button class="btn btn-success mx-2"  title="Contestar ">
-                   <BsFillPieChartFill />
-                   </button>,
-                      <button class="btn btn-success mx-2"  title="Ver Resultados">
+              <button class="btn btn-success mx-2"  title="Ver Resultados">
+              <BsFillEyeFill />
+              </button>,
+                      <button class="btn btn-success mx-2"  title="Editar">
                       <BsPencilSquare />
                       </button>,
                        <button className="btn btn-danger mx-2" onClick={sendEmail}>
