@@ -11,7 +11,7 @@ import { AdminDashboard, AgregarPropietario, BaseDatosGeneral,
     Convenios, AgregarConvenio, InformesFinancieros, AgregarInformeFinanciero, RecursosHumanos,
     AgregarRecursosHumanos, Proveedores, AgregarProveedor, Reglamentos, AgregarReglamentos,
     BlogDeNoticias, AgregarBlog, CalendarioReservaciones, AreasReservadas, EncuestasAdm, AgregarEncuesta,
-    Medidores } from "../pages";
+    Medidores, AgregarMedidores } from "../pages";
 
 export const AdminRoutes = () => {
   return (
@@ -59,6 +59,7 @@ export const AdminRoutes = () => {
           <Route path="/encuestasadm" element={<EncuestasAdm/>} />
           <Route path="/agregar-encuestas" element={<AgregarEncuesta/>} />
           <Route path="/medidores" element={<Medidores/>} />
+          <Route path="/agregar-medidores" element={<AgregarMedidores/>} />
 
 
 
