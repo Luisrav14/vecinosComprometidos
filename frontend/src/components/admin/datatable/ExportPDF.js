@@ -4,19 +4,23 @@ import autoTable from "jspdf-autotable";
 export const exportPDF = (headers, body, fileName) => {
   const doc = new jsPDF();
 
-  const headersExport = headers.headers;
-  const bodyExport = headers.data;
+  const headersExport = [];
+  const bodyExport = [];
 
-  headersExport.forEach((row) => {
+  headers.headers.forEach((row) => {
     headersExport.push(row.name);
   });
 
-  // body.forEach((row) => {
-  //   bodyExport.push(row);
-  // });
+  headers.data.forEach((row) => {
+    bodyExport.push(row);
+  });
+  const dataExport = [];
+  bodyExport.forEach((row) => {
+    dataExport.push(row.id);
+  });
 
   console.log(headersExport);
-  // console.log(bodyExport);
+  console.log(dataExport);
 
   autoTable(doc, {
     head: headersExport,
