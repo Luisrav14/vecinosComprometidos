@@ -31,7 +31,7 @@ export const loginController = {
         const data = await db.query("SELECT * FROM users WHERE correo = ? AND password = ?", [correo, password]);
 
         if (data.length > 0) {
-          const [serializedToken] = generateJWT();
+          const [serializedToken] = generateJWT(data);
 
           res.setHeader("Set-Cookie", serializedToken);
 
@@ -41,13 +41,13 @@ export const loginController = {
           });
         } else {
           res.status(200).send({
-            status: "error",
+            status: "error_password",
             message: "Contraseña incorrecta",
           });
         }
       } else {
         res.status(200).send({
-          status: "error",
+          status: "error_email",
           message: "Correo no existe",
         });
       }
