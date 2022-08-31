@@ -46,12 +46,6 @@ export * from "./admin/AreasReservadas";
 export * from "./admin/EncuestasAdm";
 export * from "./admin/AgregarEncuesta";
 export * from "./admin/Medidores";
-export * from "./admin/AgregarMedidores";
-export * from "./admin/Soporte-Pendientes";
-export * from "./admin/Soporte-Resueltos";
-export * from "./admin/Ofertas";
-export * from "./admin/AgregarOfertas";
-export * from "./admin/AgregarSoportes";
 
 
 export * from "./usuarios/dashuser";
