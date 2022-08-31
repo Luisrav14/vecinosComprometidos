@@ -29,7 +29,7 @@ export const AnunciosAcuerdos = () => {
       selector: (row) => row.titulo,
       sortable: true,
       center: true,
-      width: "30%",
+      width: "20%",
     },
     {
       id: "Motivo",
@@ -59,7 +59,7 @@ export const AnunciosAcuerdos = () => {
       name: "Acciones",
       selector: (row) => row.acciones,
       center: true,
-     
+      width: "16%",
     },
   ];
 
@@ -82,7 +82,7 @@ export const AnunciosAcuerdos = () => {
         </button>,
       ],
       acciones: [
-        <Link to="#" className="btn btn-warning mx-2">
+        <Link to="#" className="btn btn-success mx-2">
           <BsPencilSquare />
         </Link>,
        <button className="btn btn-primary mx-2" onClick={sendEmail}>
