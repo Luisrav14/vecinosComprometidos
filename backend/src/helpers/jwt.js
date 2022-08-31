@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import { serialize } from "cookie";
 
-export const generateJWT = () => {
+export const generateJWT = (data) => {
   const authToken = jwt.sign({ exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24, data }, "secret");
 
   const serializedToken = serialize("authToken", authToken, {

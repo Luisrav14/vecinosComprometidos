@@ -63,7 +63,9 @@ export const Medidores = () => {
       selector: (row) => row.acciones,
       center: true,
     },
-      ];
+    
+  ];
+
   const data = [
     {
       ano: 1,
@@ -79,7 +81,6 @@ export const Medidores = () => {
         </button>
       ],
     },
-    
   ];
 
   return (
@@ -91,7 +92,7 @@ export const Medidores = () => {
           <div className="row d-flex">
             <h5 className="card-title col-md-6 pt-2">Proveedores </h5>
             <div className="col-md-6 text-right">
-            <Link to="/admin/agregar-medidores" className="btn btn-primary">
+            <Link to="/admin/agregar-proveedores" className="btn btn-primary">
                 <BsPlusLg /> Agregar
               </Link>
             </div>

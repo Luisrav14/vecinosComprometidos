@@ -183,7 +183,7 @@ export const Sidebar = ({ show = true }) => {
                 </a>
               </li>
               <li className="sidebar-item">
-                <a className="sidebar-link" href="/admin/ofertas">
+                <a className="sidebar-link" href="/admin">
                   Ofertas
                 </a>
               </li>
@@ -193,15 +193,15 @@ export const Sidebar = ({ show = true }) => {
                 </a>
               </li>
               <li className="sidebar-item">
-                <a data-bs-target="#areas-4" data-bs-toggle="collapse" className="sidebar-link collapsed" aria-expanded="false">
+                <a data-bs-target="#areas-3" data-bs-toggle="collapse" className="sidebar-link collapsed" aria-expanded="false">
                   Soporte
                 </a>
-                <ul id="areas-4" className="sidebar-dropdown list-unstyled collapse">
+                <ul id="areas-3" className="sidebar-dropdown list-unstyled collapse">
                   <li className="sidebar-item">
-                    <a className="sidebar-link" href="/admin/soporte-pendientes">
+                    <a className="sidebar-link" href="#">
                       Pendientes
                     </a>
-                    <a className="sidebar-link" href="/admin/soporte-resueltos">
+                    <a className="sidebar-link" href="#">
                       Resueltos
                     </a>
                   </li>

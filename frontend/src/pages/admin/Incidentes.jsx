@@ -68,7 +68,7 @@ export const Incidentes = () => {
         </button>,
       ],
       acciones: [
-        <button className="btn btn-success mx-2">
+        <button className="btn btn-warning mx-2">
           <BsPencilSquare />
         </button>,
          <button className="btn btn-danger mx-2" onClick={sendEmail}>
@@ -89,7 +89,7 @@ export const Incidentes = () => {
         </button>,
       ],
       acciones: [
-        <button className="btn btn-success mx-2">
+        <button className="btn btn-warning mx-2">
           <BsPencilSquare />
         </button>,
          <button className="btn btn-danger mx-2" >
