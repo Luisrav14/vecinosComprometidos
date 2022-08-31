@@ -8,8 +8,7 @@ import { BsFileEarmarkExcel, BsFileEarmarkPdf } from "react-icons/bs";
 
 export const DataTableComponent = ({ columns, data }) => {
   const [posts, setPosts] = useState(data);
-
-  let i;
+  const [pagination, setPagination] = useState(10);
 
   const exportColumns = columns.map((col) => ({
     title: col.name,
@@ -44,7 +43,7 @@ export const DataTableComponent = ({ columns, data }) => {
       import("jspdf-autotable").then(() => {
         const doc = new jsPDF.default(0, 0);
         doc.autoTable(exportColumns, posts);
-        doc.save("posts.pdf");
+        doc.save("file.pdf");
       });
     });
   };
@@ -52,8 +51,35 @@ export const DataTableComponent = ({ columns, data }) => {
   const header = (
     <div className="d-flex mx-2 pb-3 ">
       <input className="form-control w-25 mx-2 " type="search" placeholder="Buscar..." />
-      <Button type="button" icon={<BsFileEarmarkPdf />} onClick={exportExcel} className="btn btn-primary bg-primary mr-2" data-pr-tooltip="XLS" />
-      <Button type="button" icon={<BsFileEarmarkExcel />} onClick={exportPDF} className="btn btn-primary bg-primary mr-2" data-pr-tooltip="PDF" />
+      <Button type="button" icon={<BsFileEarmarkPdf />} onClick={exportPDF} className="btn btn-primary bg-primary mr-2" data-pr-tooltip="XLS" />
+      <Button type="button" icon={<BsFileEarmarkExcel />} onClick={exportExcel} className="btn btn-primary bg-primary mr-2" data-pr-tooltip="PDF" />
+  {/*     <div className="dropdown">
+        <a className="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+          Mostrar
+        </a>
+        <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <li>
+            <button className="dropdown-item" onClick={setPagination(10)} >
+              10
+            </button>
+          </li>
+          <li>
+            <button className="dropdown-item" onClick={setPagination(50)} >
+              50
+            </button>
+          </li>
+          <li>
+            <button className="dropdown-item" onClick={setPagination(100)} >
+              100
+            </button>
+          </li>
+          <li>
+            <button className="dropdown-item" onClick={setPagination(500)} >
+              500
+            </button>
+          </li>
+        </ul>
+      </div> */}
     </div>
   );
 
