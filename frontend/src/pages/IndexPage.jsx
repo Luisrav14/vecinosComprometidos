@@ -314,6 +314,7 @@ export const IndexPage = () => {
         <img className="img-fluid" src={infoFraccionamiento.bannerinferior} alt="" />
       </div>
 
+      
       <footer className="page-footer font-small blue pt-4">
         <div className="container-fluid text-center text-md-left">
           <div className="row">
@@ -368,6 +369,7 @@ export const IndexPage = () => {
             </div>
           </div>
         </div>
+        
 
         <div className="footer-copyright text-center py-3">
           © Copyright {infoFraccionamiento.nombre} 2022. All Rights Reserved <br></br>
@@ -383,6 +385,7 @@ export const IndexPage = () => {
           </div>
         </div>
       </footer>
+      <script src="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"></script>
     </>
   );
 };
