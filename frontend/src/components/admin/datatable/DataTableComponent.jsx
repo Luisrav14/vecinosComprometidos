@@ -51,9 +51,13 @@ export const DataTableComponent = ({ columns, data }) => {
   const header = (
     <div className="d-flex mx-2 pb-3 ">
       <input className="form-control w-25 mx-2 " type="search" placeholder="Buscar..." />
-      <Button type="button" icon={<BsFileEarmarkPdf />} onClick={exportPDF} className="btn btn-primary bg-primary mr-2" data-pr-tooltip="XLS" />
-      <Button type="button" icon={<BsFileEarmarkExcel />} onClick={exportExcel} className="btn btn-primary bg-primary mr-2" data-pr-tooltip="PDF" />
-  {/*     <div className="dropdown">
+      <Button type="button" icon={<BsFileEarmarkPdf />} onClick={exportPDF} className="btn btn-primary bg-primary mr-2" data-pr-tooltip="XLS">
+        PDF
+      </Button>
+      <Button type="button" icon={<BsFileEarmarkExcel />} onClick={exportExcel} className="btn btn-primary bg-primary mr-2" data-pr-tooltip="PDF">
+        Excel
+      </Button>
+      {/*     <div className="dropdown">
         <a className="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
           Mostrar
         </a>
