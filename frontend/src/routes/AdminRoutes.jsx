@@ -11,7 +11,8 @@ import { AdminDashboard, AgregarPropietario, BaseDatosGeneral,
     Convenios, AgregarConvenio, InformesFinancieros, AgregarInformeFinanciero, RecursosHumanos,
     AgregarRecursosHumanos, Proveedores, AgregarProveedor, Reglamentos, AgregarReglamentos,
     BlogDeNoticias, AgregarBlog, CalendarioReservaciones, AreasReservadas, EncuestasAdm, AgregarEncuesta,
-    Medidores } from "../pages";
+    Medidores, AgregarMedidores, SoportePendientes, AgregarSoportes, SoporteResueltos, Ofertas,
+    AgregarOfertas } from "../pages";
 
 export const AdminRoutes = () => {
   return (
@@ -59,6 +60,12 @@ export const AdminRoutes = () => {
           <Route path="/encuestasadm" element={<EncuestasAdm/>} />
           <Route path="/agregar-encuestas" element={<AgregarEncuesta/>} />
           <Route path="/medidores" element={<Medidores/>} />
+          <Route path="/agregar-medidores" element={<AgregarMedidores/>} />
+          <Route path="/soporte-pendientes" element={<SoportePendientes/>} />
+          <Route path="/agregar-soportes" element={<AgregarSoportes/>} />
+          <Route path="/soporte-resueltos" element={<SoporteResueltos/>} />
+          <Route path="/ofertas" element={<Ofertas/>} />
+          <Route path="/agregar-ofertas" element={<AgregarOfertas/>} />
 
 
 
