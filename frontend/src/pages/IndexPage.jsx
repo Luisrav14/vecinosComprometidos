@@ -1,5 +1,6 @@
 
 import { infoFraccionamiento } from "../global/infoFraccionamiento";
+import DocuPdf from "./usuarios/DocuPdf";
 export const IndexPage = () => {
   return (
     <>
@@ -384,6 +385,7 @@ export const IndexPage = () => {
         </div>
       </footer>
       <div className="d-flex justify-content-center mt-5">
+      <DocuPdf/>
       <h1>hola</h1>
       </div>
       <button > Ver pdf</button>
@@ -391,5 +393,6 @@ export const IndexPage = () => {
                         Asambleas
                       </a>
     </>
+   
   );
 };
