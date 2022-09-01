@@ -1,17 +1,17 @@
 import React from 'react'
-import FullCalendar, { formatDate } from '@fullcalendar/react'
-import dayGridPlugin from '@fullcalendar/daygrid'
-
-
-
+import '@fullcalendar/react/dist/vdom';
+import '@fullcalendar/core/vdom'
+import FullCalendar from '@fullcalendar/react' // must go before plugins
+import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 
 export default class DocuPdf extends React.Component {
-    render(){
-        return(
-           
-    <FullCalendar/>
-        )
-    }
-
-
+  render() {
+    return (
+      <FullCalendar
+        plugins={[ dayGridPlugin ]}
+        initialView="dayGridMonth"
+      />
+    )
+  }
 }
+
