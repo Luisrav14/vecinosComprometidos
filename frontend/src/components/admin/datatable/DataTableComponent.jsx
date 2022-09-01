@@ -25,7 +25,7 @@ export const DataTableComponent = ({ columns, data }) => {
         bookType: "xlsx",
         type: "array",
       });
-      saveAsExcelFile(excelBuffer, "posts");
+      saveAsExcelFile(excelBuffer, "file");
     });
   };
 
@@ -36,11 +36,12 @@ export const DataTableComponent = ({ columns, data }) => {
       const data = new Blob([buffer], {
         type: EXCEL_TYPE,
       });
-      FileSaver.saveAs(data, "file" + "_export_" + new Date().getTime() + EXCEL_EXTENSION);
+      FileSaver.saveAs(data, fileName + "_export_" + new Date().getTime() + EXCEL_EXTENSION);
     });
   };
 
   const exportPDF = () => {
+    console.log(posts);
     import("jspdf").then((jsPDF) => {
       import("jspdf-autotable").then(() => {
         const doc = new jsPDF.default(0, 0);
