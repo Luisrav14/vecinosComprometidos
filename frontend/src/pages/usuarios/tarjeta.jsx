@@ -1,11 +1,5 @@
-import React from "react";
-import { Navbar } from "../../components/admin/Navbar";
-import { useEffect } from "react";
-import Swal from "sweetalert2";
-import { SidebarUser } from "../../components/admin/SidebarUser";
-
-import 'react-credit-cards-2/es/styles-compiled.css';
- import PaymentForms from "./paymentform";
+import PaymentForms from "./paymentform";
+import "react-credit-cards-2/es/styles-compiled.css";
 
 export const Tarjeta = () => {
   return (
@@ -15,8 +9,8 @@ export const Tarjeta = () => {
           <h5 className="card-title mb-0">Tarjeta </h5>
         </div>
 
-        <div className="card-body"> 
-        <PaymentForms />  
+        <div className="card-body">
+          <PaymentForms />
         </div>
       </div>
     </>

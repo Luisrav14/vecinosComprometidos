@@ -1,19 +1,14 @@
-import React from "react";
-import { Navbar } from "../../components/admin/Navbar";
-import { useEffect } from "react";
-import Swal from "sweetalert2";
-import { SidebarUser } from "../../components/admin/SidebarUser";
-import Calendar from 'react-calendar';
-import  { useState } from 'react';
-import 'react-calendar/dist/Calendar.css';
+import { useState } from "react";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
+
 export const EspaciosComunes = () => {
   return (
     <>
-    
       <div className="col-12">
-      <h2>
-            <b>Espacios comunes</b>
-          </h2>
+        <h2>
+          <b>Espacios comunes</b>
+        </h2>
         <div className="card">
           <div className="card-header mb-0">
             <div className=" rounded col-xl-12 col-md-12">
@@ -21,13 +16,7 @@ export const EspaciosComunes = () => {
                 <div className="text-center">
                   <div className="card-block ">
                     <div className="row d-flex justify-content-around">
-                      
-
-                    <Calendar style={{width:"100%"}} />
-
-                   
-
-                     
+                      <Calendar style={{ width: "100%" }} />
                     </div>
                   </div>
                 </div>

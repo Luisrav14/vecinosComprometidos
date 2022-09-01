@@ -1,9 +1,9 @@
 import { BsFileEarmarkExcel, BsFileEarmarkPdf, BsPlusLg } from "react-icons/bs";
 
-import { RegresarBtn } from "../../components/RegresarBtn";
+import { RegresarBtn } from "../../components/ui/RegresarBtn";
 import { exportPDF } from "../../components/admin/datatable/ExportPDF";
 import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
-import { ModalWithBtn } from "../../components/modals/ModalWithBtn";
+import { ModalWithBtn } from "../../components/ui/modals/ModalWithBtn";
 
 export const CuotaTotalPendiente = () => {
   const columns = [

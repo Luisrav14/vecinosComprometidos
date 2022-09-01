@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FaArrowLeft, FaHouseUser, FaFileAlt, FaHome, FaRegSave } from "react-icons/fa";
-import { RegresarBtn } from "../../components/RegresarBtn";
+import { RegresarBtn } from "../../components/ui/RegresarBtn";
 
 export const AgregarProveedor = () => {
   const { register, handleSubmit } = useForm();
@@ -15,7 +15,6 @@ export const AgregarProveedor = () => {
           <div className="row d-flex">
             <h5 className="card-title col-md-6 pt-2">Agregar Proveedor</h5>
             <div className="col-md-6 text-right">
-
               <RegresarBtn />
             </div>
           </div>
@@ -23,11 +22,6 @@ export const AgregarProveedor = () => {
         <div className="card-body">
           <form onSubmit={handleSubmit(showData)}>
             <div className="row justify-content-center d-flex">
-
-
-
-
-             
               <div className="col-md-6 mb-3">
                 <label className="form-label">Nombre o razón social</label>
                 <input
@@ -39,7 +33,7 @@ export const AgregarProveedor = () => {
                   placeholder="Nombre o razón social"
                 />
               </div>
-              
+
               <div className="col-md-6 mb-3">
                 <label className="form-label">RFC</label>
                 <input
@@ -63,7 +57,6 @@ export const AgregarProveedor = () => {
                   placeholder="Nombre de contacto"
                 />
               </div>
-
 
               <div className="col-md-4 mb-3">
                 <label className="form-label">Correo de contacto</label>
@@ -92,9 +85,8 @@ export const AgregarProveedor = () => {
               <div className="col-md-12 mb-3">
                 <label className="form-label">Notas (opcional)</label>
                 <textarea
-                  type="text" 
+                  type="text"
                   rows={3}
-         
                   className="form-control"
                   {...register("Notas", {
                     required: true,
@@ -102,18 +94,6 @@ export const AgregarProveedor = () => {
                   placeholder="Notas"
                 />
               </div>
-
-
-
-             
-
-
-            
-              
-
-
-
-
 
               <div className="col-md-4 my-5">
                 <button type="submit" className="btn btn-primary form-control">

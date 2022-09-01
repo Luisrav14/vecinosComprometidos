@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
-
-import { infoFraccionamiento } from "../../global/infoFraccionamiento";
-import { FaDatabase, FaTable, FaAddressCard } from "react-icons/fa";
-import { BsGraphUp } from "react-icons/bs";
 import { useEffect, useState } from "react";
+
+import { BsGraphUp } from "react-icons/bs";
+import { FaDatabase, FaTable, FaAddressCard } from "react-icons/fa";
+
+import { infoFraccionamiento } from "../../../global/infoFraccionamiento";
 
 export const Sidebar = ({ show = true }) => {
   const [showSidebar, setShowSidebar] = useState(true);

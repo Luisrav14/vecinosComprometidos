@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FaArrowLeft, FaHouseUser, FaFileAlt, FaHome, FaRegSave } from "react-icons/fa";
-import { RegresarBtn } from "../../components/RegresarBtn";
+import { RegresarBtn } from "../../components/ui/RegresarBtn";
 
 export const AgregarRecursosHumanos = () => {
   const { register, handleSubmit } = useForm();
@@ -15,7 +15,6 @@ export const AgregarRecursosHumanos = () => {
           <div className="row d-flex">
             <h5 className="card-title col-md-6 pt-2">Agregar contrato</h5>
             <div className="col-md-6 text-right">
-
               <RegresarBtn />
             </div>
           </div>
@@ -23,11 +22,6 @@ export const AgregarRecursosHumanos = () => {
         <div className="card-body">
           <form onSubmit={handleSubmit(showData)}>
             <div className="row justify-content-center d-flex">
-
-
-
-
-             
               <div className="col-md-12s mb-3">
                 <label className="form-label">Nombre</label>
                 <input
@@ -39,7 +33,7 @@ export const AgregarRecursosHumanos = () => {
                   placeholder="Nombre"
                 />
               </div>
-              
+
               <div className="col-md-6 mb-3">
                 <label className="form-label">Apellido Paterno</label>
                 <input
@@ -63,7 +57,6 @@ export const AgregarRecursosHumanos = () => {
                   placeholder="Apellido Materno"
                 />
               </div>
-
 
               <div className="col-md-4 mb-3">
                 <label className="form-label">Fraccionamiento</label>
@@ -101,8 +94,6 @@ export const AgregarRecursosHumanos = () => {
                 />
               </div>
 
-
-
               <div className="col-md-6 mb-3">
                 <label className="form-label">Telefono</label>
                 <input
@@ -114,7 +105,6 @@ export const AgregarRecursosHumanos = () => {
                   placeholder="Telefono"
                 />
               </div>
-
 
               <div className="col-md-6 mb-3">
                 <label className="form-label">Correo</label>
@@ -128,21 +118,10 @@ export const AgregarRecursosHumanos = () => {
                 />
               </div>
 
-
-
-
-
-
-
               <div className="col-12 mb-3">
                 <label className="form-label">Contrato en archivo PDF</label>
-                <input class="form-control" id="formFileLg" type="file"/>
+                <input class="form-control" id="formFileLg" type="file" />
               </div>
-              
-
-
-
-
 
               <div className="col-md-4 my-5">
                 <button type="submit" className="btn btn-primary form-control">

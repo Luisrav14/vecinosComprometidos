@@ -1,10 +1,3 @@
-import React from "react";
-import { Navbar } from "../../components/admin/Navbar";
-import { useEffect } from "react";
-import Swal from "sweetalert2";
-import { SidebarUser } from "../../components/admin/SidebarUser";
-import { UsuariosDashboard } from "./UsuariosDashboard";
-
 export const Suscripcion = () => {
   return (
     <>

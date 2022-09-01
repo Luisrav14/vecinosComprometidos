@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import { AiFillDelete } from "react-icons/ai";
 import { BsPlusLg, BsPencilSquare, BsFillChatLeftTextFill } from "react-icons/bs";
 
-import { RegresarBtn } from "../../components/RegresarBtn";
+import { RegresarBtn } from "../../components/ui/RegresarBtn";
 import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
 
 export const Inventario = () => {

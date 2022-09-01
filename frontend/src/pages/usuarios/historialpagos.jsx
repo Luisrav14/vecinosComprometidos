@@ -1,4 +1,3 @@
-import React from "react";
 import DataTable from "react-data-table-component";
 import { BsFillFileEarmarkFill } from "react-icons/bs";
 const ExpandedComponent = ({ data }) => <pre>{JSON.stringify(data, null, 2)}</pre>;
@@ -44,10 +43,10 @@ const data = [
     metodo: "Quintas #112",
     monto: "600",
     recibo: [
-      <button class="btn btn-success mx-2" onClick={Pagar}><BsFillFileEarmarkFill/>
-      
-        </button>,
-         ],
+      <button class="btn btn-success mx-2" onClick={Pagar}>
+        <BsFillFileEarmarkFill />
+      </button>,
+    ],
   },
   {
     id: 1,
@@ -56,10 +55,10 @@ const data = [
     metodo: "Quintas #112",
     monto: "600",
     recibo: [
-      <button class="btn btn-success mx-2" onClick={Pagar}><BsFillFileEarmarkFill/>
-      
-        </button>,
-         ],
+      <button class="btn btn-success mx-2" onClick={Pagar}>
+        <BsFillFileEarmarkFill />
+      </button>,
+    ],
   },
 ];
 export const HistorialPagos = () => {
@@ -81,22 +80,30 @@ export const HistorialPagos = () => {
                   <div className="row">
                     <form className="form-group form-default col-md-5 col-sm-12 row justify-content-center">
                       <div className="col-md-6 col-sm-12 mt-1">
-                        <label className="col-sm-12" htmlFor="">Buscar por año:</label>
+                        <label className="col-sm-12" htmlFor="">
+                          Buscar por año:
+                        </label>
                         <select name="" className="form-control" id="">
-                          <option selected disabled>Selcciona un año</option>
+                          <option selected disabled>
+                            Selcciona un año
+                          </option>
                           <option value="1">One</option>
                           <option value="2">Two</option>
                           <option value="3">Three</option>
                         </select>
                       </div>
-                      <button type="submit" className="btn btn-primary col-md-4 col-sm-12 mt-5">Buscar</button>
+                      <button type="submit" className="btn btn-primary col-md-4 col-sm-12 mt-5">
+                        Buscar
+                      </button>
                     </form>
                     <form className="form-group form-default col-md-5 col-sm-12 row justify-content-center">
                       <div className="col-md-6 col-sm-12 mt-1">
                         <label className="col-sm-12">Buscar por mes:</label>
 
                         <select className="form-control" name="month" required>
-                          <option selected disabled>Selcciona un mes</option>
+                          <option selected disabled>
+                            Selcciona un mes
+                          </option>
                           <option value="01">Enero</option>
                           <option value="02">Febrero</option>
                           <option value="03">Marzo</option>
@@ -111,16 +118,22 @@ export const HistorialPagos = () => {
                           <option value="12">Diciembre</option>
                         </select>
                       </div>
-                      <button type="submit" className="btn btn-primary col-md-4 col-sm-12 mt-5">  Buscar</button>
+                      <button type="submit" className="btn btn-primary col-md-4 col-sm-12 mt-5">
+                        {" "}
+                        Buscar
+                      </button>
                     </form>
                     <form id="" class="form-group form-default col-md-2 col-sm-12 row">
                       <label class="col-sm-12"></label>
                       <label class="col-sm-12"></label>
                       <label class="col-sm-12"></label>
-                      
-                        <button type="submit" class="btn btn-primary col-md-12 col-sm-12">  Mostrar Todos</button>
+
+                      <button type="submit" class="btn btn-primary col-md-12 col-sm-12">
+                        {" "}
+                        Mostrar Todos
+                      </button>
                     </form>
-                    <DataTable columns={columns} data={data} pagination/>
+                    <DataTable columns={columns} data={data} pagination />
                   </div>
                 </div>
               </div>

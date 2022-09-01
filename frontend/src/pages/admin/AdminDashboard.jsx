@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Navbar } from "../../components/admin/Navbar";
-import { Sidebar } from "../../components/admin/Sidebar";
+import { Navbar, Sidebar } from "../../components/";
 
 export const AdminDashboard = ({ children }) => {
   const [showSidebar, setShowSidebar] = useState(true);
@@ -194,7 +193,7 @@ export const AdminDashboard = ({ children }) => {
           </div>
         </nav>
         <main className="content">
-          <div className="container-fluid p-0">{children}</div>
+          <div className="container-fluid p-0"> {children} </div>
         </main>
       </div>
     </div>

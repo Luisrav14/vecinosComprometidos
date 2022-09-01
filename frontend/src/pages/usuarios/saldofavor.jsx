@@ -1,10 +1,7 @@
-import React from "react";
-
 import Swal from "sweetalert2";
 
 import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
-import { BsPlusLg, BsEnvelope, BsPencilSquare, BsPinAngle,BsFillFileEarmarkFill } from "react-icons/bs";
-
+import { BsFillFileEarmarkFill } from "react-icons/bs";
 
 const Pagar = () => {
   Swal.fire({
@@ -26,21 +23,21 @@ const columns = [
     name: "Fecha de pago ",
     selector: (row) => row.fecha,
     sortable: true,
-    
+
     center: true,
   },
   {
     name: "Saldo a favor	 ",
     selector: (row) => row.saldo,
     sortable: true,
-    
+
     center: true,
   },
   {
     name: "Comprobante",
     selector: (row) => row.comprobante,
     sortable: true,
-    
+
     center: true,
   },
   {
@@ -49,35 +46,30 @@ const columns = [
     sortable: true,
     center: true,
   },
-  
-  
 ];
 
 const data = [
   {
     id: 1,
-    fecha:"19/08/22",
+    fecha: "19/08/22",
     saldo: "$865",
     comprobante: [
-      <button class="btn btn-success mx-2" onClick={Pagar}><BsFillFileEarmarkFill/>
-      
-        </button>,
-         ],
+      <button class="btn btn-success mx-2" onClick={Pagar}>
+        <BsFillFileEarmarkFill />
+      </button>,
+    ],
     estatus: "Pendiente",
-    
-            
   },
   {
     id: 2,
-    fecha:"19/08/22",
+    fecha: "19/08/22",
     saldo: "$865",
     comprobante: [
-      <button class="btn btn-success mx-2" onClick={Pagar}><BsFillFileEarmarkFill/>
-      
-        </button>,
-         ],
+      <button class="btn btn-success mx-2" onClick={Pagar}>
+        <BsFillFileEarmarkFill />
+      </button>,
+    ],
     estatus: "Pendiente",
-           
   },
 ];
 export const SaldoFavor = () => {

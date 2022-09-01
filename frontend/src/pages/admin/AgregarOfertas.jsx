@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FaArrowLeft, FaHouseUser, FaFileAlt, FaHome, FaRegSave } from "react-icons/fa";
-import { RegresarBtn } from "../../components/RegresarBtn";
+import { RegresarBtn } from "../../components/ui/RegresarBtn";
 
 export const AgregarOfertas = () => {
   const { register, handleSubmit } = useForm();
@@ -15,7 +15,6 @@ export const AgregarOfertas = () => {
           <div className="row d-flex">
             <h5 className="card-title col-md-6 pt-2">Agregar ofertas</h5>
             <div className="col-md-6 text-right">
-
               <RegresarBtn />
             </div>
           </div>
@@ -23,9 +22,7 @@ export const AgregarOfertas = () => {
         <div className="card-body">
           <form onSubmit={handleSubmit(showData)}>
             <div className="row justify-content d-flex">
-
-
-            <div className="col-md-6 mb-3">
+              <div className="col-md-6 mb-3">
                 <label className="form-label">Nombre de la empresa</label>
                 <input
                   type="text"
@@ -37,7 +34,6 @@ export const AgregarOfertas = () => {
                 />
               </div>
 
-           
               <div className="col-md-6 mb-3">
                 <label className="form-label">categoria</label>
                 <input
@@ -94,41 +90,26 @@ export const AgregarOfertas = () => {
                   placeholder="Contacto"
                 />
               </div>
-              
 
               <div className="col-6 mb-3">
                 <label className="form-label">Imagen</label>
-                <input class="form-control" id="formFileLg" type="file"/>
+                <input class="form-control" id="formFileLg" type="file" />
               </div>
-              
+
               <div className="col-6 mb-3">
                 <label className="form-label">Banner</label>
-                <input class="form-control" id="formFileLg" type="file"/>
+                <input class="form-control" id="formFileLg" type="file" />
               </div>
 
-
-              <div className="row justify-content-center d-flex"> 
-              <div className="col-md-4 my-5">
-                <button type="submit" className="btn btn-primary form-control">
-                  <FaRegSave /> Guardar
-                </button>
+              <div className="row justify-content-center d-flex">
+                <div className="col-md-4 my-5">
+                  <button type="submit" className="btn btn-primary form-control">
+                    <FaRegSave /> Guardar
+                  </button>
+                </div>
               </div>
-              </div>
 
-
-
-
-
-
-            
-
-
-
-
-
-              <div className="col-md-4 my-5">
-               
-              </div>
+              <div className="col-md-4 my-5"></div>
             </div>
           </form>
         </div>

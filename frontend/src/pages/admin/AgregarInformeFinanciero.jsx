@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FaArrowLeft, FaHouseUser, FaFileAlt, FaHome, FaRegSave } from "react-icons/fa";
-import { RegresarBtn } from "../../components/RegresarBtn";
+import { RegresarBtn } from "../../components/ui/RegresarBtn";
 
 export const AgregarInformeFinanciero = () => {
   const { register, handleSubmit } = useForm();
@@ -15,7 +15,6 @@ export const AgregarInformeFinanciero = () => {
           <div className="row d-flex">
             <h5 className="card-title col-md-6 pt-2">Agregar informe financiero</h5>
             <div className="col-md-6 text-right">
-
               <RegresarBtn />
             </div>
           </div>
@@ -23,11 +22,6 @@ export const AgregarInformeFinanciero = () => {
         <div className="card-body">
           <form onSubmit={handleSubmit(showData)}>
             <div className="row justify-content-center d-flex">
-
-
-
-
-             
               <div className="col-md-6 mb-3">
                 <label className="form-label">Titulo del informe</label>
                 <input
@@ -39,7 +33,7 @@ export const AgregarInformeFinanciero = () => {
                   placeholder="Titulo"
                 />
               </div>
-              
+
               <div className="col-md-6 mb-3">
                 <label className="form-label">Motivo del informe</label>
                 <input
@@ -64,13 +58,8 @@ export const AgregarInformeFinanciero = () => {
               </div>
               <div className="col-12 mb-3">
                 <label className="form-label">Archivo PDF</label>
-                <input class="form-control" id="formFileLg" type="file"/>
+                <input class="form-control" id="formFileLg" type="file" />
               </div>
-              
-
-
-
-
 
               <div className="col-md-4 my-5">
                 <button type="submit" className="btn btn-primary form-control">

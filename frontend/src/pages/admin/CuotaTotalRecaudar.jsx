@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { BsFileEarmarkExcel, BsFileEarmarkPdf } from "react-icons/bs";
 import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
 import { exportPDF } from "../../components/admin/datatable/ExportPDF";
-import { RegresarBtn } from "../../components/RegresarBtn";
+import { RegresarBtn } from "../../components/ui/RegresarBtn";
 
 export const CuotaTotalRecaudar = () => {
   const columns = [

@@ -1,7 +1,3 @@
-import React from "react";
-
-import { UsuariosDashboard } from "./UsuariosDashboard";
-
 export const DashUser = () => {
   return (
     <>

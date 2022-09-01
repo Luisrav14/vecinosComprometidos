@@ -1,14 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Navbar } from "../../components/admin/Navbar";
-import { useEffect } from "react";
 import Swal from "sweetalert2";
-import { SidebarUser } from "../../components/admin/SidebarUser";
-import { UsuariosDashboard } from "./UsuariosDashboard";
-import DataTable from "react-data-table-component";
-import { BsPlusLg, BsEnvelope, BsPencilSquare, BsPinAngle, BsFillFileEarmarkFill } from "react-icons/bs";
 import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
-
 
 const sendEmail = () => {
   Swal.fire({
@@ -76,11 +68,9 @@ const data = [
     descripcion: "No prenden algunas lamparas",
     soluciones: "Cambiar las focos de las lamparas",
     resultados: "Se arreglaron los imperfectos",
-    imagen: "no hay"
+    imagen: "no hay",
   },
-  
 ];
-
 
 export const Acciones = () => {
   return (
@@ -97,7 +87,6 @@ export const Acciones = () => {
                 <div className="text-center">
                   <div className="card-block ">
                     <div className="row d-flex justify-content-around">
-
                       <DataTableComponent columns={columns} data={data} />
                     </div>
                   </div>

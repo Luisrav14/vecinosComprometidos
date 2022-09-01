@@ -1,14 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Navbar } from "../../components/admin/Navbar";
-import { useEffect } from "react";
 import Swal from "sweetalert2";
-import { SidebarUser } from "../../components/admin/SidebarUser";
-import { UsuariosDashboard } from "./UsuariosDashboard";
-import DataTable from "react-data-table-component";
-import { BsPlusLg, BsEnvelope, BsFillEyeFill, BsFillPieChartFill,BsFillFileEarmarkFill } from "react-icons/bs";
+import { BsFillEyeFill, BsFillPieChartFill } from "react-icons/bs";
 import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
-
 
 const sendEmail = () => {
   Swal.fire({
@@ -30,7 +22,7 @@ const columns = [
     name: "Titulo",
     selector: (row) => row.titulo,
     sortable: true,
-    
+
     center: true,
   },
   {
@@ -57,45 +49,44 @@ const columns = [
 const data = [
   {
     id: 1,
-    fecha:"18/07/22",
+    fecha: "18/07/22",
     titulo: "Encuesta Numero 1",
     descripcion: "Elegir color del alumbrado",
-   
-             acciones: [
-              <button class="btn btn-success mx-2" title="Contestar ">
-                <BsFillPieChartFill />
-                </button>,
-                   <button class="btn btn-success mx-2"  title="Ver Resultados">
-                   <BsFillEyeFill />
-                   </button>,
-                 ],
+
+    acciones: [
+      <button class="btn btn-success mx-2" title="Contestar ">
+        <BsFillPieChartFill />
+      </button>,
+      <button class="btn btn-success mx-2" title="Ver Resultados">
+        <BsFillEyeFill />
+      </button>,
+    ],
   },
   {
     id: 2,
-    fecha:"18/08/22",
+    fecha: "18/08/22",
     titulo: "Encuesta Numero 2",
     descripcion: "Elegir color de la entrada",
-    
-             acciones: [
-              <button class="btn btn-success mx-2"  title="Contestar ">
-                <BsFillPieChartFill />
-                </button>,
-                   <button class="btn btn-success mx-2"  title="Ver Resultados">
-                   <BsFillEyeFill />
-                   </button>,
-                 ],
+
+    acciones: [
+      <button class="btn btn-success mx-2" title="Contestar ">
+        <BsFillPieChartFill />
+      </button>,
+      <button class="btn btn-success mx-2" title="Ver Resultados">
+        <BsFillEyeFill />
+      </button>,
+    ],
   },
 ];
-
 
 export const Encuestas = () => {
   return (
     <>
       <div className="col-12">
-      <h1>
-            <b>Encuestas</b>
-          </h1>
-          <h5>En esta pagina podemos ver encuestas relevantes del fraccionamiento, podremos participar con la columna de acciones, es improtante dejar oir nuestra opinion.</h5>
+        <h1>
+          <b>Encuestas</b>
+        </h1>
+        <h5>En esta pagina podemos ver encuestas relevantes del fraccionamiento, podremos participar con la columna de acciones, es improtante dejar oir nuestra opinion.</h5>
         <div className="card">
           <div className="card-header mb-0">
             <div className=" rounded col-xl-12 col-md-12">
@@ -103,8 +94,7 @@ export const Encuestas = () => {
                 <div className="text-center">
                   <div className="card-block ">
                     <div className="row d-flex justify-content-around">
-                  
-                     <DataTableComponent columns={columns} data={data} />
+                      <DataTableComponent columns={columns} data={data} />
                     </div>
                   </div>
                 </div>

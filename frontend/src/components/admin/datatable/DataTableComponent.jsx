@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 
-import axios from "axios";
 import { Column } from "primereact/column";
 import { Button } from "primereact/button";
 import { DataTable } from "primereact/datatable";
@@ -12,7 +11,6 @@ import "primeicons/primeicons.css"; //icons
 
 export const DataTableComponent = ({ columns, data }) => {
   const [posts, setPosts] = useState(data);
-  const [pagination, setPagination] = useState(10);
 
   const exportColumns = columns.map((col) => ({
     title: col.name,

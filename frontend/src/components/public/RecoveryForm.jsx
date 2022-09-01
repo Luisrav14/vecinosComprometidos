@@ -5,8 +5,8 @@ import { useForm } from "react-hook-form";
 import { NavLink, Route, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-import globalConfig from "../global/globalConfig";
-import { infoFraccionamiento } from "../global/infoFraccionamiento";
+import globalConfig from "../../global/globalConfig";
+import { infoFraccionamiento } from "../../global/infoFraccionamiento";
 
 export const RecoveryForm = () => {
   const { register, handleSubmit } = useForm();

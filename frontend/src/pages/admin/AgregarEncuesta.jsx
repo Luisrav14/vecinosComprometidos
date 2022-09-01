@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FaArrowLeft, FaHouseUser, FaFileAlt, FaHome, FaRegSave } from "react-icons/fa";
-import { RegresarBtn } from "../../components/RegresarBtn";
-import { BsPlusLg} from "react-icons/bs";
+import { RegresarBtn } from "../../components/ui/RegresarBtn";
+import { BsPlusLg } from "react-icons/bs";
 export const AgregarEncuesta = () => {
   const { register, handleSubmit } = useForm();
 
@@ -13,19 +13,16 @@ export const AgregarEncuesta = () => {
       <div className="card">
         <div className="card-header border-bottom border-1">
           <div className="row d-flex">
-            <h5 className="card-title col-md-6 pt-2">Crear  Encuesta</h5>
+            <h5 className="card-title col-md-6 pt-2">Crear Encuesta</h5>
             <div className="col-md-6 text-right">
-             
-              <RegresarBtn/>
+              <RegresarBtn />
             </div>
           </div>
         </div>
         <div className="card-body">
           <form onSubmit={handleSubmit(showData)}>
             <div className="row justify-content-center d-flex">
-             
-              
-            <div className="col-md-6 mb-3">
+              <div className="col-md-6 mb-3">
                 <label className="form-label">Nombre de la encuesta</label>
                 <input
                   type="Titulo"
@@ -36,7 +33,7 @@ export const AgregarEncuesta = () => {
                   placeholder="Titulo"
                 />
               </div>
-              
+
               <div className="col-md-6 mb-3">
                 <label className="form-label">Fecha de finalizacion</label>
                 <input
@@ -47,7 +44,7 @@ export const AgregarEncuesta = () => {
                   })}
                 />
               </div>
-             
+
               <div className="col-md-12 mb-3">
                 <label className="form-label">Descripción</label>
                 <textarea
@@ -60,13 +57,9 @@ export const AgregarEncuesta = () => {
                   placeholder="Descripción"
                 />
               </div>
-             
 
-             
-              
-              
               <div className="col-md-4 my-5">
-              <button type="" className="btn btn-primary form-control">
+                <button type="" className="btn btn-primary form-control">
                   <BsPlusLg /> Agregar pregunta
                 </button>
                 <div className="mb-4"> </div>

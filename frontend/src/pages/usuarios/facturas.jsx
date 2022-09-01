@@ -1,12 +1,7 @@
-import React from "react";
-
-
 import Swal from "sweetalert2";
 
-import DataTable from "react-data-table-component";
-import { BsPlusLg, BsEnvelope, BsPencilSquare, BsPinAngle,BsFillFileEarmarkFill } from "react-icons/bs";
+import { BsEnvelope, BsFillFileEarmarkFill } from "react-icons/bs";
 import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
-
 
 const sendEmail = () => {
   Swal.fire({
@@ -28,7 +23,7 @@ const columns = [
     name: "Fecha",
     selector: (row) => row.fecha,
     sortable: true,
-    
+
     center: true,
   },
   {
@@ -66,57 +61,56 @@ const columns = [
 const data = [
   {
     id: 1,
-    fecha:"18/07/22",
+    fecha: "18/07/22",
     nombre: "Factura Numero 1",
     direccion: "Quintas #112",
     recibo: [
       <button class="btn btn-warning mx-2">
         <BsFillFileEarmarkFill />
       </button>,
-         ],
-         xml: [
-          <button class="btn btn-warning mx-2">
-            <BsFillFileEarmarkFill />
-          </button>,
-             ],
-             acciones: [
-              <button class="btn btn-success mx-2" onClick={sendEmail}>
-                <BsEnvelope />
-                </button>,
-                 ],
+    ],
+    xml: [
+      <button class="btn btn-warning mx-2">
+        <BsFillFileEarmarkFill />
+      </button>,
+    ],
+    acciones: [
+      <button class="btn btn-success mx-2" onClick={sendEmail}>
+        <BsEnvelope />
+      </button>,
+    ],
   },
   {
     id: 2,
-    fecha:"18/08/22",
+    fecha: "18/08/22",
     nombre: "Factura Numero dos",
     direccion: "Roble #333",
     recibo: [
       <button class="btn btn-warning mx-2">
         <BsFillFileEarmarkFill />
       </button>,
-         ],
-         xml: [
-          <button class="btn btn-warning mx-2">
-            <BsFillFileEarmarkFill />
-          </button>,
-             ],
-             acciones: [
-              <button class="btn btn-success mx-2" onClick={sendEmail}>
-                <BsEnvelope />
-                </button>,
-                 ],
+    ],
+    xml: [
+      <button class="btn btn-warning mx-2">
+        <BsFillFileEarmarkFill />
+      </button>,
+    ],
+    acciones: [
+      <button class="btn btn-success mx-2" onClick={sendEmail}>
+        <BsEnvelope />
+      </button>,
+    ],
   },
 ];
-
 
 export const Facturas = () => {
   return (
     <>
       <div className="col-12">
-      <h1>
-            <b>Facturas</b>
-          </h1>
-          <h5>En esta página veremos las facturas que se han generado.</h5>
+        <h1>
+          <b>Facturas</b>
+        </h1>
+        <h5>En esta página veremos las facturas que se han generado.</h5>
         <div className="card">
           <div className="card-header mb-0">
             <div className=" rounded col-xl-12 col-md-12">
@@ -124,8 +118,7 @@ export const Facturas = () => {
                 <div className="text-center">
                   <div className="card-block ">
                     <div className="row d-flex justify-content-around">
-                  
-                     <DataTableComponent columns={columns} data={data} />
+                      <DataTableComponent columns={columns} data={data} />
                     </div>
                   </div>
                 </div>

@@ -1,9 +1,3 @@
-import React from "react";
-import { Navbar } from "../../components/admin/Navbar";
-import { useEffect } from "react";
-import Swal from "sweetalert2";
-import { SidebarUser } from "../../components/admin/SidebarUser";
-
 export const MisSuscripciones = () => {
   return (
     <>
@@ -16,9 +10,7 @@ export const MisSuscripciones = () => {
               <div className="card-block mb-5 mt-5">
                 <div className="text-center">
                   <img className="card-img-top" style={{ width: "20%" }} src=" https://quintasresidencial.com/fraccionamiento/QuintasResidencial/assets/images/warning.png" alt="" />
-                  <h2>
-                  Atención no tienes ninguna suscripción activa
-                  </h2>
+                  <h2>Atención no tienes ninguna suscripción activa</h2>
                   <div className="container mt-5">
                     <div>
                       <h3>Verifíca en la sección "Método de pago"</h3>

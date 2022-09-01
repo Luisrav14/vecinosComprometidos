@@ -1,11 +1,5 @@
-import React from "react";
-import { Navbar } from "../../components/admin/Navbar";
-import { useEffect } from "react";
 import Swal from "sweetalert2";
-import { SidebarUser } from "../../components/admin/SidebarUser";
 import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
-
-
 
 const Pagar = () => {
   Swal.fire({
@@ -27,21 +21,21 @@ const columns = [
     name: "Concepto ",
     selector: (row) => row.concepto,
     sortable: true,
-    
+
     center: true,
   },
   {
     name: "Descripcion ",
     selector: (row) => row.descripcion,
     sortable: true,
-    
+
     center: true,
   },
   {
     name: "Monto",
     selector: (row) => row.monto,
     sortable: true,
-    
+
     center: true,
   },
   {
@@ -50,40 +44,39 @@ const columns = [
     sortable: true,
     center: true,
   },
-  
+
   {
     name: "Acciones",
     selector: (row) => row.acciones,
     center: true,
-    
   },
 ];
 
 const data = [
   {
     id: 1,
-    concepto:"Ingreso Extraordinario al mes de: Marzo del 2022",
+    concepto: "Ingreso Extraordinario al mes de: Marzo del 2022",
     descripcion: "cuota de mantenimiento febrero y marzo 2022",
     monto: "$1,029.00",
     estatus: "Pendiente",
-    
-             acciones: [
-              <button class="btn btn-success mx-2" onClick={Pagar}>
-               Pagar 
-                </button>,
-                 ],
+
+    acciones: [
+      <button class="btn btn-success mx-2" onClick={Pagar}>
+        Pagar
+      </button>,
+    ],
   },
   {
     id: 2,
-    concepto:"Ingreso Extraordinario al mes de: Marzo del 2022",
+    concepto: "Ingreso Extraordinario al mes de: Marzo del 2022",
     descripcion: "cuota de mantenimiento febrero y marzo 2022",
     monto: "$1,029.00",
     estatus: "Pendiente",
-             acciones: [
-              <button class="btn btn-success mx-2" onClick={Pagar}>
-                Pagar 
-                </button>,
-                 ],
+    acciones: [
+      <button class="btn btn-success mx-2" onClick={Pagar}>
+        Pagar
+      </button>,
+    ],
   },
 ];
 export const PagosPendientes = () => {
@@ -103,7 +96,7 @@ export const PagosPendientes = () => {
                 <div className="text-center">
                   <div className="container mt-5">
                     <div>
-                    <DataTableComponent columns={columns} data={data} />
+                      <DataTableComponent columns={columns} data={data} />
                     </div>
                   </div>
                 </div>

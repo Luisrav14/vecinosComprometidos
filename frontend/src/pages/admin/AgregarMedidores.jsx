@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FaArrowLeft, FaHouseUser, FaFileAlt, FaHome, FaRegSave } from "react-icons/fa";
-import { RegresarBtn } from "../../components/RegresarBtn";
+import { RegresarBtn } from "../../components/ui/RegresarBtn";
 
 export const AgregarMedidores = () => {
   const { register, handleSubmit } = useForm();
@@ -15,7 +15,6 @@ export const AgregarMedidores = () => {
           <div className="row d-flex">
             <h5 className="card-title col-md-6 pt-2">Agregar medidores</h5>
             <div className="col-md-6 text-right">
-
               <RegresarBtn />
             </div>
           </div>
@@ -23,11 +22,6 @@ export const AgregarMedidores = () => {
         <div className="card-body">
           <form onSubmit={handleSubmit(showData)}>
             <div className="row justify-content d-flex">
-
-
-
-
-             
               <div className="col-md-6 mb-3">
                 <label className="form-label">Numero de medidor</label>
                 <input
@@ -39,7 +33,7 @@ export const AgregarMedidores = () => {
                   placeholder="Numero de medidor"
                 />
               </div>
-              
+
               <div className="col-md-6 mb-3">
                 <label className="form-label">Numero de servicio</label>
                 <input
@@ -73,9 +67,6 @@ export const AgregarMedidores = () => {
                   })}
                 />
               </div>
-              
-
-
 
               <div className="col-6 mb-3">
                 <label className="form-label">Saldo final</label>
@@ -91,21 +82,16 @@ export const AgregarMedidores = () => {
 
               <div className="col-12 mb-3">
                 <label className="form-label">Archivo PDF</label>
-                <input class="form-control" id="formFileLg" type="file"/>
-              </div>
-              
-
-
-
-              <div className="row justify-content-center d-flex"> 
-              <div className="col-md-4 my-5">
-                <button type="submit" className="btn btn-primary form-control">
-                  <FaRegSave /> Guardar
-                </button>
-              </div>
+                <input class="form-control" id="formFileLg" type="file" />
               </div>
 
-             
+              <div className="row justify-content-center d-flex">
+                <div className="col-md-4 my-5">
+                  <button type="submit" className="btn btn-primary form-control">
+                    <FaRegSave /> Guardar
+                  </button>
+                </div>
+              </div>
             </div>
           </form>
         </div>

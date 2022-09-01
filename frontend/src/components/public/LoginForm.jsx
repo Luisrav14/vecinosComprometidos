@@ -5,9 +5,9 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 
-import globalConfig from "../global/globalConfig";
-import { infoFraccionamiento } from "../global/infoFraccionamiento";
-import { TerminosCondicionesAlert } from "./sweetAlert/TerminosCondicionesAlert";
+import globalConfig from "../../global/globalConfig";
+import { infoFraccionamiento } from "../../global/infoFraccionamiento";
+import { TerminosCondicionesAlert } from "../ui/sweetAlert/TerminosCondicionesAlert";
 
 export const LoginForm = () => {
   const { register, handleSubmit } = useForm();

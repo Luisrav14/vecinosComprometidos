@@ -1,12 +1,13 @@
-export * from "./FooterSm";
-export * from "./LoginForm";
+export * from "./public/FooterSm";
+export * from "./public/LoginForm";
+export * from "./public/RecoveryForm";
 
-export * from "./admin/MenuItem";
-export * from "./admin/Navbar";
-export * from "./admin/Sidebar";
-export * from "./admin/NavbarUser";
-export * from "./admin/SidebarUser";
+export * from "./admin/ui/MenuItem";
+export * from "./admin/ui/Navbar";
+export * from "./admin/ui/Sidebar";
 
+export * from "./usuarios/NavbarUser";
+export * from "./usuarios/SidebarUser";
 
 export * from "./admin/charts/BarChart";
 export * from "./admin/charts/DonutChart";
@@ -15,7 +16,7 @@ export * from "./admin/charts/LineChart";
 export * from "./admin/datatable/DataTableComponent";
 export * from "./admin/datatable/FiltersMonthYear";
 
-export * from "./modals/ModalWithBtn";
+export * from "./ui/modals/ModalWithBtn";
 
-export * from "./sweetAlert/TerminosCondicionesAlert";
-export * from "./sweetAlert/EliminarAlert";
+export * from "./ui/sweetAlert/TerminosCondicionesAlert";
+export * from "./ui/sweetAlert/EliminarAlert";

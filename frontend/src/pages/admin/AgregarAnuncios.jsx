@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FaArrowLeft, FaHouseUser, FaFileAlt, FaHome, FaRegSave } from "react-icons/fa";
-import { RegresarBtn } from "../../components/RegresarBtn";
+import { RegresarBtn } from "../../components/ui/RegresarBtn";
 
 export const AgregarAnuncios = () => {
   const { register, handleSubmit } = useForm();
@@ -15,7 +15,6 @@ export const AgregarAnuncios = () => {
           <div className="row d-flex">
             <h5 className="card-title col-md-6 pt-2"> Agregar accion</h5>
             <div className="col-md-6 text-right">
-
               <RegresarBtn />
             </div>
           </div>
@@ -97,8 +96,11 @@ export const AgregarAnuncios = () => {
                 />
               </div>
               <div className="col-md-6 mb-3">
-                <label className="form-label" hidden>oculto</label>
-                <input hidden
+                <label className="form-label" hidden>
+                  oculto
+                </label>
+                <input
+                  hidden
                   type="oculto"
                   className="form-control"
                   {...register("oculto", {
@@ -107,7 +109,7 @@ export const AgregarAnuncios = () => {
                   placeholder="oculto"
                 />
               </div>
-             <div className="col-md-4 my-5">
+              <div className="col-md-4 my-5">
                 <button type="submit" className="btn btn-primary form-control">
                   <FaRegSave /> Guardar
                 </button>

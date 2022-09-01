@@ -1,4 +1,4 @@
-import { infoFraccionamiento } from "../global/infoFraccionamiento";
+import { infoFraccionamiento } from "../../global/infoFraccionamiento";
 
 export const FooterSm = () => {
   const newDate = new Date();
