@@ -53,58 +53,33 @@ export const DataTableComponent = ({ columns, data }) => {
   };
 
   const header = (
-    <div className="d-flex mx-2 pb-3 ">
-      <input className="form-control w-25 mx-2 " type="search" placeholder="Buscar..." />
-      <Button type="button" icon={<BsFileEarmarkPdf />} onClick={exportPDF} className="btn btn-primary bg-primary mr-2" data-pr-tooltip="XLS"></Button>
-      <Button type="button" icon={<BsFileEarmarkExcel />} onClick={exportExcel} className="btn btn-primary bg-primary mr-2" data-pr-tooltip="PDF"></Button>
-      {/*     <div className="dropdown">
-        <a className="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-          Mostrar
-        </a>
-        <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <li>
-            <button className="dropdown-item" onClick={setPagination(10)} >
-              10
-            </button>
-          </li>
-          <li>
-            <button className="dropdown-item" onClick={setPagination(50)} >
-              50
-            </button>
-          </li>
-          <li>
-            <button className="dropdown-item" onClick={setPagination(100)} >
-              100
-            </button>
-          </li>
-          <li>
-            <button className="dropdown-item" onClick={setPagination(500)} >
-              500
-            </button>
-          </li>
-        </ul>
-      </div> */}
+    <div className="d-flex mx-2 pb-3 row">
+      <input className="form-control col-md-12 w-25 mx-2" type="search" placeholder="Buscar..." />
+      <Button type="button" className="btn btn-primary bg-primary col-md-2 mr-2" icon={<BsFileEarmarkPdf />} onClick={exportPDF} data-pr-tooltip="PDF" />
+      <Button type="button" className="btn btn-primary bg-primary col-md-2 mr-2" icon={<BsFileEarmarkExcel />} onClick={exportExcel} data-pr-tooltip="XLS" />
     </div>
   );
 
   return (
-    <div className="px-2">
-      <DataTable
-        className=""
-        rows={10}
-        value={posts}
-        header={header}
-        responsiveLayout="scroll"
-        dataKey="id"
-        paginator
-        emptyMessage="No hay información para mostrar." //
-        currentPageReportTemplate="Mostrando {first} - {last} de {totalRecords} registros"
-        paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
-      >
-        {columns.map((col) => {
-          return <Column field={col.selector} header={col.name} style={{ width: "auto" }} />;
-        })}
-      </DataTable>
-    </div>
+    <DataTable
+      className="text-center"
+      resizableColumns
+      columnResizeMode="fit"
+      showGridlines
+      rows={10}
+      value={posts}
+      header={header}
+      responsiveLayout="scroll"
+      dataKey="id"
+      emptyMessage="No hay información para mostrar." //
+      paginator
+      rowsPerPageOptions={[10, 20, 50, 100]}
+      currentPageReportTemplate="Mostrando {first} - {last} de {totalRecords} registros"
+      paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
+    >
+      {columns.map((col) => {
+        return <Column field={col.selector} header={col.name} style={{ width: "auto" }} />;
+      })}
+    </DataTable>
   );
 };

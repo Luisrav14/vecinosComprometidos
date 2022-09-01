@@ -93,16 +93,7 @@ export const CuotaTotalPendiente = () => {
         </div>
         <div className="card-body">
           <div className="col-md-12 d-flex mb-3 justify-content-between">
-            <div className="col-md-9 d-flex">
-              <input type="text" className="form-control col-md-3" placeholder="Buscar..." />
-              <button className="btn btn-primary mx-2" onClick={() => exportPDF()}>
-                <BsFileEarmarkPdf /> PDF
-              </button>
-              <button className="btn btn-primary mx-2">
-                <BsFileEarmarkExcel /> Excel
-              </button>
-            </div>
-            <div className="col-md-3 text-right">
+            <div className="col-md-12 text-right">
               <ModalWithBtn classBtn="btn btn-primary" title="Pago cuota mantenimiento" textBtn="Agregar" iconBtn={<BsPlusLg />}>
                 {<AgregarForm />}
               </ModalWithBtn>

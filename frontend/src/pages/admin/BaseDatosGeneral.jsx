@@ -192,7 +192,9 @@ export const BaseDatosGeneral = () => {
             </div>
           </div>
         </div>
-        <DataTableComponent columns={columns} data={data} expandible={true} />
+        <div className="card-body">
+          <DataTableComponent columns={columns} data={data} expandible={true} />
+        </div>
       </div>
     </>
   );

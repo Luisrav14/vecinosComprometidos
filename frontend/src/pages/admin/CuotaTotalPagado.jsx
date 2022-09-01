@@ -105,15 +105,6 @@ export const CuotaTotalPagado = () => {
           </div>
         </div>
         <div className="card-body">
-          <div className="col-md-12 d-flex mb-3 justify-content-start">
-            <input type="text" className="form-control col-md-3" placeholder="Buscar..." />
-            <button className="btn btn-primary mx-2" onClick={() => exportPDF()}>
-              <BsFileEarmarkPdf /> PDF
-            </button>
-            <button className="btn btn-primary mx-2">
-              <BsFileEarmarkExcel /> Excel
-            </button>
-          </div>
           <div className="col-md-12">
             <DataTableComponent columns={columns} data={data} />
           </div>
