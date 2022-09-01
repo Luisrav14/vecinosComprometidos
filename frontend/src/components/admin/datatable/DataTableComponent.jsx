@@ -6,6 +6,10 @@ import { Button } from "primereact/button";
 import { DataTable } from "primereact/datatable";
 import { BsFileEarmarkExcel, BsFileEarmarkPdf } from "react-icons/bs";
 
+import "primereact/resources/themes/saga-blue/theme.css"; //theme
+import "primereact/resources/primereact.min.css"; //core css
+import "primeicons/primeicons.css"; //icons
+
 export const DataTableComponent = ({ columns, data }) => {
   const [posts, setPosts] = useState(data);
   const [pagination, setPagination] = useState(10);
@@ -34,7 +38,7 @@ export const DataTableComponent = ({ columns, data }) => {
       const data = new Blob([buffer], {
         type: EXCEL_TYPE,
       });
-      FileSaver.saveAs(data, fileName + "_export_" + new Date().getTime() + EXCEL_EXTENSION);
+      FileSaver.saveAs(data, "file" + "_export_" + new Date().getTime() + EXCEL_EXTENSION);
     });
   };
 
@@ -51,12 +55,8 @@ export const DataTableComponent = ({ columns, data }) => {
   const header = (
     <div className="d-flex mx-2 pb-3 ">
       <input className="form-control w-25 mx-2 " type="search" placeholder="Buscar..." />
-      <Button type="button" icon={<BsFileEarmarkPdf />} onClick={exportPDF} className="btn btn-primary bg-primary mr-2" data-pr-tooltip="XLS">
-        PDF
-      </Button>
-      <Button type="button" icon={<BsFileEarmarkExcel />} onClick={exportExcel} className="btn btn-primary bg-primary mr-2" data-pr-tooltip="PDF">
-        Excel
-      </Button>
+      <Button type="button" icon={<BsFileEarmarkPdf />} onClick={exportPDF} className="btn btn-primary bg-primary mr-2" data-pr-tooltip="XLS"></Button>
+      <Button type="button" icon={<BsFileEarmarkExcel />} onClick={exportExcel} className="btn btn-primary bg-primary mr-2" data-pr-tooltip="PDF"></Button>
       {/*     <div className="dropdown">
         <a className="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
           Mostrar
@@ -88,9 +88,9 @@ export const DataTableComponent = ({ columns, data }) => {
   );
 
   return (
-    <div className="p-3">
+    <div className="px-2">
       <DataTable
-        className="table table-striped"
+        className=""
         rows={10}
         value={posts}
         header={header}
@@ -102,7 +102,7 @@ export const DataTableComponent = ({ columns, data }) => {
         paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
       >
         {columns.map((col) => {
-          return <Column field={col.selector} sortable header={col.name} style={{ width: "auto", textAlign: "center" }} />;
+          return <Column field={col.selector} header={col.name} style={{ width: "auto" }} />;
         })}
       </DataTable>
     </div>
