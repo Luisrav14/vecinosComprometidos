@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 
-export const EliminarAlert = (id) => {
+export const EliminarAlert = (route) => {
   return Swal.fire({
     title: "¿Estas seguro de eliminar?",
     text: "Esta acción no se puede deshacer",

@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { Toaster } from "react-hot-toast";
 import { NavLink } from "react-router-dom";
+
 import { Navbar, Sidebar } from "../../components/";
 
 export const AdminDashboard = ({ children }) => {
@@ -193,6 +195,7 @@ export const AdminDashboard = ({ children }) => {
           </div>
         </nav>
         <main className="content">
+          <Toaster position="top-center" reverseOrder={false} />
           <div className="container-fluid p-0"> {children} </div>
         </main>
       </div>

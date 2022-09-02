@@ -2,33 +2,50 @@ import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
 import axios from "axios";
+import { Toaster } from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 
 import globalConfig from "../../global/globalConfig";
 import { infoFraccionamiento } from "../../global/infoFraccionamiento";
-import { TerminosCondicionesAlert } from "../ui/sweetAlert/TerminosCondicionesAlert";
+import { TerminosCondicionesAlert, errorAlert, inputRequiredToast } from "../";
+import Swal from "sweetalert2";
 
 export const LoginForm = () => {
-  const { register, handleSubmit } = useForm();
+  const navigate = useNavigate();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   const [inputType, SetinputType] = useState("password");
   const [loginErrorMail, setloginErrorMail] = useState(false);
   const [loginErrorPass, setloginErrorPass] = useState(false);
+  const [loadBtn, setloadBtn] = useState(false);
 
   const handleChangePassword = () => (inputType == "password" ? SetinputType("text") : SetinputType("password"));
 
-  const navigate = useNavigate();
+  (errors.password?.type === "required" || errors.correo?.type === "required") && inputRequiredToast();
 
   /*   const dataValidation = async (data) => {
-    (await TerminosCondicionesAlert()) &&
-      (await axios
+    setloadBtn(false);
+    if (await TerminosCondicionesAlert()) {
+      setloadBtn(true);
+      await axios
         .post(`${globalConfig.api_URL}/login`, data)
         .then(({ data }) => {
+          setloadBtn(false);
           console.log(data);
           inputErrors(data);
         })
-        .catch((error) => console.log(error)));
+        .catch((error) => {
+          setloadBtn(false);
+          console.log(error);
+          errorAlert();
+        });
+    }
   };
 
   const inputErrors = async ({ status, data }) => {
@@ -37,6 +54,12 @@ export const LoginForm = () => {
 
     switch (status) {
       case "success":
+        await Swal.fire({
+          title: "Acceso correcto",
+          icon: "success",
+          timer: 1000,
+          showConfirmButton: false,
+        });
         data[0].tipo != 5 ? navigate("/admin", { replace: true }) : navigate("/dashboard", { replace: true });
         break;
 
@@ -79,6 +102,7 @@ export const LoginForm = () => {
   return (
     <div className="d-lg-flex half py-4">
       <div className="container py-5">
+        <Toaster position="top-center" reverseOrder={false} />
         <div className="row align-items-center justify-content-center">
           <div className="col-md-5 mb-5 py-5">
             <div className="mb-4 text-center">
@@ -99,7 +123,6 @@ export const LoginForm = () => {
                   name="correo"
                   {...register("correo", {
                     required: true,
-                    message: "Ingrese correo electrónico",
                   })}
                 />
                 {loginErrorMail && <small className="text-danger">Correo inexistente, verifique.</small>}
@@ -117,17 +140,23 @@ export const LoginForm = () => {
                     name="password"
                     {...register("password", {
                       required: true,
-                      message: "Ingrese contraseña",
                     })}
                   />
+
                   <button className="btn btn-outline-primary" type="button" onClick={handleChangePassword}>
                     {inputType != "password" ? <BsFillEyeFill /> : <BsFillEyeSlashFill />}
                   </button>
                 </div>
                 {loginErrorPass && <small className="text-danger">Contraseña Incorrecta</small>}
               </div>
-              <button type="submit" id="entrar" value="Entrar" className="btn btn-block form-control btn-primary form-inline">
-                Entrar
+              <button type="submit" id="entrar" value="Entrar" className="btn btn-block form-control btn-primary form-inline" disabled={loadBtn}>
+                {loadBtn ? (
+                  <>
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Cargando...
+                  </>
+                ) : (
+                  "Entrar"
+                )}
               </button>
               <div className="d-flex pt-4 justify-content-center">
                 <small className="text-center">

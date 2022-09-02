@@ -21,3 +21,6 @@ export * from "./ui/modals/ModalWithBtn";
 
 export * from "./ui/sweetAlert/TerminosCondicionesAlert";
 export * from "./ui/sweetAlert/EliminarAlert";
+export * from "./ui/sweetAlert/ErrorAlert";
+
+export * from "./ui/toast/inputRequiredToast";

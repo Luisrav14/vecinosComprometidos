@@ -1,5 +1,5 @@
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 export const inputRequiredToast = () => {
-  toast.error("Completa los campos obligatorios");
+  return toast.error("Completa los campos obligatorios");
 };
