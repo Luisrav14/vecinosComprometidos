@@ -4,6 +4,7 @@ import React from 'react'
 import Calendar from 'react-calendar';
 import { useState } from 'react';
 import 'react-calendar/dist/Calendar.css';
+import Calendario from "../usuarios/Calendario";
 
 
 
@@ -27,8 +28,8 @@ export const CalendarioReservaciones = () => {
             </div>
 
           </div>
-          <div className="row d-flex justify-content-around">
-            <Calendar style={{ width: "100%" }} />
+          <div className="row d-flex justify-content-around mt-5">
+           <Calendario/>
           </div>
         </div>
 

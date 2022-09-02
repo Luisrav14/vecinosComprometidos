@@ -1,6 +1,6 @@
 
 import { infoFraccionamiento } from "../global/infoFraccionamiento";
-import DocuPdf from "./usuarios/DocuPdf";
+import Calendario from "./usuarios/Calendario";
 export const IndexPage = () => {
   return (
     <>
@@ -385,7 +385,7 @@ export const IndexPage = () => {
         </div>
       </footer>
       <div className="d-flex justify-content-center mt-5">
-      <DocuPdf/>
+      <Calendario/>
       <h1>hola</h1>
       </div>
       <button > Ver pdf</button>

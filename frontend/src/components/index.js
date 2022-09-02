@@ -8,7 +8,7 @@ export * from "./admin/ui/Sidebar";
 
 export * from "./usuarios/NavbarUser";
 export * from "./usuarios/SidebarUser";
-export * from "../pages/usuarios/DocuPdf";
+export * from "../pages/usuarios/Calendario";
 
 export * from "./admin/charts/BarChart";
 export * from "./admin/charts/DonutChart";
