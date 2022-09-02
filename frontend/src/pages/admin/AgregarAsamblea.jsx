@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { FaRegSave } from "react-icons/fa";
-
+import toast, { Toaster } from 'react-hot-toast';
 import { RegresarBtn } from "../../components/ui/RegresarBtn";
 import { inputMaxLength30Toast, inputRequiredToast } from "../../components/ui/toast/inputRequiredToast";
 
@@ -15,6 +15,10 @@ export const AgregarAsamblea = () => {
 
   return (
     <>
+    <Toaster
+  position="top-center"
+  reverseOrder={false}
+/>
       <div className="card">
         <div className="card-header border-bottom border-1">
           <div className="row d-flex">
@@ -29,13 +33,17 @@ export const AgregarAsamblea = () => {
             <div className="row justify-content-center d-flex">
               <div className="col-md-6 mb-3">
                 <label className="form-label">Fecha de la asamblea *</label>
+                
                 <input
                   type="date"
                   className="form-control"
+                  
                   {...register("fecha_asamblea", {
+                    
                     required: true,
                     maxLength: 10,
                   })}
+                  
                 />
                 {errors.fecha_asamblea?.type === "required" && inputRequiredToast()}
               </div>
