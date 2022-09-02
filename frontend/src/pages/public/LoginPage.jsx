@@ -1,4 +1,4 @@
-import { LoginForm, FooterSm } from "../components/";
+import { LoginForm, FooterSm } from "../../components/";
 
 export const LoginPage = () => {
   return (
