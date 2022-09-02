@@ -1,6 +1,6 @@
-export * from "./IndexPage";
-export * from "./LoginPage";
-export * from "./PasswordRecoveryPage";
+export * from "./public/IndexPage";
+export * from "./public/LoginPage";
+export * from "./public/PasswordRecoveryPage";
 
 export * from "./admin/AdminDashboard";
 export * from "./admin/BaseDatosGeneral";
@@ -69,4 +69,3 @@ export * from "./usuarios/acciones";
 export * from "./usuarios/espacioscomunes";
 export * from "./usuarios/miperfil";
 export * from "./usuarios/missuscripciones";
-

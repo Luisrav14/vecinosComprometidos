@@ -1,4 +1,4 @@
-import { FooterSm, RecoveryForm } from "../components/";
+import { FooterSm, RecoveryForm } from "../../components/";
 
 export const PasswordRecoveryPage = () => {
   return (

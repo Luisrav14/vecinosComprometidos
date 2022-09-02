@@ -1,6 +1,6 @@
+import { infoFraccionamiento } from "../../global/infoFraccionamiento";
+import Calendario from "../usuarios/Calendario";
 
-import { infoFraccionamiento } from "../global/infoFraccionamiento";
-import Calendario from "./usuarios/Calendario";
 export const IndexPage = () => {
   return (
     <>
@@ -47,7 +47,7 @@ export const IndexPage = () => {
                 <img id="banner1" className="w-100" src={infoFraccionamiento.banner1} />
               </div>
               <div className="carousel-item">
-                <img id="banner2" className="w-100" src={infoFraccionamiento.banner2}/>
+                <img id="banner2" className="w-100" src={infoFraccionamiento.banner2} />
               </div>
               <div className="carousel-item">
                 <img id="banner3" className="w-100" src={infoFraccionamiento.banner3} />
@@ -180,7 +180,7 @@ export const IndexPage = () => {
             <div className="col-lg-2 col-md-6 mt-10 mb-30 d-flex justify-content-around">
               <div className="card">
                 <a href="https://api.whatsapp.com/send?phone=526182280145" target="_blank">
-                  <img className="img-fluid"  src={infoFraccionamiento.oficio1} alt="Deepers Lava Carros" />
+                  <img className="img-fluid" src={infoFraccionamiento.oficio1} alt="Deepers Lava Carros" />
                 </a>
               </div>
             </div>
@@ -385,14 +385,13 @@ export const IndexPage = () => {
         </div>
       </footer>
       <div className="d-flex justify-content-center mt-5">
-      <Calendario/>
-      <h1>hola</h1>
+        <Calendario />
+        <h1>hola</h1>
       </div>
-      <button > Ver pdf</button>
+      <button> Ver pdf</button>
       <a href="/docu" target="_blank">
-                        Asambleas
-                      </a>
+        Asambleas
+      </a>
     </>
-   
   );
 };

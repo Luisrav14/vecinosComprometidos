@@ -8,7 +8,7 @@ import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 
 import globalConfig from "../../global/globalConfig";
 import { infoFraccionamiento } from "../../global/infoFraccionamiento";
-import { TerminosCondicionesAlert, errorAlert, inputRequiredToast } from "../";
+import { TerminosCondicionesAlert, errorAlert, inputRequiredToast, LoaderBtn } from "../";
 import Swal from "sweetalert2";
 
 export const LoginForm = () => {
@@ -150,13 +150,7 @@ export const LoginForm = () => {
                 {loginErrorPass && <small className="text-danger">Contraseña Incorrecta</small>}
               </div>
               <button type="submit" id="entrar" value="Entrar" className="btn btn-block form-control btn-primary form-inline" disabled={loadBtn}>
-                {loadBtn ? (
-                  <>
-                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Cargando...
-                  </>
-                ) : (
-                  "Entrar"
-                )}
+                {loadBtn ? <LoaderBtn /> : "Entrar"}
               </button>
               <div className="d-flex pt-4 justify-content-center">
                 <small className="text-center">
