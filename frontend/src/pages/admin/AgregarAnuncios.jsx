@@ -52,6 +52,7 @@ export const AgregarAnuncios = () => {
                     required: true,
                   })}
                 />
+                 {errors.fecha_conclu?.type === "required" && inputRequiredToast()}
               </div>
               <div className="col-md-6 mb-3">
                 <label className="form-label">Titulo</label>
@@ -63,48 +64,62 @@ export const AgregarAnuncios = () => {
                   })}
                   placeholder="Titulo"
                 />
+                 {errors.titulo?.type === "required" && inputRequiredToast()}
               </div>
               <div className="col-md-6 mb-3">
                 <label className="form-label">Descripcion</label>
                 <input
                   type="text"
                   className="form-control"
-                  {...register("Descripcion", {
+                  {...register("descripcion", {
                     required: true,
                   })}
                   placeholder="Descripcion"
                 />
+                 {errors.descripcion?.type === "required" && inputRequiredToast()}
               </div>
               <div className="col-md-6 mb-3">
                 <label className="form-label">Soluciones</label>
                 <input
                   type="text"
                   className="form-control"
-                  {...register("Soluciones", {
+                  {...register("soluciones", {
                     required: true,
                   })}
                   placeholder="Soluciones"
                 />
+                {errors.soluciones?.type === "required" && inputRequiredToast()}
               </div>
               <div className="col-md-6 mb-3">
                 <label className="form-label">Estatus</label>
-                <select class="form-select" aria-label="Default select example">
-                  <option selected>Open this select menu</option>
+                <select
+                className="form-select"
+                 {...register("estatus",{
+                  required: true,
+                 }
+                )}
+                 
+                aria-label="Default select example">
+                  <option selected>Selecciona una opcion</option>
                   <option value="1">One</option>
                   <option value="2">Two</option>
                   <option value="3">Three</option>
                 </select>
+                
+               
               </div>
+
               <div className="col-md-6 mb-3">
                 <label className="form-label">Resultados</label>
                 <input
                   type="Resultados"
                   className="form-control"
-                  {...register("Resultados", {
+                  {...register("resultados", {
                     required: true,
                   })}
                   placeholder="Resultados"
                 />
+                 {errors.resultados?.type === "required" && inputRequiredToast()}
               </div>
               <div className="col-md-6 mb-3">
                 <label className="form-label" hidden>
@@ -115,7 +130,7 @@ export const AgregarAnuncios = () => {
                   type="oculto"
                   className="form-control"
                   {...register("oculto", {
-                    required: true,
+                  
                   })}
                   placeholder="oculto"
                 />
