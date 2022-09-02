@@ -2,6 +2,7 @@ import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
 import axios from "axios";
+import Swal from "sweetalert2";
 import { Toaster } from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
@@ -9,7 +10,6 @@ import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 import globalConfig from "../../global/globalConfig";
 import { infoFraccionamiento } from "../../global/infoFraccionamiento";
 import { TerminosCondicionesAlert, errorAlert, inputRequiredToast, LoaderBtn } from "../";
-import Swal from "sweetalert2";
 
 export const LoginForm = () => {
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ export const LoginForm = () => {
 
   (errors.password?.type === "required" || errors.correo?.type === "required") && inputRequiredToast();
 
-  /*   const dataValidation = async (data) => {
+  /* const dataValidation = async (data) => {
     setloadBtn(false);
     if (await TerminosCondicionesAlert()) {
       setloadBtn(true);
@@ -149,9 +149,10 @@ export const LoginForm = () => {
                 </div>
                 {loginErrorPass && <small className="text-danger">Contraseña Incorrecta</small>}
               </div>
-              <button type="submit" id="entrar" value="Entrar" className="btn btn-block form-control btn-primary form-inline" disabled={loadBtn}>
+              {/*  <button type="submit" id="entrar" value="Entrar" className="btn btn-block form-control btn-primary form-inline" disabled={loadBtn}>
                 {loadBtn ? <LoaderBtn /> : "Entrar"}
-              </button>
+              </button> */}
+              <LoaderBtn typeBtn="submit" textBtn={"Entrar"} classBtn="btn btn-block form-control btn-primary form-inline" isLoading={loadBtn} />
               <div className="d-flex pt-4 justify-content-center">
                 <small className="text-center">
                   ¿Olvidaste tu contraseña? <NavLink to="/password-recovery"> Click Aquí</NavLink>
