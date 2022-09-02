@@ -2,14 +2,19 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FaArrowLeft, FaHouseUser, FaFileAlt, FaHome, FaRegSave } from "react-icons/fa";
 import { RegresarBtn } from "../../components/ui/RegresarBtn";
+import toast, { Toaster } from 'react-hot-toast';
 
 export const AgregarAsamblea = () => {
-  const { register, handleSubmit } = useForm();
-
+  const { register, formState: {errors}, handleSubmit } = useForm();
+  const notify = () => toast('Here is your toast.');
   const showData = (data) => console.log(data);
 
   return (
     <>
+    <div>
+      <button onClick={notify}>Make me a toast</button>
+      <Toaster />
+    </div>
       <div className="card">
         <div className="card-header border-bottom border-1">
           <div className="row d-flex">
@@ -29,8 +34,12 @@ export const AgregarAsamblea = () => {
                   className="form-control"
                   {...register("fecha_asamblea", {
                     required: true,
+                    maxLength:10
+                   
                   })}
+                 
                 />
+                 {errors.fecha_asamblea?.type=== 'required' && <p>Es obligatorio</p>}
               </div>
               <div className="col-md-6 mb-3">
                 <label className="form-label">Titulo</label>
