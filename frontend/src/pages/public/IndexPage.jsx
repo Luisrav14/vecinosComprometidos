@@ -384,14 +384,7 @@ export const IndexPage = () => {
           </div>
         </div>
       </footer>
-      <div className="d-flex justify-content-center mt-5">
-        <Calendario />
-        <h1>hola</h1>
-      </div>
-      <button> Ver pdf</button>
-      <a href="/docu" target="_blank">
-        Asambleas
-      </a>
+     
     </>
   );
 };
