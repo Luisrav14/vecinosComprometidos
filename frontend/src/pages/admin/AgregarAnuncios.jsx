@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FaArrowLeft, FaHouseUser, FaFileAlt, FaHome, FaRegSave } from "react-icons/fa";
 import { RegresarBtn } from "../../components/ui/RegresarBtn";
+import { inputMaxLength30Toast, inputRequiredToast } from "../../components/ui/toast/inputRequiredToast";
 
 export const AgregarAnuncios = () => {
   const {
