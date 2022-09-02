@@ -15,11 +15,6 @@ export const TerminosCondicionesAlert = async () => {
   });
 
   if (accept) {
-    return Swal.fire({
-      icon: "success",
-      title: "Acceso correcto",
-      timer: 1000,
-      showConfirmButton: false,
-    });
+    return true;
   }
 };

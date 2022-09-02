@@ -20,15 +20,15 @@ export const LoginForm = () => {
 
   const navigate = useNavigate();
 
-  /* 
-  const dataValidation = async (data) => {
-    await axios
-      .post(`${globalConfig.api_URL}/login`, data)
-      .then(({ data }) => {
-        console.log(data);
-        inputErrors(data);
-      })
-      .catch((error) => console.log(error));
+  /*   const dataValidation = async (data) => {
+    (await TerminosCondicionesAlert()) &&
+      (await axios
+        .post(`${globalConfig.api_URL}/login`, data)
+        .then(({ data }) => {
+          console.log(data);
+          inputErrors(data);
+        })
+        .catch((error) => console.log(error)));
   };
 
   const inputErrors = async ({ status, data }) => {
@@ -37,9 +37,7 @@ export const LoginForm = () => {
 
     switch (status) {
       case "success":
-        data[0].tipo != 5 
-          ? (await TerminosCondicionesAlert()) && navigate("/admin", { replace: true })  
-          : (await TerminosCondicionesAlert()) && navigate("/dashboard", { replace: true });
+        data[0].tipo != 5 ? navigate("/admin", { replace: true }) : navigate("/dashboard", { replace: true });
         break;
 
       case "error_password":
@@ -53,8 +51,7 @@ export const LoginForm = () => {
       default:
         break;
     }
-  };
-  */
+  }; */
 
   /* Login temporal */
 

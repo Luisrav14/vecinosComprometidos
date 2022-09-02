@@ -1,20 +1,22 @@
-import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { FaArrowLeft, FaHouseUser, FaFileAlt, FaHome, FaRegSave } from "react-icons/fa";
+import { FaRegSave } from "react-icons/fa";
+import toast, { Toaster } from "react-hot-toast";
+
 import { RegresarBtn } from "../../components/ui/RegresarBtn";
-import toast, { Toaster } from 'react-hot-toast';
+import { inputRequiredToast } from "../../components/ui/toast/inputRequiredToast";
 
 export const AgregarAsamblea = () => {
-  const { register, formState: {errors}, handleSubmit } = useForm();
-  const notify = () => toast('Here is your toast.');
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
+
   const showData = (data) => console.log(data);
 
   return (
     <>
-    <Toaster
-  position="top-center"
-  reverseOrder={false}
-/>
+      <Toaster position="top-center" reverseOrder={false} />
       <div className="card">
         <div className="card-header border-bottom border-1">
           <div className="row d-flex">
@@ -28,18 +30,16 @@ export const AgregarAsamblea = () => {
           <form onSubmit={handleSubmit(showData)}>
             <div className="row justify-content-center d-flex">
               <div className="col-md-6 mb-3">
-                <label className="form-label">Fecha de la asamblea</label>
+                <label className="form-label">Fecha de la asamblea *</label>
                 <input
                   type="date"
                   className="form-control"
                   {...register("fecha_asamblea", {
                     required: true,
-                    maxLength:10
-                   
+                    maxLength: 10,
                   })}
-                 
                 />
-                 {errors.fecha_asamblea?.type === 'required' && toast.error('El campo fecha es obligatorio')}
+                {errors.fecha_asamblea?.type === "required" && inputRequiredToast()}
               </div>
               <div className="col-md-6 mb-3">
                 <label className="form-label">Titulo</label>
@@ -61,6 +61,7 @@ export const AgregarAsamblea = () => {
                     required: true,
                   })}
                   placeholder="Descripción"
+                  rows={5}
                 />
               </div>
 
