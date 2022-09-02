@@ -4,7 +4,11 @@ import { FaArrowLeft, FaHouseUser, FaFileAlt, FaHome, FaRegSave } from "react-ic
 import { RegresarBtn } from "../../components/ui/RegresarBtn";
 
 export const AgregarAnuncios = () => {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
 
   const showData = (data) => console.log(data);
 
