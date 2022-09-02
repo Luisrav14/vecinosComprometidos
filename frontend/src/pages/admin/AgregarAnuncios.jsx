@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import toast, { Toaster } from 'react-hot-toast';
 import { FaArrowLeft, FaHouseUser, FaFileAlt, FaHome, FaRegSave } from "react-icons/fa";
 import { RegresarBtn } from "../../components/ui/RegresarBtn";
 import { inputMaxLength30Toast, inputRequiredToast } from "../../components/ui/toast/inputRequiredToast";
@@ -15,6 +16,10 @@ export const AgregarAnuncios = () => {
 
   return (
     <>
+    <Toaster
+  position="top-center"
+  reverseOrder={false}
+/>
       <div className="card">
         <div className="card-header border-bottom border-1">
           <div className="row d-flex">
@@ -36,6 +41,7 @@ export const AgregarAnuncios = () => {
                     required: true,
                   })}
                 />
+                  {errors.fecha_inicio?.type === "required" && inputRequiredToast()}
               </div>
               <div className="col-md-6 mb-3">
                 <label className="form-label">Fecha de conclusion</label>
