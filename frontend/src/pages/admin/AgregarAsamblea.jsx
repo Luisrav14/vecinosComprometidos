@@ -11,10 +11,10 @@ export const AgregarAsamblea = () => {
 
   return (
     <>
-    <div>
-      <button onClick={notify}>Make me a toast</button>
-      <Toaster />
-    </div>
+    <Toaster
+  position="top-center"
+  reverseOrder={false}
+/>
       <div className="card">
         <div className="card-header border-bottom border-1">
           <div className="row d-flex">
