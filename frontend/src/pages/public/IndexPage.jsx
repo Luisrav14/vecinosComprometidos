@@ -5,7 +5,7 @@ export const IndexPage = () => {
   return (
     <>
       <div className="App">
-        <nav className="navbar navbar-expand-lg navbar-light py-1" style={{ backgroundColor: "#40A4BC" }}>
+        <nav className="navbar navbar-expand-lg navbar-light py-1" style={{ backgroundColor: "#40A4BC", zIndex: "99" }}>
           <a className="navbar-brand" href="/">
             <img className="logo" src={infoFraccionamiento.logo} style={{ width: 150 }} />
           </a>
@@ -21,10 +21,10 @@ export const IndexPage = () => {
               </a>
               <img id="imgtemp" src="https://quintasresidencial.com/animated/cloudy-day-1.svg" alt="" />
               <a id="temp" className="btn btn-outline-dark border border-0 text-uppercase" style={{ color: "white", fontSize: "18px" }}>
-                26 c
+                26° c
               </a>
               <a id="fecha" className="btn btn-outline-dark border border-0 text-uppercase" style={{ color: "white", fontSize: "18px" }}>
-                Viernes 05/08/200
+                Viernes 05/08/2022
               </a>
               <a id="hora" className="btn btn-outline-dark border border-0 text-uppercase" style={{ color: "white", fontSize: "18px" }}>
                 11:51:50
@@ -315,7 +315,7 @@ export const IndexPage = () => {
         <img className="img-fluid" src={infoFraccionamiento.bannerinferior} alt="" />
       </div>
 
-      <footer className="page-footer font-small blue pt-4">
+      <footer className="col-12 page-footer font-small blue pt-4">
         <div className="container-fluid text-center text-md-left">
           <div className="row">
             <div className="col-md-4 mt-md-0 mt-3">
@@ -384,14 +384,6 @@ export const IndexPage = () => {
           </div>
         </div>
       </footer>
-      <div className="d-flex justify-content-center mt-5">
-        <Calendario />
-        <h1>hola</h1>
-      </div>
-      <button> Ver pdf</button>
-      <a href="/docu" target="_blank">
-        Asambleas
-      </a>
     </>
   );
 };
