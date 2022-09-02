@@ -39,7 +39,7 @@ export const AgregarAsamblea = () => {
                   })}
                  
                 />
-                 {errors.fecha_asamblea?.type=== 'required' && <p>Es obligatorio</p>}
+                 {errors.fecha_asamblea?.type === 'required' && toast.error('El campo fecha es obligatorio')}
               </div>
               <div className="col-md-6 mb-3">
                 <label className="form-label">Titulo</label>
