@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { FaRegSave } from "react-icons/fa";
 
 import { RegresarBtn } from "../../components/ui/RegresarBtn";
-import { inputRequiredToast } from "../../components/ui/toast/inputRequiredToast";
+import { inputMaxLength30Toast, inputRequiredToast } from "../../components/ui/toast/inputRequiredToast";
 
 export const AgregarAsamblea = () => {
   const {
@@ -40,27 +40,34 @@ export const AgregarAsamblea = () => {
                 {errors.fecha_asamblea?.type === "required" && inputRequiredToast()}
               </div>
               <div className="col-md-6 mb-3">
-                <label className="form-label">Titulo</label>
+                <label className="form-label">Titulo *</label>
                 <input
                   type="Titulo"
                   className="form-control"
                   {...register("titulo", {
                     required: true,
+                    maxLength: 30
                   })}
+                
                   placeholder="Titulo"
                 />
+                  {errors.titulo?.type === "required" && inputRequiredToast()}
+                  {errors.titulo?.type === "maxLength" && inputMaxLength30Toast()}
               </div>
               <div className="col-md-12 mb-3">
-                <label className="form-label">Descripción</label>
+                <label className="form-label">Descripción *</label>
                 <textarea
                   type="text"
                   className="form-control"
-                  {...register("descripción", {
+                  {...register("descripcion", {
                     required: true,
+                    maxLength: 200
                   })}
                   placeholder="Descripción"
                   rows={5}
                 />
+                {errors.descripcion?.type === "required" && inputRequiredToast()}
+                  {errors.descripcion?.type === "maxLength" && inputMaxLength200Toast()}
               </div>
 
               <div className="col-md-4 my-5">
