@@ -1,8 +1,16 @@
+import Swal from 'sweetalert2'
 import { useForm } from "react-hook-form";
 import { FaRegSave } from "react-icons/fa";
-import toast, { Toaster } from 'react-hot-toast';
+import React from 'react';
 import { RegresarBtn } from "../../components/ui/RegresarBtn";
-import { inputMaxLength30Toast, inputRequiredToast } from "../../components/ui/toast/inputRequiredToast";
+import { ToastContainer, toast } from 'react-toastify';
+import { inputRequiredToast,inputMaxlengthToast } from "../../components/ui/toast/ToastValidation";
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
+
+
 
 export const AgregarAsamblea = () => {
   const {
@@ -15,10 +23,7 @@ export const AgregarAsamblea = () => {
 
   return (
     <>
-    <Toaster
-  position="top-center"
-  reverseOrder={false}
-/>
+  <ToastContainer/>
       <div className="card">
         <div className="card-header border-bottom border-1">
           <div className="row d-flex">
@@ -38,15 +43,20 @@ export const AgregarAsamblea = () => {
                   type="date"
                   className="form-control"
                   
-                  {...register("fecha_asamblea", {
-                    
+                  {...register("fecha_asamblea",
+                   {
                     required: true,
-                    maxLength: 10,
+                    
                   })}
                   
+                  
                 />
-                {errors.fecha_asamblea?.type === "required" && inputRequiredToast()}
+                {errors.fecha_asamblea?.type === "required" && inputRequiredToast()  }
+               
+   
               </div>
+              
+              
               <div className="col-md-6 mb-3">
                 <label className="form-label">Titulo *</label>
                 <input
@@ -54,13 +64,14 @@ export const AgregarAsamblea = () => {
                   className="form-control"
                   {...register("titulo", {
                     required: true,
-                    maxLength: 30
+                    maxLength: 30,
                   })}
                 
                   placeholder="Titulo"
                 />
-                  {errors.titulo?.type === "required" && inputRequiredToast()}
-                  {errors.titulo?.type === "maxLength" && inputMaxLength30Toast()}
+                 
+               {errors.titulo?.type === "required" && inputRequiredToast()  }
+               {errors.titulo?.type === "maxLength" &&  inputMaxlengthToast()  }
               </div>
               <div className="col-md-12 mb-3">
                 <label className="form-label">Descripción *</label>
@@ -69,19 +80,25 @@ export const AgregarAsamblea = () => {
                   className="form-control"
                   {...register("descripcion", {
                     required: true,
-                    maxLength: 200
+                    maxLength: 200,
+                    MessageEvent:"HOLA"
                   })}
                   placeholder="Descripción"
                   rows={5}
                 />
-                {errors.descripcion?.type === "required" && inputRequiredToast()}
-                  {errors.descripcion?.type === "maxLength" && inputMaxLength200Toast()}
+                 {errors.descripcion?.type === "required" && inputRequiredToast()  }
+              
               </div>
-
+              
+               
+              
+             
               <div className="col-md-4 my-5">
                 <button type="submit" className="btn btn-primary form-control">
+             
                   <FaRegSave /> Guardar
                 </button>
+               
               </div>
             </div>
           </form>

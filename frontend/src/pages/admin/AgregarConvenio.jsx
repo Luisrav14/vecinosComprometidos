@@ -2,14 +2,18 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FaArrowLeft, FaHouseUser, FaFileAlt, FaHome, FaRegSave } from "react-icons/fa";
 import { RegresarBtn } from "../../components/ui/RegresarBtn";
+import { ToastContainer, toast } from 'react-toastify';
+import { inputRequiredToast,inputMaxlengthToast } from "../../components/ui/toast/ToastValidation";
+import 'react-toastify/dist/ReactToastify.css';
 
 export const AgregarConvenio = () => {
-  const { register, handleSubmit } = useForm();
+  const { register,formState: { errors }, handleSubmit } = useForm();
 
   const showData = (data) => console.log(data);
 
   return (
     <>
+      <ToastContainer/>
       <div className="card">
         <div className="card-header border-bottom border-1">
           <div className="row d-flex">
@@ -30,6 +34,7 @@ export const AgregarConvenio = () => {
                   <option value="2">Two</option>
                   <option value="3">Three</option>
                 </select>
+                
               </div>
               <div className="col-md-6 mb-3">
                 <label className="form-label">Descripcion</label>
@@ -41,6 +46,7 @@ export const AgregarConvenio = () => {
                   })}
                   placeholder="Descripcion"
                 />
+                 {errors.descripcion?.type === "required" && inputRequiredToast()}
               </div>
               <div className="col-md-12 mb-3">
                 <label className="form-label">Selecciona la fecha de finalizacion de convenio</label>
@@ -50,7 +56,9 @@ export const AgregarConvenio = () => {
                   {...register("fecha_final", {
                     required: true,
                   })}
+
                 />
+                {errors.fecha_final?.type === "required" && inputRequiredToast()}
               </div>
 
               <div className="col-md-4 my-5">

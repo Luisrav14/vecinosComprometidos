@@ -2,14 +2,19 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FaArrowLeft, FaHouseUser, FaFileAlt, FaHome, FaRegSave } from "react-icons/fa";
 import { RegresarBtn } from "../../components/ui/RegresarBtn";
+import { ToastContainer, toast } from 'react-toastify';
+import { inputRequiredToast,inputMaxlengthToast } from "../../components/ui/toast/ToastValidation";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export const AgregarRecursosHumanos = () => {
-  const { register, handleSubmit } = useForm();
+  const { register,formState: { errors }, handleSubmit } = useForm();
 
   const showData = (data) => console.log(data);
 
   return (
     <>
+      <ToastContainer/>
       <div className="card">
         <div className="card-header border-bottom border-1">
           <div className="row d-flex">
@@ -27,11 +32,12 @@ export const AgregarRecursosHumanos = () => {
                 <input
                   type="text"
                   className="form-control"
-                  {...register("titulo", {
+                  {...register("nombre", {
                     required: true,
                   })}
                   placeholder="Nombre"
                 />
+                  {errors.nombre?.type === "required" && inputRequiredToast()}
               </div>
 
               <div className="col-md-6 mb-3">
@@ -39,11 +45,12 @@ export const AgregarRecursosHumanos = () => {
                 <input
                   type="text"
                   className="form-control"
-                  {...register("motivo", {
+                  {...register("apellido_p", {
                     required: true,
                   })}
                   placeholder="Apellido Paterno"
                 />
+                {errors.apellido_p?.type === "required" && inputRequiredToast()}
               </div>
 
               <div className="col-md-6 mb-3">
@@ -51,11 +58,12 @@ export const AgregarRecursosHumanos = () => {
                 <input
                   type="text"
                   className="form-control"
-                  {...register("motivo", {
+                  {...register("apellido_m", {
                     required: true,
                   })}
                   placeholder="Apellido Materno"
                 />
+                 {errors.apellido_m?.type === "required" && inputRequiredToast()}
               </div>
 
               <div className="col-md-4 mb-3">
@@ -68,6 +76,7 @@ export const AgregarRecursosHumanos = () => {
                   })}
                   placeholder="Fraccionamiento"
                 />
+                {errors.fraccionamiento?.type === "required" && inputRequiredToast()}
               </div>
 
               <div className="col-md-4 mb-3">
@@ -80,6 +89,7 @@ export const AgregarRecursosHumanos = () => {
                   })}
                   placeholder="Calle"
                 />
+                {errors.Calle?.type === "required" && inputRequiredToast()}
               </div>
 
               <div className="col-md-4 mb-3">
@@ -87,11 +97,12 @@ export const AgregarRecursosHumanos = () => {
                 <input
                   type="text"
                   className="form-control"
-                  {...register("Num ext", {
+                  {...register("numext", {
                     required: true,
                   })}
                   placeholder="Num ext"
                 />
+                {errors.numext?.type === "required" && inputRequiredToast()}
               </div>
 
               <div className="col-md-6 mb-3">
@@ -104,6 +115,7 @@ export const AgregarRecursosHumanos = () => {
                   })}
                   placeholder="Telefono"
                 />
+                 {errors.telefono?.type === "required" && inputRequiredToast()}
               </div>
 
               <div className="col-md-6 mb-3">
@@ -116,6 +128,7 @@ export const AgregarRecursosHumanos = () => {
                   })}
                   placeholder="Correo"
                 />
+                 {errors.correo?.type === "required" && inputRequiredToast()}
               </div>
 
               <div className="col-12 mb-3">

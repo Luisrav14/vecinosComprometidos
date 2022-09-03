@@ -2,14 +2,18 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FaArrowLeft, FaHouseUser, FaFileAlt, FaHome, FaRegSave } from "react-icons/fa";
 import { RegresarBtn } from "../../components/ui/RegresarBtn";
+import { ToastContainer, toast } from 'react-toastify';
+import { inputRequiredToast,inputMaxlengthToast } from "../../components/ui/toast/ToastValidation";
+import 'react-toastify/dist/ReactToastify.css';
 
 export const AgregarProveedor = () => {
-  const { register, handleSubmit } = useForm();
+  const { register,formState: { errors }, handleSubmit } = useForm();
 
   const showData = (data) => console.log(data);
 
   return (
     <>
+    <ToastContainer/>
       <div className="card">
         <div className="card-header border-bottom border-1">
           <div className="row d-flex">
@@ -32,6 +36,7 @@ export const AgregarProveedor = () => {
                   })}
                   placeholder="Nombre o razón social"
                 />
+                  {errors.nombre?.type === "required" && inputRequiredToast()}
               </div>
 
               <div className="col-md-6 mb-3">
@@ -39,11 +44,14 @@ export const AgregarProveedor = () => {
                 <input
                   type="text"
                   className="form-control"
-                  {...register("RFC", {
+                  {...register("rfcorfc", {
                     required: true,
                   })}
                   placeholder="RFC"
-                />
+                  
+                /> 
+                {errors.rfcorfc?.type === "required" && inputRequiredToast()}
+               
               </div>
 
               <div className="col-md-4 mb-3">
@@ -56,6 +64,7 @@ export const AgregarProveedor = () => {
                   })}
                   placeholder="Nombre de contacto"
                 />
+                {errors.nomcontacto?.type === "required" && inputRequiredToast()}
               </div>
 
               <div className="col-md-4 mb-3">
@@ -68,6 +77,7 @@ export const AgregarProveedor = () => {
                   })}
                   placeholder="Correo de contacto"
                 />
+                {errors.correo?.type === "required" && inputRequiredToast()}
               </div>
 
               <div className="col-md-4 mb-3">
@@ -75,11 +85,12 @@ export const AgregarProveedor = () => {
                 <input
                   type="text"
                   className="form-control"
-                  {...register("Teléfono", {
+                  {...register("teléfono", {
                     required: true,
                   })}
                   placeholder="Teléfono"
                 />
+                  {errors.teléfono?.type === "required" && inputRequiredToast()}
               </div>
 
               <div className="col-md-12 mb-3">
@@ -88,11 +99,12 @@ export const AgregarProveedor = () => {
                   type="text"
                   rows={3}
                   className="form-control"
-                  {...register("Notas", {
+                  {...register("notas", {
                     required: true,
                   })}
                   placeholder="Notas"
                 />
+                 {errors.notas?.type === "required" && inputRequiredToast()}
               </div>
 
               <div className="col-md-4 my-5">
