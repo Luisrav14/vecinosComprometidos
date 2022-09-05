@@ -149,9 +149,6 @@ export const LoginForm = () => {
                 </div>
                 {loginErrorPass && <small className="text-danger">Contraseña Incorrecta</small>}
               </div>
-              {/*  <button type="submit" id="entrar" value="Entrar" className="btn btn-block form-control btn-primary form-inline" disabled={loadBtn}>
-                {loadBtn ? <LoaderBtn /> : "Entrar"}
-              </button> */}
               <LoaderBtn typeBtn="submit" textBtn={"Entrar"} classBtn="btn btn-block form-control btn-primary form-inline" isLoading={loadBtn} />
               <div className="d-flex pt-4 justify-content-center">
                 <small className="text-center">
