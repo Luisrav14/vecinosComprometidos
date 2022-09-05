@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-
+import Calendario from "../usuarios/Calendario";
 export const EspaciosComunes = () => {
   return (
     <>
@@ -16,7 +16,9 @@ export const EspaciosComunes = () => {
                 <div className="text-center">
                   <div className="card-block ">
                     <div className="row d-flex justify-content-around">
-                      <Calendar style={{ width: "100%" }} />
+                    <div className="row d-flex justify-content-around mt-5">
+           <Calendario/>
+          </div>
                     </div>
                   </div>
                 </div>
