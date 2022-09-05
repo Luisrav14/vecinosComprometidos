@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { FaRegSave } from "react-icons/fa";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
 import { RegresarBtn } from "../../components/ui/RegresarBtn";
 import { inputMaxLength30Toast, inputRequiredToast } from "../../components/ui/toast/inputRequiredToast";
 
@@ -15,10 +15,7 @@ export const AgregarAsamblea = () => {
 
   return (
     <>
-    <Toaster
-  position="top-center"
-  reverseOrder={false}
-/>
+      <Toaster position="top-center" reverseOrder={false} />
       <div className="card">
         <div className="card-header border-bottom border-1">
           <div className="row d-flex">
@@ -33,17 +30,14 @@ export const AgregarAsamblea = () => {
             <div className="row justify-content-center d-flex">
               <div className="col-md-6 mb-3">
                 <label className="form-label">Fecha de la asamblea *</label>
-                
+
                 <input
                   type="date"
                   className="form-control"
-                  
                   {...register("fecha_asamblea", {
-                    
                     required: true,
                     maxLength: 10,
                   })}
-                  
                 />
                 {errors.fecha_asamblea?.type === "required" && inputRequiredToast()}
               </div>
@@ -54,13 +48,12 @@ export const AgregarAsamblea = () => {
                   className="form-control"
                   {...register("titulo", {
                     required: true,
-                    maxLength: 30
+                    maxLength: 30,
                   })}
-                
                   placeholder="Titulo"
                 />
-                  {errors.titulo?.type === "required" && inputRequiredToast()}
-                  {errors.titulo?.type === "maxLength" && inputMaxLength30Toast()}
+                {errors.titulo?.type === "required" && inputRequiredToast()}
+                {errors.titulo?.type === "maxLength" && inputMaxLength30Toast()}
               </div>
               <div className="col-md-12 mb-3">
                 <label className="form-label">Descripción *</label>
@@ -69,13 +62,13 @@ export const AgregarAsamblea = () => {
                   className="form-control"
                   {...register("descripcion", {
                     required: true,
-                    maxLength: 200
+                    maxLength: 200,
                   })}
                   placeholder="Descripción"
                   rows={5}
                 />
                 {errors.descripcion?.type === "required" && inputRequiredToast()}
-                  {errors.descripcion?.type === "maxLength" && inputMaxLength200Toast()}
+                {errors.descripcion?.type === "maxLength" && inputMaxLength200Toast()}
               </div>
 
               <div className="col-md-4 my-5">
