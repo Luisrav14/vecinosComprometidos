@@ -2,14 +2,17 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FaArrowLeft, FaHouseUser, FaFileAlt, FaHome, FaRegSave } from "react-icons/fa";
 import { RegresarBtn } from "../../components/ui/RegresarBtn";
-
+import { ToastContainer, toast } from 'react-toastify';
+import { inputRequiredToast,inputMaxlengthToast } from "../../components/ui/toast/ToastValidation";
+import 'react-toastify/dist/ReactToastify.css';
 export const AgregarInformeFinanciero = () => {
-  const { register, handleSubmit } = useForm();
+  const { register,formState: { errors }, handleSubmit } = useForm();
 
   const showData = (data) => console.log(data);
 
   return (
     <>
+     <ToastContainer/>
       <div className="card">
         <div className="card-header border-bottom border-1">
           <div className="row d-flex">
@@ -32,6 +35,7 @@ export const AgregarInformeFinanciero = () => {
                   })}
                   placeholder="Titulo"
                 />
+                 {errors.titulo?.type === "required" && inputRequiredToast()}
               </div>
 
               <div className="col-md-6 mb-3">
@@ -42,8 +46,9 @@ export const AgregarInformeFinanciero = () => {
                   {...register("motivo", {
                     required: true,
                   })}
-                  placeholder="Titulo"
+                  placeholder="Motivo"
                 />
+                {errors.motivo?.type === "required" && inputRequiredToast()}
               </div>
               <div className="col-md-12 mb-3">
                 <label className="form-label">Descripcion</label>
@@ -55,6 +60,7 @@ export const AgregarInformeFinanciero = () => {
                   })}
                   placeholder="Descripción"
                 />
+                {errors.descripción?.type === "required" && inputRequiredToast()}
               </div>
               <div className="col-12 mb-3">
                 <label className="form-label">Archivo PDF</label>

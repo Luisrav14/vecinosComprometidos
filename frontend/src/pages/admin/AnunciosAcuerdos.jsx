@@ -100,7 +100,7 @@ export const AnunciosAcuerdos = () => {
       <div className="card">
         <div className="card-header border-bottom border-1 ">
           <div className="row d-flex">
-            <h5 className="card-title col-md-6 pt-2">Asambleas </h5>
+            <h5 className="card-title col-md-6 pt-2">Anuncios </h5>
            
             <div className="col-md-6 text-right">
               <Link to="/admin/agregar-anuncios" className="btn btn-primary">

@@ -79,7 +79,7 @@ export const Acciones = () => {
         <h1>
           <b>Acciones</b>
         </h1>
-        <h5>Esta sección es de suma importancia para dar a conocer a todos los residentes acciones que se han emprendido para mejorar su calidad de vida. Desde acciones de mantenimiento hasta actividades financieras e implementación de nuevas metodologías esta sección conectará de forma importante a mesa directiva con residentes optimizando tiempos y procesos.</h5>
+        <h5>Esta sección es de s1uma importancia para dar a conocer a todos los residentes acciones que se han emprendido para mejorar su calidad de vida. Desde acciones de mantenimiento hasta actividades financieras e implementación de nuevas metodologías esta sección conectará de forma importante a mesa directiva con residentes optimizando tiempos y procesos.</h5>
         <div className="card">
           <div className="card-header mb-0">
             <div className=" rounded col-xl-12 col-md-12">
