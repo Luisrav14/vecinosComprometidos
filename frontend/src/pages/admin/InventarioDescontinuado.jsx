@@ -9,50 +9,50 @@ export const InventarioDescontinuado = () => {
   const inventarioItems = [
     {
       id: 1,
-      nombre: "Accesos",
+      nombre: " Accesos",
       icon: <AiFillIdcard color="red" size={"1.5em"} />,
       cantidad: 12,
     },
     {
       id: 2,
-      nombre: "Áreas comúnes",
+      nombre: " Áreas comúnes",
       icon: <BiCoffee color="green" size={"1.5em"} />,
       cantidad: 56,
     },
     {
       id: 3,
-      nombre: "Artículos de temporada",
+      nombre: " Artículos de temporada",
       icon: <AiOutlineStar color="red" size={"1.5em"} />,
       cantidad: 4,
     },
     {
       id: 4,
-      nombre: "Transporte",
+      nombre: " Transporte",
       icon: <FiTruck color="green" size={"1.5em"} />,
       cantidad: 4,
     },
     {
       id: 5,
-      nombre: "Herramientas de vigilancia",
+      nombre: " Herramientas de vigilancia",
       icon: <BsFillCameraVideoFill color="red" size={"1.5em"} />,
       cantidad: 4,
     },
     {
       id: 6,
-      nombre: "Herramienta de jardinería",
+      nombre: " Herramienta de jardinería",
       icon: <FaLeaf color="green" size={"1.5em"} />,
       cantidad: 4,
     },
     {
       id: 7,
-      nombre: "Herramienta de administración",
+      nombre: " Herramienta de administración",
       icon: <AiFillFile color="red" size={"1.5em"} />,
       cantidad: 4,
     },
     {
       id: 8,
-      nombre: "Otros",
-      icon: <AiFillTag color="red" size={"1.5em"} />,
+      nombre: " Otros",
+      icon: <AiFillTag color="green" size={"1.5em"} />,
       cantidad: 4,
     },
   ];
@@ -71,13 +71,13 @@ export const InventarioDescontinuado = () => {
                 {inventarioItems.map((item) => (
                   <div className="col-md-3 mb-1" key={item.id}>
                     <div className="card text-center order-visitor-card  p-4">
-                      <Link to={`/admin/inventario/${item.nombre}`}>
+                      <Link style={{textDecoration: 'none' }} to={`/admin/inventario/descontinuado${item.nombre}`}>
                         <div className="card-block">
-                          <h6 className="mb-4"> {item.nombre} </h6>
+                          <h6 className="mb-4">  {item.nombre} </h6>
                           <h4 className="m-t-15 m-b-15">
                             {item.icon} {item.cantidad}
                           </h4>
-                          <p className="m-b-0"></p>
+                          <p className="mb-5"></p>
                         </div>
                       </Link>
                     </div>

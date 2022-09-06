@@ -53,7 +53,7 @@ export const InventarioActivo = () => {
     {
       id: 8,
       nombre: "Otros",
-      icon: <AiFillTag color="red" size={"1.5em"} />,
+      icon: <AiFillTag color="green" size={"1.5em"} />,
       cantidad: 4,
     },
   ];
@@ -72,10 +72,10 @@ export const InventarioActivo = () => {
                 {inventarioItems.map((item) => (
                   <div className="col-md-3 mb-1" key={item.id}>
                     <div className="card text-center order-visitor-card  p-4">
-                      <Link to={`/admin/inventario/${item.nombre}`}>
+                      <Link  style={{textDecoration: 'none' }} to={`/admin/inventario/${item.nombre}`}>
                         <div className="card-block">
                           <h6 className="mb-4"> {item.nombre} </h6>
-                          <h4 className="">
+                          <h4 className="m-t-15 m-b-15">
                             {item.icon} {item.cantidad}
                           </h4>
                           <p className="mb-5"></p>
