@@ -1,9 +1,14 @@
 import { Router } from "express";
-import { auth } from "../controllers/auth";
+import { auth, propietario } from "../controllers/";
 
 const router = Router();
 
-router.get("/test", auth.test);
+/* Auth routes */
+
 router.post("/login", auth.validation);
+
+/* Propietarios routes */
+
+router.post("propietarios/agregar", propietario.agregar);
 
 export default router;

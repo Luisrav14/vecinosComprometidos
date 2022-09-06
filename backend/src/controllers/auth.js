@@ -2,23 +2,6 @@ import { generateJWT } from "../helpers/jwt";
 import dbConnection from "../database/connection";
 
 export const auth = {
-  test: async (req, res) => {
-    try {
-      const db = await dbConnection();
-      const data = await db.query(`SELECT * FROM users`);
-
-      res.status(200).send({
-        status: "success",
-        data,
-      });
-    } catch (error) {
-      res.status(500).send({
-        status: "error",
-        mensaje: error.message,
-      });
-    }
-  },
-
   validation: async (req, res) => {
     const correo = req.body.correo;
     const password = req.body.password;
@@ -55,7 +38,7 @@ export const auth = {
     } catch (error) {
       res.status(500).send({
         status: "error",
-        mensaje: error.message,
+        message: error.message,
       });
     }
   },
