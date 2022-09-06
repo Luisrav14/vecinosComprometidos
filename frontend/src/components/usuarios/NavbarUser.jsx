@@ -28,7 +28,7 @@ export const NavbarUser = () => {
           </li>
           <li className="nav-item dropdown">
             <a className="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Administración1
+              Administración
             </a>
             <div className="dropdown-menu" aria-labelledby="resourcesDropdown">
               <a className="dropdown-item" href="https://adminkit.io/" target="_blank">

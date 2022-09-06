@@ -71,10 +71,7 @@ export const UsuariosDashboard = ({ children }) => {
               </li>
             </ul>
           </div>
-          <button type="button" style={{ borderRadius: "100%" }} onClick={Pagar}>
-            {" "}
-            h
-          </button>
+       
         </nav>
         <main className="content">
           <div className="container-fluid p-0">{children}</div>
