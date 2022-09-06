@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -34,7 +34,7 @@ export const LoginForm = () => {
     if (await TerminosCondicionesAlert()) {
       setloadBtn(true);
       await axios
-        .post(`${globalConfig.api_URL}/login`, data)
+        .post(`${globalConfig.API_URL}/login`, data)
         .then(({ data }) => {
           setloadBtn(false);
           console.log(data);
@@ -106,9 +106,9 @@ export const LoginForm = () => {
         <div className="row align-items-center justify-content-center">
           <div className="col-md-5 mb-5 py-5">
             <div className="mb-4 text-center">
-              <a href="/">
+              <Link to="/">
                 <img src={infoFraccionamiento.logo_color} width="215" height="65" alt="logo" />
-              </a>
+              </Link>
             </div>
             <form className="mx-3 px-5" onSubmit={handleSubmit(dataValidation)}>
               <div className="form-group first">

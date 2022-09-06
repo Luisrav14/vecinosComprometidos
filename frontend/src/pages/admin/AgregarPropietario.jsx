@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FaArrowLeft, FaHouseUser, FaFileAlt, FaHome, FaRegSave, FaBuilding } from "react-icons/fa";
 
+import { usePost } from "../../hooks/usePost";
 import { LoaderBtn } from "../../components/ui/LoaderBtn";
+import { successAlert, errorAlert } from "../../components/ui/sweetAlert/sweetAlert";
 
 export const AgregarPropietario = () => {
   const {
@@ -15,8 +17,14 @@ export const AgregarPropietario = () => {
 
   const [rentaForm, setRentaForm] = useState(false);
   const [loteForm, setloteForm] = useState(false);
+  const [sendingData, setSendingData] = useState(false);
 
-  const showData = (data) => console.log(data);
+  const postData = async (data) => {
+    console.log(data);
+    setSendingData(true);
+    (await usePost("http://localhost:5000/propietarios/agregar", data)) ? await successAlert() : errorAlert();
+    setSendingData(false);
+  };
 
   return (
     <>
@@ -32,7 +40,7 @@ export const AgregarPropietario = () => {
           </div>
         </div>
         <div className="card-body">
-          <form onSubmit={handleSubmit(showData)}>
+          <form onSubmit={handleSubmit(postData)}>
             <div className="row justify-content-center d-flex">
               {/* Datos del Propietario */}
 
@@ -120,133 +128,51 @@ export const AgregarPropietario = () => {
                   </div>
                   <div className="col-md-12 mb-3">
                     <label className="form-label">Razón Social</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      {...register("razon_social", {
-                        required: true,
-                      })}
-                      placeholder="Ej. Razon Social"
-                    />
+                    <input type="text" className="form-control" {...register("razon_social")} placeholder="Ej. Razon Social" />
                   </div>
                   <div className="col-md-6 mb-3">
                     <label className="form-label">Correo</label>
-                    <input
-                      type="email"
-                      className="form-control"
-                      {...register("correo_factura", {
-                        required: true,
-                      })}
-                      placeholder="Correo"
-                    />
+                    <input type="email" className="form-control" {...register("correo_factura")} placeholder="Correo" />
                   </div>
                   <div className="col-md-6 mb-3">
                     <label className="form-label">RFC</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      {...register("rfc", {
-                        required: true,
-                      })}
-                      placeholder="RFC"
-                    />
+                    <input type="text" className="form-control" {...register("rfc")} placeholder="RFC" />
                   </div>
                   <div className="col-md-6 mb-3">
                     <label className="form-label">Fraccionamiento</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      {...register("fraccionamiento", {
-                        required: true,
-                      })}
-                      placeholder="Fraccionamiento"
-                    />
+                    <input type="text" className="form-control" {...register("fraccionamiento")} placeholder="Fraccionamiento" />
                   </div>
                   <div className="col-md-6 mb-3">
                     <label className="form-label">Calle</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      {...register("calle", {
-                        required: true,
-                      })}
-                      placeholder="Calle"
-                    />
+                    <input type="text" className="form-control" {...register("calle")} placeholder="Calle" />
                   </div>
                   <div className="col-md-2 mb-3">
                     <label className="form-label">Número Interior</label>
-                    <input
-                      type="number"
-                      className="form-control"
-                      {...register("num_int", {
-                        required: true,
-                      })}
-                      placeholder="Número Interior"
-                    />
+                    <input type="number" className="form-control" {...register("num_int")} placeholder="Número Interior" />
                   </div>
                   <div className="col-md-2 mb-3">
                     <label className="form-label">Número Exterior</label>
-                    <input
-                      type="number"
-                      className="form-control"
-                      {...register("num_ext", {
-                        required: true,
-                      })}
-                      placeholder="Número Exterior"
-                    />
+                    <input type="number" className="form-control" {...register("num_ext")} placeholder="Número Exterior" />
                   </div>
                   <div className="col-md-2 mb-3">
                     <label className="form-label"> Código Postal</label>
-                    <input
-                      type="number"
-                      className="form-control"
-                      {...register("codigo_postal", {
-                        required: true,
-                      })}
-                      placeholder="Código Postal"
-                    />
+                    <input type="number" className="form-control" {...register("codigo_postal")} placeholder="Código Postal" />
                   </div>
                   <div className="col-md-6 mb-3">
                     <label className="form-label">Ciudad</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      {...register("ciudad", {
-                        required: true,
-                      })}
-                      placeholder="Ciudad"
-                    />
+                    <input type="text" className="form-control" {...register("ciudad")} placeholder="Ciudad" />
                   </div>
                   <div className="col-md-6 mb-3">
                     <label className="form-label">Estado</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      {...register("estado", {
-                        required: true,
-                      })}
-                      placeholder="Estado"
-                    />
+                    <input type="text" className="form-control" {...register("estado")} placeholder="Estado" />
                   </div>
                   <div className="col-md-6 mb-3">
                     <label className="form-label">País</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      {...register("pais", {
-                        required: true,
-                      })}
-                      placeholder="País"
-                    />
+                    <input type="text" className="form-control" {...register("pais")} placeholder="País" />
                   </div>
                   <div className="col-md-6 mb-3">
                     <label className="form-label">Forma de pago</label>
-                    <select
-                      className="form-select"
-                      {...register("forma_pago", {
-                        required: true,
-                      })}
-                    >
+                    <select className="form-select" {...register("forma_pago")}>
                       <option>Selecciona una forma de pago</option>
                       <option value="01">01 - Efectivo</option>
                       <option value="02">02 - Cheque nominativo</option>
@@ -274,12 +200,7 @@ export const AgregarPropietario = () => {
                   </div>
                   <div className="col-md-6 mb-3">
                     <label className="form-label">Método de pago</label>
-                    <select
-                      className="form-select"
-                      {...register("metodo_pago_factura", {
-                        required: true,
-                      })}
-                    >
+                    <select className="form-select" {...register("metodo_pago_factura")}>
                       <option selected disabled>
                         Selecciona un método de pago
                       </option>
@@ -289,12 +210,7 @@ export const AgregarPropietario = () => {
                   </div>
                   <div className="col-md-6 mb-3">
                     <label className="form-label">Uso CFDI</label>
-                    <select
-                      className="form-select"
-                      {...register("cfdi", {
-                        required: true,
-                      })}
-                    >
+                    <select className="form-select" {...register("cfdi")}>
                       <option defaultValue={0}>Selecciona una opción</option>
                       <option value="G01">G01 - Adquisición de mercancias</option>
                       <option value="G02">G02 - Devoluciones, descuentos o bonificaciones</option>
@@ -312,12 +228,7 @@ export const AgregarPropietario = () => {
                   </div>
                   <div className="col-md-6 mb-3">
                     <label className="form-label">Régimen Fiscal</label>
-                    <select
-                      className="form-select"
-                      {...register("regimen_fiscal", {
-                        required: true,
-                      })}
-                    >
+                    <select className="form-select" {...register("regimen_fiscal")}>
                       <option defaultValue={0}>Selecciona el Régimen Fiscal</option>
                       <option value="601">601 - General de Ley Personas Morales</option>
                       <option value="603">603 - Personas Morales con Fines no Lucrativos</option>
@@ -569,7 +480,7 @@ export const AgregarPropietario = () => {
                       <FaRegSave /> Guardar
                     </>
                   }
-                  isLoading={false}
+                  isLoading={sendingData}
                   loadText="Guardando..."
                 />
               </div>

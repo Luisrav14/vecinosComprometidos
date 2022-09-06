@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import { infoFraccionamiento } from "../../global/infoFraccionamiento";
 import Calendario from "../usuarios/Calendario";
 
@@ -6,9 +8,9 @@ export const IndexPage = () => {
     <>
       <div className="App">
         <nav className="navbar navbar-expand-lg navbar-light py-1" style={{ backgroundColor: "#40A4BC", zIndex: "99" }}>
-          <a className="navbar-brand" href="/">
+          <Link className="navbar-brand" to="/">
             <img className="logo" src={infoFraccionamiento.logo} style={{ width: 150 }} />
-          </a>
+          </Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -31,10 +33,10 @@ export const IndexPage = () => {
               </a>
 
               <span className="float-right">
-                <a href="/login" id="btncuenta" className="btn btn-blue text-uppercase " style={{ color: "white", fontSize: "18px", marginTop: "10%" }}>
+                <Link to="/login" id="btncuenta" className="btn btn-blue text-uppercase " style={{ color: "white", fontSize: "18px", marginTop: "10%" }}>
                   {" "}
                   Mi cuenta
-                </a>
+                </Link>
               </span>
             </div>
           </div>
