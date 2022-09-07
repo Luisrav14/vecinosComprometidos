@@ -1,7 +1,17 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import { AdminDashboard, AgregarPropietario, BaseDatosGeneral, CuotasMantenimiento, CuotaTotalPagado, CuotaTotalPendiente, CuotaTotalRecaudar, EditarPropietario, ResumenInformacion, Asamblea, EstadosDeCuenta, AgregarAsamblea, AnunciosAcuerdos, InventarioActivo, InventarioDescontinuado, AgregarAnuncios, AccionesMod, CasasRenta, LotesBaldios, Inventario, InformacionPersonal, CensoAnimal, Estadisticas, Incidentes, AgregarIncidente, Reportes, ReportesResueltos, Convenios, AgregarConvenio, InformesFinancieros, AgregarInformeFinanciero, RecursosHumanos, AgregarRecursosHumanos, Proveedores, AgregarProveedor, Reglamentos, AgregarReglamentos, BlogDeNoticias, AgregarBlog, CalendarioReservaciones, AreasReservadas, EncuestasAdm, AgregarEncuesta, Medidores, AgregarMedidores, SoportePendientes, AgregarSoportes, SoporteResueltos, Ofertas, AgregarOfertas } from "../pages";
+import { AdminDashboard, AgregarPropietario, BaseDatosGeneral, CuotasMantenimiento,
+   CuotaTotalPagado, CuotaTotalPendiente, CuotaTotalRecaudar, EditarPropietario,
+    ResumenInformacion, Asamblea, EstadosDeCuenta, AgregarAsamblea, AnunciosAcuerdos,
+    InventarioActivo, InventarioDescontinuado, AgregarAnuncios, AccionesMod,
+    CasasRenta, LotesBaldios, Inventario,AgregarInventario, InformacionPersonal, CensoAnimal, Estadisticas,
+    Incidentes, AgregarIncidente, Reportes, ReportesResueltos, Convenios, AgregarConvenio,
+    InformesFinancieros, AgregarInformeFinanciero, RecursosHumanos, AgregarRecursosHumanos,
+    Proveedores, AgregarProveedor, Reglamentos, AgregarReglamentos, BlogDeNoticias,
+    AgregarBlog, CalendarioReservaciones, AreasReservadas, EncuestasAdm, AgregarEncuesta,
+    Medidores, AgregarMedidores, SoportePendientes, AgregarSoportes, SoporteResueltos,
+    Ofertas, AgregarOfertas } from "../pages";
 
 export const AdminRoutes = () => {
   return (
@@ -18,6 +28,7 @@ export const AdminRoutes = () => {
           <Route path="/inventarioactivo" element={<InventarioActivo />} />
           <Route path="/inventariodescontinuado" element={<InventarioDescontinuado />} />
           <Route path="/inventario/:categoria" element={<Inventario />} />
+          <Route path="/agregar-inventario" element={<AgregarInventario />} />
           <Route path="/acciones" element={<AccionesMod />} />
           <Route path="/informacion-personal" element={<InformacionPersonal />} />
           <Route path="/censo-animal" element={<CensoAnimal />} />

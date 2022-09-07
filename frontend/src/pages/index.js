@@ -19,6 +19,7 @@ export * from "./admin/AgregarAnuncios";
 export * from "./admin/InventarioActivo";
 export * from "./admin/InventarioDescontinuado";
 export * from "./admin/Inventario";
+export * from "./admin/AgregarInventario";
 export * from "./admin/Acciones";
 export * from "./admin/CasasRenta";
 export * from "./admin/LotesBaldios";

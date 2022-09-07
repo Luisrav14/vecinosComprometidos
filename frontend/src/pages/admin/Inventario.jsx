@@ -105,7 +105,7 @@ export const Inventario = () => {
 
   return (
     <>
-      <h1 className="mb-3 fw-bold">Inventario categoría {categoria}</h1>
+      <h1 className="mb-3 fw-bold">Inventario categoría {categoria} </h1>
       <h6>En esta seccion podras encontrar el inventario de la categoria</h6>
       <div className="card">
         <div className="card-header border-bottom border-1 ">
@@ -114,7 +114,7 @@ export const Inventario = () => {
             <div className="col-md-6 text-right">
               <RegresarBtn />
               <Link to="/admin/agregar-inventario" className="btn btn-primary mx-2">
-                <BsPlusLg />
+                <BsPlusLg /> Agregar
               </Link>
             </div>
           </div>
