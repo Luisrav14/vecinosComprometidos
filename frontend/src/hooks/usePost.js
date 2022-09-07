@@ -1,15 +1,14 @@
 import axios from "axios";
-import { useState } from "react";
 
-export const usePost = async (data, url) => {
+export const usePost = async (url, data) => {
   await axios
     .post(url, data)
     .then(({ data }) => {
       console.log(data);
-      return data;
+      return true;
     })
     .catch((error) => {
-      console.log(error);
+      // console.log(error);
       return "error";
     });
 };

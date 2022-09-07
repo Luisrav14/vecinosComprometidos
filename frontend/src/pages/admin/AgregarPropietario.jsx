@@ -1,9 +1,11 @@
 import { useState } from "react";
 import Select from "react-select";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FaArrowLeft, FaHouseUser, FaFileAlt, FaHome, FaRegSave, FaBuilding } from "react-icons/fa";
+import axios from "axios";
 
+import globalConfig from "../../global/globalConfig";
 import { usePost } from "../../hooks/usePost";
 import { LoaderBtn } from "../../components/ui/LoaderBtn";
 import { successAlert, errorAlert } from "../../components/ui/sweetAlert/sweetAlert";
@@ -19,11 +21,19 @@ export const AgregarPropietario = () => {
   const [loteForm, setloteForm] = useState(false);
   const [sendingData, setSendingData] = useState(false);
 
+  const navigate = useNavigate();
+
   const postData = async (data) => {
-    console.log(data);
+    // console.log(data);
     setSendingData(true);
-    (await usePost("http://localhost:5000/propietarios/agregar", data)) ? await successAlert() : errorAlert();
-    setSendingData(false);
+    if (await usePost(`${globalConfig.API_URL}/propietarios/agregar`, data)) {
+      errorAlert();
+      setSendingData(false);
+    } else {
+      setSendingData(false);
+      await successAlert();
+      navigate("/admin/general", { replace: true });
+    }
   };
 
   return (
@@ -265,36 +275,15 @@ export const AgregarPropietario = () => {
                   </div>
                   <div className="col-md-4 mb-3">
                     <label className="form-label">Calle *</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      {...register("calle", {
-                        required: true,
-                      })}
-                      placeholder="Calle"
-                    />
+                    <input type="text" className="form-control" {...register("calle")} placeholder="Calle" />
                   </div>
                   <div className="col-md-4 mb-3">
                     <label className="form-label">Número *</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      {...register("numero", {
-                        required: true,
-                      })}
-                      placeholder="Número"
-                    />
+                    <input type="text" className="form-control" {...register("numero")} placeholder="Número" />
                   </div>
                   <div className="col-md-4 mb-3">
                     <label className="form-label">Clave de Unidad *</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      {...register("clave_unidad", {
-                        required: true,
-                      })}
-                      placeholder="Clave de Unidad"
-                    />
+                    <input type="text" className="form-control" {...register("clave_unidad")} placeholder="Clave de Unidad" />
                   </div>
                   <div className="col-md-12 mb-3">
                     <label className="form-label">Descripción</label>
@@ -306,12 +295,7 @@ export const AgregarPropietario = () => {
                   </div>
                   <div className="col-md-6 mb-3">
                     <label className="form-label">Método de pago *</label>
-                    <select
-                      className="form-select"
-                      {...register("metodo_pago", {
-                        required: true,
-                      })}
-                    >
+                    <select className="form-select" {...register("metodo_pago")}>
                       <option selected disabled>
                         Selecciona un método de pago
                       </option>
@@ -322,25 +306,11 @@ export const AgregarPropietario = () => {
                   </div>
                   <div className="col-md-6 mb-3">
                     <label className="form-label">Cuota suscripción *</label>
-                    <input
-                      type="number"
-                      className="form-control"
-                      {...register("cuota_suscripcion", {
-                        required: true,
-                      })}
-                      placeholder="Cuota de mantenimeinto (Suscripción)"
-                    />
+                    <input type="number" className="form-control" {...register("cuota_suscripcion")} placeholder="Cuota de mantenimeinto (Suscripción)" />
                   </div>
                   <div className="col-md-6 mb-3">
                     <label className="form-label">Cuota efectivo, transferencia o depósito *</label>
-                    <input
-                      type="number"
-                      className="form-control"
-                      {...register("cuota_mantenimiento", {
-                        required: true,
-                      })}
-                      placeholder="Cuota de mantenimeinto (Efectivo, Transferencia o Depósito)"
-                    />
+                    <input type="number" className="form-control" {...register("cuota_mantenimiento")} placeholder="Cuota de mantenimeinto (Efectivo, Transferencia o Depósito)" />
                   </div>
                   <div className="col-md-6 mb-3">
                     <label className="form-label">Tipo de propiedad</label>

@@ -29,7 +29,7 @@ export const LoginForm = () => {
 
   (errors.password?.type === "required" || errors.correo?.type === "required") && inputRequiredToast();
 
-  /* const dataValidation = async (data) => {
+  const dataValidation = async (data) => {
     setloadBtn(false);
     if (await TerminosCondicionesAlert()) {
       setloadBtn(true);
@@ -74,11 +74,11 @@ export const LoginForm = () => {
       default:
         break;
     }
-  }; */
+  };
 
   /* Login temporal */
 
-  const dataValidation = async (data) => {
+ /*  const dataValidation = async (data) => {
     setloginErrorMail(false);
     setloginErrorPass(false);
 
@@ -97,7 +97,7 @@ export const LoginForm = () => {
     } else {
       setloginErrorMail(true);
     }
-  };
+  }; */
 
   return (
     <div className="d-lg-flex half py-4">
