@@ -9,6 +9,6 @@ router.post("/login", auth.validation);
 
 /* Propietarios routes */
 
-router.post("propietarios/agregar", propietario.agregar);
+router.post("/propietarios/agregar", propietario.agregar);
 
 export default router;

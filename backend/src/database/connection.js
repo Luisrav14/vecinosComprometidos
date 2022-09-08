@@ -1,7 +1,7 @@
 import mysql from "promise-mysql";
-import { devServer } from "./config";
+import { dbServer } from "./config";
 
-const connection = mysql.createConnection(devServer);
+const connection = mysql.createConnection(dbServer);
 
 export default function dbConnection() {
   return connection;

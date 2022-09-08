@@ -8,10 +8,10 @@ export const auth = {
 
     try {
       const db = await dbConnection();
-      const isUser = await db.query("SELECT * FROM users WHERE correo = ?", [correo]);
+      const isUser = await db.query("SELECT * FROM usuarios WHERE correo = ?", [correo]);
 
       if (isUser.length > 0) {
-        const data = await db.query("SELECT * FROM users WHERE correo = ? AND password = ?", [correo, password]);
+        const data = await db.query("SELECT * FROM usuarios WHERE correo = ? AND password = ?", [correo, password]);
 
         if (data.length > 0) {
           const token = await generateJWT(data);

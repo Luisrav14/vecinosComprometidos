@@ -10,13 +10,13 @@ const app = express();
 // Config
 app.set("port", 5000);
 app.use(cors());
-dotenv.config({ path: "../.env" });
+// dotenv.config({ path: "../.env" });
 
 // Middlewares
 app.use(morgan("dev"));
 app.use(express.json());
 
 // Routes
-app.use(routes);
+app.use("/api/", routes);
 
 export default app;
