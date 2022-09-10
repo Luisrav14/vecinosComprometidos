@@ -1,39 +1,43 @@
+import axios from "axios";
 import { useState } from "react";
 import Select from "react-select";
-import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { Link, useNavigate } from "react-router-dom";
 import { FaArrowLeft, FaHouseUser, FaFileAlt, FaHome, FaRegSave, FaBuilding } from "react-icons/fa";
-import axios from "axios";
 
 import globalConfig from "../../global/globalConfig";
-import { usePost } from "../../hooks/usePost";
 import { LoaderBtn } from "../../components/ui/LoaderBtn";
 import { successAlert, errorAlert } from "../../components/ui/sweetAlert/sweetAlert";
 
 export const AgregarPropietario = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const navigate = useNavigate();
+
+  const { register, handleSubmit, formState: { errors } } = useForm();
 
   const [rentaForm, setRentaForm] = useState(false);
   const [loteForm, setloteForm] = useState(false);
   const [sendingData, setSendingData] = useState(false);
 
-  const navigate = useNavigate();
-
   const postData = async (data) => {
-    // console.log(data);
     setSendingData(true);
-    if (await usePost(`${globalConfig.API_URL}/propietarios/agregar`, data)) {
-      errorAlert();
-      setSendingData(false);
-    } else {
-      setSendingData(false);
-      await successAlert();
-      navigate("/admin/general", { replace: true });
-    }
+
+    await axios
+      .post(`${globalConfig.API_URL}/propietarios/agregar`, data)
+      .then(({ data }) => {
+        console.log(data);
+        setSendingData(false);
+        data.status = "success" ? postSuccess() : errorAlert();
+      })
+      .catch((error) => {
+        console.log(error);
+        setSendingData(false);
+        errorAlert();
+      });
+  };
+
+  const postSuccess = async () => {
+    await successAlert();
+    navigate("/admin/general", { replace: true });
   };
 
   return (
