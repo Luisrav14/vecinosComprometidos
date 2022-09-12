@@ -16,5 +16,6 @@ router.post("/propietarios/agregar", propietario.agregar);
 router.post("/propietarios/editar/:uid", propietario.editar);
 router.post("/propietarios/eliminar/:uid", propietario.eliminar);
 router.get("/asamblea/", asamblea.mostrarTodos);
+router.get("/asamblea/", asamblea.mostrarUno);
 
 export default router;

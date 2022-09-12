@@ -9,7 +9,7 @@ export const asamblea = {
     try {
       const db = await dbConnection();
 
-      const mysqlQuery = await db.query("SELECT * FROM asamblea");
+      const mysqlQuery = await db.query("SELECT * FROM asamblea ");
 
       if (mysqlQuery.length > 0) {
         res.status(200).send({ status: "success", data: mysqlQuery });
@@ -22,12 +22,12 @@ export const asamblea = {
   },
 
   mostrarUno: async (req, res) => {
-    const { id_usuario } = req.body;
+    const { id_asamblea } = req.body;
 
     try {
       const db = await dbConnection();
 
-      const mysqlQuery = await db.query("SELECT * FROM asamblea WHERE id_usuario = ?", [id_usuario]);
+      const mysqlQuery = await db.query("SELECT * FROM asamblea WHERE id_asamblea = ?", [id_asamblea]);
 
       if (mysqlQuery.length > 0) {
         res.status(200).send({ status: "success", data: mysqlQuery });
