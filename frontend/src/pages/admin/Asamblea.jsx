@@ -1,24 +1,21 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { BsPlusLg, BsEnvelope, BsPencilSquare, BsFillChatLeftTextFill } from "react-icons/bs";
-
+import { useEffect } from "react";
 import Swal from "sweetalert2";
 import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
-
+import { getAsambleasRequest } from "./api/asambleaapi";
+import globalConfig from "../../global/globalConfig";
 export const Asamblea = () => {
-  const sendEmail = () => {
-    Swal.fire({
-      icon: "success",
-      title: "Operación realizada",
-      text: "Email enviado exitosamente",
-    });
-  };
+  const [data, setData] = useState([]);
+
+
 
   const columns = [
     {
       id: "id",
       name: "#",
-      selector: (row) => row.id,
+      selector: (row) => row.id_asamblea,
       sortable: true,
       width: "5%",
       center: true,
@@ -50,41 +47,37 @@ export const Asamblea = () => {
     {
       id: "Fecha Publicado",
       name: "Fecha Publicado",
-      selector: (row) => row.fechapublicado,
+      selector: (row) => row.fecha_publicado,
+      center: true,
+     
+    },
+    {
+      id: "Acciones",
+      name: "Acciones",
+      selector: (row) => row.acciones,
       center: true,
      
     },
   ];
 
-  const data = [
-    {
-      id: 1,
-      fecha: "2022-07-13",
-      titulo: "PRIMERA ASAMBLEA EXTRAORDINARIA 2022",
-      descripcion: [
-        
-        <button className="btn btn-primary mx-2" onClick={sendEmail}>
-          <BsFillChatLeftTextFill />
-        </button>,
-      ],
-      fechapublicado:"2022-07-13",
-    },
-    {
-      id: 2,
-      fecha: "2022-07-13",
-      titulo: "PRIMERA ASAMBLEA EXTRAORDINARIA 2022",
-      descripcion: [
-        
-        <button className="btn btn-primary mx-2" onClick={sendEmail}>
-          <BsFillChatLeftTextFill />
-        </button>,
-      ],
-      fechapublicado:"2022-07-13",
-    },
-  ];
+  useEffect(() => {
+    fetch(globalConfig.API_URL_ASAMBLEAS)
+      .then((res) => res.json())
+      .then((json) => setData(json.data));
+  }, 
+
+  [
+    
+  ],
+  )
+  ;
+
+    
+ 
 
   return (
     <>
+    
       <h1 className="mb-3 fw-bold">Asamblea</h1>
       <h6>En esta sección podemos encontrar información acerca de convocatorias a eventos que se han realizado con los colonos, como juntas o asambleas, nos resulta útil si queremos mantener un registro y consistencia en la comunicación con los colonos.</h6>
       <div className="card">
@@ -100,7 +93,7 @@ export const Asamblea = () => {
           </div>
         </div>
 
-        <DataTableComponent columns={columns} data={data}  />
+        <DataTableComponent columns={columns} data={data} expandible={true}  />
       </div>
     </>
   );
