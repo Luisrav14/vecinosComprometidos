@@ -12,13 +12,19 @@ import { successAlert, errorAlert } from "../../components/ui/sweetAlert/sweetAl
 export const AgregarPropietario = () => {
   const navigate = useNavigate();
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  const [rentaForm, setRentaForm] = useState(false);
-  const [loteForm, setloteForm] = useState(false);
+  const [rentaForm, setRentaForm] = useState("");
+  const [loteForm, setloteForm] = useState("");
+  const [metodoPago, setMetodoPago] = useState("");
   const [sendingData, setSendingData] = useState(false);
 
   const postData = async (data) => {
+    console.log(data);
     setSendingData(true);
 
     await axios
@@ -158,7 +164,7 @@ export const AgregarPropietario = () => {
                   </div>
                   <div className="col-md-6 mb-3">
                     <label className="form-label">Calle</label>
-                    <input type="text" className="form-control" {...register("calle")} placeholder="Calle" />
+                    <input type="text" className="form-control" {...register("calle_factura")} placeholder="Calle" />
                   </div>
                   <div className="col-md-2 mb-3">
                     <label className="form-label">Número Interior</label>
@@ -279,15 +285,15 @@ export const AgregarPropietario = () => {
                   </div>
                   <div className="col-md-4 mb-3">
                     <label className="form-label">Calle *</label>
-                    <input type="text" className="form-control" {...register("calle")} placeholder="Calle" />
+                    <input type="text" className="form-control" {...register("calle", { required: true })} placeholder="Calle" />
                   </div>
                   <div className="col-md-4 mb-3">
                     <label className="form-label">Número *</label>
-                    <input type="text" className="form-control" {...register("numero")} placeholder="Número" />
+                    <input type="text" className="form-control" {...register("numero", { required: true })} placeholder="Número" />
                   </div>
                   <div className="col-md-4 mb-3">
                     <label className="form-label">Clave de Unidad *</label>
-                    <input type="text" className="form-control" {...register("clave_unidad")} placeholder="Clave de Unidad" />
+                    <input type="text" className="form-control" {...register("clave_unidad", { required: true })} placeholder="Clave de Unidad" />
                   </div>
                   <div className="col-md-12 mb-3">
                     <label className="form-label">Descripción</label>
@@ -299,14 +305,15 @@ export const AgregarPropietario = () => {
                   </div>
                   <div className="col-md-6 mb-3">
                     <label className="form-label">Método de pago *</label>
-                    <select className="form-select" {...register("metodo_pago")}>
-                      <option selected disabled>
-                        Selecciona un método de pago
-                      </option>
-                      <option value="Suscripción">Suscripción</option>
-                      <option value="Efectivo">Pago en efectivo</option>
-                      <option value="Transferencia">Transferencia</option>
-                    </select>
+                    <Select
+                      options={[
+                        { label: "Suscripción", value: "suscripcion" },
+                        { label: "Efectivo", value: "efectivo" },
+                        { label: "Transferencia", value: "transferencia" },
+                      ]}
+                      onChange={({ value }) => setMetodoPago(value)}
+                    />
+                    <input type="hidden" {...register("metodo_pago")} value={metodoPago} />
                   </div>
                   <div className="col-md-6 mb-3">
                     <label className="form-label">Cuota suscripción *</label>
@@ -324,8 +331,9 @@ export const AgregarPropietario = () => {
                         { label: "Casa en Proceso", value: "proceso" },
                         { label: "Terreno Baldío", value: "baldio" },
                       ]}
-                      onChange={({ value }) => (value === "baldio" ? setloteForm(true) : setloteForm(false))}
+                      onChange={({ value }) => setloteForm(value)}
                     />
+                    <input type="hidden" {...register("tipo_casa")} value={loteForm} />
                   </div>
                   <div className="col-md-6 mb-3">
                     <label className="form-label">Estatus de la propiedad</label>
@@ -335,11 +343,12 @@ export const AgregarPropietario = () => {
                         { label: "Casa en Renta", value: "rentada" },
                         { label: "Sin habitar", value: "sinHabitar" },
                       ]}
-                      onChange={({ value }) => (value === "rentada" ? setRentaForm(true) : setRentaForm(false))}
+                      onChange={({ value }) => setRentaForm(value)}
                     />
+                    <input type="hidden" {...register("estatus_casa")} value={rentaForm} />
                   </div>
 
-                  {rentaForm && (
+                  {rentaForm === "rentada" && (
                     <>
                       <div className="col-md-12 border-bottom border-1 my-3">
                         <p className="text-primary fw-bolder">
@@ -369,12 +378,12 @@ export const AgregarPropietario = () => {
                       </div>
                       <div className="col-md-4 mb-3">
                         <label className="form-label">Teléfono</label>
-                        <input type="text" className="form-control" {...register("telefono")} placeholder="Teléfono" />
+                        <input type="text" className="form-control" {...register("inquilino_telefono")} placeholder="Teléfono" />
                       </div>
                     </>
                   )}
 
-                  {loteForm && (
+                  {loteForm === "baldio" && (
                     <>
                       <div className="col-md-12 border-bottom border-1 my-3">
                         <p className="text-primary fw-bolder">

@@ -3,7 +3,9 @@ import { dataValidation } from "../helpers/dataValidation";
 import { passwordGenerator } from "../helpers/passwordGenerator";
 
 export const propietario = {
+
   agregar: async (req, res) => {
+    
     const { nombre, apellidoP, apellidoM, correo, celular, telefono, fecha_nacimiento, 
       calle, numero, clave_unidad, descripcion, metros2, metodo_pago, cuota_suscripcion, cuota_mantenimiento,
        tipo_casa, estatus_casa, razon_social, correo_factura, rfc, fraccionamiento, calle_factura, num_int, num_ext, 

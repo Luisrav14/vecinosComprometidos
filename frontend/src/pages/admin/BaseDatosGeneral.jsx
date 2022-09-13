@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BsPlusLg, BsEnvelope, BsPencilSquare } from "react-icons/bs";
 
 import Swal from "sweetalert2";
 import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
 import { ModalWithBtn } from "../../components";
+import globalConfig from "../../global/globalConfig";
 
 const DatosPersonales = () => {
   return (
@@ -84,20 +85,22 @@ const InformacionPropiedades = () => {
   );
 };
 
+const sendEmail = () => {
+  Swal.fire({
+    icon: "success",
+    title: "Operación realizada",
+    text: "Email enviado exitosamente",
+  });
+};
+
 export const BaseDatosGeneral = () => {
-  const sendEmail = () => {
-    Swal.fire({
-      icon: "success",
-      title: "Operación realizada",
-      text: "Email enviado exitosamente",
-    });
-  };
+  const [data, setData] = useState([]);
 
   const columns = [
     {
       id: "id",
       name: "#",
-      selector: (row) => row.id,
+      selector: (row) => row.id_usuario,
       sortable: true,
       width: "5%",
       center: true,
@@ -131,52 +134,11 @@ export const BaseDatosGeneral = () => {
     },
   ];
 
-  const data = [
-    {
-      id: 1,
-      nombre: (
-        <ModalWithBtn classBtn="btn btn-link text-decoration-none" textBtn={"Prueba Numero 1"} title="Datos personales" footer={false}>
-          <DatosPersonales />
-        </ModalWithBtn>
-      ),
-      direccion: (
-        <ModalWithBtn classBtn="btn btn-link text-decoration-none" textBtn={"Quintas #121"} title="Datos de la propiedad" footer={false}>
-          <InformacionPropiedades />
-        </ModalWithBtn>
-      ),
-      cuota_mantenimiento: "$526.00",
-      acciones: [
-        <Link to="/admin/editar-propietario" className="btn btn-success mx-2">
-          <BsPencilSquare />
-        </Link>,
-        <button className="btn btn-primary mx-2" onClick={sendEmail}>
-          <BsEnvelope />
-        </button>,
-      ],
-    },
-    {
-      id: 2,
-      nombre: (
-        <ModalWithBtn classBtn="btn btn-link text-decoration-none" textBtn={"Prueba Numero 2"} title="Datos personales" footer={false}>
-          <DatosPersonales />
-        </ModalWithBtn>
-      ),
-      direccion: (
-        <ModalWithBtn classBtn="btn btn-link text-decoration-none" textBtn={"Roble #122"} title="Datos de la propiedad" footer={false}>
-          <InformacionPropiedades />
-        </ModalWithBtn>
-      ),
-      cuota_mantenimiento: "$526.00",
-      acciones: [
-        <Link to="/admin/editar-propietario" className="btn btn-success mx-2">
-          <BsPencilSquare />
-        </Link>,
-        <button className="btn btn-primary mx-2" onClick={sendEmail}>
-          <BsEnvelope />
-        </button>,
-      ],
-    },
-  ];
+  useEffect(() => {
+    fetch(globalConfig.API_URL + "/propietarios")
+      .then((res) => res.json())
+      .then((json) => setData(json.data));
+  }, []);
 
   return (
     <>

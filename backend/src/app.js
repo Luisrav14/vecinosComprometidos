@@ -3,7 +3,7 @@ import morgan from "morgan";
 import express from "express";
 import * as dotenv from "dotenv";
 
-import routes from "./routes/routes";
+import routes from "./routes/routes.js";
 
 const app = express();
 
@@ -15,7 +15,7 @@ app.use(cors());
 // Middlewares
 app.use(morgan("dev"));
 app.use(express.json());
-
+app.use(routes);
 // Routes
 app.use("/api/", routes);
 

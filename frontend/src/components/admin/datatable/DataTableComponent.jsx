@@ -12,6 +12,10 @@ import "primeicons/primeicons.css"; //icons
 export const DataTableComponent = ({ columns, data }) => {
   const [posts, setPosts] = useState(data);
 
+  useEffect(() => {
+    setPosts(data);
+  }, [data]);
+
   const exportColumns = columns.map((col) => ({
     title: col.name,
     dataKey: col.id,
