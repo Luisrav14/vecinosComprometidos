@@ -50,14 +50,7 @@ export const Asamblea = () => {
       selector: (row) => row.fecha_publicado,
       center: true,
      
-    },
-    {
-      id: "Acciones",
-      name: "Acciones",
-      selector: (row) => row.acciones,
-      center: true,
-     
-    },
+    }
   ];
 
   useEffect(() => {
