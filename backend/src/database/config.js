@@ -3,7 +3,8 @@ module.exports = {
     host: "localhost",
     user: "root",
     password: "",
-    database: "vecinosreact",
+    database: "vc_prueba",
+    multipleStatements: true,
   },
   // dbServer: {
   //   host: "http://db-vecinos-comprometidos-do-user-12184644-0.b.db.ondigitalocean.com/",
