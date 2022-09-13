@@ -4,6 +4,7 @@ module.exports = {
     user: "root",
     password: "",
     database: "vc_prueba",
+    multipleStatements: true,
   },
   // dbServer: {
   //   host: "http://db-vecinos-comprometidos-do-user-12184644-0.b.db.ondigitalocean.com/",
