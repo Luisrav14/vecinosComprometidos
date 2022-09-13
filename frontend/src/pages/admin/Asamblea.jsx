@@ -1,18 +1,23 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { BsPlusLg, BsEnvelope, BsPencilSquare, BsFillChatLeftTextFill } from "react-icons/bs";
-
+import { useEffect } from "react";
 import Swal from "sweetalert2";
 import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
-
+import { getAsambleasRequest } from "./api/asambleaapi";
 export const Asamblea = () => {
-  const sendEmail = () => {
-    Swal.fire({
-      icon: "success",
-      title: "Operación realizada",
-      text: "Email enviado exitosamente",
-    });
-  };
+  const [asambleasT, setAsambleas] = useState([]);
+
+
+
+    useEffect(() => {
+      async function loadAsambleas(){
+       const response = await  getAsambleasRequest();
+      
+       console.log(response.data);
+      }
+      loadAsambleas();
+    },[])
 
   const columns = [
     {
@@ -57,13 +62,14 @@ export const Asamblea = () => {
   ];
 
   const data = [
+    
     {
       id: 1,
       fecha: "2022-07-13",
       titulo: "PRIMERA ASAMBLEA EXTRAORDINARIA 2022",
       descripcion: [
         
-        <button className="btn btn-primary mx-2" onClick={sendEmail}>
+        <button className="btn btn-primary mx-2" >
           <BsFillChatLeftTextFill />
         </button>,
       ],
@@ -75,7 +81,7 @@ export const Asamblea = () => {
       titulo: "PRIMERA ASAMBLEA EXTRAORDINARIA 2022",
       descripcion: [
         
-        <button className="btn btn-primary mx-2" onClick={sendEmail}>
+        <button className="btn btn-primary mx-2" >
           <BsFillChatLeftTextFill />
         </button>,
       ],
@@ -83,8 +89,20 @@ export const Asamblea = () => {
     },
   ];
 
+    
+  
+
   return (
     <>
+    {
+    asambleasT.map(asamblea=>(
+     
+      <div className="titulo">
+        <h2>{asambleas.titulo}</h2>
+      </div>
+      
+    ))
+  }
       <h1 className="mb-3 fw-bold">Asamblea</h1>
       <h6>En esta sección podemos encontrar información acerca de convocatorias a eventos que se han realizado con los colonos, como juntas o asambleas, nos resulta útil si queremos mantener un registro y consistencia en la comunicación con los colonos.</h6>
       <div className="card">
