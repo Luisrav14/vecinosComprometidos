@@ -1,4 +1,4 @@
-export const ModalWithBtn = ({ title, textBtn, iconBtn, classBtn, footer = true, children }) => {
+export const ModalWithBtn = ({ title, textBtn, iconBtn, classBtn, size='', footer = true, children }) => {
   const modalKey = Math.floor(Math.random() * 10000);
   return (
     <>
@@ -7,7 +7,7 @@ export const ModalWithBtn = ({ title, textBtn, iconBtn, classBtn, footer = true,
       </button>
 
       <div className="modal fade" id={`Modal${modalKey}`} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" key={modalKey}>
-        <div className="modal-dialog">
+        <div className={`modal-dialog modal-${size}`}>
           <div className="modal-content">
             <div className="modal-header">
               <h4 className="modal-title fw-bold" id="exampleModalLabel">

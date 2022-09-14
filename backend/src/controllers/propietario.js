@@ -37,44 +37,33 @@ export const propietario = {
         if (false) {
           res.status(200).send({ status: "error_correo", message: "Este correo ya se encuentra registrado" });
         } else {
-          /*  db.query(`INSERT INTO usuarios (nombre, apellidoP, apellidoM, correo, password, telefono, celular, fecha_nacimiento, tipo) VALUES ('${nombre}',' ${apellidoP}',' ${apellidoM}', '${correo}', '${password}', '${telefono}', '${celular}', ${fecha_nacimiento}, '${tipo}'); INSERT INTO propiedad (calle, numero_ext, unidad, tipo_casa, estatus_casa, cuota, cuota_efectivo, metodo_pago, m2, descripcion, pin_habilitado, calle_lote, colonia_lote, tel_lote, correo_lote, ubicacion) VALUES ('${calle}', '${numero}',' ${clave_unidad}',' ${tipo_casa}', '${estatus_casa}', ${cuota_suscripcion}, ${cuota_mantenimiento}, '${metodo_pago}', '${metros2}', '${descripcion}', 1, ${lote_calle}, ${lote_colonia}, ${lote_telefono}, ${lote_correo}, ${lote_ciudad})`,
-            (error, results, fields) => {
-              if (error) throw error;
-              // `results` is an array with one element for every statement in the query:
-              console.log(results[0]); // [{1: 1}]
-              console.log(results[1]); // [{2: 2}]
+          db.query(`INSERT INTO usuarios (nombre, apellidoP, apellidoM, correo, password, telefono, celular, fecha_nacimiento, tipo) VALUES ('${nombre}',' ${apellidoP}',' ${apellidoM}', '${correo}', '${password}', '${telefono}', '${celular}', ${fecha_nacimiento}, '${tipo}');`, (error, results, fields) => {
+            if (error) res.status(200).send({ status: "error", message: error });
+            console.log("[success] Query usuario");
+            console.log(results);
+            db.query(`INSERT INTO propiedad (calle, numero_ext, unidad, tipo_casa, estatus_casa, cuota, cuota_efectivo, metodo_pago, m2, descripcion, pin_habilitado, calle_lote, colonia_lote, tel_lote, correo_lote, ubicacion, fk_propietario) VALUES ('${calle}', '${numero}',' ${clave_unidad}',' ${tipo_casa}', '${estatus_casa}', ${cuota_suscripcion}, ${cuota_mantenimiento}, '${metodo_pago}', '${metros2}', '${descripcion}', 1, ${lote_calle}, ${lote_colonia}, ${lote_telefono}, ${lote_correo}, ${lote_ciudad}, ${results.insertId})`, (error, results, fields) => {
+              if (error) res.status(200).send({ status: "error", message: error });
+              console.log("[success] Query propiedad");
+              console.log(results);
+            });
+            db.query(`INSERT INTO facturacion_datos (razon_social, rfc, correo, fraccionamiento, calle, numero_ext, numero_int, cp, ciudad, estado, pais, forma_pago, metodo_pago, uso_cfdi, regimen_fiscal, fk_propietario) VALUES ('${razon_social}', '${rfc}', '${correo_factura}', '${fraccionamiento}', '${calle_factura}', '${num_ext}', '${num_int}', '${codigo_postal}', '${ciudad}', '${estado}', '${pais}', '${forma_pago}', '${metodo_pago_factura}', '${cfdi}', '${regimen_fiscal}', ${results.insertId})`, (error, results, fields) => {
+              if (error) res.status(200).send({ status: "error", message: error });
+              console.log("[success] Query facturas");
+              console.log(results);
+            });
+            if (estatus_casa === "rentada") {
+              const { inquilino_nombre, inquilino_apellidoP, inquilino_apellidoM, inquilino_correo, inquilino_celular, inquilino_telefono } = req.body;
+              db.query(`INSERT INTO arrendatario (nombre, apellidoP, apellidoM, correo, telefono, celular, fk_propietario) VALUES (${inquilino_nombre}, ${inquilino_apellidoP}, ${inquilino_apellidoM}, ${inquilino_correo}, ${inquilino_telefono}, ${inquilino_celular}, ${results.insertId})`, (error, results, fields) => {
+                if (error) res.status(200).send({ status: "error", message: error });
+                console.log("[success] Query renta");
+                console.log(results);
+              });
             }
-          ); */
+          });
 
-          const usuarioQuery = await db.query("INSERT INTO usuarios ( nombre, apellidoP, apellidoM, correo, password, telefono, celular, fecha_nacimiento, tipo)  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", [nombre, apellidoP, apellidoM, correo, password, telefono, celular, fecha_nacimiento, tipo]);
-          console.log("Usuario insertado");
+          /* Enviar email de registro c/ contraseña */
 
-          // const propiedadQuery = await db.query("INSERT INTO propiedad (calle,	numero_int,	unidad, tipo_casa,	estatus_casa,	cuota, cuota_efectivo,	metodo_pago,	m2, descripcion,	pin_habilitado, calle_lote, colonia_lote, tel_lote, correo_lote, ubicacion) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [calle, numero, clave_unidad, tipo_casa, estatus_casa, cuota_suscripcion, cuota_mantenimiento, metodo_pago, metros2, descripcion, 1, lote_calle, lote_colonia, lote_telefono, lote_correo, lote_ciudad]);
-          // console.log("Propiedad insertada");
-
-          // const facturacionQuery = await db.query("INSERT INTO facturacion_datos (razon_social, rfc, correo, fraccionamiento, calle, numero_ext, numero_int, cp, ciudad, estado, pais, forma_pago, metodo_pago, uso_cfdi, regimen_fiscal) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [razon_social, rfc, correo_factura, fraccionamiento, calle_factura, num_ext, num_int, codigo_postal, ciudad, estado, pais, forma_pago, metodo_pago_factura, cfdi, regimen_fiscal]);
-          // console.log("Datos facturacion insertados");
-
-          if (estatus_casa === "rentada") {
-            const { inquilino_nombre, inquilino_apellidoP, inquilino_apellidoM, inquilino_correo, inquilino_celular, inquilino_telefono } = req.body;
-
-            const rentaQuery = db.query("INSERT INTO arrendatario (nombre, apellidoP, apellidoM, correo, telefono, celular, fk_propiedad, fk_propietario) VALUES (?,?,?,?,?,?,?,?)", [inquilino_nombre, inquilino_apellidoP, inquilino_apellidoM, inquilino_correo, inquilino_telefono, inquilino_celular, null, null]);
-
-            if (!rentaQuery.insertId) {
-              res.status(200).send({ status: "error", message: "Error al realizar la inserción [renta]" });
-            }
-          }
-          /* if (usuarioQuery.insertId) {
-            /* if (!propiedadQuery.insertId || !facturacionQuery.insertId) {
-              res.status(200).send({ status: "error", message: "Error al realizar la inserción [facturacion/propiedad]" });
-            } */
-
-          /* Enviar email de registro c/ contraseña 
-
-            res.status(200).send({ status: "success" });
-          } else {
-          } */
-          res.status(200).send({ status: "error", message: "Error al realizar la inserción" });
+          res.status(200).send({ status: "success", message: "Operación realizada" });
         }
       } catch (error) {
         res.status(500).send({ status: "error", message: error.message });
@@ -86,7 +75,7 @@ export const propietario = {
     try {
       const db = await dbConnection();
 
-      const mysqlQuery = await db.query("SELECT * FROM usuarios WHERE tipo = 5");
+      const mysqlQuery = await db.query("SELECT * FROM usuarios INNER JOIN propiedad ON usuarios.id_usuario = propiedad.fk_propietario WHERE tipo = 5");
 
       if (mysqlQuery.length > 0) {
         res.status(200).send({ status: "success", data: mysqlQuery });

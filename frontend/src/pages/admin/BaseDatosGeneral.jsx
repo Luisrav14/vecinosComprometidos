@@ -7,31 +7,37 @@ import { ModalWithBtn } from "../../components";
 import globalConfig from "../../global/globalConfig";
 import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
 
-const DatosPersonales = () => {
+const DatosPersonales = ({ info }) => {
   return (
     <>
       <div className="container">
         <div className="card">
-          <div className="card-header shadow shadow-sm">
-            <h5 className="card-title">Prueba Numero Uno</h5>
-            <hr />
-          </div>
-          <div className="card-body row">
-            <div className="col-md-6 mb-3">
-              <strong>Correo: </strong> mail@mail.com
+          <div className="row">
+            <div className="mx-3 mt-2">
+              <h5 className="card-title">
+                {" "}
+                {info.nombre} {info.apellidoP} {info.apellidoM}
+              </h5>
+              <hr />
             </div>
-
-            <div className="col-md-6 mb-3">
-              <strong>Contraseña: </strong> **********
-            </div>
-
-            <div className="col-md-6 mb-3">
-              <strong>Telefono: </strong> 61812345678
-            </div>
-
-            <div className="col-md-6 mb-3">
-              <strong>Celular: </strong> 61812345678
-            </div>
+            <form>
+              <div className="form-group col-md-12 mb-3">
+                <label>Correo</label>
+                <input className="form-control" type="text" value={info.correo} disabled={true} />
+              </div>
+              <div className="form-group col-md-12 mb-3">
+                <label>Contraseña</label>
+                <input className="form-control" type="password" value={info.password} disabled={true} />
+              </div>
+              <div className="form-group col-md-12 mb-3">
+                <label>Teléfono</label>
+                <input className="form-control" type="text" value={info.telefono} disabled={true} />
+              </div>
+              <div className="form-group col-md-12 mb-3">
+                <label>Celular</label>
+                <input className="form-control" type="text" value={info.celular} disabled={true} />
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -39,45 +45,50 @@ const DatosPersonales = () => {
   );
 };
 
-const InformacionPropiedades = () => {
+const InformacionPropiedades = ({ info }) => {
   return (
     <>
       <div className="container">
         <div className="card">
           <div className="card-body row">
-            <div className="form-material row">
+            <form className="row justify-content-center">
+              <div className="form-group col-md-4 mb-3">
+                <label>Clave de Unidad</label>
+                <input type="text" className="form-control" value={info.unidad} disabled={true} />
+              </div>
+              <div className="form-group col-md-4 mb-3">
+                <label>Calle</label>
+                <input type="text" className="form-control" value={info.calle} disabled={true} />
+              </div>
+              <div className="form-group col-md-4 mb-3">
+                <label>Número</label>
+                <input type="text" className="form-control" value={`#${info.numero_ext}`} disabled={true} />
+              </div>
+
               <div className="form-group col-md-12 mb-3">
-                <strong>Clave de Unidad: </strong> 1-Alc-100-001
+                <label>Descripción</label>
+                <textarea className="form-control" cols="10" rows="2" disabled={true}>
+                  {info.descripcion}
+                </textarea>
               </div>
 
-              <div className="form-group col-md-4 mb-3">
-                <strong>Calle: </strong> Alcatraces
+              <div className="form-group col-md-3 mb-3">
+                <label>Cuota de mantenimiento mensual</label>
+                <input type="text" className="form-control" value={`$${info.cuota.toFixed(2)}`} disabled={true} />
               </div>
-
-              <div className="form-group col-md-4 mb-3">
-                <strong>Número: </strong> 100
+              <div className="form-group col-md-3 mb-3">
+                <label>Metros (M²)</label>
+                <input type="text" className="form-control" value={`${info.m2} m²`} disabled={true} />
               </div>
-
-              <div className="form-group col-12 mb-3">
-                <strong>Descripción: </strong> Cuota de $2,602.41 por convenio de pago, de marzo a diciembre 2022.
+              <div className="form-group col-md-3 mb-3">
+                <label>Tipo de casa</label>
+                <input type="text" className="form-control" value={`$${info.cuota.toFixed(2)}`} disabled={true} />
               </div>
-
-              <div className="form-group col-md-9 mb-3">
-                <strong>Cuota de mantenimiento mensual: </strong> 2602.41
+              <div className="form-group col-md-3 mb-3">
+                <label>Estatus de la casa</label>
+                <input type="text" className="form-control" value={`$${info.cuota.toFixed(2)}`} disabled={true} />
               </div>
-
-              <div className="form-group col-md-6 mb-3">
-                <strong>Metros (M²): </strong> 366.78
-              </div>
-
-              <div className="form-group col-md-6 mb-3">
-                <strong>Tipo de casa: </strong> construida
-              </div>
-
-              <div className="form-group col-md-6 mb-3">
-                <strong>Estatus de la casa: </strong> habitada
-              </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
@@ -95,48 +106,67 @@ const sendEmail = () => {
 
 export const BaseDatosGeneral = () => {
   const [data, setData] = useState([]);
+  const rows = [];
 
   useEffect(() => {
     fetch(globalConfig.API_URL + "/propietarios")
       .then((res) => res.json())
-      .then((json) => {setData(json.data); console.log(json.data)});
+      .then((json) => {
+        setData(json.data);
+        console.log(json.data);
+      });
   }, []);
+
+  data.forEach((row) => {
+    rows.push({
+      id: row.id_usuario,
+      nombre: (
+        <ModalWithBtn classBtn="btn btn-link text-decoration-none" textBtn={row.nombre + row.apellidoP + row.apellidoM} title="Datos personales" size="sm" footer={false}>
+          <DatosPersonales info={row} />
+        </ModalWithBtn>
+      ),
+      direccion: (
+        <ModalWithBtn classBtn="btn btn-link text-decoration-none" textBtn={`${row.calle} #${row.numero_ext}`} title="Datos de la propiedad" size="lg" footer={false}>
+          <InformacionPropiedades info={row} />
+        </ModalWithBtn>
+      ),
+      cuota_mantenimiento: row.couta,
+      acciones: [
+        <Link to="/admin/editar-propietario" className="btn btn-success mx-2">
+          <BsPencilSquare />
+        </Link>,
+        <button className="btn btn-primary mx-2" onClick={sendEmail}>
+          <BsEnvelope />
+        </button>,
+      ],
+    });
+  });
 
   const columns = [
     {
       id: "id",
       name: "#",
       selector: (row) => row.id_usuario,
-      sortable: true,
-      width: "5%",
-      center: true,
     },
     {
-      id: "Nombre",
+      id: "nombre",
       name: "Nombre",
       selector: (row) => row.nombre,
-      sortable: true,
-      center: true,
     },
     {
-      id: "Dirección",
+      id: "direccion",
       name: "Dirección",
-      selector: (row) => row.calle,
-      sortable: true,
-      center: true,
+      selector: (row) => row.direccion,
     },
     {
-      id: "CuotaMantenimiento",
+      id: "cuota_mantenimiento",
       name: "Cuota Mantenimiento",
-      selector: (row) => row.cuota,
-      sortable: true,
-      center: true,
+      selector: (row) => row.cuota_mantenimiento,
     },
     {
       id: "Acciones",
       name: "Acciones",
       selector: (row) => row.acciones,
-      center: true,
     },
   ];
 
@@ -155,7 +185,7 @@ export const BaseDatosGeneral = () => {
           </div>
         </div>
         <div className="card-body">
-          <DataTableComponent columns={columns} data={data} expandible={true} />
+          <DataTableComponent columns={columns} data={rows} expandible={true} />
         </div>
       </div>
     </>
