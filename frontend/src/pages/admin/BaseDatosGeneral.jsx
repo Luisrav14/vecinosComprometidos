@@ -21,19 +21,19 @@ const DatosPersonales = ({ info }) => {
               <hr />
             </div>
             <form>
-              <div className="form-group col-md-12 mb-3">
+              <div className="form-group col-md-6 mb-3">
                 <label>Correo</label>
                 <input className="form-control" type="text" value={info.correo} disabled={true} />
               </div>
-              <div className="form-group col-md-12 mb-3">
+              <div className="form-group col-md-6 mb-3">
                 <label>Contraseña</label>
                 <input className="form-control" type="password" value={info.password} disabled={true} />
               </div>
-              <div className="form-group col-md-12 mb-3">
+              <div className="form-group col-md-6 mb-3">
                 <label>Teléfono</label>
                 <input className="form-control" type="text" value={info.telefono} disabled={true} />
               </div>
-              <div className="form-group col-md-12 mb-3">
+              <div className="form-group col-md-6 mb-3">
                 <label>Celular</label>
                 <input className="form-control" type="text" value={info.celular} disabled={true} />
               </div>
@@ -72,21 +72,21 @@ const InformacionPropiedades = ({ info }) => {
                 </textarea>
               </div>
 
-              <div className="form-group col-md-3 mb-3">
+              <div className="form-group col-md-6 mb-3">
                 <label>Cuota de mantenimiento mensual</label>
                 <input type="text" className="form-control" value={`$${info.cuota.toFixed(2)}`} disabled={true} />
               </div>
-              <div className="form-group col-md-3 mb-3">
+              <div className="form-group col-md-6 mb-3">
                 <label>Metros (M²)</label>
                 <input type="text" className="form-control" value={`${info.m2} m²`} disabled={true} />
               </div>
-              <div className="form-group col-md-3 mb-3">
+              <div className="form-group col-md-6 mb-3">
                 <label>Tipo de casa</label>
-                <input type="text" className="form-control" value={`$${info.cuota.toFixed(2)}`} disabled={true} />
+                <input type="text" className="form-control" value={`${info.tipo_casa}`} disabled={true} />
               </div>
-              <div className="form-group col-md-3 mb-3">
+              <div className="form-group col-md-6 mb-3">
                 <label>Estatus de la casa</label>
-                <input type="text" className="form-control" value={`$${info.cuota.toFixed(2)}`} disabled={true} />
+                <input type="text" className="form-control" value={`${info.estatus_casa}`} disabled={true} />
               </div>
             </form>
           </div>
@@ -132,7 +132,7 @@ export const BaseDatosGeneral = () => {
       ),
       cuota_mantenimiento: row.couta,
       acciones: [
-        <Link to="/admin/editar-propietario" className="btn btn-success mx-2">
+        <Link to={`/admin/editar-propietario/${row.id_usuario}`} className="btn btn-success mx-2">
           <BsPencilSquare />
         </Link>,
         <button className="btn btn-primary mx-2" onClick={sendEmail}>
