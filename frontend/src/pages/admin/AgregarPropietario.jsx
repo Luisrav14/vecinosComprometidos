@@ -32,7 +32,7 @@ export const AgregarPropietario = () => {
       .then(({ data }) => {
         console.log(data);
         setSendingData(false);
-        data.status = "success" ? postSuccess() : errorAlert();
+        resErrors(data.status);
       })
       .catch((error) => {
         console.log(error);
@@ -41,9 +41,24 @@ export const AgregarPropietario = () => {
       });
   };
 
-  const postSuccess = async () => {
-    await successAlert();
-    navigate("/admin/general", { replace: true });
+  const resErrors = async (status) => {
+    switch (status) {
+      case "success":
+        await successAlert();
+        navigate("/admin/general", { replace: true });
+        break;
+
+      case "error":
+        errorAlert();
+        break;
+
+      case "error_correo":
+        alert("Correo ya registrado");
+        break;
+
+      default:
+        break;
+    }
   };
 
   return (
@@ -313,7 +328,7 @@ export const AgregarPropietario = () => {
                       ]}
                       onChange={({ value }) => setMetodoPago(value)}
                     />
-                    <input type="hidden" {...register("metodo_pago")} value={metodoPago} />
+                    <input type="hidden" {...register("metodo_pago", { value: metodoPago })} />
                   </div>
                   <div className="col-md-6 mb-3">
                     <label className="form-label">Cuota suscripción *</label>
@@ -333,7 +348,7 @@ export const AgregarPropietario = () => {
                       ]}
                       onChange={({ value }) => setloteForm(value)}
                     />
-                    <input type="hidden" {...register("tipo_casa")} value={loteForm} />
+                    <input type="hidden" {...register("tipo_casa", { value: loteForm })} />
                   </div>
                   <div className="col-md-6 mb-3">
                     <label className="form-label">Estatus de la propiedad</label>
@@ -345,7 +360,7 @@ export const AgregarPropietario = () => {
                       ]}
                       onChange={({ value }) => setRentaForm(value)}
                     />
-                    <input type="hidden" {...register("estatus_casa")} value={rentaForm} />
+                    <input type="hidden" {...register("estatus_casa", { value: rentaForm })} />
                   </div>
 
                   {rentaForm === "rentada" && (

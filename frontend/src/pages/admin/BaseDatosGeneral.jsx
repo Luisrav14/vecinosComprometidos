@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { BsPlusLg, BsEnvelope, BsPencilSquare } from "react-icons/bs";
 
 import Swal from "sweetalert2";
-import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
 import { ModalWithBtn } from "../../components";
 import globalConfig from "../../global/globalConfig";
+import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
 
 const DatosPersonales = () => {
   return (
@@ -96,6 +96,12 @@ const sendEmail = () => {
 export const BaseDatosGeneral = () => {
   const [data, setData] = useState([]);
 
+  useEffect(() => {
+    fetch(globalConfig.API_URL + "/propietarios")
+      .then((res) => res.json())
+      .then((json) => {setData(json.data); console.log(json.data)});
+  }, []);
+
   const columns = [
     {
       id: "id",
@@ -115,14 +121,14 @@ export const BaseDatosGeneral = () => {
     {
       id: "Dirección",
       name: "Dirección",
-      selector: (row) => row.direccion,
+      selector: (row) => row.calle,
       sortable: true,
       center: true,
     },
     {
       id: "CuotaMantenimiento",
       name: "Cuota Mantenimiento",
-      selector: (row) => row.cuota_mantenimiento,
+      selector: (row) => row.cuota,
       sortable: true,
       center: true,
     },
@@ -133,12 +139,6 @@ export const BaseDatosGeneral = () => {
       center: true,
     },
   ];
-
-  useEffect(() => {
-    fetch(globalConfig.API_URL + "/propietarios")
-      .then((res) => res.json())
-      .then((json) => setData(json.data));
-  }, []);
 
   return (
     <>
