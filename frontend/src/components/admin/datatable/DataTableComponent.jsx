@@ -65,7 +65,6 @@ export const DataTableComponent = ({ columns, data }) => {
 
   return (
     <DataTable
-      className="text-center"
       resizableColumns
       columnResizeMode="fit"
       showGridlines
@@ -80,8 +79,8 @@ export const DataTableComponent = ({ columns, data }) => {
       currentPageReportTemplate="Mostrando {first} - {last} de {totalRecords} registros"
       paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
     >
-      {columns.map((col) => {
-        return <Column field={col.selector} header={col.name} style={{ width: "auto" }} />;
+      {columns.map((col, i) => {
+        return <Column field={col.selector} header={col.name} style={{ width: "auto", textAlign: "center" }}  />;
       })}
     </DataTable>
   );

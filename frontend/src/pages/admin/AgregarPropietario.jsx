@@ -16,6 +16,7 @@ export const AgregarPropietario = () => {
     register,
     handleSubmit,
     formState: { errors },
+    
   } = useForm();
 
   const [rentaForm, setRentaForm] = useState("");
