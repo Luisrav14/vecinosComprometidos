@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { infoFraccionamiento } from "../../global/infoFraccionamiento";
-import Calendario from "../usuarios/Calendario";
+
 
 export const IndexPage = () => {
   return (
@@ -361,7 +361,7 @@ export const IndexPage = () => {
                 <li>
                   <strong>
                     <span>
-                      <a href="fraccionamiento/QuintasResidencial/asambleastodas.php" target="_blank">
+                      <a href="/asambleasrecientes" target="_blank">
                         Asambleas
                       </a>
                     </span>
