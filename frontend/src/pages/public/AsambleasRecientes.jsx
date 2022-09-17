@@ -59,7 +59,10 @@ export const AsambleasRecientes = () => {
                         <small class="text-muted">Fecha: 2022-07-01</small>
                       </div>
                       <div class="card-footer">
-                        <button type="button" class="btn btn-primary">Ver mas</button>
+                        
+                        <Link to="../asambleasasistencia" className="btn btn-primary">
+                <BsPlusLg /> Ver mas
+              </Link>
                       </div>
                     </div>
 
@@ -71,7 +74,9 @@ export const AsambleasRecientes = () => {
                         <small class="text-muted">Fecha: 2022-07-01</small>
                       </div>
                       <div class="card-footer">
-                        <button type="button" class="btn btn-primary">Ver mas</button>
+                      <Link to="../asambleasasistencia" className="btn btn-primary">
+                <BsPlusLg /> Ver mas
+              </Link>
                       </div>
                     </div>
 
@@ -82,7 +87,9 @@ export const AsambleasRecientes = () => {
                         <small class="text-muted">Fecha: 2022-07-01</small>
                       </div>
                       <div class="card-footer">
-                        <button type="button" class="btn btn-primary">Ver mas</button>
+                      <Link to="../asambleasasistencia" className="btn btn-primary">
+                <BsPlusLg /> Ver mas
+              </Link>
                       </div>
                     </div>
                   </div>
