@@ -51,7 +51,7 @@ const columns = [
 const data = [
   {
     id: 1,
-    concepto: "Cuota de mantenimiento al mes de: Octubre del 2021",
+    concepto: "Cuota de mantenimiento al mes de: Noviembre del 2022",
     monto: "$500.00	",
     estatus: "Pendiente",
 

@@ -6,8 +6,8 @@ const globalConfig = {
   API_URL_ASAMBLEAS:"http://localhost:5000/asamblea",
   API_URL_ACTAS:"http://localhost:5000/actas",
 
-  API_URL_ASAMBLEAS: "http://localhost:5000/asamblea/mostrarTodos",
-  API_URL_ACTAS:"http://localhost:5000/actas/mostrarTodos",
+  API_URL_ASAMBLEAS: "http://localhost:5000/asamblea",
+  API_URL_ACTAS:"http://localhost:5000/actas",
 
 };
 
