@@ -9,8 +9,6 @@ import globalConfig from "../../global/globalConfig";
 export const Asamblea = () => {
   const [data, setData] = useState([]);
 
-
-
   const columns = [
     {
       id: "id",
@@ -49,35 +47,24 @@ export const Asamblea = () => {
       name: "Fecha Publicado",
       selector: (row) => row.fecha_publicado,
       center: true,
-     
-    }
+    },
   ];
 
   useEffect(() => {
     fetch(globalConfig.API_URL_ASAMBLEAS + "/mostrarTodos")
       .then((res) => res.json())
       .then((json) => setData(json.data));
-  }, 
-
-  [
-    
-  ],
-  )
-  ;
-
-    
- 
+  }, []);
 
   return (
     <>
-    
       <h1 className="mb-3 fw-bold">Asamblea</h1>
       <h6>En esta sección podemos encontrar información acerca de convocatorias a eventos que se han realizado con los colonos, como juntas o asambleas, nos resulta útil si queremos mantener un registro y consistencia en la comunicación con los colonos.</h6>
       <div className="card">
         <div className="card-header border-bottom border-1 ">
           <div className="row d-flex">
             <h5 className="card-title col-md-6 pt-2">Asambleas </h5>
-           
+
             <div className="col-md-6 text-right">
               <Link to="/admin/agregar-asamblea" className="btn btn-primary">
                 <BsPlusLg /> Agregar
