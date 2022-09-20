@@ -38,7 +38,7 @@ export const AdminRoutes = () => {
 
           {/* RUTAS OPERACIONES */}
           
-          
+          <Route path="/asambleas" element={<Asamblea />} />
           <Route path="/agregar-asamblea" element={<AgregarAsamblea />} />
           <Route path="/anunciosacuerdos" element={<AnunciosAcuerdos />} />
           <Route path="/agregar-anuncios" element={<AgregarAnuncios />} />

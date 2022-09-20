@@ -3,9 +3,7 @@ import { useForm } from "react-hook-form";
 import { FaRegSave } from "react-icons/fa";
 import React from "react";
 import { RegresarBtn } from "../../components/ui/RegresarBtn";
-import { ToastContainer, toast } from "react-toastify";
-import { inputRequiredToast, inputMaxlengthToast } from "../../components/ui/toast/ToastValidation";
-import "react-toastify/dist/ReactToastify.css";
+
 
 export const AgregarAsamblea = () => {
   const {
@@ -18,7 +16,7 @@ export const AgregarAsamblea = () => {
 
   return (
     <>
-      <ToastContainer />
+     
       <div className="card">
         <div className="card-header border-bottom border-1">
           <div className="row d-flex">
@@ -41,7 +39,7 @@ export const AgregarAsamblea = () => {
                     required: true,
                   })}
                 />
-                {errors.fecha_asamblea?.type === "required" && inputRequiredToast()}
+               
               </div>
 
               <div className="col-md-6 mb-3">
@@ -56,8 +54,7 @@ export const AgregarAsamblea = () => {
                   placeholder="Titulo"
                 />
 
-                {errors.titulo?.type === "required" && inputRequiredToast()}
-                {errors.titulo?.type === "maxLength" && inputMaxlengthToast()}
+               
               </div>
               <div className="col-md-12 mb-3">
                 <label className="form-label">Descripción *</label>
@@ -67,12 +64,12 @@ export const AgregarAsamblea = () => {
                   {...register("descripcion", {
                     required: true,
                     maxLength: 200,
-                    MessageEvent: "HOLA",
+                  
                   })}
                   placeholder="Descripción"
                   rows={5}
                 />
-                {errors.descripcion?.type === "required" && inputRequiredToast()}
+              
               </div>
 
               <div className="col-md-4 my-5">

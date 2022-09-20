@@ -51,9 +51,9 @@ const columns = [
 const data = [
   {
     id: 1,
-    concepto: "Pago agosto",
-    monto: "636",
-    estatus: "Pagado",
+    concepto: "Cuota de mantenimiento al mes de: Octubre del 2021",
+    monto: "$500.00	",
+    estatus: "Pendiente",
 
     acciones: [
       <button class="btn btn-success mx-2" onClick={Pagar}>
@@ -61,17 +61,7 @@ const data = [
       </button>,
     ],
   },
-  {
-    id: 2,
-    concepto: "Pago agosto",
-    monto: "636",
-    estatus: "Pendiente",
-    acciones: [
-      <button class="btn btn-success mx-2" onClick={Pagar}>
-        Pagar
-      </button>,
-    ],
-  },
+ 
 ];
 
 export const Efectivo = () => {

@@ -54,7 +54,7 @@ export const Asamblea = () => {
   ];
 
   useEffect(() => {
-    fetch(globalConfig.API_URL_ASAMBLEAS)
+    fetch(globalConfig.API_URL_ASAMBLEAS + "/mostrarTodos")
       .then((res) => res.json())
       .then((json) => setData(json.data));
   }, 

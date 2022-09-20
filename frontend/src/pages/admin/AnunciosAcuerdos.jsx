@@ -21,7 +21,7 @@ export const AnunciosAcuerdos = () => {
   const rows = [];
 
   useEffect(() => {
-    fetch(globalConfig.API_URL_ACTAS)
+    fetch(globalConfig.API_URL_ACTAS + "/mostrarTodos")
       .then((res) => res.json())
       .then((json) => {
         setData(json.data);
