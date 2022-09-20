@@ -2,7 +2,7 @@ import dbConnection from "../database/connection";
 import { dataValidation } from "../helpers/dataValidation";
 import { passwordGenerator } from "../helpers/passwordGenerator";
 
-export const asamblea = {
+export const actasyacuerdos = {
  
 
 
@@ -12,7 +12,7 @@ export const asamblea = {
     try {
       const db = await dbConnection();
 
-      const mysqlQuery = await db.query("SELECT * FROM asamblea");
+      const mysqlQuery = await db.query("SELECT * FROM anuncios");
 
       if (mysqlQuery.length > 0) {
         res.status(200).send({ status: "success", data: mysqlQuery });
@@ -23,8 +23,7 @@ export const asamblea = {
       res.status(500).send({ status: "error", error });
     }
   },
-
-  mostrarTodosA: async (req, res) => {
+  mostrarTodosActas: async (req, res) => {
     
 
     try {
@@ -42,14 +41,13 @@ export const asamblea = {
     }
   },
 
-
   mostrarDos: async (req, res) => {
     
 
     try {
       const db = await dbConnection();
 
-      const mysqlQuery = await db.query("SELECT * FROM asamblea WHERE id_asamblea = 1");
+      const mysqlQuery = await db.query("SELECT * FROM anuncios WHERE id_anuncios = 2");
 
       if (mysqlQuery.length > 0) {
         res.status(200).send({ status: "success", data: mysqlQuery });

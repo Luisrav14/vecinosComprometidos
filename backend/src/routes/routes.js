@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import { auth, propietario, asamblea } from "../controllers/";
+import { auth, propietario, asamblea,actasyacuerdos } from "../controllers/";
 import { casas_renta } from "../controllers/casas-renta";
 
 const router = Router();
@@ -22,5 +22,7 @@ router.get("/casas-renta/:cid", casas_renta.mostrarUno);
 
 router.get("/asamblea/mostrarTodos", asamblea.mostrarTodos);
 router.get("/asamblea/mostrarDos", asamblea.mostrarDos);
+
+router.get("/actas/mostrarTodos", asamblea.mostrarTodosA);
 
 export default router;

@@ -3,6 +3,8 @@ import { Route, Routes } from "react-router-dom";
 
 import { AdminDashboard, AgregarPropietario, BaseDatosGeneral, CuotasMantenimiento, CuotaTotalPagado, CuotaTotalPendiente, CuotaTotalRecaudar, EditarPropietario, ResumenInformacion, Asamblea, EstadosDeCuenta, AgregarAsamblea, AnunciosAcuerdos, InventarioActivo, InventarioDescontinuado, AgregarAnuncios, AccionesMod, CasasRenta, LotesBaldios, Inventario, AgregarInventario, InformacionPersonal, CensoAnimal, Estadisticas, Incidentes, AgregarIncidente, Reportes, ReportesResueltos, Convenios, AgregarConvenio, InformesFinancieros, AgregarInformeFinanciero, RecursosHumanos, AgregarRecursosHumanos, Proveedores, AgregarProveedor, Reglamentos, AgregarReglamentos, BlogDeNoticias, AgregarBlog, CalendarioReservaciones, AreasReservadas, EncuestasAdm, AgregarEncuesta, Medidores, AgregarMedidores, SoportePendientes, AgregarSoportes, SoporteResueltos, Ofertas, AgregarOfertas } from "../pages";
 
+    
+
 export const AdminRoutes = () => {
   return (
     <>
@@ -25,7 +27,8 @@ export const AdminRoutes = () => {
           <Route path="/estadisticas" element={<Estadisticas />} />
 
           {/* RUTAS OPERACIONES */}
-          <Route path="/asambleas" element={<Asamblea />} />
+          
+          
           <Route path="/agregar-asamblea" element={<AgregarAsamblea />} />
           <Route path="/anunciosacuerdos" element={<AnunciosAcuerdos />} />
           <Route path="/agregar-anuncios" element={<AgregarAnuncios />} />

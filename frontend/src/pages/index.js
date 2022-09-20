@@ -1,7 +1,8 @@
 export * from "./public/IndexPage";
 export * from "./public/LoginPage";
 export * from "./public/PasswordRecoveryPage";
-
+export * from "./public/AsambleasRecientes";
+export * from "./public/AsambleasAsistencia";
 export * from "./admin/AdminDashboard";
 export * from "./admin/BaseDatosGeneral";
 export * from "./admin/ResumenInformacion";
@@ -53,6 +54,10 @@ export * from "./admin/Soporte-Resueltos";
 export * from "./admin/Ofertas";
 export * from "./admin/AgregarOfertas";
 export * from "./admin/AgregarSoportes";
+
+
+
+
 
 export * from "./usuarios/dashuser";
 export * from "./usuarios/pago-efectivo";

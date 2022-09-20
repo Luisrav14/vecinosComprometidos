@@ -73,7 +73,8 @@ export const Asamblea = () => {
           </div>
         </div>
 
-        <DataTableComponent columns={columns} data={data} expandible={true} />
+        <DataTableComponent columns={columns} data={data} expandible={true}  />
+       
       </div>
     </>
   );

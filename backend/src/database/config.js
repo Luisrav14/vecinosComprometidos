@@ -3,7 +3,7 @@ module.exports = {
     host: "localhost",
     user: "root",
     password: "",
-    database: "vc_prueba",
+    database: "vc_prueba1",
     multipleStatements: true,
   },
   // dbServer: {

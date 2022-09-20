@@ -1,12 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { BsPlusLg, BsEnvelope, BsPencilSquare,BsFillFileEarmarkFill, BsFillChatLeftTextFill } from "react-icons/bs";
-
+import { BsPlusLg, BsEnvelope, BsPencilSquare,BsFillFileEarmarkFill,BsFillTrashFill, BsFillChatLeftTextFill } from "react-icons/bs";
+import globalConfig from "../../global/globalConfig";
 import Swal from "sweetalert2";
 import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
+import { LoaderBtn, ModalWithBtn } from "../../components";
 
-export const AnunciosAcuerdos = () => {
-  const sendEmail = () => {
+const sendEmail = () => {
     Swal.fire({
       icon: "success",
       title: "Operación realizada",
@@ -14,84 +14,79 @@ export const AnunciosAcuerdos = () => {
     });
   };
 
+
+export const AnunciosAcuerdos = () => {
+  const [data, setData] = useState([]);
+  const [loaderMail, setSendMail] = useState(false);
+  const rows = [];
+
+  useEffect(() => {
+    fetch(globalConfig.API_URL_ACTAS)
+      .then((res) => res.json())
+      .then((json) => {
+        setData(json.data);
+        console.log(json.data);
+      });
+  }, []);
+
+  (!data.length === 0) &
+    data.forEach((row, i) => {
+      rows.push({
+        id_usuario: i + 1,
+        titulo: `${row.titulo}`,
+        motivo: `${row.motivo}`,
+        descripcion: `${row.descripcion}`,
+        documento: [
+          
+          <LoaderBtn classBtn="btn btn-primary" textBtn={<BsFillFileEarmarkFill />} loadText="" isLoading={loaderMail} onClick={sendEmail} />,
+        ],
+        acciones: [
+          <Link to={`/admin/editar-propietario/${row.id_usuario}`} className="btn btn-success mx-2">
+            <BsPencilSquare />
+          </Link>,
+          <LoaderBtn classBtn="btn btn-danger" textBtn={<BsFillTrashFill />} loadText="" isLoading={loaderMail} onClick={sendEmail} />,
+        ],
+      });
+    });
+
   const columns = [
     {
       id: "id",
       name: "#",
-      selector: (row) => row.id,
-      sortable: true,
-      width: "auto",
-      center: true,
+      selector: (row) => row.id_usuario,
+    
     },
     {
       id: "Titulo",
       name: "Titulo",
       selector: (row) => row.titulo,
-      sortable: true,
-      center: true,
-      width: "30%",
+    
     },
     {
       id: "Motivo",
       name: "Motivo",
       selector: (row) => row.motivo,
-      sortable: true,
-      center: true,
-      width: "30%",
+     
     },
     {
       id: "Descripcion",
       name: "Descripcion",
       selector: (row) => row.descripcion,
-      sortable: true,
-      center: true,
-      width: "15%",
+    
     },
     {
       id: "Documento",
       name: "Documento",
       selector: (row) => row.documento,
-      center: true,
-     
+    
     },
     {
-      id: "Acciones",
+      id: "acciones",
       name: "Acciones",
       selector: (row) => row.acciones,
-      center: true,
-     
     },
   ];
 
-  const data = [
-    {
-      id: 1,
-      titulo: "PRIMER ANUNCIO Y ACTA 2022",
-      motivo:"DAR A CONOCER LA INFORMACION",
-      descripcion: [
-        
-        <button className="btn btn-primary mx-2" onClick={sendEmail}>
-          <BsFillChatLeftTextFill />
-        </button>,
-      ],
-      fechapublicado:"2022-07-13",
-      documento: [
-        
-        <button className="btn btn-primary mx-2" onClick={sendEmail}>
-          <BsFillFileEarmarkFill />
-        </button>,
-      ],
-      acciones: [
-        <Link to="#" className="btn btn-warning mx-2">
-          <BsPencilSquare />
-        </Link>,
-       <button className="btn btn-primary mx-2" onClick={sendEmail}>
-       <BsFillFileEarmarkFill />
-     </button>,
-      ],
-
-    }
-  ];
 
   return (
     <>
@@ -110,7 +105,7 @@ export const AnunciosAcuerdos = () => {
           </div>
         </div>
 
-        <DataTableComponent columns={columns} data={data}  />
+        <DataTableComponent columns={columns} data={rows} />
       </div>
     </>
   );
