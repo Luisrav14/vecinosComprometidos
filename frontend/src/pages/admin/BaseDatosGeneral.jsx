@@ -103,34 +103,33 @@ export const BaseDatosGeneral = () => {
     fetch(globalConfig.API_URL + "/propietarios")
       .then((res) => res.json())
       .then((json) => {
-        setData(json.data);
-        console.log(json.data);
+        json.status === "success" ? setData(json.data) : setData([]);
+        console.log(json);
       });
   }, []);
 
-  (!data.length === 0) &
-    data.forEach((row, i) => {
-      rows.push({
-        id_usuario: i + 1,
-        nombre: (
-          <ModalWithBtn classBtn="btn btn-link text-decoration-none" textBtn={row.nombre + row.apellidoP + row.apellidoM} title="Datos personales" size="sm" footer={false}>
-            <DatosPersonales info={row} />
-          </ModalWithBtn>
-        ),
-        direccion: (
-          <ModalWithBtn classBtn="btn btn-link text-decoration-none" textBtn={`${row.calle} #${row.numero_ext}`} title="Datos de la propiedad" size="lg" footer={false}>
-            <InformacionPropiedades info={row} />
-          </ModalWithBtn>
-        ),
-        cuota: `$${row.cuota.toFixed(2)}`,
-        acciones: [
-          <Link to={`/admin/editar-propietario/${row.id_usuario}`} className="btn btn-success mx-2">
-            <BsPencilSquare />
-          </Link>,
-          <LoaderBtn classBtn="btn btn-primary" textBtn={<BsEnvelope />} loadText="" isLoading={loaderMail} onClick={sendEmail} />,
-        ],
-      });
+  data.forEach((row, i) => {
+    rows.push({
+      id_usuario: i + 1,
+      nombre: (
+        <ModalWithBtn classBtn="btn btn-link text-decoration-none" textBtn={row.nombre + row.apellidoP + row.apellidoM} title="Datos personales" size="sm" footer={false}>
+          <DatosPersonales info={row} />
+        </ModalWithBtn>
+      ),
+      direccion: (
+        <ModalWithBtn classBtn="btn btn-link text-decoration-none" textBtn={`${row.calle} #${row.numero_ext}`} title="Datos de la propiedad" size="lg" footer={false}>
+          <InformacionPropiedades info={row} />
+        </ModalWithBtn>
+      ),
+      cuota: `$${row.cuota.toFixed(2)}`,
+      acciones: [
+        <Link to={`/admin/editar-propietario/${row.id_usuario}`} className="btn btn-success mx-2">
+          <BsPencilSquare />
+        </Link>,
+        <LoaderBtn classBtn="btn btn-primary" textBtn={<BsEnvelope />} loadText="" isLoading={loaderMail} onClick={sendEmail} />,
+      ],
     });
+  });
 
   const columns = [
     {

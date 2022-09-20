@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Select from "react-select";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
@@ -15,8 +15,8 @@ export const AgregarPropietario = () => {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
-    
   } = useForm();
 
   const [rentaForm, setRentaForm] = useState("");
@@ -327,9 +327,9 @@ export const AgregarPropietario = () => {
                         { label: "Efectivo", value: "efectivo" },
                         { label: "Transferencia", value: "transferencia" },
                       ]}
-                      onChange={({ value }) => setMetodoPago(value)}
+                      onChange={({ value }) => setValue("metodo_pago", value)}
                     />
-                    <input type="hidden" {...register("metodo_pago", { value: metodoPago })} />
+                    {/* <input type="hidden" {...register("metodo_pago", { value: metodoPago })} /> */}
                   </div>
                   <div className="col-md-6 mb-3">
                     <label className="form-label">Cuota suscripción *</label>
@@ -347,9 +347,12 @@ export const AgregarPropietario = () => {
                         { label: "Casa en Proceso", value: "proceso" },
                         { label: "Terreno Baldío", value: "baldio" },
                       ]}
-                      onChange={({ value }) => setloteForm(value)}
+                      onChange={({ value }) => {
+                        setValue("tipo_casa", value);
+                        setloteForm(value);
+                      }}
                     />
-                    <input type="hidden" {...register("tipo_casa", { value: loteForm })} />
+                    {/* <input type="hidden" {...register("tipo_casa", { value: loteForm })} /> */}
                   </div>
                   <div className="col-md-6 mb-3">
                     <label className="form-label">Estatus de la propiedad</label>
@@ -359,9 +362,12 @@ export const AgregarPropietario = () => {
                         { label: "Casa en Renta", value: "rentada" },
                         { label: "Sin habitar", value: "sinHabitar" },
                       ]}
-                      onChange={({ value }) => setRentaForm(value)}
+                      onChange={({ value }) => {
+                        setValue("estatus_casa", value);
+                        setRentaForm(value);
+                      }}
                     />
-                    <input type="hidden" {...register("estatus_casa", { value: rentaForm })} />
+                    {/* <input type="hidden" {...register("estatus_casa", { value: rentaForm })} /> */}
                   </div>
 
                   {rentaForm === "rentada" && (

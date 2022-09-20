@@ -1,18 +1,31 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FaArrowLeft, FaHouseUser, FaFileAlt, FaHome, FaRegSave } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import globalConfig from "../../global/globalConfig";
 
 export const EditarPropietario = () => {
   const { register, handleSubmit } = useForm();
 
-  const showData = (data) => console.log(data);
+  const [data, setData] = useState();
+
+  const { uid } = useParams();
+
+  useEffect(() => {
+    fetch(`${globalConfig.API_URL}/propietarios/${uid}`)
+      .then((res) => res.json())
+      .then((json) => {
+        json.status === "success" ? setData(json.data) : setData([]);
+        console.log(json.data);
+      });
+  }, []);
 
   return (
     <>
       <div className="card">
         <div className="card-header border-bottom border-1">
           <div className="row d-flex">
-            <h5 className="card-title col-md-6 pt-2">Editar propietario</h5>
+            <h5 className="card-title col-md-6 pt-2">Editar propietario {uid} </h5>
             <div className="col-md-6 text-right">
               <Link to="/admin/general" className="btn btn-primary">
                 <FaArrowLeft /> Regresar
@@ -21,7 +34,7 @@ export const EditarPropietario = () => {
           </div>
         </div>
         <div className="card-body">
-          <form onSubmit={handleSubmit(showData)}>
+          <form onSubmit={handleSubmit()}>
             <div className="row justify-content-center d-flex">
               <div className="col-md-12 border-bottom border-1 my-3">
                 <p className="text-primary fw-bolder">
