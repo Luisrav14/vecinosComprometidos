@@ -1,9 +1,11 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
-
+import globalConfig from "../../global/globalConfig";
+import { LoaderBtn, ModalWithBtn } from "../../components";
 import { DataTableComponent } from "../../components/admin/datatable/DataTableComponent";
-
+import { BsPlusLg, BsEnvelope, BsPencilSquare,BsFillFileEarmarkFill,BsFillTrashFill, BsFillChatLeftTextFill } from "react-icons/bs";
 const Pagar = () => {
   Swal.fire({
     icon: "success",
@@ -12,7 +14,7 @@ const Pagar = () => {
   });
 };
 
-const columns = [
+const columns2 = [
   {
     name: "#",
     selector: (row) => row.id,
@@ -48,7 +50,7 @@ const columns = [
   },
 ];
 
-const data = [
+const data1 = [
   {
     id: 1,
     concepto: "Cuota de mantenimiento al mes de: Noviembre del 2022",
@@ -65,6 +67,78 @@ const data = [
 ];
 
 export const Efectivo = () => {
+  const [data, setData] = useState([]);
+  const [loaderMail, setSendMail] = useState(false);
+  const rows = [];
+
+  useEffect(() => {
+    fetch(globalConfig.API_URL_ACTAS + "/mostrarTodos")
+      .then((res) => res.json())
+      .then((json) => {
+        setData(json.data);
+        console.log(json.data);
+      });
+  }, []);
+
+  (!data.length === 0) &
+    data.forEach((row, i) => {
+      rows.push({
+        id_usuario: i + 1,
+        titulo: `${row.titulo}`,
+        motivo: `${row.motivo}`,
+        descripcion: `${row.descripcion}`,
+        documento: [
+          
+          <LoaderBtn classBtn="btn btn-primary" textBtn={<BsFillFileEarmarkFill />} loadText="" isLoading={loaderMail} onClick={sendEmail} />,
+        ],
+        acciones: [
+          <Link to={`/admin/editar-propietario/${row.id_usuario}`} className="btn btn-success mx-2">
+            <BsPencilSquare />
+          </Link>,
+          <LoaderBtn classBtn="btn btn-danger" textBtn={<BsFillTrashFill />} loadText="" isLoading={loaderMail} onClick={sendEmail} />,
+        ],
+      });
+    });
+
+   
+    const columns = [
+      {
+        id: "id",
+        name: "#",
+        selector: (row) => row.id_usuario,
+      
+      },
+      {
+        id: "Titulo",
+        name: "Titulo",
+        selector: (row) => row.titulo,
+      
+      },
+      {
+        id: "Motivo",
+        name: "Motivo",
+        selector: (row) => row.motivo,
+       
+      },
+      {
+        id: "Descripcion",
+        name: "Descripcion",
+        selector: (row) => row.descripcion,
+      
+      },
+      {
+        id: "Documento",
+        name: "Documento",
+        selector: (row) => row.documento,
+      
+      },
+      {
+        id: "acciones",
+        name: "Acciones",
+        selector: (row) => row.acciones,
+      },
+    ];
+    
   return (
     <main className="content">
       <div className="container-fluid p-0">
@@ -83,7 +157,7 @@ export const Efectivo = () => {
                     <div className="text-center">
                       <div className="container mt-5">
                         <div>
-                          <DataTableComponent columns={columns} data={data} />
+                          <DataTableComponent columns={columns} data={rows} />
                         </div>
                       </div>
                     </div>

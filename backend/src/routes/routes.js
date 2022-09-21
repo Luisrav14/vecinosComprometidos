@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import { auth, propietario, asamblea,actasyacuerdos } from "../controllers/";
+import { auth, propietario, asamblea,actasyacuerdos,pagosefectivo } from "../controllers/";
 import { casas_renta } from "../controllers/casas-renta";
 
 const router = Router();
@@ -24,5 +24,8 @@ router.get("/asamblea/mostrarTodos", asamblea.mostrarTodos);
 router.get("/asamblea/mostrarDos", asamblea.mostrarDos);
 
 router.get("/actas/mostrarTodos", asamblea.mostrarTodosA);
+
+/* micrositio routes */
+router.get("/pagosefectivo/mostrarTodos",pagosefectivo.mostrarTodos);
 
 export default router;
